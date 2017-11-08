@@ -8,3 +8,5 @@ Team iPlan
 jorgeSia -> Σιαχάμης Γεώργιος 03113618 georgedrfsia@gmail.com
 
 LnKat    -> Τσιβρά Αικατερίνη 03108208 katerinatsivra@gmail.com
+
+thomastsap -> Τσαπραλής Θωμάς 03113535 thomastsapralis@yahoo.gr
