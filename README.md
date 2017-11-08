@@ -12,3 +12,5 @@ LnKat    -> Τσιβρά Αικατερίνη 03108208 katerinatsivra@gmail.com
 thomastsap -> Τσαπραλής Θωμάς 03113535 thomastsapralis@yahoo.gr
 
 kompsosdasarxhs -> Γιαννάκης Ορέστης 03112157 kompsosdasarxhs@gmail.com
+
+BarbaBrill -> Μπριλλάκης Βασίλειος 03113533 billbrillakis@gmail.com
