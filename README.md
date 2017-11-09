@@ -14,3 +14,5 @@ thomastsap -> Τσαπραλής Θωμάς 03113535 thomastsapralis@yahoo.gr
 kompsosdasarxhs -> Γιαννάκης Ορέστης 03112157 kompsosdasarxhs@gmail.com
 
 BarbaBrill -> Μπριλλάκης Βασίλειος 03113533 billbrillakis@gmail.com
+
+vasiliskv -> Καβαρδίνας Βασίλειος 03112153 v.kavardinas@gmail.com
