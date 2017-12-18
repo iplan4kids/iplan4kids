@@ -9,6 +9,8 @@ https://www.keycdn.com/blog/front-end-frameworks/
 
 https://da-14.com/blog/reactjs-vs-angular-comparison-which-better
 
+https://www.w3schools.com/bootstrap/bootstrap_theme_band.asp
+
 ### databases
 
 http://www.itzgeek.com/how-tos/linux/debian/install-postgresql-9-6-on-debian-9-ubuntu-16-04-linuxmint-18.html
