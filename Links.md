@@ -1,4 +1,4 @@
-# Links
+ # Links
 
 ### front-end frameworks
 https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282
@@ -17,6 +17,6 @@ http://www.itzgeek.com/how-tos/linux/debian/install-postgresql-9-6-on-debian-9-u
 
 http://www.postgresqltutorial.com/
 
-###Location/Map Information
+### Location/Map Information
 
 https://developer.android.com/training/building-location.html
