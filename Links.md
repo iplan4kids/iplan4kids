@@ -16,3 +16,7 @@ https://www.w3schools.com/bootstrap/bootstrap_theme_band.asp
 http://www.itzgeek.com/how-tos/linux/debian/install-postgresql-9-6-on-debian-9-ubuntu-16-04-linuxmint-18.html
 
 http://www.postgresqltutorial.com/
+
+###Location/Map Information
+
+https://developer.android.com/training/building-location.html
