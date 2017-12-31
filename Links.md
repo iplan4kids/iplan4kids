@@ -1,4 +1,5 @@
- # Links
+
+# Links
 
 ### front-end frameworks
 https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282
@@ -26,3 +27,5 @@ https://developer.android.com/training/building-location.html
 https://www.developer.com/java/ent/adding-email-support-to-your-java-applications.html
 
 http://www.baeldung.com/spring-email
+
+https://docs.oracle.com/cd/E29542_01/bi.1111/e22259/delmgrapis.htm#BIPDV704
