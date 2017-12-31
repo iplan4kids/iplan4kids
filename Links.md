@@ -20,3 +20,9 @@ http://www.postgresqltutorial.com/
 ### Location/Map Information
 
 https://developer.android.com/training/building-location.html
+
+### Email Support
+
+https://www.developer.com/java/ent/adding-email-support-to-your-java-applications.html
+
+http://www.baeldung.com/spring-email
