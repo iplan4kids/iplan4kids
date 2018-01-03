@@ -33,3 +33,13 @@ http://www.baeldung.com/spring-email
 https://docs.oracle.com/cd/E29542_01/bi.1111/e22259/delmgrapis.htm#BIPDV704
 
 https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/mail/javamail/package-summary.html
+
+### PDF Creation
+
+http://www.vogella.com/tutorials/JavaPDF/article.html#createpdf
+
+http://www.baeldung.com/java-pdf-creation
+
+https://www.tutorialspoint.com/springmvc/springmvc_pdf.htm
+
+http://programmersfaq.blogspot.gr/2016/02/java-mail-in-spring-framework-to-send.html
