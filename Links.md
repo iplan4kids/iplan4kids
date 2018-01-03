@@ -1,4 +1,6 @@
 
+
+
 # Links
 
 ### front-end frameworks
@@ -29,3 +31,5 @@ https://www.developer.com/java/ent/adding-email-support-to-your-java-application
 http://www.baeldung.com/spring-email
 
 https://docs.oracle.com/cd/E29542_01/bi.1111/e22259/delmgrapis.htm#BIPDV704
+
+https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/mail/javamail/package-summary.html
