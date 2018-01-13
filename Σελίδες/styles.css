@@ -65,16 +65,20 @@ footer a:hover {
 .modal{
     position: absolute;
     padding-right: 0px !important;
+	
 }
 .modal-open {
     width: 100%;
     padding-right: 0px !important;
+	
 }
 .panel-register1 {
+	margin-top:100px;                     /* ΑΥΤΑ ΔΕΝ ΕΙΝΑΙ ΣΩΣΤΑ ΤΟ FOOTER ΔΕΝ ΠΑΕΙ ΚΑΤΩ ΤΑ ΒΑΖΩ ΕΤΣΙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	margin-bottom:200px;				 /* ΑΥΤΑ ΔΕΝ ΕΙΝΑΙ ΣΩΣΤΑ ΤΟ FOOTER ΔΕΝ ΠΑΕΙ ΚΑΤΩ ΤΑ ΒΑΖΩ ΕΤΣΙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 }
 .panel-register1>.panel-heading {
     color: #00415d;
