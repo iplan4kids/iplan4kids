@@ -12,7 +12,7 @@ public class ProviderRowMapper implements RowMapper<Provider> {
         pr.setId(rs.getInt("user_id"));
         pr.setUsername(rs.getString("username"));
         pr.setPassword(rs.getString("password"));
-        pr.setFull_name(rs.getString("full_name"));
+        pr.setCompany_name(rs.getString("full_name"));
         pr.setAfm(rs.getString("afm"));
         pr.setIban(rs.getString("iban"));
         pr.setM_first_name(rs.getString("m_first_name"));

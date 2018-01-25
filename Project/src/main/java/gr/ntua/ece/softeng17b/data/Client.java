@@ -7,7 +7,7 @@ public class Client extends User{
     private String address;
     private String address_num;
     private String latitude;
-    private String longitude
+    private String longtitude;
     private double balance;
 
     // GETTERS
@@ -37,7 +37,7 @@ public class Client extends User{
     }
 
     public String getPhone() {
-        return phone;
+        return m_phone;
     }
 
     public String getCity() {
@@ -57,7 +57,7 @@ public class Client extends User{
     }
 
     public double getWallet() {
-        return wallet;
+        return balance;
     }
 
     // SETTERS
@@ -87,7 +87,7 @@ public class Client extends User{
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.m_phone = phone;
     }
 
     public void setCity(String city) {
@@ -107,6 +107,8 @@ public class Client extends User{
     }
 
     public void setWallet(double wallet) {
-        this.wallet = wallet;
+        this.balance = wallet;
     }
+
+    public boolean login(){return true;}
 }

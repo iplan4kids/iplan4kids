@@ -1,5 +1,7 @@
 package gr.ntua.ece.softeng17b.controller;
 
+import gr.ntua.ece.softeng17b.data.*;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
@@ -20,20 +22,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AppController {
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	   public String redirect() {
-	      return "redirect:pages/index.html";
-	   }
+	public String redirect() {
+		return "redirect:pages/index.html";
+	}
 	
 	/*@RequestMapping(value="/login" , method=RequestMethod.GET)
 	public ModelAndView getForm() {
 		ModelAndView model1 = new ModelAndView("AdmissionForm");
 		return model1;
 	}*/
-	
-	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm( @RequestParam("username") String username, @RequestParam("password") String password, ServletRequest req) {
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, ServletRequest req) {
 
 		ModelAndView model1 = new ModelAndView("AdmissionSuccess");
 		HttpServletRequest request = (HttpServletRequest) req;
@@ -48,8 +50,9 @@ public class AppController {
 		return model1;
 	}
 
-	@RequestMapping(value="/register", method = RequestMethod.POST)
-	public ModelAndView registerForm(@ModelAttribute("client1") Client client1){
-		
-	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public void registerForm(@ModelAttribute("client1") Client client1) {
+
+
+	}
 }

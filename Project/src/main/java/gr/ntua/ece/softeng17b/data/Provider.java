@@ -1,9 +1,10 @@
 package gr.ntua.ece.softeng17b.data;
 
-public class Provider {
+public class Provider extends User {
 
     private String afm;
     private String iban;
+    private String company_name;
     private String postal_code;
     private String phone;
     private String city;
@@ -25,8 +26,8 @@ public class Provider {
         return password;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getCompany_name() {
+        return company_name;
     }
 
     public String getAfm() {
@@ -38,11 +39,11 @@ public class Provider {
     }
 
     public String getM_first_name() {
-        return m_first_name;
+        return first_name;
     }
 
     public String getM_last_name() {
-        return m_last_name;
+        return last_name;
     }
 
     public String getPostal_code() {
@@ -87,8 +88,8 @@ public class Provider {
         this.password = password;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setCompany_name(String company_name) {
+        this.company_name = company_name;
     }
 
     public void setAfm(String afm) {
@@ -99,12 +100,12 @@ public class Provider {
         this.iban = iban;
     }
 
-    public void setM_first_name(String m_first_name) {
-        this.m_first_name = m_first_name;
+    public void setM_first_name(String first_name) {
+        this.first_name = first_name;
     }
 
     public void setM_last_name(String last_name) {
-        this.m_last_name = last_name;
+        this.last_name = last_name;
     }
 
     public void setPostal_code(String postal_code) {
@@ -135,4 +136,7 @@ public class Provider {
         this.email = email;
     }
 
+    public boolean login(){
+        return true;
+    }
 }

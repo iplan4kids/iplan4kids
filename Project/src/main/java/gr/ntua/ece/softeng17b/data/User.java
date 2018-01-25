@@ -1,15 +1,15 @@
-package main.java.gr.ntua.ece.softeng17b.data;
+package gr.ntua.ece.softeng17b.data;
 
 public abstract class User {
 	
-	private int id;
-    private String username;
-    private String password;
-    private String salt;
-    private String first_name;
-    private String last_name;
-    private String email;
-    private String m_phone;
+	protected int id;
+    protected String username;
+    protected String password;
+    protected String salt;
+    protected String first_name;
+    protected String last_name;
+    protected String email;
+    protected String m_phone;
     
     abstract boolean login();
 
