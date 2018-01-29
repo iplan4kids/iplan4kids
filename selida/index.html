@@ -125,11 +125,11 @@
 
      <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-    <div class = "mainBody">
+    <div class = "row mainBody">
 
         <!-- Η εταιρεία -->
 
-        <div class="col-sm-3 ">                            
+        <div class="col-sm-3">                            
             <div class="panel ourCompany">
                 <h2 align="center">H εταιρεία</h2>
                 <div class="panel-thumbnail"><img src="images/ourCompany_image.jpg" class="img-responsive img-rounded"></div>
@@ -215,9 +215,9 @@
 
         <!-- Η εφαρμογή μας -->
 
-        <div class="col-sm-3 ">                            
+        <div class="col-sm-3">                            
                 <div class="panel panel-default ourWebApp">
-                    <h2 align="center">H εφαρμογή μας</h2>
+                    <h2 align="center">H εφαρμογή</h2>
                     <div class="panel-thumbnail"><img src="images/ourWebApp_image.jpg" class="img-responsive img-rounded"></div>
                     <div class="panel-body">
                         <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd
@@ -231,8 +231,35 @@
                 
     </div>
 		
-    
-     
+    <!-- -------------------------------------- CONTACT FORM ----------------------------------------------- -->
+    <div class="container contactForm">
+        <h3 class="text-center">Επικοινωνία</h3>
+        <p class="text-center"><em>Στείλτε μας ένα email</em></p>
+        <div class="row test">
+            <div class="col-md-4">
+            <p>Στοιχεία Επικοινωνίας</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>Ζωγράφου, GR</p>
+            <p><span class="glyphicon glyphicon-phone"></span>Τηλέφωνο: +30 210 7777777</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>Email: iplan@mail.com</p> 
+            </div>
+            <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                <input class="form-control" id="name" name="name" placeholder="Όνομα" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Σχόλιο" rows="5"></textarea>
+            <div class="row sendButtonRow">
+                <div class= "form-group">
+                <button class="btn submitButton pull-right" type="submit">Αποστολή</button>
+                </div>
+            </div> 
+            </div>
+        </div>
+    </div> 
     <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> 
     <footer class="text-center">
         <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Μετάβαση στη κορυφή της σελίδας">
