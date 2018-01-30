@@ -260,6 +260,18 @@
             </div>
         </div>
     </div> 
+    <!-- -------------------------------------- GOOGLE MAP ----------------------------------------------- -->
+    <div id="googleMap"></div>
+    <script>
+    function myMap() {
+    var myCenter = new google.maps.LatLng(37.9792194, 23.783086499999968);
+    var mapProp = {center:myCenter, zoom:16, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVCx5csUzQV85Fz9f2LscVZQRckJvhLb8&callback=myMap"></script>
     <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> 
     <footer class="text-center">
         <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Μετάβαση στη κορυφή της σελίδας">
