@@ -8,7 +8,11 @@ body {
 
     padding-right : 0 !important;
 }
-
+/*------------------------------------------------- ADMIN TABLE STYLES ----------------------------------------------------------*/
+table.table th, table.table td {
+        text-align: center;
+        vertical-align: middle;
+      }
 /*------------------------------------------------- PAGE HEADER STYLES ----------------------------------------------------------*/
 .pageHeader{
     background-color: black;
@@ -206,6 +210,7 @@ footer a:hover {
 }
 /*--------------------------------------------------- REGISTER MODAL -----------------------------------------------------------------*/
 .modal{
+	
 	padding-top:10%;
     padding-right: 0px !important;
 }
@@ -215,6 +220,7 @@ footer a:hover {
     padding-right: 0px !important;
 }
 .panel-register1 {
+	margin-top: 15px;
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
