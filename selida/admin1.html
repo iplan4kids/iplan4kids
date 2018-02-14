@@ -42,8 +42,15 @@
                 <!-- Left part of Navbar -->
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Δραστηριότητες
-                        <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Χρήστες
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Κατηγορία 1</a></li>
+                            <li><a href="#">Κατηγορία 2</a></li>
+                            <li><a href="#">Κατηγορία 3</a></li>
+                        </ul>
+                    </li>
+					 <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Πάροχοι 
                         <ul class="dropdown-menu">
                             <li><a href="#">Κατηγορία 1</a></li>
                             <li><a href="#">Κατηγορία 2</a></li>
@@ -53,10 +60,16 @@
                 </ul>
                 <!-- Right part of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
+                      	<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Όνομα Διαχειριστή
+							<span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									 <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
+									
+								  </ul>
+						</li>
 				</ul>
-				 <ul class="nav navbar-nav navbar-right">
+				<!-- <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
                         <form class="navbar-form" role="search">
                             <div class="input-group">
@@ -67,7 +80,7 @@
                             </div>
                         </form>
                     </div>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
@@ -75,90 +88,29 @@
 
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-    <div  class="container">
-    	<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-register1">
-					<div class="panel-heading">
-						<div class="row">
-							<p style="color: black;font-size: 18px;font-weight:bold;">Φόρμα Εγγραφής</p>
-							<div class="col-xs-6">
-								<a href="#" class="active" id="register1-form-link">Χρήστης</a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Πάροχος</a>
-							</div>
-						</div>
-						<hr>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<form id="register1-form" action="https://phpoll.com/register1/process" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="postal_code" id="postal_code" tabindex="1" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="city" id="city" tabindex="1" class="form-control" placeholder="Περιοχή" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Oδός" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="address_num" id="address_num" tabindex="1" class="form-control" placeholder="Αριθμός Οδού" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register1-submit" id="register1-submit" tabindex="4" class="form-control btn btn-register1" value="Εγγραφη">
-											</div>
-										</div>
-									</div>
-								</form>
-								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
-										<div class="form-group">
-										<input type="text" name="Name" id="Name" tabindex="1" class="form-control" placeholder="Όνομα" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="Lastname" id="Lastname" tabindex="1" class="form-control" placeholder="Επώνυμο" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="Tele" id="Tele" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Κωδικός">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Εγγραφη">
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    
+     <div class="container">
+      <div class="pull-right col-sm-2">
+        <input type="text" class="search form-control col-sm 3" placeholder="Search.." value="">
+      </div>
+    </div>
+    <div class="main">
+      <div class="container">
+        <table class="providers-table table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Όνομα</th>
+              <th>Username</th>
+              <th>Τηλέφωνο</th>
+              <th>Email</th>
+              <th>Ενέργειες</th>
+            </tr>
+          </thead>
+          <tbody>
+			
+          </tbody>
+        </table>
+      </div>
+    </div>
      
     <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> 
     <footer class="text-center">
