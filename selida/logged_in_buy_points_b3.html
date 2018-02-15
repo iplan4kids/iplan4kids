@@ -1,45 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
-  <title>Buy points</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="styles.css" type="text/css">
-
-
-  <style>
-
-</style>
-
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
-<body id="myPage">
-<script>
-    $(function() {
 
-    $('#register1-form-link').click(function(e) {
-		$("#register1-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#register1-form").fadeOut(100);
-		$('#register1-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-});
-</script>
-<!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">    
+      
+    <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">		
 		<div class="JumboLogo" >
 			<img  src="images/iplan.png"/>
@@ -89,12 +67,12 @@
                             </div>
                         </form>
                     </div>
-                </ul>
+                 </ul>
             </div>
         </div>
     </nav>
 	
- <!-- Begin page content -->
+  <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
    <div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
