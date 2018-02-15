@@ -577,5 +577,35 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
-
-/* orestis chan */
+/* -----------------------------------    all events ---------------------------------------------------- */
+.eventCard{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-top-color: #ddd;
+    border-right-color: #ddd; 
+    border-left-color: #ddd; 
+    border-bottom-color: #ddd; 
+}
+.activities, .filters{
+    border: none;
+}
+.eventDescription{
+    line-height: 100%; 
+    max-block-size: 161px;
+    color: #777;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.eventDate{
+    float: right;
+    color: #333;
+    font-weight: bold;
+}
+.eventPrice{
+    font-size: 16px;
+}
