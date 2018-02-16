@@ -1,0 +1,8 @@
+1. Κανουμε εγκατασταση της Postgresql 10.1 (κατα προτιμηση σε linux) ακολουθώντας τις οδηγίες που υπάρχουν στο github στο αρχείο links.
+2. Δημιουργούμε την βάση iplan4kidz_18a εκτελώντας τις εντολές su - postgres(ισως και να μην ειναι απαραιτητη αυτη), createdb iplan4kidz_18a
+3. Δημιουργούμε superuser στη συγκεκριμενη βάση εκτελώντας κατα σειρά :
+    psql iplan4kidz_18a
+    CREATE USER dataadmin WITH SUPERUSER LOGIN PASSWORD 'softeng_2018';
+4. Εισάγουμε το schema και τα δεδομένα της βάσης μέσω του αρχέιου initialDb που υπάρχει στο Ongoing branch του GitHub μέσω της εντολής 
+    psql iplan4kidz_18a < initialDb
+5. Η βάση μας πρέπει να είναι έτοιμη για χρήση και η εφαρμογή να λειτουργεί κανονικά.
