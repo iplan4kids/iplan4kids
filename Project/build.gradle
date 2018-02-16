@@ -27,6 +27,7 @@ dependencies {
     compile "org.apache.commons:commons-dbcp2:2.1.1"				//db connection pool
     compile "org.springframework:spring-jdbc:5.0.2.RELEASE"			//spring JDBC template utility
 	compile "org.springframework:spring-context:5.0.2.RELEASE"		//spring core functionality
+    compile "org.springframework.security:spring-security-core:5.0.1.RELEASE"
 
 	compile "org.springframework:spring-webmvc:5.0.2.RELEASE"			//spring web module
 

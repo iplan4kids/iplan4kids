@@ -1,0 +1,172 @@
+html {
+    position: relative;
+    min-height: 100%;
+    padding-right : 0 !important;
+}
+body {
+/* Margin bottom by footer height */
+    padding-right : 0 !important;
+    margin-bottom: 0px;
+}
+
+/*------------------------------------------------- PAGE HEADER STYLES ----------------------------------------------------------*/
+.pageHeader{
+    background-color: black;
+	text-align:center;
+}
+.headerStyle img{
+	text-align:center;
+    float: left;
+    padding-left: 20px;
+	
+}
+
+.JumboLogo{
+		display:flex;
+		justify-content:center;
+}
+.JumboLogo img{
+	width:100px;
+	height:100px;
+}
+
+.fixed-header {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; 
+}
+/*--------------------------------------------------- NAVIGATION BAR -----------------------------------------------------------------*/
+.navbar{
+    width: 100%;
+    z-index:100;
+    margin-bottom: 0px;
+    
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*--------------------------------------------------- PAGE FOOTER -----------------------------------------------------------------*/
+footer {
+    background-color: #222;
+    color: #f5f5f5;
+    padding: 32px;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+/*--------------------------------------------------- REGISTER MODAL -----------------------------------------------------------------*/
+.modal{
+    position: absolute;
+    padding-right: 0px !important;
+	
+}
+.modal-open {
+    width: 100%;
+    padding-right: 0px !important;
+	
+}
+.panel-register1 {
+	margin-top:100px;                     /* ΑΥΤΑ ΔΕΝ ΕΙΝΑΙ ΣΩΣΤΑ ΤΟ FOOTER ΔΕΝ ΠΑΕΙ ΚΑΤΩ ΤΑ ΒΑΖΩ ΕΤΣΙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    border-color: #ccc;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	margin-bottom:200px;				 /* ΑΥΤΑ ΔΕΝ ΕΙΝΑΙ ΣΩΣΤΑ ΤΟ FOOTER ΔΕΝ ΠΑΕΙ ΚΑΤΩ ΤΑ ΒΑΖΩ ΕΤΣΙ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+}
+.panel-register1>.panel-heading {
+    color: #00415d;
+    background-color: #fff;
+    border-color: #fff;
+    text-align:center;
+}
+.panel-register1>.panel-heading a{
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-register1>.panel-heading a.active{
+    color: #029f5b;
+    font-size: 18px;
+}
+.panel-register1>.panel-heading hr{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-register1 input[type="text"],.panel-register1 input[type="email"],.panel-register1 input[type="password"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-register1 input:hover,
+.panel-register1 input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+.btn-register1 {
+    background-color: #59B2E0;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #59B2E6;
+}
+.btn-register1:hover,
+.btn-register1:focus {
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD;
+}
+.forgot-password {
+    text-decoration: underline;
+    color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+    text-decoration: underline;
+    color: #666;
+}
+
+.btn-register {
+    background-color: #1CB94E;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347;
+}

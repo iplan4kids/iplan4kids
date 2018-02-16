@@ -100,9 +100,9 @@ public class DataAccess {
         jdbcTemplate.update( SQL, params);
     }
 
-    public void createClient(String[] params) {
+    public void createClient(Client c) {
 
-        Client new_c = new Client();
+        //Client new_c = new Client();
         KeyHolder keyHolder = new GeneratedKeyHolder();
         String query = "insert into " +
                 "clients (username, password, first_name, last_name, postal_code, phone, city, address, address_num, email)" +
@@ -114,16 +114,16 @@ public class DataAccess {
         jdbcTemplate.update(con1 -> {
 
             PreparedStatement stmt = con1.prepareStatement(query, new String[]{"ID"});
-            stmt.setString(1,params[0]);
-            stmt.setString(2,params[1]);
-            stmt.setString(3,params[2]);
-            stmt.setString(4,params[3]);
-            stmt.setString(5,params[4]);
-            stmt.setString(6,params[5]);
-            stmt.setString(7,params[6]);
-            stmt.setString(8,params[7]);
-            stmt.setString(9,params[8]);
-            stmt.setString(10,params[9]);
+            stmt.setString(1,c.getUsername());
+            stmt.setString(2,c.getPassword());
+            stmt.setString(3,c.getFirst_name());
+            stmt.setString(4,c.getLast_name());
+            stmt.setString(5,c.getPostal_code());
+            stmt.setString(6,c.getPhone());
+            stmt.setString(7,c.getCity());
+            stmt.setString(8,c.getAddress());
+            stmt.setString(9,c.getAddress_num());
+            stmt.setString(10,c.getEmail());
             return stmt;
         },keyHolder);
         int new_id = keyHolder.getKey().intValue();

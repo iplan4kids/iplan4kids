@@ -1,6 +1,7 @@
 package gr.ntua.ece.softeng17b.conf;
 
 import gr.ntua.ece.softeng17b.data.DataAccess;
+import gr.ntua.ece.softeng17b.data.EncryptionUtils;
 
 import java.util.Properties;
 import java.util.Set;
@@ -12,6 +13,7 @@ public class Configuration {
     private String contextPath = null;
     private Properties props = new Properties();
     private DataAccess dataAccess = new DataAccess();
+    private EncryptionUtils encrypter = new EncryptionUtils();
 
     private Configuration() {
 
@@ -56,4 +58,9 @@ public class Configuration {
     public DataAccess getDataAccess() {
         return dataAccess;
     }
+
+    public EncryptionUtils getEncrypter() {
+        return encrypter;
+}
+
 }

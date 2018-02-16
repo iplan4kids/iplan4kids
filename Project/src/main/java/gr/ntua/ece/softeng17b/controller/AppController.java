@@ -42,23 +42,26 @@ public class AppController {
 	public ModelAndView submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, ServletRequest req) {
 
 	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
+
 	    try {
 
 			Optional<Client> optional = dbAccess.getClientByUsername(username);
 			Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
-
-
-			ModelAndView model1 = new ModelAndView("AdmissionSuccess");
-			HttpServletRequest request = (HttpServletRequest) req;
-			Cookie cookieUsername = new Cookie("cookieLoginUser", c.getUsername());
-			Cookie cookiePassword = new Cookie("cookieLoginPassword", c.getPassword());
-			cookieUsername.setMaxAge(60 * 60 * 24 * 365);
-			cookiePassword.setMaxAge(60 * 60 * 24 * 365);
-			//System.console().writer().println(request.getContextPath());
-			model1.addObject("cookie1", cookieUsername);
-			model1.addObject("cookie2", cookiePassword);
-			//model1.addObject("msg","You have logged in with username " + username + " and pass " + password);
-			return model1;
+            if(encrypter.encryptMatch(password,c.getPassword())) {
+                ModelAndView model1 = new ModelAndView("AdmissionSuccess");
+                HttpServletRequest request = (HttpServletRequest) req;
+                Cookie cookieUsername = new Cookie("cookieLoginUser", c.getUsername());
+                Cookie cookiePassword = new Cookie("cookieLoginPassword", c.getPassword());
+                cookieUsername.setMaxAge(60 * 60 * 24 * 365);
+                cookiePassword.setMaxAge(60 * 60 * 24 * 365);
+                //System.console().writer().println(request.getContextPath());
+                model1.addObject("cookie1", cookieUsername);
+                model1.addObject("cookie2", cookiePassword);
+                //model1.addObject("msg","You have logged in with username " + username + " and pass " + password);
+                return model1;
+            }
+            else throw new Exception("Wrong password");
 		}
 		catch (Exception e){
 			ModelAndView model1 = new ModelAndView("AdmissionSuccess");
@@ -84,6 +87,11 @@ public class AppController {
 	@RequestMapping(value = "/registerDone", method = RequestMethod.POST)
 	public void registerForm(@ModelAttribute("client1") Client client1) {
 
+        DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
+
+        client1.setPassword(encrypter.encryptPass(client1.getPassword()));
+        dbAccess.createClient(client1);
 
 	}
 }
