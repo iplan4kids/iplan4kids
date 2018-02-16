@@ -15,28 +15,28 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">    
-      
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
-    <div class="pageHeader row">		
+    <div class="pageHeader row">
 		<div class="JumboLogo" >
 			<img  src="images/iplan.png"/>
-			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>            
+			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>
 		</div>
 	</div>
 
     <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid"> 
+        <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-left" href="index.html">
                     <img src="images/iplan.png" align="center" width="50">
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>  
-                    <span class="icon-bar"></span>                     
-                </button>               
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <!-- Left part of Navbar -->
@@ -53,9 +53,15 @@
                 </ul>
                 <!-- Right part of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
-				</ul>
+                      	<li class="dropdown">
+        							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Όνομα Χρήστη
+        							<span class="caret"></span></a>
+        								  <ul class="dropdown-menu">
+        									 <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
+
+        								  </ul>
+        						</li>
+        				</ul>
 				 <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
                         <form class="navbar-form" role="search">
@@ -71,7 +77,7 @@
             </div>
         </div>
     </nav>
-	
+
   <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
    <div class="container">
     	<div class="row">
@@ -130,30 +136,30 @@
 			</div>
 		</div>
 	</div>
-   <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> 
+   <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- -->
     <footer class="text-center">
         <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Μετάβαση στη κορυφή της σελίδας">
                 <span class="glyphicon glyphicon-chevron-up"></span>
             </a><br><br>
             <p> Created and maintained by iplan <br>
-                Copyright &copy usage under terms and conditions of texnologia logismikou 2017-2018</p> 
+                Copyright &copy usage under terms and conditions of texnologia logismikou 2017-2018</p>
     </footer>
-    
-    <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- --> 
+
+    <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->
     <div class="modal" id="myModal">
         <div class="modal-dialog">
-            <div class="modal-content">            
+            <div class="modal-content">
                 <!-- Modal Header -->
                     <div class="modal-header ">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="text-center modal-title">Συνδεθείτε</h4>
                     </div>
-                    
+
                     <!-- Modal body -->
              	<form action="/app/login" method="POST">
                     <!-- Modal body -->
                 <div class="modal-body">
-					 
+
                     	<div>Email</div>
                         	<input type="text" class="form-control" name="username">
                     	<div>Κωδικός</div>

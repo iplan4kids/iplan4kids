@@ -621,3 +621,69 @@ body {
 .eventPrice{
     font-size: 16px;
 }
+
+
+
+.profile-header {
+  font-size: 25px;
+  position: relative;
+  text-align: center;
+  height: 200px;
+  background-color: #636363;
+}
+.profile-header div{
+  display: inline-block;
+}
+.profile-header div.left{
+  font-size: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.profile-header div.center{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile.table {
+  margin: 80px 0px;
+  font-size: 18px;
+}
+
+.profile.table td {
+  border: none;
+}
+
+.table.drastiriotites {
+  margin-top: 80px;
+}
+.table.drastiriotites th{
+  background-color: #cecece;
+}
+
+.below-drastiriotites button {
+  margin-top: 20px;
+}
+.below-drastiriotites {
+  height: 100px;
+}
+
+.form-drastiriotitas .button-bottom {
+  text-align:center;
+}
+.form-drastiriotitas .content {
+  padding: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid #c3c3c3;
+}
+
+.padding-top {
+  padding-top: 10px;
+}
+
+.list-drastiriotites {
+  padding: 80px 0px;
+}
