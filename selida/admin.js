@@ -462,3 +462,4 @@ $(document).ready(function() {
         }
       }
     });
+ });
