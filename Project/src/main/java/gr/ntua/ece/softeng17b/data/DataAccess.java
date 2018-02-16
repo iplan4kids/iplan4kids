@@ -131,6 +131,59 @@ public class DataAccess {
         jdbcTemplate.update("insert into wallet(user_id,balance) values(?, ?) ", new Object[]{new_id,0});
     }
 
+    public void createEvent(Event e){
+        String tags = String.join(",",e.getTags());
+        String images = String.join(",", e.getImages());
+        Object[] params = new Object[]{e.getProv_id(),e.getName(),e.getDate(),e.getTickets(),e.getPrice(),e.getDescription(),tags,images};
 
+        String SQL = "insert into " +
+                "events (prov_id, event_id, name, date, tickets, price, description, tags, images)" +
+                " values (?, DEFAULT, ?, ?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update( SQL, params);
+
+    }
+
+    public double addWallet(long id, double coins) throws Exception{
+
+        Optional<Client> optional = getClient(id);
+        Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+        double new_balance = c.getWallet() + coins;
+
+        String query = "update wallet set balance=? where user_id=?";
+        jdbcTemplate.update(query, new Object[]{new_balance,id});
+        c.setWallet(new_balance);
+
+        return c.getWallet();
+    }
+
+    public double subWallet(long id, double coins) throws Exception{
+
+        Optional<Client> optional = getClient(id);
+        Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+        double new_balance = c.getWallet() - coins;
+        if(new_balance<0){
+            throw new Exception("Not enough points");
+        }
+        else {
+            String query = "update wallet set balance=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{new_balance, id});
+            c.setWallet(new_balance);
+
+            return c.getWallet();
+        }
+    }
+
+   /* public double subTicket(long id, double coins) throws Exception{
+
+        Optional<Client> optional = getClient(id);
+        Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+        double new_balance = c.getWallet() + coins;
+
+        String query = "update wallet set balance=? where user_id=?";
+        jdbcTemplate.update(query, new Object[]{new_balance,id});
+        c.setWallet(new_balance);
+
+        return c.getWallet();
+    }*/
 }
 
