@@ -36,7 +36,7 @@ public class Client extends User{
         return postal_code;
     }
 
-    public String getPhone() {
+    public String getM_phone() {
         return m_phone;
     }
 
@@ -86,7 +86,7 @@ public class Client extends User{
         this.postal_code = postal_code;
     }
 
-    public void setPhone(String phone) {
+    public void setM_phone(String phone) {
         this.m_phone = phone;
     }
 

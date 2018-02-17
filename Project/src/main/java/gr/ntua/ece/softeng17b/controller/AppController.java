@@ -29,7 +29,7 @@ public class AppController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String redirect() {
-		return "redirect:pages/index.jsp";
+		return "redirect:pages/index.html";
 	}
 	
 	/*@RequestMapping(value="/login" , method=RequestMethod.GET)
@@ -81,17 +81,19 @@ public class AppController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String redirectToReg() {
-        return "redirect:pages/boobs3_register.html";
+        return "redirect:pages/register.html";
     }
 
 	@RequestMapping(value = "/registerDone", method = RequestMethod.POST)
-	public void registerForm(@ModelAttribute("client1") Client client1) {
+	public String registerForm(@ModelAttribute("client1") Client client1) {
 
         DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
         client1.setPassword(encrypter.encryptPass(client1.getPassword()));
         dbAccess.createClient(client1);
+
+		return "redirect:pages/index.html";
 
 	}
 }

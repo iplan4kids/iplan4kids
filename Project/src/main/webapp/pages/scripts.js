@@ -44,6 +44,14 @@ $(document).ready(function() {
     
     //------------------------------------------ TOOLTIP ------------------------------------------------
     $('[data-toggle="tooltip"]').tooltip();
+	
+	
+	
+	
+	
+	
+	
+	
 
     //-------------------------------------- FOOTER SCROLLING ---------------------------------
     $("footer a[href='#myPage']").on('click', function(event) {

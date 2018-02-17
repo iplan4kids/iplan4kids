@@ -14,7 +14,7 @@ public class ClientRowMapper implements RowMapper<Client> {
         cl.setFirst_name(rs.getString("first_name"));
         cl.setLast_name(rs.getString("last_name"));
         cl.setPostal_code(rs.getString("postal_code"));
-        cl.setPhone(rs.getString("phone"));
+        cl.setM_phone(rs.getString("phone"));
         cl.setCity(rs.getString("city"));
         cl.setAddress(rs.getString("address"));
         cl.setAddress_num(rs.getString("address_num"));

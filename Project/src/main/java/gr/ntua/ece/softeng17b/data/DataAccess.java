@@ -100,7 +100,7 @@ public class DataAccess {
         jdbcTemplate.update( SQL, params);
     }
 
-    public void createClient(Client c) {
+    public int createClient(Client c) {
 
         //Client new_c = new Client();
         KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -113,13 +113,13 @@ public class DataAccess {
 
         jdbcTemplate.update(con1 -> {
 
-            PreparedStatement stmt = con1.prepareStatement(query, new String[]{"ID"});
+            PreparedStatement stmt = con1.prepareStatement(query, new String[]{"user_id"});
             stmt.setString(1,c.getUsername());
             stmt.setString(2,c.getPassword());
             stmt.setString(3,c.getFirst_name());
             stmt.setString(4,c.getLast_name());
             stmt.setString(5,c.getPostal_code());
-            stmt.setString(6,c.getPhone());
+            stmt.setString(6,c.getM_phone());
             stmt.setString(7,c.getCity());
             stmt.setString(8,c.getAddress());
             stmt.setString(9,c.getAddress_num());
@@ -129,6 +129,8 @@ public class DataAccess {
         int new_id = keyHolder.getKey().intValue();
 
         jdbcTemplate.update("insert into wallet(user_id,balance) values(?, ?) ", new Object[]{new_id,0});
+
+        return new_id;
     }
 
     public void createEvent(Event e){
