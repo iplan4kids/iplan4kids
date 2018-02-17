@@ -20,7 +20,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">		
 		<div class="JumboLogo" >
-			<img  src="images/iplan.png"/>
+			<img  src="../images/iplan.png"/>
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>            
 		</div>
 	</div>
@@ -30,7 +30,7 @@
         <div class="container-fluid"> 
             <div class="navbar-header">
                 <a class="navbar-left" href="index.html">
-                    <img src="images/iplan.png" align="center" width="50">
+                    <img src="../images/iplan.png" align="center" width="50">
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -94,33 +94,39 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="register1-form" action="https://phpoll.com/register1/process" method="post" role="form" style="display: block;">
+								<form id="register1-form" action="/app/registerDone" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="">
+										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο" value="">
+										<input type="text" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="">
+										<input type="tel" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="postal_code" id="postal_code" tabindex="1" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="">
+										<input type="text" pattern="^\d{5}$" name="postal_code" id="postal_code" tabindex="1" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="city" id="city" tabindex="1" class="form-control" placeholder="Περιοχή" value="">
+										<input type="text" name="city" id="city" tabindex="1" class="form-control" placeholder="Περιοχή" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Oδός" value="">
+										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Oδός" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="address_num" id="address_num" tabindex="1" class="form-control" placeholder="Αριθμός Οδού" value="">
+										<input type="text" name="address_num" pattern="[a-zA-Z0-9]+" id="address_num" tabindex="1" class="form-control" placeholder="Αριθμός Οδού" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="">
+										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" onkeyup='check();' id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm_password" onkeyup='check();' id="confirm_password" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
 									</div>
 									<div class="form-group">
 										<div id="button-row" class="row">
@@ -130,7 +136,7 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+								<form id="register-form" action="/app/registerDone" method="post" role="form" style="display: none;">
 										<div class="form-group">
 										<input type="text" name="Name" id="Name" tabindex="1" class="form-control" placeholder="Όνομα" value="">
 									</div>
@@ -209,6 +215,7 @@
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
     <script src = "scripts.js" type = "text/javascript"></script>
+	<script src = "register.js" type = "text/javascript"></script>
     </body>
 
 </html>
