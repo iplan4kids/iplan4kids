@@ -384,6 +384,12 @@ footer a:hover {
 	border-color: #1CA347;
 }
 /* -----------------------------------    all events ---------------------------------------------------- */
+.filters{
+    padding: 30px;
+}
+#slider-range{
+    margin-bottom: 20px;
+}
 .eventCard{
     padding-left: 15px;
     padding-right: 15px;
