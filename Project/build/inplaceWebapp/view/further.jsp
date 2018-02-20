@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Successful login</title>
+<title>Insert title here</title>
 </head>
 <body>
-	
-		<h1>you logged in with Username: ${cookie1.getValue()} and Password: ${cookie2.getValue()} </h1>
+
+	${client.getFirst_name()}.
+	${name}.
 
 </body>
 </html>
