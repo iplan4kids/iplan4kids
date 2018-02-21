@@ -1,19 +1,64 @@
 // !!! BELOW CODE WILL RUN ONCE THE PAGE IS READY FOR JAVASCRIPT CODE TO EXECUTE
 $(document).ready(function() {
 
-    //---------------------------------------- REGISTER FORM -------------------------------------------
-    $(function() {    
+    //---------------------------------------- MODAL FORM -------------------------------------------
+    $(function() {
         $('#register1-form-link').click(function(e) {
             $("#register1-form").delay(100).fadeIn(100);
             $("#register-form").fadeOut(100);
+            $("#register2-form").fadeOut(100);
             $('#register-form-link').removeClass('active');
+            $('#register2-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#register2-form-link').click(function(e) {
+            $("#register2-form").delay(100).fadeIn(100);
+            $("#register1-form").fadeOut(100);
+            $("#register-form").fadeOut(100);
+            $('#register-form-link').removeClass('active');
+            $('#register1-form-link').removeClass('active');
             $(this).addClass('active');
             e.preventDefault();
         });
         $('#register-form-link').click(function(e) {
             $("#register-form").delay(100).fadeIn(100);
             $("#register1-form").fadeOut(100);
+            $("#register2-form").fadeOut(100);
             $('#register1-form-link').removeClass('active');
+            $('#register2-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+    });
+
+    //---------------------------------------- REGISTER FORM -------------------------------------------
+
+    $(function() {
+        $('#login1-form-link').click(function(e) {
+            $("#login1-form").delay(100).fadeIn(100);
+            $("#login-form").fadeOut(100);
+            $("#login2-form").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $('#login2-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#login2-form-link').click(function(e) {
+            $("#login2-form").delay(100).fadeIn(100);
+            $("#login1-form").fadeOut(100);
+            $("#login-form").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $('#login1-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#login-form-link').click(function(e) {
+            $("#login-form").delay(100).fadeIn(100);
+            $("#login1-form").fadeOut(100);
+            $("#login2-form").fadeOut(100);
+            $('#login1-form-link').removeClass('active');
+            $('#login2-form-link').removeClass('active');
             $(this).addClass('active');
             e.preventDefault();
         });

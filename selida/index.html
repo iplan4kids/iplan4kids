@@ -282,41 +282,79 @@
     </footer>
     
     <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- --> 
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">            
-                <!-- Modal Header -->
-                    <div class="modal-header ">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="text-center modal-title">Συνδεθείτε</h4>
+    <div style="align:center;" class="modal" id="myModal">
+                <div style="width:60%; margin:auto; " class="panel panel-register1">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <button style="margin-right:10px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 style="margin-left: 18px;" class="text-center modal-title"> Συνδεθείτε</h4>
+                            <br>
+                            <div class="col-xs-4">
+                                <a href="#" class="active" id="login1-form-link">Χρήστης</a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="#" id="login2-form-link">Διαχειριστής</a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="#" id="login-form-link">Πάροχος</a>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
-                    
-                    <!-- Modal body -->
-             	<form action="/app/login" method="POST">
-                    <!-- Modal body -->
-                <div class="modal-body">
-					 
-                    	<div>Email</div>
-                        	<input type="text" class="form-control" name="username">
-                    	<div>Κωδικός</div>
-                    	<input type="text" class="form-control" name="password">
-                </div>
-                    <!-- Modal footer -->
-                <div class="modal-footer">
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-success" value="Συνδεση">
-                    </div>
-                </div>
-			</form>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="text-center">
-                                    <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Ξέχασες τον κωδικό?</a>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login1-form" action="/app/registerDone" method="post" role="form" style="display: block;">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" onkeyup='check();' id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="button-row" class="row">
+                                            <div class="">
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="login2-form" action="/app/registerDone" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="button-row" class="row">
+                                            <div class="">
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="login-form" action="/app/registerDone" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="button-row" class="row">
+                                            <div class="">
+                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΕΓΓΡΑΦΗ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
