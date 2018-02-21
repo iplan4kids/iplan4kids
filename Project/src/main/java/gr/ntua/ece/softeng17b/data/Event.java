@@ -6,13 +6,14 @@ public class Event {
 
     private int prov_id;
     private int event_id;
-    private String name;
+    private String title;
     private Timestamp date;
     private int tickets;
     private double price;
     private String description;
-    private String[] tags;
-    private String[] images;
+    private String tags;
+    private String images;
+    private Place place;
 
     //GETTERS
 
@@ -24,8 +25,8 @@ public class Event {
         return event_id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
     public Timestamp getDate() {
@@ -44,14 +45,17 @@ public class Event {
         return description;
     }
 
-    public String[] getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public String[] getImages() {
+    public String getImages() {
         return images;
     }
 
+    public Place getPlace() {
+        return place;
+    }
 
     //SETTERS
 
@@ -64,8 +68,8 @@ public class Event {
         this.event_id = event_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setDate(Timestamp date) {
@@ -84,13 +88,15 @@ public class Event {
         this.description = description;
     }
 
-    public void setTags(String[] tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
-    public void setImages(String[] images) {
+    public void setImages(String images) {
         this.images = images;
     }
 
-
+    public void setPlace(Place place) {
+        this.place = place;
+    }
 }

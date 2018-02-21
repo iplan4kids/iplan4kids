@@ -82,7 +82,7 @@ public class AppController {
         return "redirect:pages/register.html";
     }
 
-	@RequestMapping(value = "/registerDone", method = RequestMethod.POST)
+	@RequestMapping(value = "/registerClient", method = RequestMethod.POST)
 	public String registerForm(@ModelAttribute("client1") Client client1) {
 
         DataAccess dbAccess = Configuration.getInstance().getDataAccess();
@@ -90,6 +90,18 @@ public class AppController {
 
         client1.setPassword(encrypter.encryptPass(client1.getPassword()));
         dbAccess.createClient(client1);
+
+		return "redirect:pages/wellcome.html";
+	}
+
+	@RequestMapping(value = "/registerProvider", method = RequestMethod.POST)
+	public String registerForm(@ModelAttribute("provider1") Provider provider1) {
+
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
+
+		provider1.setPassword(encrypter.encryptPass(provider1.getPassword()));
+		dbAccess.createProvider(provider1);
 
 		return "redirect:pages/wellcome.html";
 	}

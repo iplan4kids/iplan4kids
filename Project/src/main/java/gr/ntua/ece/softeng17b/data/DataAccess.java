@@ -19,6 +19,8 @@ public class DataAccess {
 
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
+    private Elastic elastic;
+
 
     public void setup(String driverClass, String url, String user, String pass) throws SQLException {
 
@@ -42,6 +44,8 @@ public class DataAccess {
 
         //keep the dataSource for the low-level manual example to function (not actually required)
         dataSource = bds;
+
+        this.elastic = elastic;
     }
 
 
@@ -93,7 +97,11 @@ public class DataAccess {
         }
     }
 
-    public void createProvider(Object[] params) {
+    public void createProvider(Provider p) {
+
+        Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getM_first_name(),p.getM_last_name(),p.getM_phone(),p.getPostal_code(),
+                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail()};
+
         String SQL = "insert into " +
                 "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email)" +
                 " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -136,7 +144,7 @@ public class DataAccess {
     public void createEvent(Event e){
         String tags = String.join(",",e.getTags());
         String images = String.join(",", e.getImages());
-        Object[] params = new Object[]{e.getProv_id(),e.getName(),e.getDate(),e.getTickets(),e.getPrice(),e.getDescription(),tags,images};
+        Object[] params = new Object[]{e.getProv_id(),e.getTitle(),e.getDate(),e.getTickets(),e.getPrice(),e.getDescription(),tags,images};
 
         String SQL = "insert into " +
                 "events (prov_id, event_id, name, date, tickets, price, description, tags, images)" +
@@ -174,6 +182,11 @@ public class DataAccess {
             return c.getWallet();
         }
     }
+
+    public SearchResults searchEvents(String text, Long subject, Long distanceInKm, Location fromLoc, int from, int count) {
+        return elastic.search(text, subject, true, distanceInKm, fromLoc, from, count);
+    }
+
 
    /* public double subTicket(long id, double coins) throws Exception{
 
