@@ -38,11 +38,11 @@ public class Provider extends User {
         return iban;
     }
 
-    public String getM_first_name() {
+    public String getFirst_name() {
         return first_name;
     }
 
-    public String getM_last_name() {
+    public String getLast_name() {
         return last_name;
     }
 
@@ -100,11 +100,11 @@ public class Provider extends User {
         this.iban = iban;
     }
 
-    public void setM_first_name(String first_name) {
+    public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
 
-    public void setM_last_name(String last_name) {
+    public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
 

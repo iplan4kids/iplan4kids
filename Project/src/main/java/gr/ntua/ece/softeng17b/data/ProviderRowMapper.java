@@ -15,8 +15,8 @@ public class ProviderRowMapper implements RowMapper<Provider> {
         pr.setCompany_name(rs.getString("full_name"));
         pr.setAfm(rs.getString("afm"));
         pr.setIban(rs.getString("iban"));
-        pr.setM_first_name(rs.getString("m_first_name"));
-        pr.setM_last_name(rs.getString("m_last_name"));
+        pr.setFirst_name(rs.getString("m_first_name"));
+        pr.setLast_name(rs.getString("m_last_name"));
         pr.setM_phone(rs.getString("m_phone"));
         pr.setPostal_code(rs.getString("postal_code"));
         pr.setPhone(rs.getString("phone"));

@@ -77,6 +77,16 @@ public class DataAccess {
         }
     }
 
+    public Optional<Admin> getAdminByUsername(String username) {
+        String[] params = new String[]{username};
+        List<Admin> admins = jdbcTemplate.query("select * from admins where username = ?", params, new AdminRowMapper());
+        if (admins.size() == 1) {
+            return Optional.of(admins.get(0));
+        } else {
+            return Optional.empty();
+        }
+    }
+
     public Optional<Provider> getProvider(Long id) {
         Long[] params = new Long[]{id};
         List<Provider> providers = jdbcTemplate.query("select * from providers where user_id = ?", params, new ProviderRowMapper());
@@ -99,7 +109,7 @@ public class DataAccess {
 
     public void createProvider(Provider p) {
 
-        Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getM_first_name(),p.getM_last_name(),p.getM_phone(),p.getPostal_code(),
+        Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getFirst_name(),p.getLast_name(),p.getM_phone(),p.getPostal_code(),
                             p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail()};
 
         String SQL = "insert into " +

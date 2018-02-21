@@ -43,12 +43,13 @@ public class AppController {
 	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
+
 	    try {
 
 			Optional<Client> optional = dbAccess.getClientByUsername(username);
-			Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
-            if(encrypter.encryptMatch(password,c.getPassword())) {
-                ModelAndView model1 = new ModelAndView("AdmissionSuccess");
+			Client c = optional.orElseThrow(() -> new Exception("User Not Found"));
+			if(encrypter.encryptMatch(password,c.getPassword())) {
+                ModelAndView model1 = new ModelAndView("../../view/AdmissionSuccess");
                 HttpSession session = req.getSession();
                 Cookie sessionCookie = new Cookie( "sessionId", session.getId());
                 //Cookie cookieUsername = new Cookie("cookieLoginUser", c.getUsername());
