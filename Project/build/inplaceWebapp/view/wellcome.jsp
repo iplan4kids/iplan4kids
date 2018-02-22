@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -12,7 +14,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="redirect:pages/styles.css" type="text/css">
+	<spring:url value="/images"  var="myImages" />
+	<spring:url value="/pages/styles.css"  var="myCss" />
+    <link rel="stylesheet" href=${myCss} type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">    
@@ -20,7 +24,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">		
 		<div class="JumboLogo" >
-			<img  src="../images/iplan.png"/>
+			<img  src=${myImages}/iplan.png/>
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>            
 		</div>
 	</div>
@@ -30,7 +34,7 @@
         <div class="container-fluid"> 
             <div class="navbar-header">
                 <a class="navbar-left" href="index.html">
-                    <img src="../images/iplan.png" align="center" width="50">
+                    <img src=${myImages}/iplan.png align="center" width="50">
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -320,7 +324,7 @@
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-    <script src = "redirect:pages/scripts.js" type = "text/javascript"></script>
-    </body>
-
+	<spring:url value="/pages/scripts.js"  var="myJs" />
+    <script href=${myJs} type="text/javascript"></script>
+</body>
 </html>

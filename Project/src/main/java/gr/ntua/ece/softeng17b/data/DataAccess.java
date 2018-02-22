@@ -50,7 +50,7 @@ public class DataAccess {
 
 
     public List<Client> getAllClients() {
-        return jdbcTemplate.query("select * from clients", new ClientRowMapper());
+        return jdbcTemplate.query("select * from clients,wallet where clients.user_id = wallet.user_id", new ClientRowMapper());
     }
 
     public List<Provider> getAllProviders() {

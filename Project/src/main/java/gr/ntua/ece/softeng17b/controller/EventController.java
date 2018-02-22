@@ -27,17 +27,28 @@ import java.util.Optional;
 
 
 @Controller
-@SessionAttributes("client")
 @RequestMapping(value = "/events")
 public class EventController {
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String getEvents() {
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String getEvents(HttpServletRequest req) {
+		/*ModelAndView model1 = new ModelAndView("events");
+		HttpSession session = req.getSession(false);
+		if (session == null)
+			model1.addObject("loggedIn", false);
+		else
+			model1.addObject("loggedIn", true);*/
 		return "redirect:pages/allEvents.html";
 	}
 	
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
-	public String getEvent() {
+	public String getEvent(HttpServletRequest req) {
+		ModelAndView model1 = new ModelAndView("events");
+		HttpSession session = req.getSession(false);
+		if (session == null)
+			model1.addObject("loggedIn", false);
+		else
+			model1.addObject("loggedIn", true);
 		return "redirect:pages/eventPage.html";
 	}
 	
