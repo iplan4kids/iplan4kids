@@ -1,0 +1,483 @@
+html {
+    position: relative;
+    min-height: 100%;
+    padding-right : 0 !important;
+}
+body {
+/* Margin bottom by footer height */
+
+    padding-right : 0 !important;
+}
+/*------------------------------------------------- ADMIN TABLE STYLES ----------------------------------------------------------*/
+table.table th, table.table td {
+        text-align: center;
+        vertical-align: middle;
+      }
+/*------------------------------------------------- PAGE HEADER STYLES ----------------------------------------------------------*/
+.pageHeader{
+    background-color: black;
+	text-align:center;
+}
+.headerStyle img{
+	text-align:center;
+    padding-left: 20px;
+	float: left;
+}
+
+.JumboLogo{
+		display:flex;
+		justify-content:center;
+}
+.JumboLogo img{
+	width:100px;
+	height:100px;
+}
+
+.fixed-header {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; 
+}
+/*--------------------------------------------------- NAVIGATION BAR -----------------------------------------------------------------*/
+.navbar{
+    width: 100%;
+    z-index:100;
+    margin-bottom: 0px;   
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.search-form {
+    display: inline-block;
+}
+.navbar-form{
+    margin-right: 0px;
+    margin-left: 0px; 
+}
+/*Custom width for navbar collapsing*/
+@media (max-width: 750px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+}
+}
+/*--------------------------------------------------- CAROUSEL -----------------------------------------------------------------*/
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+.carouselContainer{
+    margin: 15px;
+    padding-bottom: 5px;
+}
+/*--------------------------------------------------- BODY -----------------------------------------------------------------*/
+.ourCompany, .ourWebApp{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 12px solid;
+    border-top-color: #222;
+    border-right-color: #ddd; 
+    border-left-color: #ddd; 
+    border-bottom-color: #ddd;       
+}
+.latestNode {
+    margin-top: 18px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    border-bottom: 2px dotted #999999;
+    max-width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+.latestVd {
+    float: left;
+    margin-right: 30px;
+    position: relative;
+}
+.latestVd > img {
+    max-width: 50px;
+    max-height: 50px;
+}
+.newsHeader{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999999;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.latestTxt {
+    font-size: 15px;
+    color: #333333;
+    display: table;
+    height: 50px;
+}
+.news{
+    height: 383.11px;
+    overflow-y: scroll;
+}
+.date{
+    float: right;
+    color: #777;
+    font-weight: bold;
+}
+.mainBody{
+    padding-left:15px;
+    padding-right:15px;
+}
+@media (max-width: 1046px){
+    .col-sm-3, .col-sm-6, .col-sm-9 {
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------- EVENT PAGE -----------------------------------------------------------------*/
+
+.ourCompany, .ourWebApp,.eventProfileBox{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 12px solid;
+    border-top-color: #222;
+    border-right-color: #ddd; 
+    border-left-color: #ddd; 
+    border-bottom-color: #ddd;       
+}
+
+.eventProfileBox{
+    border-top: 1px solid!important;
+    border-right: 0px solid!important;
+    border-radius:0!important;   
+    padding-top: 15px!important;
+     border-top-color: #ddd!important;
+     height: 100%!important;     
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------- CONTACT FORM -----------------------------------------------------------------*/
+.contactForm{
+    padding-bottom: 20px;
+}
+#comments{
+    margin-bottom: 5px;
+}
+.sendButtonRow{
+    padding-right: 15px;
+}
+.submitButton {
+    padding: 10px 20px;
+    background-color: #222;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+.submitButton:hover, .submitButton:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+}
+/*---------------------------------------------------GOOGLE MAPS -----------------------------------------------------------------*/
+#googleMap {
+    width: 100%; /* Span the entire width of the screen */
+    height: 400px; /* Set the height to 400 pixels */
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); /* Change the color of the map to black and white */
+    padding:10px;
+}
+
+
+#googleMap_event {
+    width: 100%; /* Span the entire width of the screen */
+    height: 350px; /* Set the height to 400 pixels */
+    
+    
+    padding:10px;
+	padding-bottom:15px;
+	margin-bottom:15px;
+}
+/*--------------------------------------------------- PAGE FOOTER -----------------------------------------------------------------*/
+footer {
+    background-color: #222;
+    color: #f5f5f5;
+    padding: 32px;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+/*--------------------------------------------------- REGISTER MODAL -----------------------------------------------------------------*/
+.modal{
+	
+	padding-top:10%;
+    padding-right: 0px !important;
+}
+.modal-open {
+    vertical-align: middle;
+    width: 100%;
+    padding-right: 0px !important;
+}
+.panel-register1 {
+	margin-top: 15px;
+    border-color: #ccc;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-register1>.panel-heading {
+    color: #00415d;
+    background-color: #fff;
+    border-color: #fff;
+    text-align:center;
+}
+.panel-register1>.panel-heading a{
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-register1>.panel-heading a.active{
+    color: #029f5b;
+    font-size: 18px;
+}
+.panel-register1>.panel-heading hr{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-register1 input[type="text"],.panel-register1 input[type="email"],.panel-register1 input[type="password"],.panel-register1 input[type="tel"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-register1 input:hover,
+.panel-register1 input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+
+.forgot-password {
+    text-decoration: underline;
+    color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+    text-decoration: underline;
+    color: #666;
+}
+
+#button-row {
+	text-align:center;
+}
+
+#button-row button {
+	width:80%;
+}
+
+.btn-register1 {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+}
+.btn-register1:hover,
+.btn-register1:focus,
+.btn-register1:disabled {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+.forgot-password {
+	text-decoration: underline;
+	color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+	text-decoration: underline;
+	color: #666;
+}
+
+.btn-register {
+	background-color: #1CB94E;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+	color: #fff;
+	background-color: #1CA347;
+	border-color: #1CA347;
+}
+/* -----------------------------------    all events ---------------------------------------------------- */
+.eventCard{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-top-color: #ddd;
+    border-right-color: #ddd; 
+    border-left-color: #ddd; 
+    border-bottom-color: #ddd; 
+}
+.activities, .filters{
+    border: none;
+}
+.eventDescription{
+    line-height: 100%; 
+    max-block-size: 161px;
+    color: #777;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.eventDate{
+    float: right;
+    color: #333;
+    font-weight: bold;
+}
+.eventPrice{
+    font-size: 16px;
+}
+
+
+
+.profile-header {
+  font-size: 25px;
+  position: relative;
+  text-align: center;
+  height: 200px;
+  background-color: #636363;
+}
+.profile-header div{
+  display: inline-block;
+}
+.profile-header div.left{
+  font-size: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.profile-header div.center{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile.table {
+  margin: 80px 0px;
+  font-size: 18px;
+}
+
+.profile.table td {
+  border: none;
+}
+
+.table.drastiriotites {
+  margin-top: 80px;
+}
+.table.drastiriotites th{
+  background-color: #cecece;
+}
+
+.below-drastiriotites button {
+  margin-top: 20px;
+}
+.below-drastiriotites {
+  height: 100px;
+}
+
+.form-drastiriotitas .button-bottom {
+  text-align:center;
+}
+.form-drastiriotitas .content {
+  padding: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 1px solid #c3c3c3;
+}
+
+.padding-top {
+  padding-top: 10px;
+}
+
+.list-drastiriotites {
+  padding: 80px 0px;
+}
