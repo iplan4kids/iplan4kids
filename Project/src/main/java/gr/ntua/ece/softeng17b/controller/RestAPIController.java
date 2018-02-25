@@ -6,6 +6,9 @@ import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +32,10 @@ public class RestAPIController {
 		return dbAccess.getAllProviders();
 	}
 
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public RESTclass test(){
-		return new RESTclass("test RESTend", 187.4);	
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public void logout(HttpServletRequest req){
+		HttpSession session = req.getSession();
+		session.invalidate();
 	}
 	
 	/*@RequestMapping(value = "/events/getAllEvents", method = RequestMethod.GET)

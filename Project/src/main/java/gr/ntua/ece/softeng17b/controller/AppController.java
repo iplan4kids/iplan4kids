@@ -4,11 +4,8 @@ import gr.ntua.ece.softeng17b.conf.Configuration;
 import gr.ntua.ece.softeng17b.data.*;
 import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,31 +40,19 @@ public class AppController {
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
-		//ModelAndView model1 = new ModelAndView("AdmissionSuccess");
-
-
 		try {
-
 			Optional<Client> optional = dbAccess.getClientByUsername(username);
 			Client c = optional.orElseThrow(() -> new Exception("User Not Found"));
 			if(encrypter.encryptMatch(password,c.getPassword())) {
                 HttpSession session = req.getSession();
 				session.setMaxInactiveInterval(3*60*60);
 				session.setAttribute("client", c);
-				RESTclass r = new RESTclass(c.getUsername() , c.getWallet());
-				return r;
-				//Cookie cookie1 = new Cookie("username", "ola kala");
-                //model1.addObject("cookie1", c.getUsername());
-                //model1.addObject("cookie2", c.getPassword());
-                //return cookie1;
+				return new RESTclass(true, c.getUsername() , c.getWallet());
             }
             else throw new Exception("Wrong password");
 		}
 		catch (Exception e){
-			//model1.addObject("cookie1", e.getMessage());
-			//model1.addObject("cookie2", e.getMessage());
-			//Cookie cookie1 = new Cookie("username", "ola skata");
-			return new RESTclass("egine la8os" , 0.0 );
+			return new RESTclass(false , e.getMessage() , 1.5 );
 		}
 	}
 	

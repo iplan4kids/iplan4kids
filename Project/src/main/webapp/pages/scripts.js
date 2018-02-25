@@ -88,7 +88,7 @@ $(document).ready(function() {
                     // tab of the developer tools
                     //  alert(result.username + result.balance);
 
-                    //if (result.success) {
+                    if (result.success) {
                         $("#logregprof").empty();
                         var parentDiv = $("#logregprof");
 
@@ -96,8 +96,11 @@ $(document).ready(function() {
                         parentDiv.append(putit);
                         var show = true;
                          $('#myModal').modal('hide');
-                   // }
-                   // else {}
+                    }
+                    else {
+						na mhn kleisei to modal kai na vgei me alert to result.username pou 8a periexei to logo apotuxias
+						epishs ftia3e ena ajax post request gia to koumpi logout (url=/logout) kai onSuccess na gurnaei thn mpara me thn eggrafh kai to login
+					}
                 },
                 error: function(xhr, resp, text) {
                     alert("egine malakia");

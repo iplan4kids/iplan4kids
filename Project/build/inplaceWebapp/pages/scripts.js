@@ -14,7 +14,7 @@ var logged = '<li class="dropdown">\n' +
     '        \t\t\t\t\t\t\t\t  </ul>\n' +
     '        \t\t\t\t\t\t</li>';
 var show = false;
-var userdata = {"username":"Gio","balance":"789"};
+//var userdata = {"username":"Gio","balance":"789"};
 $(document).ready(function() {
     //---------------------------------------- MODAL FORM -------------------------------------------
 
@@ -60,8 +60,9 @@ $(document).ready(function() {
 
         var parentDiv = $("#logregprof");
         if (show) {
-                var putit = logged.replace('%USERNAME%', userdata["username"]).replace('%WALLET_POINTS%', userdata["balance"]);
-                parentDiv.append(putit);
+               // var putit = logged.replace('%USERNAME%', userdata["username"]).replace('%WALLET_POINTS%', userdata["balance"]);
+            var putit = logged.replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance);
+            parentDiv.append(putit);
         }
         else {
             parentDiv.append(notlogged);
@@ -85,7 +86,21 @@ $(document).ready(function() {
                 success : function(result) {
                     // you can see the result from the console
                     // tab of the developer tools
-                    alert(result.username + result.balance);
+                    //  alert(result.username + result.balance);
+
+                    if (result.success) {
+                        $("#logregprof").empty();
+                        var parentDiv = $("#logregprof");
+
+                        var putit = logged.replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance);
+                        parentDiv.append(putit);
+                        var show = true;
+                         $('#myModal').modal('hide');
+                    }
+                    else {
+						na mhn kleisei to modal kai na vgei me alert to result.username pou 8a periexei to logo apotuxias
+						epishs ftia3e ena ajax post request gia to koumpi logout (url=/logout) kai onSuccess na gurnaei thn mpara me thn eggrafh kai to login
+					}
                 },
                 error: function(xhr, resp, text) {
                     alert("egine malakia");
