@@ -2,6 +2,7 @@ package gr.ntua.ece.softeng17b.controller;
 
 import gr.ntua.ece.softeng17b.conf.Configuration;
 import gr.ntua.ece.softeng17b.data.*;
+import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
 import java.util.List;
 
@@ -26,6 +27,11 @@ public class RestAPIController {
 	public List<Provider> getProviders(){
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 		return dbAccess.getAllProviders();
+	}
+
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public RESTclass test(){
+		return new RESTclass("test RESTend", 187.4);	
 	}
 	
 	/*@RequestMapping(value = "/events/getAllEvents", method = RequestMethod.GET)

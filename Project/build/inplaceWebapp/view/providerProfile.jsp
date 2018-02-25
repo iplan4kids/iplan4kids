@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -12,7 +15,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+	<spring:url value="/images"  var="myImages" />
+	<spring:url value="/pages/styles.css"  var="myCss" />
+    <link rel="stylesheet" href=${myCss} type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -20,7 +25,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">
 		<div class="JumboLogo" >
-			<img  src="images/iplan.png"/>
+			<img  src=${myImages}/iplan.png />
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>
 		</div>
 	</div>
@@ -29,8 +34,8 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-left" href="index.html">
-                    <img src="images/iplan.png" align="center" width="50">
+                <a class="navbar-left" href="/app/">
+                    <img src=${myImages}/iplan.png align="center" width="50">
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -138,41 +143,86 @@
     </footer>
 
     <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                    <div class="modal-header ">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="text-center modal-title">Συνδεθείτε</h4>
+    <div style="align:center;" class="modal" id="myModal">
+                <div style="width:500px; margin:auto; " class="panel panel-register1">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <button style="margin-right:10px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 style="margin-left: 18px;" class="text-center modal-title"> Συνδεθείτε</h4>
+                            <br>
+                            <div class="col-xs-4">
+                                <a href="#" class="active" id="login1-form-link">Χρήστης</a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="#" id="login2-form-link">Διαχειριστής</a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="#" id="login-form-link">Πάροχος</a>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
 
-                    <!-- Modal body -->
-             	<form action="/app/login" method="POST">
-                    <!-- Modal body -->
-                <div class="modal-body">
+<!----------------------------------------------------------- CLIENT LOGIN ------------------------------------------------------------------------>
 
-                    	<div>Email</div>
-                        	<input type="text" class="form-control" name="username">
-                    	<div>Κωδικός</div>
-                    	<input type="text" class="form-control" name="password">
-                </div>
-                    <!-- Modal footer -->
-                <div class="modal-footer">
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-success" value="Συνδεση">
-                    </div>
-                </div>
-			</form>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="text-center">
-                                    <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Ξέχασες τον κωδικό?</a>
+                                <form id="login1-form" action="/app/loginClient" method="post" role="form" style="display: block;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα χρήστη" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="button-row" class="row">
+                                            <div class="">
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+<!----------------------------------------------------------- ADMIN LOGIN ------------------------------------------------------------------------>
+
+                                <form id="login2-form" action="/app/login/admin" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα διαχειριστή" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="button-row" class="row">
+                                            <div class="">
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+<!----------------------------------------------------------- PROVIDER LOGIN ------------------------------------------------------------------------>
+
+                                <form id="login-form" action="/app/login/provider" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα παρόχου" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="button-row" class="row">
+                                            <div class="">
+                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΕΓΓΡΑΦΗ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->

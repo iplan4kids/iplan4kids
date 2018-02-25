@@ -2,6 +2,7 @@ package gr.ntua.ece.softeng17b.controller;
 
 import gr.ntua.ece.softeng17b.conf.Configuration;
 import gr.ntua.ece.softeng17b.data.*;
+import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
@@ -35,12 +37,13 @@ public class AppController {
 	
 	
 	@RequestMapping(value = "/loginClient", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest req) {
+	@ResponseBody
+	public RESTclass submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest req) {
 		
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
-		ModelAndView model1 = new ModelAndView("AdmissionSuccess");
+		//ModelAndView model1 = new ModelAndView("AdmissionSuccess");
 
 
 		try {
@@ -51,20 +54,20 @@ public class AppController {
                 HttpSession session = req.getSession();
 				session.setMaxInactiveInterval(3*60*60);
 				session.setAttribute("client", c);
-                model1.addObject("cookie1", c.getUsername());
-                model1.addObject("cookie2", c.getPassword());
-                return model1;
+				RESTclass r = new RESTclass(c.getUsername() , c.getWallet());
+				return r;
+				//Cookie cookie1 = new Cookie("username", "ola kala");
+                //model1.addObject("cookie1", c.getUsername());
+                //model1.addObject("cookie2", c.getPassword());
+                //return cookie1;
             }
             else throw new Exception("Wrong password");
 		}
 		catch (Exception e){
-			Cookie cookieUsername = new Cookie("cookieLoginUser", e.getMessage());
-			Cookie cookiePassword = new Cookie("cookieLoginPassword", e.getMessage());
-			cookieUsername.setMaxAge(60 * 60 * 24 * 365);
-			cookiePassword.setMaxAge(60 * 60 * 24 * 365);
-			model1.addObject("cookie1", cookieUsername);
-			model1.addObject("cookie2", cookiePassword);
-			return model1;
+			//model1.addObject("cookie1", e.getMessage());
+			//model1.addObject("cookie2", e.getMessage());
+			//Cookie cookie1 = new Cookie("username", "ola skata");
+			return new RESTclass("egine la8os" , 0.0 );
 		}
 	}
 	
@@ -78,27 +81,38 @@ public class AppController {
 		ModelAndView model1 = new ModelAndView("AdmissionSuccess");
 
 	    try {
-
-			Optional<Provider> optional = dbAccess.getProviderByUsername(username);
-			Provider p = optional.orElseThrow(() -> new Exception("User Not Found"));
-			if(encrypter.encryptMatch(password,p.getPassword())) {                
-                HttpSession session = req.getSession();
-				session.setMaxInactiveInterval(3*60*60);
-				session.setAttribute("provider", p);
-                model1.addObject("cookie1", p.getUsername());
-                model1.addObject("cookie2", p.getPassword());
-				model1.addObject("message", "    and logged in with type:" + loginType);
-                return model1;
-            }
-            else throw new Exception("Wrong password");
+			if (loginType.equals("provider")){
+				Optional<Provider> optional = dbAccess.getProviderByUsername(username);
+				Provider p = optional.orElseThrow(() -> new Exception("User Not Found"));
+				if(encrypter.encryptMatch(password,p.getPassword())) {                
+                	HttpSession session = req.getSession();
+					session.setMaxInactiveInterval(3*60*60);
+					session.setAttribute("provider", p);
+                	model1.addObject("cookie1", p.getUsername());
+                	model1.addObject("cookie2", p.getPassword());
+					model1.addObject("message", "    and logged in with type:" + loginType);
+                	return model1;
+            	}	
+            	else throw new Exception("Wrong password");
+			}
+			else{
+				Optional<Admin> optional = dbAccess.getAdminByUsername(username);
+				Admin a = optional.orElseThrow(() -> new Exception("User Not Found"));
+				if(encrypter.encryptMatch(password,a.getPassword())) {                
+                	HttpSession session = req.getSession();
+					session.setMaxInactiveInterval(3*60*60);
+					session.setAttribute("admin", a);
+                	model1.addObject("cookie1", a.getUsername());
+                	model1.addObject("cookie2", a.getPassword());
+					model1.addObject("message", "    and logged in with type:" + loginType);
+                	return model1;
+				}
+				else throw new Exception("Wrong password");
+			}
 		}
 		catch (Exception e){
-			Cookie cookieUsername = new Cookie("cookieLoginUser", e.getMessage());
-			Cookie cookiePassword = new Cookie("cookieLoginPassword", e.getMessage());
-			cookieUsername.setMaxAge(60 * 60 * 24 * 365);
-			cookiePassword.setMaxAge(60 * 60 * 24 * 365);
-			model1.addObject("cookie1", cookieUsername);
-			model1.addObject("cookie2", cookiePassword);
+			model1.addObject("cookie1", e.getMessage());
+			model1.addObject("cookie2", e.getMessage());
 			model1.addObject("message", loginType);
 			return model1;
 		}

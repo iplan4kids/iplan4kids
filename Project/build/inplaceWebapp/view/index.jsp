@@ -51,10 +51,9 @@
 					</li>
                 </ul>
                 <!-- Right part of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/app/register"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
-				</ul>
+                <ul id="logregprof" class="nav navbar-nav navbar-right">
+
+                </ul>
 				 <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
                         <form class="navbar-form" role="search">

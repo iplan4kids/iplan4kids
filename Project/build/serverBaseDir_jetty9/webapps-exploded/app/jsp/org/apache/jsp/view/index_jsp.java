@@ -116,10 +116,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t</li>\n");
       out.write("                </ul>\n");
       out.write("                <!-- Right part of Navbar -->\n");
-      out.write("                <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                    <li><a href=\"/app/register\"><span class=\"glyphicon glyphicon-user\"></span> Εγγραφή </a></li>\n");
-      out.write("                    <li><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
-      out.write("\t\t\t\t</ul>\n");
+      out.write("                <ul id=\"logregprof\" class=\"nav navbar-nav navbar-right\">\n");
+      out.write("\n");
+      out.write("                </ul>\n");
       out.write("\t\t\t\t <ul class=\"nav navbar-nav navbar-right\">\n");
       out.write("                    <div class=\"search-form\">\n");
       out.write("                        <form class=\"navbar-form\" role=\"search\">\n");

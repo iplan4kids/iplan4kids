@@ -51,9 +51,9 @@ public final class AdmissionSuccess_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("<body>\n");
       out.write("\t\n");
       out.write("\t\t<h1>you logged in with Username: ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getUsername()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cookie1}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" and Password: ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getPassword()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cookie2}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(' ');
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${message}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" </h1>\n");

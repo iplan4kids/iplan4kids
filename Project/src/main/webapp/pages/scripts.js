@@ -13,10 +13,9 @@ var logged = '<li class="dropdown">\n' +
     '\n' +
     '        \t\t\t\t\t\t\t\t  </ul>\n' +
     '        \t\t\t\t\t\t</li>';
-var show = true;
+var show = false;
 var userdata = {"username":"Gio","balance":"789"};
 $(document).ready(function() {
-    var show = true;
     //---------------------------------------- MODAL FORM -------------------------------------------
 
 
@@ -79,17 +78,17 @@ $(document).ready(function() {
 
             // send ajax
             $.ajax({
-                url: 'test.php', // url where to submit the request
+                url: "/app/loginClient", // url where to submit the request
                 type : "POST", // type of action POST || GET
                 dataType : 'json', // data type
                 data : $("#login1-form").serialize(), // post data || get data
                 success : function(result) {
                     // you can see the result from the console
                     // tab of the developer tools
-                    console.log(result);
+                    alert(result.username + result.balance);
                 },
                 error: function(xhr, resp, text) {
-                    console.log(xhr, resp, text);
+                    alert("egine malakia");
                 }
             })
 

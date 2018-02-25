@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-		<h1>you logged in with Username: ${client.getUsername()} and Password: ${client.getPassword()} ${message} </h1>
+		<h1>you logged in with Username: ${cookie1} and Password: ${cookie2} ${message} </h1>
 		<a href="/app/further">go further</a>
 
 </body>
