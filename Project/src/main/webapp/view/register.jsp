@@ -176,10 +176,10 @@
 										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password1" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+										<input type="password" name="password" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm_password1" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
+										<input type="password" name="confirm_password" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
 									</div>
 									<div class="form-group">
 										<div id="button-row" class="row">

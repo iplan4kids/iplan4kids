@@ -397,10 +397,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <input type=\"password\" name=\"password\" id=\"password\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("                                    </div>\n");
+      out.write("                                    <span id=\"clientwrong\" style=\"display:none; color:red;\" class=\"help-block\">*Μη έγκυρος συνδυασμός όνοματος χρήστη και συνθηματικού.</span>\n");
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <div id=\"button-row\" class=\"row\">\n");
       out.write("                                            <div class=\"\">\n");
-      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΕΓΓΡΑΦΗ</button>\n");
+      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΣΥΝΔΕΣΗ</button>\n");
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");
@@ -414,10 +415,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <input type=\"password\" name=\"password\" id=\"password\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("                                    </div>\n");
+      out.write("                                    <span id=\"adminwrong\" style=\"display:none; color:red;\" class=\"help-block\">*Μη έγκυρος συνδυασμός όνοματος διαχειριστή και συνθηματικού.</span>\n");
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <div id=\"button-row\" class=\"row\">\n");
       out.write("                                            <div class=\"\">\n");
-      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΕΓΓΡΑΦΗ</button>\n");
+      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΣΥΝΔΕΣΗ</button>\n");
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");
@@ -431,10 +433,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <input type=\"password\" name=\"password\"  id=\"password\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("                                    </div>\n");
+      out.write("                                    <span id=\"providerwrong\" style=\"display:none; color:red;\" class=\"help-block\">*Μη έγκυρος συνδυασμός όνοματος παρόχου και συνθηματικού.</span>\n");
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <div id=\"button-row\" class=\"row\">\n");
       out.write("                                            <div class=\"\">\n");
-      out.write("                                                <button type=\"submit\" name=\"register-submit\" id=\"register-submit\" class=\"form-control btn btn-register\">ΕΓΓΡΑΦΗ</button>\n");
+      out.write("                                                <button type=\"submit\" name=\"register-submit\" id=\"register-submit\" class=\"form-control btn btn-register\">ΣΥΝΔΕΣΗ</button>\n");
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");

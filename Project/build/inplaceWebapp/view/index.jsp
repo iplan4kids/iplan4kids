@@ -312,10 +312,11 @@
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
                                     </div>
+                                    <span id="clientwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος χρήστη και συνθηματικού.</span>
                                     <div class="form-group">
                                         <div id="button-row" class="row">
                                             <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
                                             </div>
                                         </div>
                                     </div>
@@ -329,10 +330,11 @@
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
                                     </div>
+                                    <span id="adminwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος διαχειριστή και συνθηματικού.</span>
                                     <div class="form-group">
                                         <div id="button-row" class="row">
                                             <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
                                             </div>
                                         </div>
                                     </div>
@@ -346,10 +348,11 @@
                                     <div class="form-group">
                                         <input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
                                     </div>
+                                    <span id="providerwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος παρόχου και συνθηματικού.</span>
                                     <div class="form-group">
                                         <div id="button-row" class="row">
                                             <div class="">
-                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΕΓΓΡΑΦΗ</button>
+                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΣΥΝΔΕΣΗ</button>
                                             </div>
                                         </div>
                                     </div>

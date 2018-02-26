@@ -34,7 +34,7 @@ public class RestAPIController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public void logout(HttpServletRequest req){
-		HttpSession session = req.getSession();
+		HttpSession session = req.getSession(false);
 		session.invalidate();
 	}
 	

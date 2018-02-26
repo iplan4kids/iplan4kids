@@ -25,6 +25,8 @@ import java.util.Optional;
 @Controller
 public class AppController {
 
+
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView redirect() {
 
@@ -32,6 +34,8 @@ public class AppController {
 		return model1;
 	}
 	
+
+
 	
 	@RequestMapping(value = "/loginClient", method = RequestMethod.POST)
 	@ResponseBody
@@ -57,8 +61,7 @@ public class AppController {
 	}
 	
 	@RequestMapping(value = "/login/{type}", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, @PathVariable("type") String loginType,
-			HttpServletRequest req) {
+	public ModelAndView submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, @PathVariable("type") String loginType, HttpServletRequest req) {
 
 	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
@@ -101,14 +104,31 @@ public class AppController {
 			model1.addObject("message", loginType);
 			return model1;
 		}
-
 	}
+
+
+
+
+	@RequestMapping(value = "/logoutStrong", method = RequestMethod.GET)
+	public String logout(HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		session.invalidate();
+        return "redirect:/";
+	}
+
+
+
+
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView redirectToReg() {
-			ModelAndView model1 = new ModelAndView("register");
+		ModelAndView model1 = new ModelAndView("register");
         return model1;
     }
+
+
+
+
 
 	@RequestMapping(value = "/registerClient", method = RequestMethod.POST)
 	public ModelAndView registerForm(@ModelAttribute("client1") Client client1) {
@@ -123,6 +143,9 @@ public class AppController {
 		return model1;
 	}
 
+
+
+
 	@RequestMapping(value = "/registerProvider", method = RequestMethod.POST)
 	public ModelAndView registerForm(@ModelAttribute("provider1") Provider provider1) {
 
@@ -136,6 +159,9 @@ public class AppController {
 		return model1;
 	}
 	
+
+
+
 	
 	@RequestMapping(value = "/further", method = RequestMethod.GET)
 	public ModelAndView getfurther(HttpServletRequest req) {
@@ -148,6 +174,9 @@ public class AppController {
 		else 	session.setAttribute("name", true);
 		return model1;
 	}
+
+
+
 	
 	@RequestMapping(value = "/myProfile", method = RequestMethod.GET)
 	public ModelAndView getProfile(HttpServletRequest req) {
@@ -157,11 +186,17 @@ public class AppController {
 		model1.addObject("client1",c);
 		return model1;
 	}
+
+
+
 	
 	@RequestMapping(value = "/buyPoints", method = RequestMethod.GET)
 	public String getbuyPoints() {
 		return "redirect:pages/buyPoints.html";
 	}
+
+
+
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String getAdminPage() {

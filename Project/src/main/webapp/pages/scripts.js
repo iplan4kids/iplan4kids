@@ -7,9 +7,9 @@ var logged = '<li class="dropdown">\n' +
     '        \t\t\t\t\t\t\t<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> %USERNAME%' +
     '        \t\t\t\t\t\t\t<span class="caret"></span></a>\n' +
     '        \t\t\t\t\t\t\t\t  <ul class="dropdown-menu">\n' +
-    '        \t\t\t\t\t\t\t\t\t <li><a id="profile" href="#"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>\n' +
+    '        \t\t\t\t\t\t\t\t\t <li><a id="profile" href="/app/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>\n' +
     '        \t\t\t\t\t\t\t\t\t <li><a id="wallet" href="#"><span class="glyphicon glyphicon-piggy-bank"></span>Πορτοφίλι(%WALLET_POINTS%)</a></li>\n' +
-    '        \t\t\t\t\t\t\t\t\t <li ><a  href="#"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>\n' +
+    '        \t\t\t\t\t\t\t\t\t <li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>\n' +
     '\n' +
     '        \t\t\t\t\t\t\t\t  </ul>\n' +
     '        \t\t\t\t\t\t</li>';
