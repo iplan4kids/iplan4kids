@@ -1,5 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page import="gr.ntua.ece.softeng17b.data.Client" %>
+<% if (session.getAttribute("client") == null){
+		session.setAttribute("notloggedIn","list-item");
+		session.setAttribute("loggedIn","none");
+	}
+	else{
+		session.setAttribute("loggedIn","list-item");
+		session.setAttribute("notloggedIn","none");
+	}%>
 
 <!DOCTYPE html>
 <html lang="el">
@@ -52,7 +61,16 @@
                 </ul>
                 <!-- Right part of Navbar -->
                 <ul id="logregprof" class="nav navbar-nav navbar-right">
-
+					<li class="notlogged" style="display:${notloggedIn}" ><a href="register.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
+					<li class="notlogged" style="display:${notloggedIn}"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
+					<li class="dropdown">
+					<a id="logged" class="dropdown-toggle" style="display:${loggedIn}" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> <% if (session.getAttribute("client") == null){ %> %USERNAME% <%} else { %> ${client.getUsername()} <% }%><span class="caret"></span></a>
+    				<ul class="dropdown-menu">
+    					<li><a id="profile" href="/app/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
+    					<li><a id="wallet" href="#"><span class="glyphicon glyphicon-piggy-bank"></span>Πορτοφόλι (<% if (session.getAttribute("client") == null){ %>%WALLET_POINTS%<%} else {%> <%=String.format("%.2f",((Client) session.getAttribute("client")).getWallet())%> <% }%>)</a></li>
+    					<li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>
+    				</ul>
+    				</li>
                 </ul>
 				 <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">

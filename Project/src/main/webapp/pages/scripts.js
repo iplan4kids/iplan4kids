@@ -1,6 +1,6 @@
 // !!! BELOW CODE WILL RUN ONCE THE PAGE IS READY FOR JAVASCRIPT CODE TO EXECUTE
 
-var notlogged = '<li ><a href="register.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>\n' +
+/*var notlogged = '<li ><a href="register.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>\n' +
     '                    <li class="notlogged"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>';
 
 var logged = '<li class="dropdown">\n' +
@@ -13,7 +13,9 @@ var logged = '<li class="dropdown">\n' +
     '\n' +
     '        \t\t\t\t\t\t\t\t  </ul>\n' +
     '        \t\t\t\t\t\t</li>';
+
 var show = false;
+*/
 //var userdata = {"username":"Gio","balance":"789"};
 $(document).ready(function() {
     //---------------------------------------- MODAL FORM -------------------------------------------
@@ -54,23 +56,6 @@ $(document).ready(function() {
 
 
 
-
-    $(function(){
-        $("#logregprof").empty();
-
-        var parentDiv = $("#logregprof");
-        if (show) {
-               // var putit = logged.replace('%USERNAME%', userdata["username"]).replace('%WALLET_POINTS%', userdata["balance"]);
-            var putit = logged.replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance);
-            parentDiv.append(putit);
-        }
-        else {
-            parentDiv.append(notlogged);
-            }
-        });
-
-
-
     /* attach a submit handler to the form */
     $("#login1-form").submit(function(event) {
 
@@ -86,16 +71,15 @@ $(document).ready(function() {
                 success : function(result) {
                     // you can see the result from the console
                     // tab of the developer tools
-                    //  alert(result.username + result.balance);
 
                     if (result.success) {
-                        $("#logregprof").empty();
                         var parentDiv = $("#logregprof");
-
-                        var putit = logged.replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance);
-                        parentDiv.append(putit);
-                        var show = true;
-                         $('#myModal').modal('hide');
+						var text = parentDiv.html().replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance.toFixed(2));
+						parentDiv.html(text);
+						$(".notlogged").hide();
+						$("#logged").show();
+								
+                        $('#myModal').modal('hide');
                     }
                     else {
                         $("#clientwrong").show();
@@ -105,7 +89,7 @@ $(document).ready(function() {
 					}
                 },
                 error: function(xhr, resp, text) {
-                    alert("egine malakia");
+                    alert("AJAX FAILED");
                 }
             })
 
