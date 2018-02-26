@@ -241,10 +241,10 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"username\" pattern=\"[a-zA-Z0-9]+\" id=\"username\" tabindex=\"1\" class=\"form-control\" placeholder=\"Username\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"password1\" onkeyup='check1();' id=\"password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"password\" onkeyup='check1();' id=\"password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"confirm_password1\" onkeyup='check1();' id=\"confirm_password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Επιβεβαίωση Κωδικού\" value=\"\" style=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"confirm_password\" onkeyup='check1();' id=\"confirm_password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Επιβεβαίωση Κωδικού\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div id=\"button-row\" class=\"row\">\n");

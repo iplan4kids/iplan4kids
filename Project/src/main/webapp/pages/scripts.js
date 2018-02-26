@@ -1,7 +1,28 @@
 // !!! BELOW CODE WILL RUN ONCE THE PAGE IS READY FOR JAVASCRIPT CODE TO EXECUTE
-$(document).ready(function() {
 
+/*var notlogged = '<li ><a href="register.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>\n' +
+    '                    <li class="notlogged"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>';
+
+var logged = '<li class="dropdown">\n' +
+    '        \t\t\t\t\t\t\t<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> %USERNAME%' +
+    '        \t\t\t\t\t\t\t<span class="caret"></span></a>\n' +
+    '        \t\t\t\t\t\t\t\t  <ul class="dropdown-menu">\n' +
+    '        \t\t\t\t\t\t\t\t\t <li><a id="profile" href="/app/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>\n' +
+    '        \t\t\t\t\t\t\t\t\t <li><a id="wallet" href="#"><span class="glyphicon glyphicon-piggy-bank"></span>Πορτοφίλι(%WALLET_POINTS%)</a></li>\n' +
+    '        \t\t\t\t\t\t\t\t\t <li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>\n' +
+    '\n' +
+    '        \t\t\t\t\t\t\t\t  </ul>\n' +
+    '        \t\t\t\t\t\t</li>';
+
+var show = false;
+*/
+//var userdata = {"username":"Gio","balance":"789"};
+$(document).ready(function() {
     //---------------------------------------- MODAL FORM -------------------------------------------
+
+
+
+
     $(function() {
         $('#register1-form-link').click(function(e) {
             $("#register1-form").delay(100).fadeIn(100);
@@ -30,6 +51,54 @@ $(document).ready(function() {
             $(this).addClass('active');
             e.preventDefault();
         });
+    });
+
+
+
+
+    /* attach a submit handler to the form */
+    $("#login1-form").submit(function(event) {
+
+        /* stop form from submitting normally */
+        event.preventDefault();
+
+            // send ajax
+            $.ajax({
+                url: "/app/loginClient", // url where to submit the request
+                type : "POST", // type of action POST || GET
+                dataType : 'json', // data type
+                data : $("#login1-form").serialize(), // post data || get data
+                success : function(result) {
+                    // you can see the result from the console
+                    // tab of the developer tools
+
+                    if (result.success) {
+                        var parentDiv = $("#logregprof");
+						var text = parentDiv.html().replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance.toFixed(2));
+						parentDiv.html(text);
+						$(".notlogged").hide();
+						$("#logged").show();
+								
+                        $('#myModal').modal('hide');
+                    }
+                    else {
+                        $("#clientwrong").show();
+
+						//na mhn kleisei to modal kai na vgei me alert to result.username pou 8a periexei to logo apotuxias
+						//epishs ftia3e ena ajax post request gia to koumpi logout (url=/logout) kai onSuccess na gurnaei thn mpara me thn eggrafh kai to login
+					}
+                },
+                error: function(xhr, resp, text) {
+                    alert("AJAX FAILED");
+                }
+            })
+
+    });
+
+    //---------------------------------------- CLIENT LOGOUT -------------------------------------------
+    $('#logout').click(function(e) {
+        alert("SURPRISE MOTHAFUCKA!");
+        e.preventDefault();
     });
 
     //---------------------------------------- REGISTER FORM -------------------------------------------

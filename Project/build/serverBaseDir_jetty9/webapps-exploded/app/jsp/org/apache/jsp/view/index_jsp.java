@@ -3,6 +3,7 @@ package org.apache.jsp.view;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import gr.ntua.ece.softeng17b.data.Client;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -52,6 +53,16 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+ if (session.getAttribute("client") == null){
+		session.setAttribute("notloggedIn","list-item");
+		session.setAttribute("loggedIn","none");
+	}
+	else{
+		session.setAttribute("loggedIn","list-item");
+		session.setAttribute("notloggedIn","none");
+	}
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -116,10 +127,40 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t</li>\n");
       out.write("                </ul>\n");
       out.write("                <!-- Right part of Navbar -->\n");
-      out.write("                <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                    <li><a href=\"/app/register\"><span class=\"glyphicon glyphicon-user\"></span> Εγγραφή </a></li>\n");
-      out.write("                    <li><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
-      out.write("\t\t\t\t</ul>\n");
+      out.write("                <ul id=\"logregprof\" class=\"nav navbar-nav navbar-right\">\n");
+      out.write("\t\t\t\t\t<li class=\"notlogged\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" ><a href=\"register.html\"><span class=\"glyphicon glyphicon-user\"></span> Εγγραφή </a></li>\n");
+      out.write("\t\t\t\t\t<li class=\"notlogged\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
+      out.write("\t\t\t\t\t<li class=\"dropdown\">\n");
+      out.write("\t\t\t\t\t<a id=\"logged\" class=\"dropdown-toggle\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> ");
+ if (session.getAttribute("client") == null){ 
+      out.write(" %USERNAME% ");
+} else { 
+      out.write(' ');
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getUsername()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(' ');
+ }
+      out.write("<span class=\"caret\"></span></a>\n");
+      out.write("    \t\t\t\t<ul class=\"dropdown-menu\">\n");
+      out.write("    \t\t\t\t\t<li><a id=\"profile\" href=\"/app/myProfile\"><span class=\"glyphicon glyphicon-file\"></span>Τα στοιχεία μου</a></li>\n");
+      out.write("    \t\t\t\t\t<li><a id=\"wallet\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Πορτοφόλι (");
+ if (session.getAttribute("client") == null){ 
+      out.write("%WALLET_POINTS%");
+} else {
+      out.write(' ');
+      out.print(String.format("%.2f",((Client) session.getAttribute("client")).getWallet()));
+      out.write(' ');
+ }
+      out.write(")</a></li>\n");
+      out.write("    \t\t\t\t\t<li ><a  href=\"/app/logoutStrong\"><span id=\"logout\" class=\"glyphicon glyphicon-log-out\"></span>Αποσύνδεση</a></li>\n");
+      out.write("    \t\t\t\t</ul>\n");
+      out.write("    \t\t\t\t</li>\n");
+      out.write("                </ul>\n");
       out.write("\t\t\t\t <ul class=\"nav navbar-nav navbar-right\">\n");
       out.write("                    <div class=\"search-form\">\n");
       out.write("                        <form class=\"navbar-form\" role=\"search\">\n");
@@ -398,10 +439,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <input type=\"password\" name=\"password\" id=\"password\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("                                    </div>\n");
+      out.write("                                    <span id=\"clientwrong\" style=\"display:none; color:red;\" class=\"help-block\">*Μη έγκυρος συνδυασμός όνοματος χρήστη και συνθηματικού.</span>\n");
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <div id=\"button-row\" class=\"row\">\n");
       out.write("                                            <div class=\"\">\n");
-      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΕΓΓΡΑΦΗ</button>\n");
+      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΣΥΝΔΕΣΗ</button>\n");
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");
@@ -415,10 +457,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <input type=\"password\" name=\"password\" id=\"password\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("                                    </div>\n");
+      out.write("                                    <span id=\"adminwrong\" style=\"display:none; color:red;\" class=\"help-block\">*Μη έγκυρος συνδυασμός όνοματος διαχειριστή και συνθηματικού.</span>\n");
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <div id=\"button-row\" class=\"row\">\n");
       out.write("                                            <div class=\"\">\n");
-      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΕΓΓΡΑΦΗ</button>\n");
+      out.write("                                                <button type=\"submit\" name=\"register1-submit\" id=\"register1-submit\" class=\"form-control btn btn-register1\">ΣΥΝΔΕΣΗ</button>\n");
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");
@@ -432,10 +475,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <input type=\"password\" name=\"password\"  id=\"password\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("                                    </div>\n");
+      out.write("                                    <span id=\"providerwrong\" style=\"display:none; color:red;\" class=\"help-block\">*Μη έγκυρος συνδυασμός όνοματος παρόχου και συνθηματικού.</span>\n");
       out.write("                                    <div class=\"form-group\">\n");
       out.write("                                        <div id=\"button-row\" class=\"row\">\n");
       out.write("                                            <div class=\"\">\n");
-      out.write("                                                <button type=\"submit\" name=\"register-submit\" id=\"register-submit\" class=\"form-control btn btn-register\">ΕΓΓΡΑΦΗ</button>\n");
+      out.write("                                                <button type=\"submit\" name=\"register-submit\" id=\"register-submit\" class=\"form-control btn btn-register\">ΣΥΝΔΕΣΗ</button>\n");
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");

@@ -8,7 +8,7 @@ public class AdminRowMapper implements RowMapper<Admin> {
     @Override
     public Admin mapRow(ResultSet rs, int rowNum) throws SQLException {
         Admin ad = new Admin();
-        ad.setId(rs.getInt("user_id"));
+        ad.setId(rs.getInt("admin_id"));
         ad.setUsername(rs.getString("username"));
         ad.setPassword(rs.getString("password"));
         ad.setFirst_name(rs.getString("first_name"));

@@ -88,7 +88,7 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t<div class=\"JumboLogo\" >\n");
       out.write("\t\t\t<img  src=");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png\"/>\n");
+      out.write("/iplan.png />\n");
       out.write("\t\t\t<h2 style=\"margin:auto 0; color:white\">Iplan4kids<strong><sub style=\"font-size:15px; color:white\"> by Iplan</sub></strong></h2>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");

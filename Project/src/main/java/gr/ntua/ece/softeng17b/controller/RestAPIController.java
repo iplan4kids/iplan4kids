@@ -2,8 +2,12 @@ package gr.ntua.ece.softeng17b.controller;
 
 import gr.ntua.ece.softeng17b.conf.Configuration;
 import gr.ntua.ece.softeng17b.data.*;
+import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +30,12 @@ public class RestAPIController {
 	public List<Provider> getProviders(){
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 		return dbAccess.getAllProviders();
+	}
+
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public void logout(HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		session.invalidate();
 	}
 	
 	/*@RequestMapping(value = "/events/getAllEvents", method = RequestMethod.GET)
