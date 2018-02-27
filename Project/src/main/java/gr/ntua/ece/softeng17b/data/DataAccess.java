@@ -11,7 +11,9 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class DataAccess {
 
     private static final int MAX_TOTAL_CONNECTIONS = 16;

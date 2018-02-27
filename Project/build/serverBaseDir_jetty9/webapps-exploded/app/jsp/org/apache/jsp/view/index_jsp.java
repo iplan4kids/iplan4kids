@@ -134,10 +134,22 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t<li class=\"notlogged\" style=\"display:");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
-      out.write("\t\t\t\t\t<li class=\"dropdown\">\n");
-      out.write("\t\t\t\t\t<a id=\"logged\" class=\"dropdown-toggle\" style=\"display:");
+      out.write("                    <li class=\"dropdown\"><a id=\"logged1\" style=\"display:");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> ");
+      out.write("\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span> Πορτοφόλι (");
+ if (session.getAttribute("client") == null){ 
+      out.write("%WALLET_POINTS%");
+} else {
+      out.write(' ');
+      out.print(String.format("%.2f",((Client) session.getAttribute("client")).getWallet()));
+      out.write(' ');
+ }
+      out.write(")</a></li>\n");
+      out.write("\n");
+      out.write("                    <li class=\"dropdown\">\n");
+      out.write("\t\t\t\t\t<a id=\"logged2\" class=\"dropdown-toggle\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>");
  if (session.getAttribute("client") == null){ 
       out.write(" %USERNAME% ");
 } else { 
@@ -148,15 +160,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<span class=\"caret\"></span></a>\n");
       out.write("    \t\t\t\t<ul class=\"dropdown-menu\">\n");
       out.write("    \t\t\t\t\t<li><a id=\"profile\" href=\"/app/myProfile\"><span class=\"glyphicon glyphicon-file\"></span>Τα στοιχεία μου</a></li>\n");
-      out.write("    \t\t\t\t\t<li><a id=\"wallet\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Πορτοφόλι (");
- if (session.getAttribute("client") == null){ 
-      out.write("%WALLET_POINTS%");
-} else {
-      out.write(' ');
-      out.print(String.format("%.2f",((Client) session.getAttribute("client")).getWallet()));
-      out.write(' ');
- }
-      out.write(")</a></li>\n");
+      out.write("    \t\t\t\t\t<li><a id=\"wallet\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Αγορά πόντων</a></li>\n");
       out.write("    \t\t\t\t\t<li ><a  href=\"/app/logoutStrong\"><span id=\"logout\" class=\"glyphicon glyphicon-log-out\"></span>Αποσύνδεση</a></li>\n");
       out.write("    \t\t\t\t</ul>\n");
       out.write("    \t\t\t\t</li>\n");

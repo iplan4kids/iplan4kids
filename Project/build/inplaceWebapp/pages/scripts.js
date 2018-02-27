@@ -77,7 +77,8 @@ $(document).ready(function() {
 						var text = parentDiv.html().replace('%USERNAME%', result.username).replace('%WALLET_POINTS%', result.balance.toFixed(2));
 						parentDiv.html(text);
 						$(".notlogged").hide();
-						$("#logged").show();
+						$("#logged1").show();
+                        $("#logged2").show();
 								
                         $('#myModal').modal('hide');
                     }
