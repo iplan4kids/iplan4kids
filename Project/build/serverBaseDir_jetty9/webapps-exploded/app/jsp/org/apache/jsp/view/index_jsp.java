@@ -12,7 +12,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_spring_url_var_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -21,11 +21,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
-    _jspx_tagPool_spring_url_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
-    _jspx_tagPool_spring_url_var_value_nobody.release();
+    _jspx_tagPool_c_url_value_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -55,6 +55,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
  if (session.getAttribute("client") == null){
 		session.setAttribute("notloggedIn","list-item");
 		session.setAttribute("loggedIn","none");
@@ -79,17 +80,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("    ");
-      if (_jspx_meth_spring_url_0(_jspx_page_context))
-        return;
-      out.write('\n');
-      out.write('	');
-      if (_jspx_meth_spring_url_1(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myCss}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(" type=\"text/css\">\n");
+      out.write("    <link rel=\"stylesheet\" href=\"pages/styles.css\" type=\"text/css\">\n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">    \n");
@@ -97,9 +88,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->\n");
       out.write("    <div class=\"pageHeader row\">\t\t\n");
       out.write("\t\t<div class=\"JumboLogo\" >\n");
-      out.write("\t\t\t<img  src=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png />\n");
+      out.write("\t\t\t<img  src=\"");
+      if (_jspx_meth_c_url_0(_jspx_page_context))
+        return;
+      out.write("\" />\n");
       out.write("\t\t\t<h2 style=\"margin:auto 0; color:white\">Iplan4kids<strong><sub style=\"font-size:15px; color:white\"> by Iplan</sub></strong></h2>            \n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
@@ -109,9 +101,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container-fluid\"> \n");
       out.write("            <div class=\"navbar-header\">\n");
       out.write("                <a class=\"navbar-left\" href=\"/app/\">\n");
-      out.write("                    <img src=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png align=\"center\" width=\"50\">\n");
+      out.write("                    <img src=\"");
+      if (_jspx_meth_c_url_1(_jspx_page_context))
+        return;
+      out.write("\" align=\"center\" width=\"50\"/>\n");
       out.write("                </a>\n");
       out.write("                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n");
       out.write("                    <span class=\"icon-bar\"></span>\n");
@@ -196,8 +189,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            \n");
       out.write("                <div class=\"item active\">\n");
       out.write("                    <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/test_image.jpg\" alt=\"Image1\" style=\"width:100%;\">\n");
+      if (_jspx_meth_c_url_2(_jspx_page_context))
+        return;
+      out.write("\" alt=\"Image1\" style=\"width:100%;\">\n");
       out.write("                    <div class=\"carousel-caption\">\n");
       out.write("                    <h3>asdfsd</h3>\n");
       out.write("                    <p>adsasdfasdf</p>\n");
@@ -206,8 +200,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            \n");
       out.write("                <div class=\"item\">\n");
       out.write("                    <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/test_image.jpg\" alt=\"Image2\" style=\"width:100%;\" >\n");
+      if (_jspx_meth_c_url_3(_jspx_page_context))
+        return;
+      out.write("\" alt=\"Image2\" style=\"width:100%;\">\n");
       out.write("                    <div class=\"carousel-caption\">\n");
       out.write("                    <h3>asdfasdf</h3>\n");
       out.write("                    <p>adsfasdfasdf</p>\n");
@@ -216,8 +211,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                \n");
       out.write("                <div class=\"item\">\n");
       out.write("                    <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/test_image.jpg\" alt=\"Image3\" style=\"width:100%;\" >\n");
+      if (_jspx_meth_c_url_4(_jspx_page_context))
+        return;
+      out.write("\" alt=\"Image3\" style=\"width:100%;\">\n");
       out.write("                    <div class=\"carousel-caption\">\n");
       out.write("                    <h3>sdfasdf</h3>\n");
       out.write("                    <p>asdfasdf</p>\n");
@@ -248,8 +244,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"panel ourCompany\">\n");
       out.write("                <h2 align=\"center\">H εταιρεία</h2>\n");
       out.write("                <div class=\"panel-thumbnail\"><img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/ourCompany_image.jpg\" class=\"img-responsive img-rounded\"></div>\n");
+      if (_jspx_meth_c_url_5(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive img-rounded\"></div>\n");
       out.write("                <div class=\"panel-body\">\n");
       out.write("                    <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd\n");
       out.write("                        adsasdas ddasd as d as da sd asd as dasdasd a dsads  as da sddas\n");
@@ -270,8 +267,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"panel-body latestNode\">\n");
       out.write("                    <div class=\"latestVd\">\n");
       out.write("                        <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/announcement_image.png\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
+      if (_jspx_meth_c_url_6(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"latestTxt\">\n");
       out.write("                        <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>\n");
@@ -284,8 +282,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"panel-body latestNode\">\n");
       out.write("                    <div class=\"latestVd\">\n");
       out.write("                        <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/announcement_image.png\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
+      if (_jspx_meth_c_url_7(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"latestTxt\">\n");
       out.write("                        <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>\n");
@@ -298,8 +297,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"panel-body latestNode\">\n");
       out.write("                    <div class=\"latestVd\">\n");
       out.write("                        <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/announcement_image.png\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
+      if (_jspx_meth_c_url_8(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"latestTxt\">\n");
       out.write("                        <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>\n");
@@ -312,8 +312,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"panel-body latestNode\">\n");
       out.write("                    <div class=\"latestVd\">\n");
       out.write("                        <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/announcement_image.png\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
+      if (_jspx_meth_c_url_9(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"latestTxt\">\n");
       out.write("                        <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>\n");
@@ -326,8 +327,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"panel-body latestNode\">\n");
       out.write("                    <div class=\"latestVd\">\n");
       out.write("                        <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/announcement_image.png\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
+      if (_jspx_meth_c_url_10(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive\"><div class=\"latestOverlay\"></div>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"latestTxt\">\n");
       out.write("                        <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>\n");
@@ -346,8 +348,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"panel panel-default ourWebApp\">\n");
       out.write("                    <h2 align=\"center\">H εφαρμογή</h2>\n");
       out.write("                    <div class=\"panel-thumbnail\"><img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/ourWebApp_image.jpg\" class=\"img-responsive img-rounded\"></div>\n");
+      if (_jspx_meth_c_url_11(_jspx_page_context))
+        return;
+      out.write("\" class=\"img-responsive img-rounded\"></div>\n");
       out.write("                    <div class=\"panel-body\">\n");
       out.write("                        <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd\n");
       out.write("                            adsasdas ddasd as d as da sd asd as dasdasd a dsads  as da sddas\n");
@@ -497,13 +500,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->\n");
-      out.write("    ");
-      if (_jspx_meth_spring_url_2(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("    <script src = ");
+      out.write("   <!-- <spring:url value=\"/pages\"  var=\"myJs\" />-->\n");
+      out.write("    <!--<script src = ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myJs}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/scripts.js type = \"text/javascript\"></script>\n");
+      out.write("/scripts.js type = \"text/javascript\"></script>-->\n");
+      out.write("\t<script src = \"pages/scripts.js\" type = \"text/javascript\"></script>\n");
       out.write("    </body>\n");
       out.write("\n");
       out.write("</html>\n");
@@ -520,84 +521,219 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
   }
 
-  private boolean _jspx_meth_spring_url_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_0 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_0.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_0.setParent(null);
-    _jspx_th_spring_url_0.setValue("/images");
-    _jspx_th_spring_url_0.setVar("myImages");
-    int[] _jspx_push_body_count_spring_url_0 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_0 = _jspx_th_spring_url_0.doStartTag();
-      if (_jspx_th_spring_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_0.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_0);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent(null);
+    _jspx_th_c_url_0.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+      return true;
     }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
     return false;
   }
 
-  private boolean _jspx_meth_spring_url_1(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_1 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_1.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_1.setParent(null);
-    _jspx_th_spring_url_1.setValue("/pages/styles.css");
-    _jspx_th_spring_url_1.setVar("myCss");
-    int[] _jspx_push_body_count_spring_url_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_1 = _jspx_th_spring_url_1.doStartTag();
-      if (_jspx_th_spring_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_1.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_1);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_1.setParent(null);
+    _jspx_th_c_url_1.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_1 = _jspx_th_c_url_1.doStartTag();
+    if (_jspx_th_c_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
+      return true;
     }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
     return false;
   }
 
-  private boolean _jspx_meth_spring_url_2(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_2(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_2 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_2.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_2.setParent(null);
-    _jspx_th_spring_url_2.setValue("/pages");
-    _jspx_th_spring_url_2.setVar("myJs");
-    int[] _jspx_push_body_count_spring_url_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_2 = _jspx_th_spring_url_2.doStartTag();
-      if (_jspx_th_spring_url_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_2.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_2);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_2 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_2.setParent(null);
+    _jspx_th_c_url_2.setValue("/images/test_image.jpg");
+    int _jspx_eval_c_url_2 = _jspx_th_c_url_2.doStartTag();
+    if (_jspx_th_c_url_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
+      return true;
     }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_3(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_3.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_3.setParent(null);
+    _jspx_th_c_url_3.setValue("/images/test_image.jpg");
+    int _jspx_eval_c_url_3 = _jspx_th_c_url_3.doStartTag();
+    if (_jspx_th_c_url_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_3);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_3);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_4(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_4 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_4.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_4.setParent(null);
+    _jspx_th_c_url_4.setValue("/images/test_image.jpg");
+    int _jspx_eval_c_url_4 = _jspx_th_c_url_4.doStartTag();
+    if (_jspx_th_c_url_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_4);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_4);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_5(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_5 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_5.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_5.setParent(null);
+    _jspx_th_c_url_5.setValue("/images/ourCompany_image.jpg");
+    int _jspx_eval_c_url_5 = _jspx_th_c_url_5.doStartTag();
+    if (_jspx_th_c_url_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_5);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_5);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_6(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_6 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_6.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_6.setParent(null);
+    _jspx_th_c_url_6.setValue("/images/announcement_image.png");
+    int _jspx_eval_c_url_6 = _jspx_th_c_url_6.doStartTag();
+    if (_jspx_th_c_url_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_6);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_6);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_7(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_7 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_7.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_7.setParent(null);
+    _jspx_th_c_url_7.setValue("/images/announcement_image.png");
+    int _jspx_eval_c_url_7 = _jspx_th_c_url_7.doStartTag();
+    if (_jspx_th_c_url_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_7);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_7);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_8(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_8 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_8.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_8.setParent(null);
+    _jspx_th_c_url_8.setValue("/images/announcement_image.png");
+    int _jspx_eval_c_url_8 = _jspx_th_c_url_8.doStartTag();
+    if (_jspx_th_c_url_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_8);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_8);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_9(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_9 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_9.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_9.setParent(null);
+    _jspx_th_c_url_9.setValue("/images/announcement_image.png");
+    int _jspx_eval_c_url_9 = _jspx_th_c_url_9.doStartTag();
+    if (_jspx_th_c_url_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_9);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_9);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_10(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_10 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_10.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_10.setParent(null);
+    _jspx_th_c_url_10.setValue("/images/announcement_image.png");
+    int _jspx_eval_c_url_10 = _jspx_th_c_url_10.doStartTag();
+    if (_jspx_th_c_url_10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_10);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_10);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_11(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_11 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_11.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_11.setParent(null);
+    _jspx_th_c_url_11.setValue("/images/ourWebApp_image.jpg");
+    int _jspx_eval_c_url_11 = _jspx_th_c_url_11.doStartTag();
+    if (_jspx_th_c_url_11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_11);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_11);
     return false;
   }
 }

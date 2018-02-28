@@ -10,8 +10,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,86 +27,26 @@ public class AppController {
 
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView redirect() {
-
-		ModelAndView model1 = new ModelAndView("index");
+	public ModelAndView welcome(HttpServletRequest req) {
+		HttpSession session = req.getSession(false);
+		ModelAndView model1;
+		if (session==null)
+			model1 = new ModelAndView("index");
+		else {
+			if (session.getAttribute("provider") != null || session.getAttribute("admin") != null)
+				model1 = new ModelAndView("redirect");
+			else
+				model1 = new ModelAndView("index");
+		}
 		return model1;
 	}
 	
 
 
-	
-	@RequestMapping(value = "/loginClient", method = RequestMethod.POST)
-	@ResponseBody
-	public RESTclass submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest req) {
-		
-		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
-
-		try {
-			Optional<Client> optional = dbAccess.getClientByUsername(username);
-			Client c = optional.orElseThrow(() -> new Exception("User Not Found"));
-			if(encrypter.encryptMatch(password,c.getPassword())) {
-                HttpSession session = req.getSession();
-				session.setMaxInactiveInterval(3*60*60);
-				session.setAttribute("client", c);
-				return new RESTclass(true, c.getUsername() , c.getWallet());
-            }
-            else throw new Exception("Wrong password");
-		}
-		catch (Exception e){
-			return new RESTclass(false , e.getMessage() , 1.5 );
-		}
-	}
-	
-	@RequestMapping(value = "/login/{type}", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, @PathVariable("type") String loginType, HttpServletRequest req) {
-
-	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
-
-		ModelAndView model1 = new ModelAndView("AdmissionSuccess");
-
-	    try {
-			if (loginType.equals("provider")){
-				Optional<Provider> optional = dbAccess.getProviderByUsername(username);
-				Provider p = optional.orElseThrow(() -> new Exception("User Not Found"));
-				if(encrypter.encryptMatch(password,p.getPassword())) {                
-                	HttpSession session = req.getSession();
-					session.setMaxInactiveInterval(3*60*60);
-					session.setAttribute("provider", p);
-                	model1.addObject("cookie1", p.getUsername());
-                	model1.addObject("cookie2", p.getPassword());
-					model1.addObject("message", "    and logged in with type:" + loginType);
-                	return model1;
-            	}	
-            	else throw new Exception("Wrong password");
-			}
-			else{
-				Optional<Admin> optional = dbAccess.getAdminByUsername(username);
-				Admin a = optional.orElseThrow(() -> new Exception("User Not Found"));
-				if(encrypter.encryptMatch(password,a.getPassword())) {                
-                	HttpSession session = req.getSession();
-					session.setMaxInactiveInterval(3*60*60);
-					session.setAttribute("admin", a);
-                	model1.addObject("cookie1", a.getUsername());
-                	model1.addObject("cookie2", a.getPassword());
-					model1.addObject("message", "    and logged in with type:" + loginType);
-                	return model1;
-				}
-				else throw new Exception("Wrong password");
-			}
-		}
-		catch (Exception e){
-			model1.addObject("cookie1", e.getMessage());
-			model1.addObject("cookie2", e.getMessage());
-			model1.addObject("message", loginType);
-			return model1;
-		}
-	}
 
 
 
+/*--------------------------------------------------------------------	Admin/Provide Logout	------------------------------------------ */
 
 	@RequestMapping(value = "/logoutStrong", method = RequestMethod.GET)
 	public String logout(HttpServletRequest req){
@@ -119,7 +57,7 @@ public class AppController {
 
 
 
-
+/*--------------------------------------------------------------------	Register	------------------------------------------ */
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView redirectToReg() {
@@ -130,6 +68,7 @@ public class AppController {
 
 
 
+/*--------------------------------------------------------------------	Create Client	------------------------------------------ */
 
 	@RequestMapping(value = "/registerClient", method = RequestMethod.POST)
 	public ModelAndView registerForm(@ModelAttribute("client1") Client client1) {
@@ -146,6 +85,8 @@ public class AppController {
 
 
 
+
+/*--------------------------------------------------------------------	Create Provider 	------------------------------------------ */
 
 	@RequestMapping(value = "/registerProvider", method = RequestMethod.POST)
 	public ModelAndView registerForm(@ModelAttribute("provider1") Provider provider1) {
@@ -178,27 +119,46 @@ public class AppController {
 
 
 
+/*--------------------------------------------------------------------	Client Profile 	------------------------------------------ */
 	
 	@RequestMapping(value = "/myProfile", method = RequestMethod.GET)
 	public ModelAndView getProfile(HttpServletRequest req) {
-		ModelAndView model1 = new ModelAndView("clientProfile");
+		ModelAndView model1;
 		HttpSession session = req.getSession(false);
-		Client c = (Client) session.getAttribute("client");
-		model1.addObject("client1",c);
+		if (session==null)
+			model1 = new ModelAndView("index");
+		else {
+			if (session.getAttribute("client") != null)
+			model1 = new ModelAndView("clientProfile");
+		else
+			model1 = new ModelAndView("redirect");
+		}
 		return model1;
 	}
 
 
 
+/*--------------------------------------------------------------------	Buy Points	------------------------------------------ */
 	
 	@RequestMapping(value = "/buyPoints", method = RequestMethod.GET)
 	public ModelAndView getbuyPoints(HttpServletRequest req) {
-		ModelAndView model1 = new ModelAndView("buyPoints");
+		ModelAndView model1;
 		HttpSession session = req.getSession(false);
+		if (session==null)
+			model1 = new ModelAndView("index");
+		else{		
+			if (session.getAttribute("client") != null)
+				model1 = new ModelAndView("buyPoints");
+			else
+				model1 = new ModelAndView("redirect");
+		}
 		Client c = (Client) session.getAttribute("client");
 		model1.addObject("client1",c);
 		return model1;
 	}
+
+
+
 
 	@RequestMapping(value = "/Points", method = RequestMethod.POST)
 	public ModelAndView getPoints(@RequestParam("money") double money,HttpServletRequest req) throws Exception{
@@ -216,6 +176,9 @@ public class AppController {
 		//catch(Exception e){System.out.print(e.getMessage());}
 	}
 
+
+
+/*--------------------------------------------------------------------	Admin Page 	------------------------------------------ */
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String getAdminPage() {

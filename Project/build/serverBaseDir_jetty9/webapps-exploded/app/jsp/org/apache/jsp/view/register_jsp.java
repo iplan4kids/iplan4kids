@@ -11,7 +11,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_spring_url_var_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -20,11 +20,11 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
-    _jspx_tagPool_spring_url_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
-    _jspx_tagPool_spring_url_var_value_nobody.release();
+    _jspx_tagPool_c_url_value_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -68,17 +68,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("    ");
-      if (_jspx_meth_spring_url_0(_jspx_page_context))
-        return;
-      out.write('\n');
-      out.write('	');
-      if (_jspx_meth_spring_url_1(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myCss}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(" type=\"text/css\">\n");
+      out.write("     <link rel=\"stylesheet\" href=\"pages/styles.css\" type=\"text/css\">\n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">    \n");
@@ -87,8 +77,9 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <div class=\"pageHeader row\">\t\t\n");
       out.write("\t\t<div class=\"JumboLogo\" >\n");
       out.write("\t\t\t<img  src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png\"/>\n");
+      if (_jspx_meth_c_url_0(_jspx_page_context))
+        return;
+      out.write("\" />\n");
       out.write("\t\t\t<h2 style=\"margin:auto 0; color:white\">Iplan4kids<strong><sub style=\"font-size:15px; color:white\"> by Iplan</sub></strong></h2>            \n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
@@ -98,9 +89,10 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container-fluid\"> \n");
       out.write("            <div class=\"navbar-header\">\n");
       out.write("                <a class=\"navbar-left\" href=\"/app/\">\n");
-      out.write("                    <img src=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png align=\"center\" width=\"50\">\n");
+      out.write("                    <img src=\"");
+      if (_jspx_meth_c_url_1(_jspx_page_context))
+        return;
+      out.write("\" align=\"center\" width=\"50\"/>\n");
       out.write("                </a>\n");
       out.write("                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n");
       out.write("                    <span class=\"icon-bar\"></span>\n");
@@ -158,7 +150,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t<div class=\"panel-body\">\n");
       out.write("\t\t\t\t\t\t<div class=\"row\">\n");
       out.write("\t\t\t\t\t\t\t<div class=\"col-lg-12\">\n");
-      out.write("\t\t\t\t\t\t\t\t<form id=\"register1-form\" action=\"/app/registerClient\" method=\"post\" role=\"form\" style=\"display: block;\">\n");
+      out.write("\t\t\t\t\t\t\t\t<form id=\"register1-form\" action=\"/app/registerDone\" method=\"post\" role=\"form\" style=\"display: block;\">\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"first_name\" id=\"first_name\" tabindex=\"1\" class=\"form-control\" placeholder=\"Όνομα\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
@@ -172,16 +164,26 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"email\" name=\"email\" id=\"email\" tabindex=\"1\" class=\"form-control\" placeholder=\"Email\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pattern=\"^\\d{5}$\" name=\"postal_code\" id=\"postal_code\" tabindex=\"1\" class=\"form-control\" placeholder=\"Ταχυδρομικός Κωδικας\" value=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input id=\"autocomplete\" placeholder=\"Τοποθεσία\" type=\"text\" class=\"form-control\" name=\"\" value=\"\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<span id=\"geowrong\" style=\"color:red;\" class=\"help-block\"></span>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"postal_code\" id=\"postal_code\" class=\"form-control\" placeholder=\"Ταχυδρομικός Κωδικας\" value=\"\" required=\"required\" disabled>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"city\" id=\"city\" tabindex=\"1\" class=\"form-control\" placeholder=\"Περιοχή\" value=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"city\" id=\"locality\" class=\"form-control\" placeholder=\"Περιοχή\" value=\"\" required=\"required\" disabled>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address\" id=\"address\" tabindex=\"1\" class=\"form-control\" placeholder=\"Oδός\" value=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address\" id=\"route\" class=\"form-control\" placeholder=\"Oδός\" value=\"\" required=\"required\" disabled>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address_num\" pattern=\"[a-zA-Z0-9]+\" id=\"address_num\" tabindex=\"1\" class=\"form-control\" placeholder=\"Αριθμός Οδού\" value=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address_num\" id=\"street_number\" class=\"form-control\" placeholder=\"Αριθμός Οδού\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"lat\" id=\"lat\" class=\"form-control\" placeholder=\"Γεωγραφικό πλάτος\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"lng\" id=\"lng\" class=\"form-control\" placeholder=\"Γεωγραφικό μήκος\" value=\"\" required=\"required\" disabled>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"username\" pattern=\"[a-zA-Z0-9]+\" id=\"username\" tabindex=\"1\" class=\"form-control\" placeholder=\"Username\" value=\"\" required=\"required\">\n");
@@ -200,7 +202,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t</form>\n");
-      out.write("\t\t\t\t\t\t\t\t<form id=\"register-form\" action=\"/app/registerProvider\" method=\"post\" role=\"form\" style=\"display: none;\">\n");
+      out.write("\t\t\t\t\t\t\t\t<form id=\"register-form\" action=\"/app/registerDone\" method=\"post\" role=\"form\" style=\"display: none;\">\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"company_name\" id=\"company_name\" tabindex=\"1\" class=\"form-control\" placeholder=\"Επωνυμία Επιχείρησης\" value=\"\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
@@ -214,7 +216,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"email\" name=\"email\" id=\"email\" tabindex=\"1\" class=\"form-control\" placeholder=\"Email\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"tel\" pattern=\"^\\d{10}$\" name=\"phone\" id=\"phone\" tabindex=\"1\" class=\"form-control\" placeholder=\"Τηλέφωνο\" value=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"tel\" pattern=\"^\\d{10}$\" name=\"tel\" id=\"tel\" tabindex=\"1\" class=\"form-control\" placeholder=\"Τηλέφωνο\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"tel\" pattern=\"^\\d{10}$\" name=\"m_phone\" id=\"m_phone\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κινητό Τηλέφωνο\" value=\"\" required=\"required\">\n");
@@ -225,26 +227,36 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"iban\" id=\"iban\" tabindex=\"1\" class=\"form-control\" placeholder=\"ΙΒΑΝ\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pattern=\"^\\d{5}$\" name=\"postal_code\" id=\"postal_code\" tabindex=\"1\" class=\"form-control\" placeholder=\"Ταχυδρομικός Κωδικας\" value=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\"><div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input id=\"autocomplete2\" placeholder=\"Τοποθεσία\" type=\"text\" class=\"form-control\" name=\"\" value=\"\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"city\" id=\"city\" tabindex=\"1\" class=\"form-control\" placeholder=\"Περιοχή\" value=\"\" required=\"required\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address\" id=\"address\" tabindex=\"1\" class=\"form-control\" placeholder=\"Oδός\" value=\"\" required=\"required\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address_num\" pattern=\"[a-zA-Z0-9]+\" id=\"address_num\" tabindex=\"1\" class=\"form-control\" placeholder=\"Αριθμός Οδού\" value=\"\" required=\"required\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<span id=\"geowrong2\" style=\"color:red;\" class=\"help-block\"></span>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"postal_code\" id=\"postal_code\" class=\"form-control\" placeholder=\"Ταχυδρομικός Κωδικας\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"city\" id=\"locality\" class=\"form-control\" placeholder=\"Περιοχή\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address\" id=\"route\" class=\"form-control\" placeholder=\"Oδός\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"address_num\" id=\"street_number\" class=\"form-control\" placeholder=\"Αριθμός Οδού\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"lat\" id=\"lat\" class=\"form-control\" placeholder=\"Γεωγραφικό πλάτος\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"lng\" id=\"lng\" class=\"form-control\" placeholder=\"Γεωγραφικό μήκος\" value=\"\" required=\"required\" disabled>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"username\" pattern=\"[a-zA-Z0-9]+\" id=\"username\" tabindex=\"1\" class=\"form-control\" placeholder=\"Username\" value=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"password\" onkeyup='check1();' id=\"password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"password1\" onkeyup='check1();' id=\"password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Κωδικός\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"confirm_password\" onkeyup='check1();' id=\"confirm_password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Επιβεβαίωση Κωδικού\" value=\"\" style=\"\" required=\"required\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"password\" name=\"confirm_password1\" onkeyup='check1();' id=\"confirm_password1\" tabindex=\"1\" class=\"form-control\" placeholder=\"Επιβεβαίωση Κωδικού\" value=\"\" style=\"\" required=\"required\">\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div id=\"button-row\" class=\"row\">\n");
@@ -261,7 +273,6 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
-      out.write("\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> \n");
       out.write("    <footer class=\"text-center\">\n");
@@ -356,16 +367,9 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->\n");
-      out.write("\t");
-      if (_jspx_meth_spring_url_2(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("    <script src = ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myJs}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/scripts.js type = \"text/javascript\"></script>\n");
-      out.write("\t<script src = ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myJs}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/register.js type = \"text/javascript\"></script>\n");
+      out.write("\t<script src = \"pages/scripts.js\" type = \"text/javascript\"></script>\n");
+      out.write("\t<script src = \"pages/register.js\" type = \"text/javascript\"></script>\n");
+      out.write("\t<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete\" async defer></script>\n");
       out.write("    </body>\n");
       out.write("\n");
       out.write("</html>\n");
@@ -382,84 +386,39 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
   }
 
-  private boolean _jspx_meth_spring_url_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_0 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_0.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_0.setParent(null);
-    _jspx_th_spring_url_0.setValue("/images");
-    _jspx_th_spring_url_0.setVar("myImages");
-    int[] _jspx_push_body_count_spring_url_0 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_0 = _jspx_th_spring_url_0.doStartTag();
-      if (_jspx_th_spring_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_0.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_0);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent(null);
+    _jspx_th_c_url_0.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+      return true;
     }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
     return false;
   }
 
-  private boolean _jspx_meth_spring_url_1(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_1 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_1.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_1.setParent(null);
-    _jspx_th_spring_url_1.setValue("/pages/styles.css");
-    _jspx_th_spring_url_1.setVar("myCss");
-    int[] _jspx_push_body_count_spring_url_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_1 = _jspx_th_spring_url_1.doStartTag();
-      if (_jspx_th_spring_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_1.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_1);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_1.setParent(null);
+    _jspx_th_c_url_1.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_1 = _jspx_th_c_url_1.doStartTag();
+    if (_jspx_th_c_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
+      return true;
     }
-    return false;
-  }
-
-  private boolean _jspx_meth_spring_url_2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_2 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_2.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_2.setParent(null);
-    _jspx_th_spring_url_2.setValue("/pages");
-    _jspx_th_spring_url_2.setVar("myJs");
-    int[] _jspx_push_body_count_spring_url_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_2 = _jspx_th_spring_url_2.doStartTag();
-      if (_jspx_th_spring_url_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_2.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_2);
-    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
     return false;
   }
 }

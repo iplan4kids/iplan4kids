@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="el">
@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <spring:url value="/images"  var="myImages" />
-	<spring:url value="/pages/styles.css"  var="myCss" />
-    <link rel="stylesheet" href=${myCss} type="text/css">
+     <link rel="stylesheet" href="pages/styles.css" type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">    
@@ -25,7 +23,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">		
 		<div class="JumboLogo" >
-			<img  src="${myImages}/iplan.png"/>
+			<img  src="<c:url value='/images/iplan.png' />" />
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>            
 		</div>
 	</div>
@@ -35,7 +33,7 @@
         <div class="container-fluid"> 
             <div class="navbar-header">
                 <a class="navbar-left" href="/app/">
-                    <img src=${myImages}/iplan.png align="center" width="50">
+                    <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -93,7 +91,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="register1-form" action="/app/registerClient" method="post" role="form" style="display: block;">
+								<form id="register1-form" action="/app/registerDone" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="" required="required">
 									</div>
@@ -107,16 +105,26 @@
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" pattern="^\d{5}$" name="postal_code" id="postal_code" tabindex="1" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required">
+										<input id="autocomplete" placeholder="Τοποθεσία" type="text" class="form-control" name="" value="">
+									</div>
+									<span id="geowrong" style="color:red;" class="help-block"></span>
+									<div class="form-group">
+										<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" disabled>
 									</div>
 									<div class="form-group">
-										<input type="text" name="city" id="city" tabindex="1" class="form-control" placeholder="Περιοχή" value="" required="required">
+										<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" disabled>
 									</div>
 									<div class="form-group">
-										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Oδός" value="" required="required">
+										<input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" disabled>
 									</div>
 									<div class="form-group">
-										<input type="text" name="address_num" pattern="[a-zA-Z0-9]+" id="address_num" tabindex="1" class="form-control" placeholder="Αριθμός Οδού" value="" required="required">
+										<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" disabled>
+									</div>
+									<div class="form-group">
+										<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" disabled>
+									</div>
+									<div class="form-group">
+										<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" disabled>
 									</div>
 									<div class="form-group">
 										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
@@ -135,7 +143,7 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="/app/registerProvider" method="post" role="form" style="display: none;">
+								<form id="register-form" action="/app/registerDone" method="post" role="form" style="display: none;">
 									<div class="form-group">
 										<input type="text" name="company_name" id="company_name" tabindex="1" class="form-control" placeholder="Επωνυμία Επιχείρησης" value="">
 									</div>
@@ -149,7 +157,7 @@
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="tel" pattern="^\d{10}$" name="phone" id="phone" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
+										<input type="tel" pattern="^\d{10}$" name="tel" id="tel" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
 									</div>
 									<div class="form-group">
 										<input type="tel" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Κινητό Τηλέφωνο" value="" required="required">
@@ -160,26 +168,36 @@
 									<div class="form-group">
 										<input type="text" name="iban" id="iban" tabindex="1" class="form-control" placeholder="ΙΒΑΝ" value="" required="required">
 									</div>
-<div class="form-group">
-										<input type="text" pattern="^\d{5}$" name="postal_code" id="postal_code" tabindex="1" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required">
+									<div class="form-group"><div class="form-group">
+										<input id="autocomplete2" placeholder="Τοποθεσία" type="text" class="form-control" name="" value="">
 									</div>
-									<div class="form-group">
-										<input type="text" name="city" id="city" tabindex="1" class="form-control" placeholder="Περιοχή" value="" required="required">
-									</div>
-									<div class="form-group">
-										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Oδός" value="" required="required">
-									</div>
-									<div class="form-group">
-										<input type="text" name="address_num" pattern="[a-zA-Z0-9]+" id="address_num" tabindex="1" class="form-control" placeholder="Αριθμός Οδού" value="" required="required">
-									</div>
+										<span id="geowrong2" style="color:red;" class="help-block"></span>
+										<div class="form-group">
+											<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" disabled>
+										</div>
+										<div class="form-group">
+											<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" disabled>
+										</div>
+										<div class="form-group">
+											<input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" disabled>
+										</div>
+										<div class="form-group">
+											<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" disabled>
+										</div>
+										<div class="form-group">
+											<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" disabled>
+										</div>
+										<div class="form-group">
+											<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" disabled>
+										</div>
 									<div class="form-group">
 										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+										<input type="password" name="password1" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm_password" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
+										<input type="password" name="confirm_password1" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
 									</div>
 									<div class="form-group">
 										<div id="button-row" class="row">
@@ -196,7 +214,6 @@
 			</div>
 		</div>
 	</div>
-
 
     <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> 
     <footer class="text-center">
@@ -291,9 +308,9 @@
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-	<spring:url value="/pages"  var="myJs" />
-    <script src = ${myJs}/scripts.js type = "text/javascript"></script>
-	<script src = ${myJs}/register.js type = "text/javascript"></script>
+	<script src = "pages/scripts.js" type = "text/javascript"></script>
+	<script src = "pages/register.js" type = "text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete" async defer></script>
     </body>
 
 </html>

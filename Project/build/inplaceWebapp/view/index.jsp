@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page import="gr.ntua.ece.softeng17b.data.Client" %>
 <% if (session.getAttribute("client") == null){
 		session.setAttribute("notloggedIn","list-item");
@@ -24,9 +25,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <spring:url value="/images"  var="myImages" />
-	<spring:url value="/pages/styles.css"  var="myCss" />
-    <link rel="stylesheet" href=${myCss} type="text/css">
+    <link rel="stylesheet" href="pages/styles.css" type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">    
@@ -34,7 +33,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">		
 		<div class="JumboLogo" >
-			<img  src=${myImages}/iplan.png />
+			<img  src="<c:url value='/images/iplan.png' />" />
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>            
 		</div>
 	</div>
@@ -44,7 +43,7 @@
         <div class="container-fluid"> 
             <div class="navbar-header">
                 <a class="navbar-left" href="/app/">
-                    <img src=${myImages}/iplan.png align="center" width="50">
+                    <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -104,7 +103,7 @@
                 <div class="carousel-inner">
             
                 <div class="item active">
-                    <img src="${myImages}/test_image.jpg" alt="Image1" style="width:100%;">
+                    <img src="<c:url value='/images/test_image.jpg'/>" alt="Image1" style="width:100%;">
                     <div class="carousel-caption">
                     <h3>asdfsd</h3>
                     <p>adsasdfasdf</p>
@@ -112,7 +111,7 @@
                 </div>
             
                 <div class="item">
-                    <img src="${myImages}/test_image.jpg" alt="Image2" style="width:100%;" >
+                    <img src="<c:url value='/images/test_image.jpg'/>" alt="Image2" style="width:100%;">
                     <div class="carousel-caption">
                     <h3>asdfasdf</h3>
                     <p>adsfasdfasdf</p>
@@ -120,7 +119,7 @@
                 </div>
                 
                 <div class="item">
-                    <img src="${myImages}/test_image.jpg" alt="Image3" style="width:100%;" >
+                    <img src="<c:url value='/images/test_image.jpg'/>" alt="Image3" style="width:100%;">
                     <div class="carousel-caption">
                     <h3>sdfasdf</h3>
                     <p>asdfasdf</p>
@@ -150,7 +149,7 @@
         <div align="center" class="col-sm-3">                            
             <div class="panel ourCompany">
                 <h2 align="center">H εταιρεία</h2>
-                <div class="panel-thumbnail"><img src="${myImages}/ourCompany_image.jpg" class="img-responsive img-rounded"></div>
+                <div class="panel-thumbnail"><img src="<c:url value='/images/ourCompany_image.jpg'/>" class="img-responsive img-rounded"></div>
                 <div class="panel-body">
                     <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd
                         adsasdas ddasd as d as da sd asd as dasdasd a dsads  as da sddas
@@ -170,7 +169,7 @@
 
                 <div class="panel-body latestNode">
                     <div class="latestVd">
-                        <img src="${myImages}/announcement_image.png" class="img-responsive"><div class="latestOverlay"></div>
+                        <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                     </div>
                     <div class="latestTxt">
                         <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
@@ -182,7 +181,7 @@
 
                 <div class="panel-body latestNode">
                     <div class="latestVd">
-                        <img src="${myImages}/announcement_image.png" class="img-responsive"><div class="latestOverlay"></div>
+                        <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                     </div>
                     <div class="latestTxt">
                         <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
@@ -194,7 +193,7 @@
 
                 <div class="panel-body latestNode">
                     <div class="latestVd">
-                        <img src="${myImages}/announcement_image.png" class="img-responsive"><div class="latestOverlay"></div>
+                        <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                     </div>
                     <div class="latestTxt">
                         <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
@@ -206,7 +205,7 @@
 
                 <div class="panel-body latestNode">
                     <div class="latestVd">
-                        <img src="${myImages}/announcement_image.png" class="img-responsive"><div class="latestOverlay"></div>
+                        <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                     </div>
                     <div class="latestTxt">
                         <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
@@ -218,7 +217,7 @@
 
                 <div class="panel-body latestNode">
                     <div class="latestVd">
-                        <img src="${myImages}/announcement_image.png" class="img-responsive"><div class="latestOverlay"></div>
+                        <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                     </div>
                     <div class="latestTxt">
                         <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
@@ -236,7 +235,7 @@
         <div class="col-sm-3">                            
                 <div class="panel panel-default ourWebApp">
                     <h2 align="center">H εφαρμογή</h2>
-                    <div class="panel-thumbnail"><img src="${myImages}/ourWebApp_image.jpg" class="img-responsive img-rounded"></div>
+                    <div class="panel-thumbnail"><img src="<c:url value='/images/ourWebApp_image.jpg'/>" class="img-responsive img-rounded"></div>
                     <div class="panel-body">
                         <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd
                             adsasdas ddasd as d as da sd asd as dasdasd a dsads  as da sddas
@@ -386,8 +385,9 @@
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-    <spring:url value="/pages"  var="myJs" />
-    <script src = ${myJs}/scripts.js type = "text/javascript"></script>
+   <!-- <spring:url value="/pages"  var="myJs" />-->
+    <!--<script src = ${myJs}/scripts.js type = "text/javascript"></script>-->
+	<script src = "pages/scripts.js" type = "text/javascript"></script>
     </body>
 
 </html>
