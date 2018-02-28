@@ -67,7 +67,7 @@ else{
                 </ul>
                 <!-- Right part of Navbar -->
                 <ul id="logregprof" class="nav navbar-nav navbar-right">
-                    <li class="notlogged" style="display:${notloggedIn}" ><a href="register.html"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
+                    <li class="notlogged" style="display:${notloggedIn}" ><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
                     <li class="notlogged" style="display:${notloggedIn}"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
                     <li class="dropdown"><a id="logged1" style="display:${loggedIn}" href="#"><span class="glyphicon glyphicon-piggy-bank"></span> Πορτοφόλι (<% if (session.getAttribute("client") == null){ %>%WALLET_POINTS%<%} else {%> <%=String.format("%.2f",((Client) session.getAttribute("client")).getWallet())%> <% }%>)</a></li>
 

@@ -1,4 +1,4 @@
-package org.apache.jsp.view;
+package org.apache.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -369,7 +369,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->\n");
       out.write("\t<script src = \"pages/scripts.js\" type = \"text/javascript\"></script>\n");
       out.write("\t<script src = \"pages/register.js\" type = \"text/javascript\"></script>\n");
-      out.write("\t<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5eP199GDotlWhbsMppKyTSVKQJlS4o&language=el&libraries=places&callback=initAutocomplete\" async defer></script>\n");
+      out.write("\t<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete\" async defer></script>\n");
       out.write("    </body>\n");
       out.write("\n");
       out.write("</html>\n");

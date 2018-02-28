@@ -1,5 +1,9 @@
 package gr.ntua.ece.softeng17b.data;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Provider extends User {
 
     private String afm;
@@ -10,6 +14,7 @@ public class Provider extends User {
     private String city;
     private String address;
     private String address_num;
+    private Timestamp subscription;
 
 
     //GETTERS
@@ -74,6 +79,10 @@ public class Provider extends User {
         return email;
     }
 
+    public Timestamp getSubscription() {
+        return subscription;
+    }
+
     // SETTERS
 
     public void setId(int id) {
@@ -135,6 +144,12 @@ public class Provider extends User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setSubscription(Timestamp subscription){
+        this.subscription = subscription;
+    }
+
+    //-------------------------------------------------
 
     public boolean login(){
         return true;

@@ -310,7 +310,7 @@
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
 	<script src = "pages/scripts.js" type = "text/javascript"></script>
 	<script src = "pages/register.js" type = "text/javascript"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5eP199GDotlWhbsMppKyTSVKQJlS4o&language=el&libraries=places&callback=initAutocomplete" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete" async defer></script>
     </body>
 
 </html>

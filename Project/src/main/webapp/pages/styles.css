@@ -259,6 +259,7 @@ table.table th, table.table td {
 
 footer {
     position:absolute;
+    left: 0;
     bottom:0;
     width:100%;
     background-color: #222;

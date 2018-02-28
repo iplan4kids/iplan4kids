@@ -72,7 +72,7 @@
 
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-    <div  class="container">
+    <div  class="container" style="padding-bottom: 154px">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-register1">
@@ -91,7 +91,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="register1-form" action="/app/registerDone" method="post" role="form" style="display: block;">
+								<form id="register1-form" action="/app/registerClient" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="" required="required">
 									</div>
@@ -143,7 +143,7 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="/app/registerDone" method="post" role="form" style="display: none;">
+								<form id="register-form" action="/app/registerProvider" method="post" role="form" style="display: none;">
 									<div class="form-group">
 										<input type="text" name="company_name" id="company_name" tabindex="1" class="form-control" placeholder="Επωνυμία Επιχείρησης" value="">
 									</div>
@@ -310,7 +310,7 @@
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
 	<script src = "pages/scripts.js" type = "text/javascript"></script>
 	<script src = "pages/register.js" type = "text/javascript"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5eP199GDotlWhbsMppKyTSVKQJlS4o&language=el&libraries=places&callback=initAutocomplete" async defer></script>
     </body>
 
 </html>

@@ -4,6 +4,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 
 public class ProviderRowMapper implements RowMapper<Provider> {
     @Override
@@ -24,6 +26,7 @@ public class ProviderRowMapper implements RowMapper<Provider> {
         pr.setAddress(rs.getString("address"));
         pr.setAddress_num(rs.getString("address_num"));
         pr.setEmail(rs.getString("email"));
+        pr.setSubscription(rs.getTimestamp("subscription"));
 
 
         return pr;

@@ -3,7 +3,11 @@ package gr.ntua.ece.softeng17b.data;
 import javax.sql.DataSource;
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -197,6 +201,27 @@ public class DataAccess {
 
     public SearchResults searchEvents(String text, Long subject, Long distanceInKm, Location fromLoc, int from, int count) {
         return elastic.search(text, subject, true, distanceInKm, fromLoc, from, count);
+    }
+
+    public Timestamp renewSub(int months,long id)throws Exception{
+        //DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Optional<Provider> optional = getProvider(id);
+        Provider pr = optional.orElseThrow(() -> new Exception("Provider Not Found"));
+        Timestamp exists = pr.getSubscription();
+        Calendar cal = Calendar.getInstance();
+        if(cal.getTime().getTime() < exists.getTime()){
+            cal.setTimeInMillis(exists.getTime());
+        }
+        cal.add(Calendar.MONTH, months);
+        Date now = cal.getTime();
+        Timestamp toBase = new Timestamp(now.getTime());
+        String query = "update providers set subscription=? where prov_id=?";
+        jdbcTemplate.update(query, new Object[]{toBase, id});
+
+
+
+        //System.out.println(dateFormat.format(cal));
+        return null;
     }
 
 
