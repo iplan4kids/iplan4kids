@@ -5,7 +5,7 @@ html {
 }
 body {
 /* Margin bottom by footer height */
-
+    min-height: 100vh;
     padding-right : 0 !important;
 }
 /*------------------------------------------------- ADMIN TABLE STYLES ----------------------------------------------------------*/
@@ -235,11 +235,13 @@ table.table th, table.table td {
 }
 /*---------------------------------------------------GOOGLE MAPS -----------------------------------------------------------------*/
 #googleMap {
+
     width: 100%; /* Span the entire width of the screen */
     height: 400px; /* Set the height to 400 pixels */
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%); /* Change the color of the map to black and white */
     padding:10px;
+    margin-bottom: 154px;
 }
 
 
@@ -253,7 +255,12 @@ table.table th, table.table td {
 	margin-bottom:15px;
 }
 /*--------------------------------------------------- PAGE FOOTER -----------------------------------------------------------------*/
+
+
 footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
     background-color: #222;
     color: #f5f5f5;
     padding: 32px;

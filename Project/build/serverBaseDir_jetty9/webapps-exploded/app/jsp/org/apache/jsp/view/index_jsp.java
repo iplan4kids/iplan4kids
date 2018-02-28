@@ -160,7 +160,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<span class=\"caret\"></span></a>\n");
       out.write("    \t\t\t\t<ul class=\"dropdown-menu\">\n");
       out.write("    \t\t\t\t\t<li><a id=\"profile\" href=\"/app/myProfile\"><span class=\"glyphicon glyphicon-file\"></span>Τα στοιχεία μου</a></li>\n");
-      out.write("    \t\t\t\t\t<li><a id=\"wallet\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Αγορά πόντων</a></li>\n");
+      out.write("    \t\t\t\t\t<li><a id=\"wallet\" href=\"/app/buyPoints\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Αγορά πόντων</a></li>\n");
       out.write("    \t\t\t\t\t<li ><a  href=\"/app/logoutStrong\"><span id=\"logout\" class=\"glyphicon glyphicon-log-out\"></span>Αποσύνδεση</a></li>\n");
       out.write("    \t\t\t\t</ul>\n");
       out.write("    \t\t\t\t</li>\n");

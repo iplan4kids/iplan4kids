@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -191,11 +192,29 @@ public class AppController {
 
 	
 	@RequestMapping(value = "/buyPoints", method = RequestMethod.GET)
-	public String getbuyPoints() {
-		return "redirect:pages/buyPoints.html";
+	public ModelAndView getbuyPoints(HttpServletRequest req) {
+		ModelAndView model1 = new ModelAndView("buyPoints");
+		HttpSession session = req.getSession(false);
+		Client c = (Client) session.getAttribute("client");
+		model1.addObject("client1",c);
+		return model1;
 	}
 
+	@RequestMapping(value = "/Points", method = RequestMethod.POST)
+	public ModelAndView getPoints(@RequestParam("money") double money,HttpServletRequest req) throws Exception{
+		ModelAndView model1 = new ModelAndView("buyPoints");
+		HttpSession session = req.getSession(false);
+		Client c = (Client) session.getAttribute("client");
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 
+		//try {
+			double new_money = dbAccess.addWallet(c.getId(),money);
+			c.setWallet(new_money);
+			model1.addObject("client1", c);
+			return model1;
+		//}
+		//catch(Exception e){System.out.print(e.getMessage());}
+	}
 
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)

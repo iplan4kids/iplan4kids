@@ -61,7 +61,7 @@ public class DataAccess {
 
     public Optional<Client> getClient(Long id) {
         Long[] params = new Long[]{id};
-        List<Client> places = jdbcTemplate.query("select * from clients,wallet where user_id = ? and clients.user_id = wallet.user_id", params, new ClientRowMapper());
+        List<Client> places = jdbcTemplate.query("select * from clients,wallet where clients.user_id = ? and clients.user_id = wallet.user_id", params, new ClientRowMapper());
         if (places.size() == 1) {
             return Optional.of(places.get(0));
         } else {

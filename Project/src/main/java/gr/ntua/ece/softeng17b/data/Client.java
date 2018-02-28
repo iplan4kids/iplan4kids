@@ -1,5 +1,9 @@
 package gr.ntua.ece.softeng17b.data;
 
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
+
 public class Client extends User{
 
     private String postal_code;
@@ -111,4 +115,5 @@ public class Client extends User{
     }
 
     public boolean login(){return true;}
+
 }
