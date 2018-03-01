@@ -3,6 +3,7 @@ package org.apache.jsp.view;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import gr.ntua.ece.softeng17b.data.Client;
 
 public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -11,7 +12,7 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
 
   private static java.util.List<String> _jspx_dependants;
 
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_spring_url_var_value_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -20,11 +21,11 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
   }
 
   public void _jspInit() {
-    _jspx_tagPool_spring_url_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
-    _jspx_tagPool_spring_url_var_value_nobody.release();
+    _jspx_tagPool_c_url_value_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -54,6 +55,7 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"el\">\n");
       out.write("<head>\n");
@@ -68,17 +70,8 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("    ");
-      if (_jspx_meth_spring_url_0(_jspx_page_context))
-        return;
-      out.write('\n');
-      out.write('	');
-      if (_jspx_meth_spring_url_1(_jspx_page_context))
-        return;
       out.write("\n");
-      out.write("    <link rel=\"stylesheet\" href=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myCss}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(" type=\"text/css\">\n");
+      out.write("    <link rel=\"stylesheet\" href=\"pages/styles.css\" type=\"text/css\">\n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\n");
@@ -86,9 +79,10 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->\n");
       out.write("    <div class=\"pageHeader row\">\n");
       out.write("\t\t<div class=\"JumboLogo\" >\n");
-      out.write("\t\t\t<img  src=");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png />\n");
+      out.write("\t\t\t<img  src=\"");
+      if (_jspx_meth_c_url_0(_jspx_page_context))
+        return;
+      out.write("\" />\n");
       out.write("\t\t\t<h2 style=\"margin:auto 0; color:white\">Iplan4kids<strong><sub style=\"font-size:15px; color:white\"> by Iplan</sub></strong></h2>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
@@ -99,8 +93,9 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            <div class=\"navbar-header\">\n");
       out.write("                <a class=\"navbar-left\" href=\"/app/\">\n");
       out.write("                    <img src=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myImages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/iplan.png\" align=\"center\" width=\"50\">\n");
+      if (_jspx_meth_c_url_1(_jspx_page_context))
+        return;
+      out.write("\" align=\"center\" width=\"50\"/>\n");
       out.write("                </a>\n");
       out.write("                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n");
       out.write("                    <span class=\"icon-bar\"></span>\n");
@@ -112,21 +107,27 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                <!-- Left part of Navbar -->\n");
       out.write("                <ul class=\"nav navbar-nav navbar-left\">\n");
       out.write("                    <li>\n");
-      out.write("                        <a href=\"/app/events\"> Δραστηριότητες </a\n");
+      out.write("                        <a href=\"/app/events\"> Δραστηριότητες </a>\n");
       out.write("                    </li>\n");
       out.write("                </ul>\n");
       out.write("                <!-- Right part of Navbar -->\n");
-      out.write("                <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                      \t<li class=\"dropdown\">\n");
-      out.write("        \t\t\t\t\t\t\t<a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Όνομα Χρήστη\n");
-      out.write("        \t\t\t\t\t\t\t<span class=\"caret\"></span></a>\n");
-      out.write("        \t\t\t\t\t\t\t\t  <ul class=\"dropdown-menu\">\n");
-      out.write("        \t\t\t\t\t\t\t\t\t <li><a href=\"#\"><span class=\"octicon octicon-file\"></span>Τα στοιχεία μου</a></li>\n");
+      out.write("                <ul id=\"logregprof\" class=\"nav navbar-nav navbar-right\">\n");
+      out.write("                    <li class=\"dropdown\"><a id=\"logged1\" style=\"display:list-item\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span> Πορτοφόλι (");
+      out.print(String.format("%.2f",((Client) session.getAttribute("client")).getWallet()));
+      out.write(")</a></li>\n");
       out.write("\n");
-      out.write("        \t\t\t\t\t\t\t\t  </ul>\n");
-      out.write("        \t\t\t\t\t\t</li>\n");
-      out.write("        \t\t\t\t</ul>\n");
-      out.write("\t\t\t\t<!-- <ul class=\"nav navbar-nav navbar-right\">\n");
+      out.write("                    <li class=\"dropdown\">\n");
+      out.write("                        <a id=\"logged2\" class=\"dropdown-toggle\" style=\"display:list-item\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getUsername()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("<span class=\"caret\"></span></a>\n");
+      out.write("                        <ul class=\"dropdown-menu\">\n");
+      out.write("                            <li><a id=\"profile\" href=\"/app/myProfile\"><span class=\"glyphicon glyphicon-file\"></span>Τα στοιχεία μου</a></li>\n");
+      out.write("                            <li><a id=\"wallet\" href=\"/app/buyPoints\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Αγορά πόντων</a></li>\n");
+      out.write("                            <li ><a  href=\"/app/logoutStrong\"><span id=\"logout\" class=\"glyphicon glyphicon-log-out\"></span>Αποσύνδεση</a></li>\n");
+      out.write("                        </ul>\n");
+      out.write("                    </li>\n");
+      out.write("                </ul>\n");
+      out.write("                <ul class=\"nav navbar-nav navbar-right\">\n");
       out.write("                    <div class=\"search-form\">\n");
       out.write("                        <form class=\"navbar-form\" role=\"search\">\n");
       out.write("                            <div class=\"input-group\">\n");
@@ -137,7 +138,7 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                            </div>\n");
       out.write("                        </form>\n");
       out.write("                    </div>\n");
-      out.write("                </ul> -->\n");
+      out.write("                </ul>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("    </nav>\n");
@@ -152,13 +153,15 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            <span class=\"glyphicon glyphicon-user\"></span>\n");
       out.write("          </div>\n");
       out.write("          <div class=\"center col-sm-6\">\n");
-      out.write("            Όνομα Χρήστη\n");
+      out.write("              ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getUsername()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
       out.write("          </div>\n");
       out.write("        </div>\n");
       out.write("      </div>\n");
       out.write("    </div>\n");
       out.write("\n");
-      out.write("    <div class=\"row\">\n");
+      out.write("    <div class=\"row\" style=\"padding-bottom: 154px\">\n");
       out.write("      <div class=\"container\">\n");
       out.write("        <table class=\"profile table\">\n");
       out.write("          <tr>\n");
@@ -186,9 +189,15 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("</td>\n");
       out.write("          </tr>\n");
       out.write("          <tr>\n");
-      out.write("            <td>Τ.Κ:</td>\n");
+      out.write("            <td>Οδός:</td>\n");
       out.write("            <td>");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getPostal_code()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getAddress()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</td>\n");
+      out.write("          </tr>\n");
+      out.write("          <tr>\n");
+      out.write("            <td>Αριθμός:</td>\n");
+      out.write("            <td>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getAddress_num()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</td>\n");
       out.write("          </tr>\n");
       out.write("          <tr>\n");
@@ -197,6 +206,13 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getCity()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</td>\n");
       out.write("          </tr>\n");
+      out.write("          <tr>\n");
+      out.write("            <td>Τ.Κ:</td>\n");
+      out.write("            <td>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getPostal_code()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</td>\n");
+      out.write("          </tr>\n");
+      out.write("\n");
       out.write("        </table>\n");
       out.write("      </div>\n");
       out.write("    </div>\n");
@@ -249,13 +265,8 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    </div>\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->\n");
-      out.write("    ");
-      if (_jspx_meth_spring_url_2(_jspx_page_context))
-        return;
       out.write("\n");
-      out.write("    <script src = ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myJs}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/scripts.js type = \"text/javascript\"></script>\n");
+      out.write("    <script src = \"pages/scripts.js\" type = \"text/javascript\"></script>\n");
       out.write("    </body>\n");
       out.write("\n");
       out.write("</html>\n");
@@ -272,84 +283,39 @@ public final class clientProfile_jsp extends org.apache.jasper.runtime.HttpJspBa
     }
   }
 
-  private boolean _jspx_meth_spring_url_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_0 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_0.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_0.setParent(null);
-    _jspx_th_spring_url_0.setValue("/images");
-    _jspx_th_spring_url_0.setVar("myImages");
-    int[] _jspx_push_body_count_spring_url_0 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_0 = _jspx_th_spring_url_0.doStartTag();
-      if (_jspx_th_spring_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_0[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_0.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_0.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_0);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent(null);
+    _jspx_th_c_url_0.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+      return true;
     }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
     return false;
   }
 
-  private boolean _jspx_meth_spring_url_1(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_url_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_1 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_1.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_1.setParent(null);
-    _jspx_th_spring_url_1.setValue("/pages/styles.css");
-    _jspx_th_spring_url_1.setVar("myCss");
-    int[] _jspx_push_body_count_spring_url_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_1 = _jspx_th_spring_url_1.doStartTag();
-      if (_jspx_th_spring_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_1.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_1);
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_1.setParent(null);
+    _jspx_th_c_url_1.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_1 = _jspx_th_c_url_1.doStartTag();
+    if (_jspx_th_c_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
+      return true;
     }
-    return false;
-  }
-
-  private boolean _jspx_meth_spring_url_2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  spring:url
-    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_2 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_var_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
-    _jspx_th_spring_url_2.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_2.setParent(null);
-    _jspx_th_spring_url_2.setValue("/pages");
-    _jspx_th_spring_url_2.setVar("myJs");
-    int[] _jspx_push_body_count_spring_url_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_spring_url_2 = _jspx_th_spring_url_2.doStartTag();
-      if (_jspx_th_spring_url_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_spring_url_2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_spring_url_2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_spring_url_2.doFinally();
-      _jspx_tagPool_spring_url_var_value_nobody.reuse(_jspx_th_spring_url_2);
-    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
     return false;
   }
 }

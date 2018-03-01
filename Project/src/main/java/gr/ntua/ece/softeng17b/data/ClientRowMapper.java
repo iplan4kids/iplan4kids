@@ -20,6 +20,8 @@ public class ClientRowMapper implements RowMapper<Client> {
         cl.setAddress_num(rs.getString("address_num"));
         cl.setEmail(rs.getString("email"));
         cl.setWallet(rs.getDouble("balance"));
+        cl.setLongtitude(rs.getDouble("long"));
+        cl.setLatitude(rs.getDouble("lat"));
 
         return cl;
     }

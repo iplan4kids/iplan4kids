@@ -27,6 +27,8 @@ public class ProviderRowMapper implements RowMapper<Provider> {
         pr.setAddress_num(rs.getString("address_num"));
         pr.setEmail(rs.getString("email"));
         pr.setSubscription(rs.getTimestamp("subscription"));
+        pr.setLongtitude(rs.getDouble("long"));
+        pr.setLatitude(rs.getDouble("lat"));
 
 
         return pr;

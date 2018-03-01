@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page import="gr.ntua.ece.softeng17b.data.Client" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="el">
@@ -15,9 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <spring:url value="/images"  var="myImages" />
-	<spring:url value="/pages/styles.css"  var="myCss" />
-    <link rel="stylesheet" href=${myCss} type="text/css">
+
+    <link rel="stylesheet" href="pages/styles.css" type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -25,7 +25,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">
 		<div class="JumboLogo" >
-			<img  src=${myImages}/iplan.png />
+			<img  src="<c:url value='/images/iplan.png' />" />
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>
 		</div>
 	</div>
@@ -35,7 +35,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-left" href="/app/">
-                    <img src="${myImages}/iplan.png" align="center" width="50">
+                    <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -47,21 +47,23 @@
                 <!-- Left part of Navbar -->
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a href="/app/events"> Δραστηριότητες </a
+                        <a href="/app/events"> Δραστηριότητες </a>
                     </li>
                 </ul>
                 <!-- Right part of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                      	<li class="dropdown">
-        							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Όνομα Χρήστη
-        							<span class="caret"></span></a>
-        								  <ul class="dropdown-menu">
-        									 <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
+                <ul id="logregprof" class="nav navbar-nav navbar-right">
+                    <li class="dropdown"><a id="logged1" style="display:list-item" href="#"><span class="glyphicon glyphicon-piggy-bank"></span> Πορτοφόλι (<%=String.format("%.2f",((Client) session.getAttribute("client")).getWallet())%>)</a></li>
 
-        								  </ul>
-        						</li>
-        				</ul>
-				<!-- <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a id="logged2" class="dropdown-toggle" style="display:list-item" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>${client.getUsername()}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a id="profile" href="/app/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
+                            <li><a id="wallet" href="/app/buyPoints"><span class="glyphicon glyphicon-piggy-bank"></span>Αγορά πόντων</a></li>
+                            <li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
                         <form class="navbar-form" role="search">
                             <div class="input-group">
@@ -72,7 +74,7 @@
                             </div>
                         </form>
                     </div>
-                </ul> -->
+                </ul>
             </div>
         </div>
     </nav>
@@ -87,13 +89,13 @@
             <span class="glyphicon glyphicon-user"></span>
           </div>
           <div class="center col-sm-6">
-            Όνομα Χρήστη
+              ${client.getUsername()}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="padding-bottom: 154px">
       <div class="container">
         <table class="profile table">
           <tr>
@@ -113,13 +115,22 @@
             <td>${client.getEmail()}</td>
           </tr>
           <tr>
-            <td>Τ.Κ:</td>
-            <td>${client.getPostal_code()}</td>
+            <td>Οδός:</td>
+            <td>${client.getAddress()}</td>
+          </tr>
+          <tr>
+            <td>Αριθμός:</td>
+            <td>${client.getAddress_num()}</td>
           </tr>
           <tr>
             <td>Πόλη:</td>
             <td>${client.getCity()}</td>
           </tr>
+          <tr>
+            <td>Τ.Κ:</td>
+            <td>${client.getPostal_code()}</td>
+          </tr>
+
         </table>
       </div>
     </div>
@@ -172,8 +183,8 @@
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-    <spring:url value="/pages"  var="myJs" />
-    <script src = ${myJs}/scripts.js type = "text/javascript"></script>
+
+    <script src = "pages/scripts.js" type = "text/javascript"></script>
     </body>
 
 </html>

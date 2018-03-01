@@ -10,8 +10,8 @@ public class Client extends User{
     private String city;
     private String address;
     private String address_num;
-    private String latitude;
-    private String longtitude;
+    private double latitude;
+    private double longtitude;
     private double balance;
 
     // GETTERS
@@ -62,6 +62,14 @@ public class Client extends User{
 
     public double getWallet() {
         return balance;
+    }
+
+    public void setLongtitude(double longtitude) {
+        this.longtitude = longtitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     // SETTERS
@@ -116,4 +124,11 @@ public class Client extends User{
 
     public boolean login(){return true;}
 
+    public double getLongtitude() {
+        return longtitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
 }

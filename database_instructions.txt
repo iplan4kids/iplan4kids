@@ -4,5 +4,5 @@
     psql iplan4kidz_18a
     CREATE USER dataadmin WITH SUPERUSER LOGIN PASSWORD 'softeng_2018';
 4. Εισάγουμε το schema και τα δεδομένα της βάσης μέσω του αρχέιου initialDb που υπάρχει στο Ongoing branch του GitHub μέσω της εντολής 
-    psql iplan4kidz_18a < initialDb
+    psql --no-owner iplan4kidz_18a < initialDb
 5. Η βάση μας πρέπει να είναι έτοιμη για χρήση και η εφαρμογή να λειτουργεί κανονικά.

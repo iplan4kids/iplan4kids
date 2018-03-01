@@ -15,6 +15,8 @@ public class Provider extends User {
     private String address;
     private String address_num;
     private Timestamp subscription;
+    private double longtitude;
+    private double latitude;
 
 
     //GETTERS
@@ -83,6 +85,14 @@ public class Provider extends User {
         return subscription;
     }
 
+    public double getLongtitude() {
+        return longtitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
     // SETTERS
 
     public void setId(int id) {
@@ -147,6 +157,14 @@ public class Provider extends User {
 
     public void setSubscription(Timestamp subscription){
         this.subscription = subscription;
+    }
+
+    public void setLongtitude(double longtitude) {
+        this.longtitude = longtitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     //-------------------------------------------------

@@ -157,7 +157,7 @@ public class DataAccess {
         return new_id;
     }
 
-    public void createEvent(Event e){
+    /*public void createEvent(Event e){
         String tags = String.join(",",e.getTags());
         String images = String.join(",", e.getImages());
         Object[] params = new Object[]{e.getProv_id(),e.getTitle(),e.getDate(),e.getTickets(),e.getPrice(),e.getDescription(),tags,images};
@@ -167,7 +167,54 @@ public class DataAccess {
                 " values (?, DEFAULT, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update( SQL, params);
 
-    }
+    }*/
+
+/*    public Event createEvent(final Place place, final String title, final String description, final Long subject, int tickets) {
+
+        //Create the new event record using a prepared statement
+        PreparedStatementCreator psc = new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+                PreparedStatement ps = con.prepareStatement(
+                        "insert into event(place_id, title, description, subject, tickets) values(?, ?, ?, ?, ?)",
+                        Statement.RETURN_GENERATED_KEYS
+                );
+                ps.setLong(1, place.getId());
+                ps.setString(2, title);
+                ps.setString(3, description);
+                if (subject == null) {
+                    ps.setNull(4, Types.INTEGER);
+                }
+                else {
+                    ps.setLong(4, subject);
+                }
+                ps.setInt(5, tickets);
+                return ps;
+            }
+        };
+        GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
+        int cnt = jdbcTemplate.update(psc, keyHolder);
+
+        if (cnt == 1) {
+            //New row has been added
+            Event event = new Event(
+                    keyHolder.getKey().longValue(), //the newly created event id
+                    title,
+                    description,
+                    subject,
+                    tickets,
+                    place
+            );
+            //add it to elastic
+            elastic.add(event);
+
+            return event;
+
+        }
+        else {
+            throw new RuntimeException("Creation of event failed");
+        }
+    }*/
 
     public double addWallet(long id, double coins) throws Exception{
 
