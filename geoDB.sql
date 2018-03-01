@@ -15,14 +15,14 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -35,7 +35,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: admins; Type: TABLE; Schema: public; Owner: george
+-- Name: admins; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE admins (
@@ -49,10 +49,8 @@ CREATE TABLE admins (
 );
 
 
-ALTER TABLE admins OWNER TO george;
-
 --
--- Name: admins_admin_id_seq; Type: SEQUENCE; Schema: public; Owner: george
+-- Name: admins_admin_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE admins_admin_id_seq
@@ -64,17 +62,15 @@ CREATE SEQUENCE admins_admin_id_seq
     CACHE 1;
 
 
-ALTER TABLE admins_admin_id_seq OWNER TO george;
-
 --
--- Name: admins_admin_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: george
+-- Name: admins_admin_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE admins_admin_id_seq OWNED BY admins.admin_id;
 
 
 --
--- Name: clients; Type: TABLE; Schema: public; Owner: george
+-- Name: clients; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE clients (
@@ -94,10 +90,8 @@ CREATE TABLE clients (
 );
 
 
-ALTER TABLE clients OWNER TO george;
-
 --
--- Name: clients_user_id_seq; Type: SEQUENCE; Schema: public; Owner: george
+-- Name: clients_user_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE clients_user_id_seq
@@ -109,17 +103,15 @@ CREATE SEQUENCE clients_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE clients_user_id_seq OWNER TO george;
-
 --
--- Name: clients_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: george
+-- Name: clients_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE clients_user_id_seq OWNED BY clients.user_id;
 
 
 --
--- Name: events; Type: TABLE; Schema: public; Owner: george
+-- Name: events; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE events (
@@ -137,10 +129,8 @@ CREATE TABLE events (
 );
 
 
-ALTER TABLE events OWNER TO george;
-
 --
--- Name: events_event_id_seq; Type: SEQUENCE; Schema: public; Owner: george
+-- Name: events_event_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE events_event_id_seq
@@ -152,17 +142,15 @@ CREATE SEQUENCE events_event_id_seq
     CACHE 1;
 
 
-ALTER TABLE events_event_id_seq OWNER TO george;
-
 --
--- Name: events_event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: george
+-- Name: events_event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE events_event_id_seq OWNED BY events.event_id;
 
 
 --
--- Name: providers; Type: TABLE; Schema: public; Owner: george
+-- Name: providers; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE providers (
@@ -187,10 +175,8 @@ CREATE TABLE providers (
 );
 
 
-ALTER TABLE providers OWNER TO george;
-
 --
--- Name: providers_prov_id_seq; Type: SEQUENCE; Schema: public; Owner: george
+-- Name: providers_prov_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE providers_prov_id_seq
@@ -202,17 +188,15 @@ CREATE SEQUENCE providers_prov_id_seq
     CACHE 1;
 
 
-ALTER TABLE providers_prov_id_seq OWNER TO george;
-
 --
--- Name: providers_prov_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: george
+-- Name: providers_prov_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE providers_prov_id_seq OWNED BY providers.prov_id;
 
 
 --
--- Name: wallet; Type: TABLE; Schema: public; Owner: george
+-- Name: wallet; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE wallet (
@@ -221,38 +205,36 @@ CREATE TABLE wallet (
 );
 
 
-ALTER TABLE wallet OWNER TO george;
-
 --
--- Name: admins admin_id; Type: DEFAULT; Schema: public; Owner: george
+-- Name: admins admin_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY admins ALTER COLUMN admin_id SET DEFAULT nextval('admins_admin_id_seq'::regclass);
 
 
 --
--- Name: clients user_id; Type: DEFAULT; Schema: public; Owner: george
+-- Name: clients user_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY clients ALTER COLUMN user_id SET DEFAULT nextval('clients_user_id_seq'::regclass);
 
 
 --
--- Name: events event_id; Type: DEFAULT; Schema: public; Owner: george
+-- Name: events event_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY events ALTER COLUMN event_id SET DEFAULT nextval('events_event_id_seq'::regclass);
 
 
 --
--- Name: providers prov_id; Type: DEFAULT; Schema: public; Owner: george
+-- Name: providers prov_id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY providers ALTER COLUMN prov_id SET DEFAULT nextval('providers_prov_id_seq'::regclass);
 
 
 --
--- Data for Name: admins; Type: TABLE DATA; Schema: public; Owner: george
+-- Data for Name: admins; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY admins (admin_id, username, password, first_name, last_name, email, phone) FROM stdin;
@@ -262,7 +244,7 @@ COPY admins (admin_id, username, password, first_name, last_name, email, phone) 
 
 
 --
--- Data for Name: clients; Type: TABLE DATA; Schema: public; Owner: george
+-- Data for Name: clients; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY clients (user_id, username, password, first_name, last_name, postal_code, phone, city, address, address_num, email, long, lat) FROM stdin;
@@ -274,7 +256,7 @@ COPY clients (user_id, username, password, first_name, last_name, postal_code, p
 
 
 --
--- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: george
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY events (prov_id, event_id, name, date, tickets, price, description, tags, images, long, lat) FROM stdin;
@@ -282,7 +264,7 @@ COPY events (prov_id, event_id, name, date, tickets, price, description, tags, i
 
 
 --
--- Data for Name: providers; Type: TABLE DATA; Schema: public; Owner: george
+-- Data for Name: providers; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY providers (prov_id, username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, phone, postal_code, address, address_num, city, email, subscription, long, lat) FROM stdin;
@@ -294,7 +276,7 @@ COPY providers (prov_id, username, password, full_name, afm, iban, m_first_name,
 
 
 --
--- Data for Name: wallet; Type: TABLE DATA; Schema: public; Owner: george
+-- Data for Name: wallet; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY wallet (user_id, balance) FROM stdin;
@@ -306,35 +288,35 @@ COPY wallet (user_id, balance) FROM stdin;
 
 
 --
--- Name: admins_admin_id_seq; Type: SEQUENCE SET; Schema: public; Owner: george
+-- Name: admins_admin_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('admins_admin_id_seq', 2, true);
 
 
 --
--- Name: clients_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: george
+-- Name: clients_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('clients_user_id_seq', 6, true);
 
 
 --
--- Name: events_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: george
+-- Name: events_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('events_event_id_seq', 1, false);
 
 
 --
--- Name: providers_prov_id_seq; Type: SEQUENCE SET; Schema: public; Owner: george
+-- Name: providers_prov_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('providers_prov_id_seq', 5, true);
 
 
 --
--- Name: admins admins_pkey; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: admins admins_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY admins
@@ -342,7 +324,7 @@ ALTER TABLE ONLY admins
 
 
 --
--- Name: clients clients_email_key; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: clients clients_email_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY clients
@@ -350,7 +332,7 @@ ALTER TABLE ONLY clients
 
 
 --
--- Name: clients clients_pkey; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: clients clients_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY clients
@@ -358,7 +340,7 @@ ALTER TABLE ONLY clients
 
 
 --
--- Name: clients clients_username_key; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: clients clients_username_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY clients
@@ -366,7 +348,7 @@ ALTER TABLE ONLY clients
 
 
 --
--- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY events
@@ -374,7 +356,7 @@ ALTER TABLE ONLY events
 
 
 --
--- Name: providers providers_email_key; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: providers providers_email_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY providers
@@ -382,7 +364,7 @@ ALTER TABLE ONLY providers
 
 
 --
--- Name: providers providers_pkey; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: providers providers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY providers
@@ -390,7 +372,7 @@ ALTER TABLE ONLY providers
 
 
 --
--- Name: providers providers_username_key; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: providers providers_username_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY providers
@@ -398,7 +380,7 @@ ALTER TABLE ONLY providers
 
 
 --
--- Name: wallet wallet_pkey; Type: CONSTRAINT; Schema: public; Owner: george
+-- Name: wallet wallet_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY wallet
@@ -406,7 +388,7 @@ ALTER TABLE ONLY wallet
 
 
 --
--- Name: events events_prov_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: george
+-- Name: events events_prov_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY events
@@ -414,7 +396,7 @@ ALTER TABLE ONLY events
 
 
 --
--- Name: wallet wallet_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: george
+-- Name: wallet wallet_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY wallet
