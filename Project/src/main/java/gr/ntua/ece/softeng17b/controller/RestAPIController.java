@@ -58,7 +58,7 @@ public class RestAPIController {
 
 	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
-
+		System.out.println("*"+username+"*");
 	    try {
 			if (loginType.equals("provider")){
 				Optional<Provider> optional = dbAccess.getProviderByUsername(username);
@@ -72,13 +72,14 @@ public class RestAPIController {
             	else throw new Exception("Wrong password " + encrypter.encryptPass(password));
 			}
 			else{
+				System.out.println("*"+username+"*");
 				Optional<Admin> optional = dbAccess.getAdminByUsername(username);
 				Admin a = optional.orElseThrow(() -> new Exception("User Not Found"));
 				if(encrypter.encryptMatch(password,a.getPassword())) {                
                 	HttpSession session = req.getSession();
 					session.setMaxInactiveInterval(3*60*60);
 					session.setAttribute("admin", a);
-                	return false;
+                	return true;
 				}
 				else throw new Exception("Wrong password");
 			}
@@ -109,11 +110,7 @@ public class RestAPIController {
 		return dbAccess.getAllProviders();
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public void logout(HttpServletRequest req){
-		HttpSession session = req.getSession(false);
-		session.invalidate();
-	}
+
 	
 	/*@RequestMapping(value = "/events/getAllEvents", method = RequestMethod.GET)
 	public List<Event> getEvents(){

@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-
+    //---------------------------------------- CLIENT LOGIN -------------------------------------------
 
     /* attach a submit handler to the form */
     $("#login1-form").submit(function(event) {
@@ -41,6 +41,79 @@ $(document).ready(function() {
             })
 
     });
+
+
+
+        //---------------------------------------- ADMIN LOGIN -------------------------------------------
+
+
+    /* attach a submit handler to the form */
+        $("#login2-form").submit(function(event) {
+
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+                // send ajax
+                $.ajax({
+                    url: "/app/login/admin", // url where to submit the request
+                    type : "POST", // type of action POST || GET
+                    dataType : 'json', // data type
+                    data : $("#login2-form").serialize(), // post data || get data
+                    success : function(result) {
+                        // you can see the result from the console
+                        // tab of the developer tools
+
+                        if (result) {
+    						var href = "/app/admin"
+							window.location = href;
+    					}
+    					else {
+                            $("#adminwrong").show();
+    					}
+                    },
+                    error: function(xhr, resp, text) {
+                        alert("AJAX FAILED");
+                    }
+                })
+        });
+
+
+
+        //---------------------------------------- PROVIDER LOGIN -------------------------------------------
+
+    /* attach a submit handler to the form */
+        $("#login-form").submit(function(event) {
+
+            /* stop form from submitting normally */
+            event.preventDefault();
+			
+                // send ajax
+                $.ajax({
+                    url: "/app/login/provider", // url where to submit the request
+                    type : "POST", // type of action POST || GET
+                    dataType : 'json', // data type
+                    data : $("#login-form").serialize(), // post data || get data
+                    success : function(result) {
+                        // you can see the result from the console
+                        // tab of the developer tools
+
+                        if (result) {
+    						/*$.ajax({
+                    			url: "/app/provider/", // url where to submit the request
+                    			type : "GET", // type of action POST || GET
+                    		})*/
+							var href = "/app/provider/"
+							window.location = href;
+    					}
+    					else {
+                            $("#providerwrong").show();
+    					}
+                    },
+                    error: function(xhr, resp, text) {
+                        alert("AJAX FAILED");
+                    }
+                })
+        });
 
     //---------------------------------------- REGISTER FORM -------------------------------------------
 

@@ -32,7 +32,7 @@ public class ProvController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome() {
-		return "redirect:pages/provWelcome.html";
+		return "redirect:../pages/provWelcome.html";
 	}
 	
 	
