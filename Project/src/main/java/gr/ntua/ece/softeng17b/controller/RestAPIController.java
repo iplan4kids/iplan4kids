@@ -52,7 +52,7 @@ public class RestAPIController {
 
 
 /*--------------------------------------------------------------------	Admin/Provider Login	------------------------------------------ */
-	
+	//produces={"text/html; charset=UTF-8"}
 	@RequestMapping(value = "/login/{type}", method = RequestMethod.POST)
 	public boolean submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, @PathVariable("type") String loginType, HttpServletRequest req) {
 
@@ -69,7 +69,7 @@ public class RestAPIController {
 					session.setAttribute("provider", p);
                 	return true;
             	}	
-            	else throw new Exception("Wrong password");
+            	else throw new Exception("Wrong password " + encrypter.encryptPass(password));
 			}
 			else{
 				Optional<Admin> optional = dbAccess.getAdminByUsername(username);
@@ -78,12 +78,13 @@ public class RestAPIController {
                 	HttpSession session = req.getSession();
 					session.setMaxInactiveInterval(3*60*60);
 					session.setAttribute("admin", a);
-                	return true;
+                	return false;
 				}
 				else throw new Exception("Wrong password");
 			}
 		}
 		catch (Exception e){
+	    	System.out.println(e.getMessage());
 			return false;
 		}
 	}

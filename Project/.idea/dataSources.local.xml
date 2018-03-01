@@ -6,9 +6,8 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
       <user-name>george</user-name>
-      <introspection-schemas>iplan4kidz_18a:@</introspection-schemas>
+      <introspection-schemas>iplan4kidz_18a:@,public</introspection-schemas>
     </data-source>
   </component>
 </project>

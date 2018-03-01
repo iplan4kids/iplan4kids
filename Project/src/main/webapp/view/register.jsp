@@ -109,22 +109,22 @@
 									</div>
 									<span id="geowrong" style="color:red;" class="help-block"></span>
 									<div class="form-group">
-										<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" disabled>
+										<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" disabled>
+										<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" disabled>
+										<input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" disabled>
+										<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" disabled>
+										<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" disabled>
+										<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
 										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
@@ -157,7 +157,7 @@
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="tel" pattern="^\d{10}$" name="tel" id="tel" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
+										<input type="tel" pattern="^\d{10}$" name="phone" id="tel" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
 									</div>
 									<div class="form-group">
 										<input type="tel" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Κινητό Τηλέφωνο" value="" required="required">
@@ -173,31 +173,31 @@
 									</div>
 										<span id="geowrong2" style="color:red;" class="help-block"></span>
 										<div class="form-group">
-											<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" disabled>
+											<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" disabled>
+											<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" disabled>
+											<input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" disabled>
+											<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" disabled>
+											<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" disabled>
+											<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
 										</div>
 									<div class="form-group">
 										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password1" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+										<input type="password" name="password" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm_password1" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
+										<input type="password" name="confirm_password" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
 									</div>
 									<div class="form-group">
 										<div id="button-row" class="row">
@@ -260,7 +260,7 @@
                                     <div class="form-group">
                                         <div id="button-row" class="row">
                                             <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
                                             </div>
                                         </div>
                                     </div>
@@ -277,7 +277,7 @@
                                     <div class="form-group">
                                         <div id="button-row" class="row">
                                             <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
+                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
                                             </div>
                                         </div>
                                     </div>
@@ -294,7 +294,7 @@
                                     <div class="form-group">
                                         <div id="button-row" class="row">
                                             <div class="">
-                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΕΓΓΡΑΦΗ</button>
+                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΣΥΝΔΕΣΗ</button>
                                             </div>
                                         </div>
                                     </div>

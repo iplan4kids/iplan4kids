@@ -403,7 +403,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    marker.setMap(map);\n");
       out.write("    }\n");
       out.write("    </script>\n");
-      out.write("    <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5eP199GDotlWhbsMppKyTSVKQJlS4o&callback=myMap\"></script>\n");
+      out.write("    <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBVCx5csUzQV85Fz9f2LscVZQRckJvhLb8&callback=myMap\"></script>\n");
       out.write("    <!-- -------------------------------------- PAGE FOOTER ----------------------------------------------- --> \n");
       out.write("    <footer class=\"text-center\">\n");
       out.write("        <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"Μετάβαση στη κορυφή της σελίδας\">\n");

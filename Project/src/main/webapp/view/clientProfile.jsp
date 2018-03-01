@@ -98,27 +98,27 @@
         <table class="profile table">
           <tr>
             <td>Όνομα:</td>
-            <td>${client1.getFirst_name()}</td>
+            <td>${client.getFirst_name()}</td>
           </tr>
           <tr>
             <td>Επώνυμο:</td>
-            <td>${client1.getLast_name()}</td>
+            <td>${client.getLast_name()}</td>
           </tr>
           <tr>
             <td>Τηλέφωνο:</td>
-            <td>${client1.getM_phone()}</td>
+            <td>${client.getM_phone()}</td>
           </tr>
           <tr>
             <td>Email:</td>
-            <td>${client1.getEmail()}</td>
+            <td>${client.getEmail()}</td>
           </tr>
           <tr>
             <td>Τ.Κ:</td>
-            <td>${client1.getPostal_code()}</td>
+            <td>${client.getPostal_code()}</td>
           </tr>
           <tr>
             <td>Πόλη:</td>
-            <td>${client1.getCity()}</td>
+            <td>${client.getCity()}</td>
           </tr>
         </table>
       </div>

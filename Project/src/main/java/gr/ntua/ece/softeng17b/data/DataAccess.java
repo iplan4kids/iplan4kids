@@ -116,11 +116,11 @@ public class DataAccess {
     public void createProvider(Provider p) {
 
         Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getFirst_name(),p.getLast_name(),p.getM_phone(),p.getPostal_code(),
-                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail()};
+                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime())};
 
         String SQL = "insert into " +
-                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email)" +
-                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription)" +
+                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update( SQL, params);
     }
 
