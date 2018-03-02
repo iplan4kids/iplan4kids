@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../pages/styles.css" type="text/css">
+    <link rel="stylesheet" href="pages/styles.css" type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -64,15 +64,15 @@
                   </ul>
                 <!-- Right part of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                      	<li class="dropdown">
-        							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> ${provider.getUsername()}
-        							<span class="caret"></span></a>
-        								  <ul class="dropdown-menu">
-        									 <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
-
-        								  </ul>
-        						</li>
-        				</ul>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> ${provider.getUsername()}
+                        <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/app/provider/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
+                                <li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>
+                            </ul>
+                    </li>
+                </ul>
 				<!-- <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
                         <form class="navbar-form" role="search">
@@ -176,91 +176,9 @@
                 Copyright &copy usage under terms and conditions of texnologia logismikou 2017-2018</p>
     </footer>
 
-    <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->
-    <div style="align:center;" class="modal" id="myModal">
-                <div style="width:500px; margin:auto; " class="panel panel-register1">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <button style="margin-right:10px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 style="margin-left: 18px;" class="text-center modal-title"> Συνδεθείτε</h4>
-                            <br>
-                            <div class="col-xs-4">
-                                <a href="#" class="active" id="login1-form-link">Χρήστης</a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" id="login2-form-link">Διαχειριστής</a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" id="login-form-link">Πάροχος</a>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-
-<!----------------------------------------------------------- CLIENT LOGIN ------------------------------------------------------------------------>
-
-                                <form id="login1-form" action="/app/loginClient" method="post" role="form" style="display: block;">
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα χρήστη" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <div id="button-row" class="row">
-                                            <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-<!----------------------------------------------------------- ADMIN LOGIN ------------------------------------------------------------------------>
-
-                                <form id="login2-form" action="/app/login/admin" method="post" role="form" style="display: none;">
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα διαχειριστή" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <div id="button-row" class="row">
-                                            <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΕΓΓΡΑΦΗ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-<!----------------------------------------------------------- PROVIDER LOGIN ------------------------------------------------------------------------>
-
-                                <form id="login-form" action="/app/login/provider" method="post" role="form" style="display: none;">
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα παρόχου" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <div id="button-row" class="row">
-                                            <div class="">
-                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΕΓΓΡΑΦΗ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-    </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-    <script src = "../pages/scripts.js" type = "text/javascript"></script>
+	<script src = "pages/scripts.js" type = "text/javascript"></script>
     </body>
 
 </html>
