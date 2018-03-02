@@ -85,34 +85,41 @@
             <div class="panel filters">
 
 
-                <div class="row">
-                    <p>
+                <div style="margin: 10px;" class="row filterContainer" >
+
                     <label>Επιλογή Κατηγορίας:</label>
                     <div class="checkbox" >
-                        <label><input class="category1" type="checkbox" value="1">Option 1</label>
+                        <label><input id="category1" type="checkbox" value="1">Αθλητισμός</label>
                     </div>
-                    <div class="checkbox category2">
-                        <label><input class="category2" type="checkbox" value="2">Option 2</label>
+                    <div class="checkbox">
+                        <label><input id="category2" type="checkbox" value="2">Θέατρο</label>
                     </div>
-                    <div class="checkbox category3">
-                        <label><input class="category3" type="checkbox" value="3">Option 3</label>
+                    <div class="checkbox">
+                        <label><input id="category3" type="checkbox" value="3">Μουσική</label>
                     </div>
-                    <div class="checkbox category4">
-                        <label><input class="category4" type="checkbox" value="4">Option 4</label>
+                    <div class="checkbox">
+                        <label><input id="category4" type="checkbox" value="4">Βιβλίο</label>
                     </div>
-                    <div class="checkbox category5">
-                        <label><input class="category5" type="checkbox" value="5">Option 5</label>
+                    <div class="checkbox">
+                        <label><input id="category5" type="checkbox" value="5">Άλλες Δραστηριότηες</label>
                     </div>
-                    </p>
-                    <p>
-                        <label for="amount">Εύρος Τιμών:</label>
-                        <input type="text" id="amount" readonly="" style="border:0; color:#222; font-weight:bold;">
-                    </p>
+
+                        <label style="display: inline;"  for="amount">
+                            <input type="text" id="amount" readonly="" style=" margin-bottom:15px; border:0; color:#222; font-weight:bold;">
+                        </label>
 
 
-                    <div class="filters-container" id="slider-range" ></div>
+                    <div style="margin-bottom: 10px;" class="filters-container" id="slider-range" ></div>
                     <label>Επιλογή Ημερομηνιας:</label>
-                    <input style="margin-left: 5px; margin-bottom:10px; "  placeholder="Ημερομηνία" type="date" id="filterdate" min="" class="form-control " name="date" value="">
+                    <input style="margin-left: 5px; margin-bottom:10px; margin-top:10px;"  placeholder="Ημερομηνία" type="date" id="filterdate" min="" class="form-control " name="date" value="">
+                    <label>Επιλογή Τοποθεσίας:</label>
+                    <div class="radio">
+                        <label><input id="myLocation" type="radio" name="optradio">Το σπίτι μου</label>
+                    </div>
+                    <div class="radio">
+                        <label><input id="currentLocation" type="radio" name="optradio">Εδώ που είμαι αυτή την στιγμή</label>
+                    </div>
+
                     <button class="btn submitButton" onclick="applyFilters()">Εφαρμογή Φίλτρων</button>
                 </div>
 
@@ -201,6 +208,7 @@
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
     <script src = "scripts.js" type = "text/javascript"></script>
     <script src = "allEvents.js" type = "text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5eP199GDotlWhbsMppKyTSVKQJlS4o&language=el&libraries=places" async defer></script>
     </body>
 
 </html>
