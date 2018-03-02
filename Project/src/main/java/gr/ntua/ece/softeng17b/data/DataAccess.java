@@ -95,7 +95,7 @@ public class DataAccess {
 
     public Optional<Provider> getProvider(Long id) {
         Long[] params = new Long[]{id};
-        List<Provider> providers = jdbcTemplate.query("select * from providers where user_id = ?", params, new ProviderRowMapper());
+        List<Provider> providers = jdbcTemplate.query("select * from providers where prov_id = ?", params, new ProviderRowMapper());
         if (providers.size() == 1) {
             return Optional.of(providers.get(0));
         } else {
@@ -265,10 +265,8 @@ public class DataAccess {
         String query = "update providers set subscription=? where prov_id=?";
         jdbcTemplate.update(query, new Object[]{toBase, id});
 
-
-
         //System.out.println(dateFormat.format(cal));
-        return null;
+        return toBase;
     }
 
 

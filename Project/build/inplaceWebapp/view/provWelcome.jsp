@@ -33,7 +33,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-left" href="/app/">
+                <a class="navbar-left" href="/app/provider/">
                     <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,16 +46,16 @@
                 <!-- Left part of Navbar -->
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ιστορικό</a>
+                        <a href="#">Ιστορικό</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Αναφορά</a>
+                        <a href="#">Αναφορά</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/app/provider/addEvent">Προσθήκη Νέου</a>
+                        <a href="/app/provider/addEvent">Προσθήκη Νέου</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/app/provider/buySub">Ανανέωσε</a>
+                        <a href="/app/provider/buySub">Ανανέωσε</a>
                     </li>
                 </ul>
                 <!-- Right part of Navbar -->
@@ -64,23 +64,11 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> ${provider.getUsername()}
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/app/provider/myProfile"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
-
+                            <li><a href="/app/provider/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
+                            <li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>
                         </ul>
                     </li>
                 </ul>
-                <!-- <ul class="nav navbar-nav navbar-right">
-                    <div class="search-form">
-                        <form class="navbar-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </ul> -->
             </div>
         </div>
     </nav>
@@ -91,6 +79,7 @@
     <div class="row list-drastiriotites">
       <div class="col-sm-12">
         <div class="row">
+          <h2 style="align:center;"> Ιστορικό </h2>
           <table class="table">
             <thead>
               <tr>
@@ -126,46 +115,10 @@
                 Copyright &copy usage under terms and conditions of texnologia logismikou 2017-2018</p>
     </footer>
 
-    <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                    <div class="modal-header ">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="text-center modal-title">Συνδεθείτε</h4>
-                    </div>
 
-                    <!-- Modal body -->
-             	<form action="/app/login" method="POST">
-                    <!-- Modal body -->
-                <div class="modal-body">
-
-                    	<div>Email</div>
-                        	<input type="text" class="form-control" name="username">
-                    	<div>Κωδικός</div>
-                    	<input type="text" class="form-control" name="password">
-                </div>
-                    <!-- Modal footer -->
-                <div class="modal-footer">
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-success" value="Συνδεση">
-                    </div>
-                </div>
-			</form>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="text-center">
-                                    <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Ξέχασες τον κωδικό?</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-    <script src = "../pages/scripts.js" type = "text/javascript"></script>
+	<script src = "../pages/scripts.js" type = "text/javascript"></script>
     </body>
 
 </html>

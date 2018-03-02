@@ -3,9 +3,8 @@ package org.apache.jsp.view;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import gr.ntua.ece.softeng17b.data.Client;
 
-public final class buyPoints_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class buySub_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -56,16 +55,6 @@ public final class buyPoints_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
- if (session.getAttribute("client") == null){
-    session.setAttribute("notloggedIn","list-item");
-    session.setAttribute("loggedIn","none");
-}
-else{
-    session.setAttribute("loggedIn","list-item");
-    session.setAttribute("notloggedIn","none");
-}
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"el\">\n");
       out.write("<head>\n");
@@ -80,7 +69,7 @@ else{
       out.write("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("    <link rel=\"stylesheet\" href=\"pages/styles.css\" type=\"text/css\">\n");
+      out.write("    <link rel=\"stylesheet\" href=\"../pages/styles.css\" type=\"text/css\">\n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\n");
@@ -100,7 +89,7 @@ else{
       out.write("<nav class=\"navbar navbar-inverse\">\n");
       out.write("    <div class=\"container-fluid\">\n");
       out.write("        <div class=\"navbar-header\">\n");
-      out.write("            <a class=\"navbar-left\" href=\"/app/\">\n");
+      out.write("            <a class=\"navbar-left\" href=\"/app/provider/\">\n");
       out.write("                <img src=\"");
       if (_jspx_meth_c_url_1(_jspx_page_context))
         return;
@@ -126,41 +115,13 @@ else{
       out.write("                </li>\n");
       out.write("            </ul>\n");
       out.write("            <!-- Right part of Navbar -->\n");
-      out.write("            <ul id=\"logregprof\" class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                <li class=\"notlogged\" style=\"display:");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" ><a href=\"register.jsp\"><span class=\"glyphicon glyphicon-user\"></span> Εγγραφή </a></li>\n");
-      out.write("                <li class=\"notlogged\" style=\"display:");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
-      out.write("                <li class=\"dropdown\"><a id=\"logged1\" style=\"display:");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span> Πορτοφόλι (");
- if (session.getAttribute("client") == null){ 
-      out.write("%WALLET_POINTS%");
-} else {
-      out.write(' ');
-      out.print(String.format("%.2f",((Client) session.getAttribute("client")).getWallet()));
-      out.write(' ');
- }
-      out.write(")</a></li>\n");
-      out.write("\n");
+      out.write("            <ul class=\"nav navbar-nav navbar-right\">\n");
       out.write("                <li class=\"dropdown\">\n");
-      out.write("                    <a id=\"logged2\" class=\"dropdown-toggle\" style=\"display:");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>");
- if (session.getAttribute("client") == null){ 
-      out.write(" %USERNAME% ");
-} else { 
-      out.write(' ');
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getUsername()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(' ');
- }
-      out.write("<span class=\"caret\"></span></a>\n");
+      out.write("                    <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Όνομα Παρόχου\n");
+      out.write("                        <span class=\"caret\"></span></a>\n");
       out.write("                    <ul class=\"dropdown-menu\">\n");
-      out.write("                        <li><a id=\"profile\" href=\"/app/myProfile\"><span class=\"glyphicon glyphicon-file\"></span>Τα στοιχεία μου</a></li>\n");
-      out.write("                        <li><a id=\"wallet\" href=\"/app/buyPoints\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Αγορά πόντων</a></li>\n");
-      out.write("                        <li ><a  href=\"/app/logoutStrong\"><span id=\"logout\" class=\"glyphicon glyphicon-log-out\"></span>Αποσύνδεση</a></li>\n");
+      out.write("                        <li><a href=\"#\"><span class=\"octicon octicon-file\"></span>Τα στοιχεία μου</a></li>\n");
+      out.write("\n");
       out.write("                    </ul>\n");
       out.write("                </li>\n");
       out.write("            </ul>\n");
@@ -194,13 +155,19 @@ else{
       out.write("                <div class=\"panel-body\">\n");
       out.write("                    <div class=\"row\">\n");
       out.write("                        <div class=\"col-lg-12\">\n");
-      out.write("                            <form id=\"points-form\" class=\"form-horizontal\" action=\"/app/buyPoints/buy\" method=\"post\" role=\"form\" style=\"display: block;\">\n");
+      out.write("                            <form id=\"renew-form\" class=\"form-horizontal\" action=\"/app/provider/renew\" method=\"post\" role=\"form\" style=\"display: block;\">\n");
       out.write("                                <div class=\"form-group\">\n");
       out.write("                                    <div class=\"col-sm-3\">\n");
-      out.write("                                        <label for=\"amount\">ΠΟΣΟ</label>\n");
+      out.write("                                        <label for=\"amount\">ΣΥΝΔΡΟΜΗ</label>\n");
       out.write("                                    </div>\n");
       out.write("                                    <div class=\"col-sm-9\">\n");
-      out.write("                                        <input type=\"number\" step=\"1\" name=\"money\" id=\"amount\" tabindex=\"1\" class=\"form-control\" placeholder=\"\" value=\"\">\n");
+      out.write("                                        <select id=\"amount\" class=\"form-control\" name=\"amount\">\n");
+      out.write("                                            <option value=\"1\">1 Μήνας</option>\n");
+      out.write("                                            <option value=\"2\">2 Μήνες</option>\n");
+      out.write("                                            <option value=\"3\">3 Μήνες</option>\n");
+      out.write("                                            <option value=\"6\">6 Μήνες</option>\n");
+      out.write("                                            <option value=\"12\">12 Μήνες</option>\n");
+      out.write("                                        </select>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"form-group\">\n");
@@ -226,7 +193,7 @@ else{
       out.write("                                <div class=\"form-group\">\n");
       out.write("                                    <div id=\"button-row\" class=\"row\">\n");
       out.write("                                        <div class=\"\">\n");
-      out.write("                                            <button type=\"submit\" name=\"points-submit\" id=\"points-submit\" class=\"form-control btn btn-register1\">ΑΓΟΡΑ</button>\n");
+      out.write("                                            <button type=\"submit\" name=\"register1-submit\" id=\"renew-submit\" class=\"form-control btn btn-register1\">ΑΓΟΡΑ</button>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
@@ -247,44 +214,7 @@ else{
       out.write("        Copyright &copy usage under terms and conditions of texnologia logismikou 2017-2018</p>\n");
       out.write("</footer>\n");
       out.write("\n");
-      out.write("<!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->\n");
-      out.write("<div class=\"modal\" id=\"myModal\">\n");
-      out.write("    <div class=\"modal-dialog\">\n");
-      out.write("        <div class=\"modal-content\">\n");
-      out.write("            <!-- Modal Header -->\n");
-      out.write("            <div class=\"modal-header \">\n");
-      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n");
-      out.write("                <h4 class=\"text-center modal-title\">Συνδεθείτε</h4>\n");
-      out.write("            </div>\n");
-      out.write("\n");
-      out.write("            <!-- Modal body -->\n");
-      out.write("            <form action=\"/app/login\" method=\"POST\">\n");
-      out.write("                <!-- Modal body -->\n");
-      out.write("                <div class=\"modal-body\">\n");
-      out.write("\n");
-      out.write("                    <div>Email</div>\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" name=\"username\">\n");
-      out.write("                    <div>Κωδικός</div>\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" name=\"password\">\n");
-      out.write("                </div>\n");
-      out.write("                <!-- Modal footer -->\n");
-      out.write("                <div class=\"modal-footer\">\n");
-      out.write("                    <div class=\"text-center\">\n");
-      out.write("                        <input type=\"submit\" class=\"btn btn-success\" value=\"Συνδεση\">\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("            </form>\n");
-      out.write("            <div class=\"form-group\">\n");
-      out.write("                <div class=\"row\">\n");
-      out.write("                    <div class=\"text-center\">\n");
-      out.write("                        <a href=\"https://phpoll.com/recover\" tabindex=\"5\" class=\"forgot-password\">Ξέχασες τον κωδικό?</a>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("<script src = \"pages/scripts.js\" type = \"text/javascript\"></script>\n");
+      out.write("<script src = \"../pages/scripts.js\" type = \"text/javascript\"></script>\n");
       out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

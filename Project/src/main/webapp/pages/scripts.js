@@ -98,10 +98,6 @@ $(document).ready(function() {
                         // tab of the developer tools
 
                         if (result) {
-    						/*$.ajax({
-                    			url: "/app/provider/", // url where to submit the request
-                    			type : "GET", // type of action POST || GET
-                    		})*/
 							var href = "/app/provider/"
 							window.location = href;
     					}
@@ -115,7 +111,7 @@ $(document).ready(function() {
                 })
         });
 
-    //---------------------------------------- REGISTER FORM -------------------------------------------
+    //---------------------------------------- LOGIN FORM -------------------------------------------
 
     $(function() {
         $('#login1-form-link').click(function(e) {
@@ -145,6 +141,74 @@ $(document).ready(function() {
             $(this).addClass('active');
             e.preventDefault();
         });
+    });
+
+
+//-------------------------------- BUY POINTS -----------------------------------------
+
+    $("#points-form").submit(function(event) {
+
+        /* stop form from submitting normally */
+        event.preventDefault();
+        event.stopPropagation();
+
+        // send ajax
+        $.ajax({
+            url: "/app/buyPoints/buy", // url where to submit the request
+            type : "POST", // type of action POST || GET
+            dataType : 'json', // data type
+            data : $("#points-form").serialize(), // post data || get data
+            success:function(result) {
+                // you can see the result from the console
+                // tab of the developer tools
+
+                if (result.success){
+
+                    var text ='<span class="glyphicon glyphicon-piggy-bank"></span> Πορτοφόλι ('+result.balance.toFixed(2)+')';
+                    $("#logged1").html(text);
+
+                    alert("Oι πόντοι προστέθηκαν στο πορτοφόλι σας! Ευχαριστούμε πολύ!")
+                }
+                else {
+                    alert("Υπήρξε πρόβλημα και η συναλλαγή δεν ολοκληρώθηκε! Προσπαθήστε ξανά!")
+                }
+            },
+            error: function(xhr, resp, text) {
+                alert("AJAX FAILED");
+            }
+        })
+    });
+
+
+
+    //--------------------------------RENEW SUBSCRIPTION------------------------------------------
+
+    $("#renew-form").submit(function(event) {
+
+        /* stop form from submitting normally */
+        event.preventDefault();
+
+        // send ajax
+        $.ajax({
+            url: "/app/provider/buySub/renew", // url where to submit the request
+            type : "POST", // type of action POST || GET
+            dataType : 'json', // data type
+            data : $("#renew-form").serialize(), // post data || get data
+            success : function(result) {
+                // you can see the result from the console
+                // tab of the developer tools
+
+                if (result) {
+                    alert("Η συνδρομή σας ανανεώθηκε! Ευχαριστούμε πολύ!")
+                }
+                else {
+                    alert("Υπήρξε πρόβλημα και η ανανέωση δεν πραγματοποιήθηκε! Προσπαθήστε ξανά!")
+                }
+            },
+            error: function(xhr, resp, text) {
+                alert("AJAX FAILED");
+            }
+        })
     });
 
     // ---------------------------------- STICKY NAVIGATION BAR ----------------------------------------

@@ -500,10 +500,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->\n");
-      out.write("   <!-- <spring:url value=\"/pages\"  var=\"myJs\" />-->\n");
-      out.write("    <!--<script src = ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${myJs}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/scripts.js type = \"text/javascript\"></script>-->\n");
       out.write("\t<script src = \"pages/scripts.js\" type = \"text/javascript\"></script>\n");
       out.write("    </body>\n");
       out.write("\n");

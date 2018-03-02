@@ -1,6 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<%@ page import="gr.ntua.ece.softeng17b.data.Client" %>
+<% if (session.getAttribute("client") == null){
+	session.setAttribute("notloggedIn","list-item");
+	session.setAttribute("loggedIn","none");
+}
+else{
+	session.setAttribute("loggedIn","list-item");
+	session.setAttribute("notloggedIn","none");
+}%>
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -29,45 +38,55 @@
 	</div>
 
     <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid"> 
-            <div class="navbar-header">
-                <a class="navbar-left" href="/app/">
-                    <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
-                </a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>  
-                    <span class="icon-bar"></span>                     
-                </button>               
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <!-- Left part of Navbar -->
-                <ul class="nav navbar-nav navbar-left">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-left" href="/app/">
+					<img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<!-- Left part of Navbar -->
+				<ul class="nav navbar-nav navbar-left">
 					<li>
 						<a href="/app/events"> Δραστηριότητες </a>
 					</li>
-                </ul>
-                <!-- Right part of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/app/register"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
 				</ul>
-				 <ul class="nav navbar-nav navbar-right">
-                    <div class="search-form">
-                        <form class="navbar-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>
+				<!-- Right part of Navbar -->
+				<ul id="logregprof" class="nav navbar-nav navbar-right">
+					<li class="notlogged" style="display:${notloggedIn}" ><a href="/app/register"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
+					<li class="notlogged" style="display:${notloggedIn}"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
+					<li class="dropdown"><a id="logged1" style="display:${loggedIn}" href="#"><span class="glyphicon glyphicon-piggy-bank"></span> Πορτοφόλι (<% if (session.getAttribute("client") == null){ %>%WALLET_POINTS%<%} else {%> <%=String.format("%.2f",((Client) session.getAttribute("client")).getWallet())%> <% }%>)</a></li>
+
+					<li class="dropdown">
+						<a id="logged2" class="dropdown-toggle" style="display:${loggedIn}" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><% if (session.getAttribute("client") == null){ %> %USERNAME% <%} else { %> ${client.getUsername()} <% }%><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a id="profile" href="/app/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
+							<li><a id="wallet" href="/app/buyPoints"><span class="glyphicon glyphicon-piggy-bank"></span>Αγορά πόντων</a></li>
+							<li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<div class="search-form">
+						<form class="navbar-form" role="search">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+								<div class="input-group-btn">
+									<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->

@@ -4,6 +4,7 @@ import gr.ntua.ece.softeng17b.conf.Configuration;
 import gr.ntua.ece.softeng17b.data.*;
 import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,7 +46,7 @@ public class RestAPIController {
             else throw new Exception("Wrong password");
 		}
 		catch (Exception e){
-			return new RESTclass(false , e.getMessage() , 1.5 );
+			return new RESTclass(false , e.getMessage() , 0 );
 		}
 	}
 
@@ -117,18 +118,42 @@ public class RestAPIController {
 		
 	}
 	*/
-	
-	/*@RequestMapping(value = "/buyPoints/{number}", method = RequestMethod.PUT)
-	public boolean buyYourPoints(@PathVariable ("number") int points) {
+
+
+
+	@RequestMapping(value = "/buyPoints/buy", method = RequestMethod.POST)
+	public RESTclass getPoints(@RequestParam("money") double money, HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		Client c = (Client) session.getAttribute("client");
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-		//enhmerwsh ths vashs
+
+		try {
+			double new_money = dbAccess.addWallet(c.getId(), money);
+			c.setWallet(new_money);
+			return new RESTclass(true, c.getUsername() , c.getWallet());
+		}
+		catch(Exception e){
+			System.out.print(e.getMessage());
+			return new RESTclass(false , e.getMessage() , 0 );
+		}
 	}
-	
-	@RequestMapping(value = "/provider/buySub/{sub}", method = RequestMethod.PUT)
-	public boolean buyYourSub(@PathVariable ("sub") int subMonths) {
+
+	@RequestMapping(value = "/provider/buySub/renew", method = RequestMethod.POST)
+	public boolean buyYourSub(@RequestParam ("amount") int subMonths, HttpServletRequest req) {
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-		//enhmerwsh ths vashs
-	}*/
+		HttpSession session = req.getSession(false);
+
+		Provider prov = (Provider) session.getAttribute("provider");
+		try {
+			Timestamp nsub = dbAccess.renewSub(subMonths, prov.getId());
+			prov.setSubscription(nsub);
+			return true;
+		}
+		catch (Exception e){
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
 	
 }

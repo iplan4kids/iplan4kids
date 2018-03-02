@@ -131,14 +131,14 @@ public class AppController {
 
 
 /*--------------------------------------------------------------------	Buy Points	------------------------------------------ */
-	
+
 	@RequestMapping(value = "/buyPoints", method = RequestMethod.GET)
 	public ModelAndView getbuyPoints(HttpServletRequest req) {
 		ModelAndView model1;
 		HttpSession session = req.getSession(false);
 		if (session==null)
 			model1 = new ModelAndView("index");
-		else{		
+		else{
 			if (session.getAttribute("client") != null)
 				model1 = new ModelAndView("buyPoints");
 			else
@@ -147,25 +147,6 @@ public class AppController {
 		Client c = (Client) session.getAttribute("client");
 		model1.addObject("client1",c);
 		return model1;
-	}
-
-
-
-
-	@RequestMapping(value = "/Points", method = RequestMethod.POST)
-	public ModelAndView getPoints(@RequestParam("money") double money,HttpServletRequest req) throws Exception{
-		ModelAndView model1 = new ModelAndView("buyPoints");
-		HttpSession session = req.getSession(false);
-		Client c = (Client) session.getAttribute("client");
-		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-
-		//try {
-			double new_money = dbAccess.addWallet(c.getId(),money);
-			c.setWallet(new_money);
-			model1.addObject("client1", c);
-			return model1;
-		//}
-		//catch(Exception e){System.out.print(e.getMessage());}
 	}
 
 

@@ -46,16 +46,16 @@
                 <!-- Left part of Navbar -->
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ιστορικό</a>
+                        <a href="#">Ιστορικό</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Αναφορά</a>
+                        <a href="#">Αναφορά</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/app/provider/addEvent">Προσθήκη Νέου</a>
+                        <a href="/app/provider/addEvent">Προσθήκη Νέου</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/app/provider/buySub">Ανανέωσε</a>
+                        <a href="/app/provider/buySub">Ανανέωσε</a>
                     </li>
                 </ul>
                 <!-- Right part of Navbar -->
@@ -69,18 +69,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- <ul class="nav navbar-nav navbar-right">
-                    <div class="search-form">
-                        <form class="navbar-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </ul> -->
             </div>
         </div>
     </nav>

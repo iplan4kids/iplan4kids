@@ -3,6 +3,7 @@ package org.apache.jsp.view;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import gr.ntua.ece.softeng17b.data.Client;
 
 public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -54,6 +55,16 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+ if (session.getAttribute("client") == null){
+	session.setAttribute("notloggedIn","list-item");
+	session.setAttribute("loggedIn","none");
+}
+else{
+	session.setAttribute("loggedIn","list-item");
+	session.setAttribute("notloggedIn","none");
+}
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"el\">\n");
       out.write("<head>\n");
@@ -85,48 +96,82 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->\n");
-      out.write("    <nav class=\"navbar navbar-inverse\">\n");
-      out.write("        <div class=\"container-fluid\"> \n");
-      out.write("            <div class=\"navbar-header\">\n");
-      out.write("                <a class=\"navbar-left\" href=\"/app/\">\n");
-      out.write("                    <img src=\"");
+      out.write("\t<nav class=\"navbar navbar-inverse\">\n");
+      out.write("\t\t<div class=\"container-fluid\">\n");
+      out.write("\t\t\t<div class=\"navbar-header\">\n");
+      out.write("\t\t\t\t<a class=\"navbar-left\" href=\"/app/\">\n");
+      out.write("\t\t\t\t\t<img src=\"");
       if (_jspx_meth_c_url_1(_jspx_page_context))
         return;
       out.write("\" align=\"center\" width=\"50\"/>\n");
-      out.write("                </a>\n");
-      out.write("                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n");
-      out.write("                    <span class=\"icon-bar\"></span>\n");
-      out.write("                    <span class=\"icon-bar\"></span>  \n");
-      out.write("                    <span class=\"icon-bar\"></span>                     \n");
-      out.write("                </button>               \n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n");
-      out.write("                <!-- Left part of Navbar -->\n");
-      out.write("                <ul class=\"nav navbar-nav navbar-left\">\n");
+      out.write("\t\t\t\t</a>\n");
+      out.write("\t\t\t\t<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n");
+      out.write("\t\t\t\t\t<span class=\"icon-bar\"></span>\n");
+      out.write("\t\t\t\t\t<span class=\"icon-bar\"></span>\n");
+      out.write("\t\t\t\t\t<span class=\"icon-bar\"></span>\n");
+      out.write("\t\t\t\t</button>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t\t<div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n");
+      out.write("\t\t\t\t<!-- Left part of Navbar -->\n");
+      out.write("\t\t\t\t<ul class=\"nav navbar-nav navbar-left\">\n");
       out.write("\t\t\t\t\t<li>\n");
       out.write("\t\t\t\t\t\t<a href=\"/app/events\"> Δραστηριότητες </a>\n");
       out.write("\t\t\t\t\t</li>\n");
-      out.write("                </ul>\n");
-      out.write("                <!-- Right part of Navbar -->\n");
-      out.write("                <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                    <li><a href=\"/app/register\"><span class=\"glyphicon glyphicon-user\"></span> Εγγραφή </a></li>\n");
-      out.write("                    <li><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
       out.write("\t\t\t\t</ul>\n");
-      out.write("\t\t\t\t <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                    <div class=\"search-form\">\n");
-      out.write("                        <form class=\"navbar-form\" role=\"search\">\n");
-      out.write("                            <div class=\"input-group\">\n");
-      out.write("                                <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"srch-term\" id=\"srch-term\">\n");
-      out.write("                                <div class=\"input-group-btn\">\n");
-      out.write("                                    <button class=\"btn btn-default\" type=\"submit\"><i class=\"glyphicon glyphicon-search\"></i></button>\n");
-      out.write("                                </div>\n");
-      out.write("                            </div>\n");
-      out.write("                        </form>\n");
-      out.write("                    </div>\n");
-      out.write("                </ul>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </nav>\n");
+      out.write("\t\t\t\t<!-- Right part of Navbar -->\n");
+      out.write("\t\t\t\t<ul id=\"logregprof\" class=\"nav navbar-nav navbar-right\">\n");
+      out.write("\t\t\t\t\t<li class=\"notlogged\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" ><a href=\"/app/register\"><span class=\"glyphicon glyphicon-user\"></span> Εγγραφή </a></li>\n");
+      out.write("\t\t\t\t\t<li class=\"notlogged\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${notloggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\"><span class=\"glyphicon glyphicon-log-in\"></span> Σύνδεση </a></li>\n");
+      out.write("\t\t\t\t\t<li class=\"dropdown\"><a id=\"logged1\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" href=\"#\"><span class=\"glyphicon glyphicon-piggy-bank\"></span> Πορτοφόλι (");
+ if (session.getAttribute("client") == null){ 
+      out.write("%WALLET_POINTS%");
+} else {
+      out.write(' ');
+      out.print(String.format("%.2f",((Client) session.getAttribute("client")).getWallet()));
+      out.write(' ');
+ }
+      out.write(")</a></li>\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t<li class=\"dropdown\">\n");
+      out.write("\t\t\t\t\t\t<a id=\"logged2\" class=\"dropdown-toggle\" style=\"display:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loggedIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" data-toggle=\"dropdown\" href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>");
+ if (session.getAttribute("client") == null){ 
+      out.write(" %USERNAME% ");
+} else { 
+      out.write(' ');
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${client.getUsername()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(' ');
+ }
+      out.write("<span class=\"caret\"></span></a>\n");
+      out.write("\t\t\t\t\t\t<ul class=\"dropdown-menu\">\n");
+      out.write("\t\t\t\t\t\t\t<li><a id=\"profile\" href=\"/app/myProfile\"><span class=\"glyphicon glyphicon-file\"></span>Τα στοιχεία μου</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a id=\"wallet\" href=\"/app/buyPoints\"><span class=\"glyphicon glyphicon-piggy-bank\"></span>Αγορά πόντων</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li ><a  href=\"/app/logoutStrong\"><span id=\"logout\" class=\"glyphicon glyphicon-log-out\"></span>Αποσύνδεση</a></li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</li>\n");
+      out.write("\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\n");
+      out.write("\t\t\t\t\t<div class=\"search-form\">\n");
+      out.write("\t\t\t\t\t\t<form class=\"navbar-form\" role=\"search\">\n");
+      out.write("\t\t\t\t\t\t\t<div class=\"input-group\">\n");
+      out.write("\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"srch-term\" id=\"srch-term\">\n");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"input-group-btn\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t<button class=\"btn btn-default\" type=\"submit\"><i class=\"glyphicon glyphicon-search\"></i></button>\n");
+      out.write("\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t</form>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</ul>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</nav>\n");
       out.write("\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->\n");

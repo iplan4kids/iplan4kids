@@ -385,8 +385,6 @@
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-   <!-- <spring:url value="/pages"  var="myJs" />-->
-    <!--<script src = ${myJs}/scripts.js type = "text/javascript"></script>-->
 	<script src = "pages/scripts.js" type = "text/javascript"></script>
     </body>
 
