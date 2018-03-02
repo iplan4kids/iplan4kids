@@ -4,7 +4,7 @@
 		response.sendRedirect("/app/");
 	}
 	else if (session.getAttribute("provider") != null){
-		response.sendRedirect("/app/provider");
+		response.sendRedirect("/app/provider/");
 	}
 	else if (session.getAttribute("admin") != null){
 		response.sendRedirect("/app/admin");

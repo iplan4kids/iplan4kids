@@ -1,6 +1,6 @@
 // min and max prices for slider 
-var minPrice = Number.POSITIVE_INFINITY;
-var maxPrice = Number.NEGATIVE_INFINITY;
+var minPrice;
+var maxPrice;
 
 //mock json variable
 var mockEvents = [{
@@ -94,17 +94,7 @@ $(document).ready(function() {
                                 .replace('%EVENT_DATE%', mockEvents[i]['date']) 
                                 .replace('%EVENT_DESCRIPTION%', mockEvents[i]['description'])
                                 .replace('%EVENT_PRICE%', mockEvents[i]['price']);
-        
 
-        // Finding min and max prices to limit the slider range between those
-        if( parseFloat(mockEvents[i]['price']) < minPrice ){
-            minPrice = parseFloat(mockEvents[i]['price']);
-        }
-
-        if( parseFloat(mockEvents[i]['price']) > maxPrice ){
-            maxPrice = parseFloat(mockEvents[i]['price']);
-        }
-        console.log(maxPrice, minPrice);
         parentDiv.append(divContent);
     }
 
@@ -114,9 +104,9 @@ $( function() {
     
     $( "#slider-range" ).slider({
       range: true,
-      min: Math.floor(minPrice),
-      max: Math.ceil(maxPrice),
-      values: [Math.floor(minPrice), Math.ceil(maxPrice)],
+      min: 0,
+      max: 150,
+      values: [0, 150],
       step:1,
       slide: function( event, ui ) {
         $( "#amount" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
@@ -128,21 +118,24 @@ $( function() {
 
 );
 
-function myFunction(){
-    $("#allEvents").empty();
+function applyFilters(){
 
     var parentDiv = $('#allEvents');
-    for (var i = 0; i < mockEvents.length; i++)
-    {
-        var divContent = templateTest.replace('%EVENT_TITLE%', mockEvents[i]['name'])
-                                .replace('%EVENT_IMAGE%', mockEvents[i]['image'])  
-                                .replace('%EVENT_DATE%', mockEvents[i]['date']) 
-                                .replace('%EVENT_DESCRIPTION%', mockEvents[i]['description'])
-                                .replace('%EVENT_PRICE%', mockEvents[i]['price']);
-        
-        if((mockEvents[i]['price'] >= $("#slider-range").slider("values") [0]) && (mockEvents[i]['price'] <= $("#slider-range").slider("values") [1])){
-            console.log("hellos");
-            parentDiv.append(divContent);
-        }
-    }
+
+    // slider filter
+    console.log($("#slider-range").slider("values") [0]);
+    console.log($("#slider-range").slider("values") [1]);
+    var elamou = $("#filterdate").val();
+    alert(typeof(elamou));
+    console.log(elamou);
+
+    var checkedValue1 = $('.category1:checked').val();
+    var checkedValue2 = $('.category2:checked').val();
+    var checkedValue3 = $('.category3:checked').val();
+    var checkedValue4 = $('.category4:checked').val();
+    var checkedValue5 = $('.category5:checked').val();
+
+
+    alert(checkedValue2);
+
 }

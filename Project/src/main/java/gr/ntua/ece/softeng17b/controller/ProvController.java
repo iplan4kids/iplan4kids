@@ -31,8 +31,9 @@ import java.util.Optional;
 public class ProvController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String welcome() {
-		return "redirect:../pages/provWelcome.html";
+	public ModelAndView welcome() {
+		ModelAndView model1 = new ModelAndView("provWelcome");
+		return model1;
 	}
 	
 	
@@ -43,10 +44,10 @@ public class ProvController {
 	
 	
 	@RequestMapping(value = "/myProfile", method = RequestMethod.GET)
-	public String getProfile() {
-		return "redirect:pages/providerProfile.html";
+	public ModelAndView getProfile() {
+		ModelAndView model1 = new ModelAndView("providerProfile");
+		return model1;
 	}
-	
 	
 	@RequestMapping(value = "/buySub", method = RequestMethod.GET)
 	public String getBuySub() {

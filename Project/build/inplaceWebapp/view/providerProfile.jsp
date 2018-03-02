@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page import="gr.ntua.ece.softeng17b.data.Provider" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    Provider prov = (Provider)session.getAttribute("provider");
+%>
 
 <!DOCTYPE html>
 <html lang="el">
@@ -15,9 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<spring:url value="/images"  var="myImages" />
-	<spring:url value="/pages/styles.css"  var="myCss" />
-    <link rel="stylesheet" href=${myCss} type="text/css">
+    <link rel="stylesheet" href="../pages/styles.css" type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -25,7 +28,7 @@
     <!-- ------------------------------------- PAGE HEADER -------------------------------------------------- -->
     <div class="pageHeader row">
 		<div class="JumboLogo" >
-			<img  src=${myImages}/iplan.png />
+            <img  src="<c:url value='/images/iplan.png' />" />
 			<h2 style="margin:auto 0; color:white">Iplan4kids<strong><sub style="font-size:15px; color:white"> by Iplan</sub></strong></h2>
 		</div>
 	</div>
@@ -34,8 +37,8 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-left" href="/app/">
-                    <img src=${myImages}/iplan.png align="center" width="50">
+                <a class="navbar-left" href="/app/provider/">
+                    <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -53,16 +56,16 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Αναφορά</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Προσθήκη Νέου</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/app/provider/addEvent">Προσθήκη Νέου</a>
                     </li>
                     <li>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ανανέωσε</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/app/provider/buySub">Ανανέωσε</a>
                     </li>
                   </ul>
                 <!-- Right part of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                       	<li class="dropdown">
-        							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Όνομα Παρόχου
+        							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> ${provider.getUsername()}
         							<span class="caret"></span></a>
         								  <ul class="dropdown-menu">
         									 <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
@@ -96,39 +99,70 @@
             <span class="glyphicon glyphicon-user"></span>
           </div>
           <div class="center col-sm-6">
-            Όνομα Παρόχου
+            ${provider.getUsername()}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="padding-bottom: 154px">
       <div class="container">
         <table class="profile table">
           <tr>
-            <td>Όνομα:</td>
-            <td>orestis</td>
+            <td>Επωνυμία εταιρίας:</td>
+            <td>${provider.getCompany_name()}</td>
           </tr>
           <tr>
-            <td>Επώνυμο:</td>
-            <td>chan</td>
+            <td>Όνομα Υπεύθυνου:</td>:</td>
+            <td>${provider.getFirst_name()}</td>
           </tr>
           <tr>
-            <td>Τηλέφωνο:</td>
-            <td>090</td>
+            <td>Επώνυμο Υπεύθυνου:</td>
+            <td>${provider.getLast_name()}</td>
+          </tr>
+          <tr>
+            <td>Τηλέφωνο Εταιρίας:</td>
+            <td>${provider.getPhone()}</td>
+          </tr>
+          <tr>
+            <td>Τηλέφωνο Υπεύθυνου:</td>
+            <td>${provider.getM_phone()}</td>
           </tr>
           <tr>
             <td>Email:</td>
-            <td>yooy@oyoyo</td>
+            <td>${provider.getEmail()}</td>
+          </tr>
+          <tr>
+            <td>ΑΦΜ:</td>
+            <td>${provider.getAfm()}</td>
+          </tr>
+          <tr>
+            <td>IBAN:</td>
+            <td>${provider.getIban()}</td>
+          </tr>
+          <tr>
+            <td>Οδός:</td>
+            <td>${provider.getAddress()}</td>
+          </tr>
+          <tr>
+            <td>Αριθμός:</td>
+            <td>${provider.getAddress_num()}</td>
+          </tr>
+          <tr>
+            <td>Πόλη:</td>
+            <td>${provider.getCity()}</td>
           </tr>
           <tr>
             <td>Τ.Κ:</td>
-            <td>16466</td>
+            <td>${provider.getPostal_code()}</td>
           </tr>
           <tr>
-            <td>Περιοχή:</td>
-            <td>Κένυα</td>
+            <td>Ενεργή συνδρομή εώς:</td>
+            <td><%if (prov.getSubscription().getTime() > Calendar.getInstance().getTime().getTime()){%>
+                ${provider.getSubscription()}<%} else{%>Έχει λήξει<%}%>
+            </td>
           </tr>
+
         </table>
       </div>
     </div>
@@ -226,7 +260,7 @@
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-    <script src = "scripts.js" type = "text/javascript"></script>
+    <script src = "../pages/scripts.js" type = "text/javascript"></script>
     </body>
 
 </html>
