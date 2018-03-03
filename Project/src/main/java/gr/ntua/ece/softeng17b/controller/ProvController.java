@@ -40,7 +40,7 @@ public class ProvController {
             model1 = new ModelAndView("index");
         else{
             if (session.getAttribute("provider") != null)
-                model1 = new ModelAndView("addEvent");
+                model1 = new ModelAndView("providerAddEvent");
             else
                 model1 = new ModelAndView("redirect");
         }

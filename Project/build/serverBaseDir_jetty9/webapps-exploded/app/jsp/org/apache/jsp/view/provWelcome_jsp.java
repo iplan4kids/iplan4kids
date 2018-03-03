@@ -58,9 +58,13 @@ public final class provWelcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"el\">\n");
       out.write("<head>\n");
-      out.write("    <title>Bootstrap Example</title>\n");
+      out.write("    <title>Iplan4kids</title>\n");
       out.write("    <meta charset=\"utf-8\">\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("    <link rel=\"icon\" href=\"\"");
+      if (_jspx_meth_c_url_0(_jspx_page_context))
+        return;
+      out.write("\"\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css\">\n");
@@ -78,7 +82,7 @@ public final class provWelcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <div class=\"pageHeader row\">\n");
       out.write("\t\t<div class=\"JumboLogo\" >\n");
       out.write("            <img  src=\"");
-      if (_jspx_meth_c_url_0(_jspx_page_context))
+      if (_jspx_meth_c_url_1(_jspx_page_context))
         return;
       out.write("\" />\n");
       out.write("\t\t\t<h2 style=\"margin:auto 0; color:white\">Iplan4kids<strong><sub style=\"font-size:15px; color:white\"> by Iplan</sub></strong></h2>\n");
@@ -91,7 +95,7 @@ public final class provWelcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"navbar-header\">\n");
       out.write("                <a class=\"navbar-left\" href=\"/app/provider/\">\n");
       out.write("                    <img src=\"");
-      if (_jspx_meth_c_url_1(_jspx_page_context))
+      if (_jspx_meth_c_url_2(_jspx_page_context))
         return;
       out.write("\" align=\"center\" width=\"50\"/>\n");
       out.write("                </a>\n");
@@ -138,9 +142,9 @@ public final class provWelcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->\n");
       out.write("\n");
       out.write("    <div class=\"row list-drastiriotites\">\n");
-      out.write("      <div class=\"col-sm-12\">\n");
+      out.write("      <div class=\"col-sm-12\">d\n");
       out.write("        <div class=\"row\">\n");
-      out.write("          <h2 style=\"align:center;\"> Ιστορικό </h2>\n");
+      out.write("          <h2 style=\"text-align:center;\"> Ιστορικό </h2>\n");
       out.write("          <table class=\"table\">\n");
       out.write("            <thead>\n");
       out.write("              <tr>\n");
@@ -229,6 +233,24 @@ public final class provWelcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_2 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_2.setParent(null);
+    _jspx_th_c_url_2.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_2 = _jspx_th_c_url_2.doStartTag();
+    if (_jspx_th_c_url_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
     return false;
   }
 }

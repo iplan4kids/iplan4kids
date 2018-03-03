@@ -4,8 +4,8 @@ import java.sql.Timestamp;
 
 public class Event {
 
-    private int prov_id;
-    private int event_id;
+    private long prov_id;
+    private long event_id;
     private String title;
     private Timestamp date;
     private int tickets;
@@ -17,11 +17,11 @@ public class Event {
 
     //GETTERS
 
-    public int getProv_id() {
+    public long getProv_id() {
         return prov_id;
     }
 
-    public int getEvent_id() {
+    public long getEvent_id() {
         return event_id;
     }
 
@@ -60,11 +60,11 @@ public class Event {
     //SETTERS
 
 
-    public void setProv_id(int prov_id) {
+    public void setProv_id(long prov_id) {
         this.prov_id = prov_id;
     }
 
-    public void setEvent_id(int event_id) {
+    public void setEvent_id(long event_id) {
         this.event_id = event_id;
     }
 

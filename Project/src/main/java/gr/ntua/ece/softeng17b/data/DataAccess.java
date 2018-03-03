@@ -13,6 +13,7 @@ import java.util.Optional;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.transaction.annotation.Transactional;
@@ -169,26 +170,32 @@ public class DataAccess {
 
     }*/
 
-/*    public Event createEvent(final Place place, final String title, final String description, final Long subject, int tickets) {
+    public Event createEvent(Event ne) {
 
         //Create the new event record using a prepared statement
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement ps = con.prepareStatement(
-                        "insert into event(place_id, title, description, subject, tickets) values(?, ?, ?, ?, ?)",
+                        "insert into events(prov_id, event_id, name, date, tickets, price, description, tags, images, long, lat)" +
+                                " values(?, default, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                         Statement.RETURN_GENERATED_KEYS
                 );
-                ps.setLong(1, place.getId());
-                ps.setString(2, title);
-                ps.setString(3, description);
-                if (subject == null) {
-                    ps.setNull(4, Types.INTEGER);
+                ps.setLong(1, ne.getProv_id());
+                ps.setString(2, ne.getTitle());
+                ps.setTimestamp(3, ne.getDate());
+                ps.setInt(4, ne.getTickets());
+                ps.setDouble(5,ne.getPrice());
+                ps.setString(6, ne.getDescription());
+                if (ne.getTags() == null) {
+                    ps.setNull(7, Types.INTEGER);
                 }
                 else {
-                    ps.setLong(4, subject);
+                    ps.setString(7, ne.getTags());
                 }
-                ps.setInt(5, tickets);
+                ps.setString(8, ne.getImages());
+                ps.setDouble(9,ne.getPlace().getLongitude());
+                ps.setDouble(10,ne.getPlace().getLatitude());
                 return ps;
             }
         };
@@ -197,24 +204,25 @@ public class DataAccess {
 
         if (cnt == 1) {
             //New row has been added
-            Event event = new Event(
+            /*Event event = new Event(
                     keyHolder.getKey().longValue(), //the newly created event id
                     title,
                     description,
                     subject,
                     tickets,
                     place
-            );
+            );*/
+            ne.setEvent_id(keyHolder.getKey().longValue());
             //add it to elastic
-            elastic.add(event);
+            elastic.add(ne);
 
-            return event;
+            return ne;
 
         }
         else {
             throw new RuntimeException("Creation of event failed");
         }
-    }*/
+    }
 
     public double addWallet(long id, double coins) throws Exception{
 

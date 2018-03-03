@@ -112,30 +112,85 @@ $( function() {
         $( "#amount" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
+    $( "#amount" ).val( "Εύρος Τιμών: €" + $( "#slider-range" ).slider( "values", 0 ) +
       " - €" + $( "#slider-range" ).slider( "values", 1 ) );
     } 
 
 );
 
+
+
+
 function applyFilters(){
+
+    var succesful = function (position) {
+        geoloc = {
+            longitude: position.coords.longitude,
+            latitude: position.coords.latitude
+        };
+
+    };
+
 
     var parentDiv = $('#allEvents');
 
-    // slider filter
-    console.log($("#slider-range").slider("values") [0]);
-    console.log($("#slider-range").slider("values") [1]);
-    var elamou = $("#filterdate").val();
-    alert(typeof(elamou));
-    console.log(elamou);
+    var filterDate = $("#filterdate").val();
+    var sliderMin = $("#slider-range").slider("values") [0];
+    var sliderMax = $("#slider-range").slider("values") [1];
+    var selectedCategories = [];
+    var lng,lat;
+    var findAddress;
 
-    var checkedValue1 = $('.category1:checked').val();
-    var checkedValue2 = $('.category2:checked').val();
-    var checkedValue3 = $('.category3:checked').val();
-    var checkedValue4 = $('.category4:checked').val();
-    var checkedValue5 = $('.category5:checked').val();
+    if($('#category1').is(':checked') == true){
+        selectedCategories.push($('#category1').val());
+    }
+    if($('#category2').is(':checked') == true){
+        selectedCategories.push($('#category2').val());
+    }
+    if($('#category3').is(':checked') == true){
+        selectedCategories.push($('#category3').val());
+    }
+    if($('#category4').is(':checked') == true){
+        selectedCategories.push($('#category4').val());
+    }
+    if($('#category5').is(':checked') == true){
+        selectedCategories.push($('#category5').val());
+    }
+
+    if($('#myLocation').is(':checked') == true){
+        findAddress = 0;
+    }
+    if($('#currentLocation').is(':checked') == true){
+        findAddress = 1;
+        var getLocation = function(callback){
+            navigator.geolocation.getCurrentPosition(function(pos){
+                succesful(pos);
+                typeof callback === 'function' && callback(geoloc);
+            }, function(){
+                alert("fail");
+            });
+        };
+        getLocation(function(pos){
+            console.log(pos.longitude, pos.latitude);
+            lng = pos.longitude;
+            lat = pos.latitude;
+            var filtersJSON = {
+                "categories":selectedCategories,
+                "min":sliderMin,
+                "max":sliderMax,
+                "date":filterDate,
+                "lng":lng,
+                "lat":lat,
+                "findAddr":findAddress
+            }
 
 
-    alert(checkedValue2);
+            console.log(filtersJSON);
+        });
+    }
+
+
+
 
 }
+

@@ -111,7 +111,7 @@ public class Elastic {
             writer.endObject();
             writer.name("subject").value(event.getTags());
             writer.name("hasTickets").value(event.getTickets() > 0);
-            writer.name("images").value(event.getTags());
+            writer.name("images").value(event.getImages());
             writer.endObject();
             writer.close();
 

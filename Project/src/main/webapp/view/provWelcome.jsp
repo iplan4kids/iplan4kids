@@ -5,9 +5,10 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Iplan4kids</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href=""<c:url value='/images/iplan.png' />"">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
@@ -77,9 +78,9 @@
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
     <div class="row list-drastiriotites">
-      <div class="col-sm-12">
+      <div class="col-sm-12">d
         <div class="row">
-          <h2 style="align:center;"> Ιστορικό </h2>
+          <h2 style="text-align:center;"> Ιστορικό </h2>
           <table class="table">
             <thead>
               <tr>
