@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
+import gr.ntua.ece.softeng17b.conf.Configuration;
+import gr.ntua.ece.softeng17b.data.DataAccess;
 import gr.ntua.ece.softeng17b.data.Event;
 import gr.ntua.ece.softeng17b.data.Place;
 import gr.ntua.ece.softeng17b.data.Provider;
@@ -83,9 +85,10 @@ public class ProvController {
 	}
 
 
-    @RequestMapping(value = "/addEvent/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/addEvent/add", method = RequestMethod.POST)
     public ModelAndView add(HttpServletRequest req) {
         ModelAndView model1;
+        DataAccess db = Configuration.getInstance().getDataAccess();
         HttpSession session = req.getSession(false);
 
         if (session==null)
@@ -98,13 +101,23 @@ public class ProvController {
         }
 
         Provider prov = (Provider)session.getAttribute("provider");
-        String time[] = req.getParameter("time").split("%3A");
-        String date = req.getParameter("date") + " " + time[0]+":"+time[1];
-        String tags = ""+req.getParameter("sports")+","+
-                ""+req.getParameter("theatre")+","+
-                ""+req.getParameter("music")+","+
-                ""+req.getParameter("workshop")+","+
-                ""+req.getParameter("other")+",";
+
+        String time = req.getParameter("time");
+        if(time.length()<=4) time = "0"+time;
+        time += ":00";
+        String date = req.getParameter("date") + " " + time;
+        String[] arrayTags = {"sports","theatre","music","workshop","other"};
+        int[] numTags = {
+                Integer.parseInt(req.getParameter("sports")),
+                Integer.parseInt(req.getParameter("theatre")),
+                Integer.parseInt(req.getParameter("music")),
+                Integer.parseInt(req.getParameter("workshop")),
+                Integer.parseInt(req.getParameter("other")),
+        };
+        String tags = "";
+        for(int i=0 ; i<5 ; i++){
+            if(numTags[i]==1) tags += arrayTags[i]+" , ";
+        }
         Place pl = new Place(prov.getId(), req.getParameter("title"),"",Double.parseDouble(req.getParameter("lat")),Double.parseDouble(req.getParameter("lng")));
 
         Event ne = new Event();
@@ -117,6 +130,8 @@ public class ProvController {
         ne.setDate(Timestamp.valueOf(date));
         ne.setDescription(req.getParameter("description"));
         ne.setDuration(Integer.parseInt(req.getParameter("duration")));
+
+        db.createEvent(ne);
 
         return model1;
     }

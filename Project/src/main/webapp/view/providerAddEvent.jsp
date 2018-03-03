@@ -30,7 +30,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../pages/styles.css" type="text/css">
     <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
-    <link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css"/>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -102,7 +102,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="register1-form" action="/app/registerDone" method="post" role="form" style="display: block;">
+                            <form id="register1-form" action="/app/provider/addEvent/add" method="post" role="form" style="display: block;">
                                 <span class="help-block"></span>
                                 <div class="form-group">
                                     <input placeholder="Ονομασία δραστηριότητας" type="text" class="form-control" name="title" value="" required="required">
@@ -315,7 +315,7 @@
 <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
 <script src = "../pages/scripts.js" type = "text/javascript"></script>
 <script src = "../pages/registerevent.js" type = "text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIiqpp38PgqgG9teEQZToa_PCO2M7kGzc&language=el&libraries=places&callback=initAutocomplete" async defer></script>
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 </body>

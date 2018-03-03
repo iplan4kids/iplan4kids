@@ -29,7 +29,7 @@ public class DataAccess {
     private Elastic elastic;
 
 
-    public void setup(String driverClass, String url, String user, String pass) throws SQLException {
+    public void setup(String driverClass, String url, String user, String pass, Elastic elastic) throws SQLException {
 
         //initialize the data source
         BasicDataSource bds = new BasicDataSource();
@@ -177,9 +177,9 @@ public class DataAccess {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement ps = con.prepareStatement(
-                        "insert into events(prov_id, event_id, name, date, tickets, price, description, tags, images, long, lat)" +
-                                " values(?, default, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                        Statement.RETURN_GENERATED_KEYS
+                        "insert into events(prov_id, event_id, name, date, tickets, price, description, tags, images, long, lat, duration)" +
+                                " values(?, default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                        new String[]{"event_id"}
                 );
                 ps.setLong(1, ne.getProv_id());
                 ps.setString(2, ne.getTitle());
@@ -196,6 +196,7 @@ public class DataAccess {
                 ps.setString(8, ne.getImages());
                 ps.setDouble(9,ne.getPlace().getLongitude());
                 ps.setDouble(10,ne.getPlace().getLatitude());
+                ps.setInt(11, ne.getDuration());
                 return ps;
             }
         };
@@ -212,6 +213,7 @@ public class DataAccess {
                     tickets,
                     place
             );*/
+            //System.out.println(keyHolder.getKeys());
             ne.setEvent_id(keyHolder.getKey().longValue());
             //add it to elastic
             elastic.add(ne);

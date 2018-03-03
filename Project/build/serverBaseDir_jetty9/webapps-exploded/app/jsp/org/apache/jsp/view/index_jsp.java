@@ -75,7 +75,7 @@ else{
       out.write("    <link rel=\"icon\" type=\"image/png\" href=\"");
       if (_jspx_meth_c_url_0(_jspx_page_context))
         return;
-      out.write("\" sizes=\"16x16\">\n");
+      out.write("\" sizes=\"32x32\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css\">\n");

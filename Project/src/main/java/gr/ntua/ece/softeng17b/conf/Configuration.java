@@ -41,7 +41,8 @@ public class Configuration {
                     getProperty("db.driver"),
                     getProperty("db.url"),
                     getProperty("db.user"),
-                    getProperty("db.pass")
+                    getProperty("db.pass"),
+                    elastic
             );
         }
         catch(Exception e) {

@@ -29,6 +29,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../pages/styles.css" type="text/css">
+    <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css"/>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -100,7 +102,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="register1-form" action="/app/registerDone" method="post" role="form" style="display: block;">
+                            <form id="register1-form" action="/app/provider/addEvent/add" method="post" role="form" style="display: block;">
                                 <span class="help-block"></span>
                                 <div class="form-group">
                                     <input placeholder="Ονομασία δραστηριότητας" type="text" class="form-control" name="title" value="" required="required">
@@ -109,40 +111,44 @@
                                 <div class="form-group">
                                     <input placeholder="Ημερομηνία" type="date" id="checkdate" min="" class="form-control" name="date" value="">
                                 </div>
-
-
+                                <div class="form-group">
+                                    <input type="text" id="time" name="time" class="form-control" placeholder="Time">
+                                </div>
+                                <div class="form-group">
+                                    <input placeholder="Διάρκεια Δραστηριότητας σε λεπτά" type="number" min="0" class="form-control" name="duration" value="" required="required">
+                                </div>
                                 <div class="form-group">
                                     <input id="autocomplete" onFocus="" placeholder="Τοποθεσία" type="text" class="form-control" name="" value="">
                                 </div>
                                 <span id="geowrong" style="color:red;" class="help-block"></span>
                                 <div class="form-group">
-                                    <input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" disabled>
+                                    <input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" disabled>
+                                    <input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" disabled>
+                                    <input type="text" name="address" id="route" class="form-control" placeholder="Oδός" value="" required="required" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" disabled>
+                                    <input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" disabled>
+                                    <input type="hidden" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" >
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" disabled>
+                                    <input type="hidden" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" >
                                 </div>
                                 <div class="form-group">
-                                    <input placeholder="Αριθμός Εισιτηρίων" type="number" min="0" class="form-control" name="" value="" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <input placeholder="Τιμή" type="number" min="0"  class="form-control" name="" value="" required="required">
+                                    <input placeholder="Αριθμός Εισιτηρίων" type="number" min="0" class="form-control" name="tickets" value="" required="required">
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="name" style="resize:none; font-size: 16px;" rows="3" class="form-control" placeholder="Περιγραφή" required="required"></textarea>
+                                    <input placeholder="Τιμή" type="number" min="0"  class="form-control" name="price" value="" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="description" style="resize:none; font-size: 16px;" rows="3" class="form-control" placeholder="Περιγραφή" required="required"></textarea>
                                 </div>
 
                                 <div style="margin-bottom: 15px;" class="row">
@@ -156,7 +162,7 @@
                                                     <div data-toggle="buttons" class="btn-group bizmoduleselect">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="sports" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="sports-checkbox" value="">
 
                                                                 <h5>Αθλητισμός</h5>
                                                             </div>
@@ -169,7 +175,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="theatre" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="theatre-checkbox" value="">
 
                                                                 <h5>Θέατρο</h5>
                                                             </div>
@@ -182,7 +188,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="music" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="music-checkbox" value="">
 
                                                                 <h5>Μουσική</h5>
                                                             </div>
@@ -195,7 +201,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="workshop" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="workshop-checkbox" value="">
 
                                                                 <h5>Εργαστήρι</h5>
                                                             </div>
@@ -208,7 +214,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="other" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="other-checkbox" value="">
 
                                                                 <h5>Άλλες</h5>
                                                             </div>
@@ -223,7 +229,11 @@
 
 
                                 </div>
-
+                                <input type="hidden" class="form-control" name="sports" id="sports" value="0">
+                                <input type="hidden" class="form-control" name="music" id="music" value="0">
+                                <input type="hidden" class="form-control" name="theatre" id="theatre" value="0">
+                                <input type="hidden" class="form-control" name="workshop" id="workshop" value="0">
+                                <input type="hidden" class="form-control" name="other" id="other" value="0">
 
 
                                 <div class="input-group">
@@ -305,7 +315,7 @@
 <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
 <script src = "../pages/scripts.js" type = "text/javascript"></script>
 <script src = "../pages/registerevent.js" type = "text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClySXxDsUN8wEcC0J6xS3TWftKdER07rA&language=el&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIiqpp38PgqgG9teEQZToa_PCO2M7kGzc&language=el&libraries=places&callback=initAutocomplete" async defer></script>
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 </body>
