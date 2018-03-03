@@ -144,9 +144,84 @@
 										<textarea name="name" style="resize:none; font-size: 16px;" rows="3" class="form-control" placeholder="Περιγραφή" required="required"></textarea>
 									  </div>
 
-									  <div class="form-group">
-										<input placeholder="Tags" type="text" class="form-control" name="" value="" required="required">
-									  </div>
+                                    <div style="margin-bottom: 15px;" class="row">
+
+                                        <div class="form-group">
+                                            <h style="margin-left: 20px;">Επιλογή Κατηγοριών:</h>
+                                            <div class="items-collection">
+
+                                                <div class="items col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                    <div class="info-block block-info clearfix">
+                                                        <div data-toggle="buttons" class="btn-group bizmoduleselect">
+                                                            <label class="btn btn-default">
+                                                                <div class="itemcontent">
+                                                                    <input type="checkbox" name="sports" autocomplete="off" value="">
+
+                                                                    <h5>Αθλητισμός</h5>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="items col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                    <div class="info-block block-info clearfix">
+                                                        <div data-toggle="buttons" class="btn-group itemcontent">
+                                                            <label class="btn btn-default">
+                                                                <div class="itemcontent">
+                                                                    <input type="checkbox" name="theatre" autocomplete="off" value="">
+
+                                                                    <h5>Θέατρο</h5>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="items col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                    <div class="info-block block-info clearfix">
+                                                        <div data-toggle="buttons" class="btn-group itemcontent">
+                                                            <label class="btn btn-default">
+                                                                <div class="itemcontent">
+                                                                    <input type="checkbox" name="music" autocomplete="off" value="">
+
+                                                                    <h5>Μουσική</h5>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="items col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                    <div class="info-block block-info clearfix">
+                                                        <div data-toggle="buttons" class="btn-group itemcontent">
+                                                            <label class="btn btn-default">
+                                                                <div class="itemcontent">
+                                                                    <input type="checkbox" name="workshop" autocomplete="off" value="">
+
+                                                                    <h5>Εργαστήρι</h5>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="items col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                    <div class="info-block block-info clearfix">
+                                                        <div data-toggle="buttons" class="btn-group itemcontent">
+                                                            <label class="btn btn-default">
+                                                                <div class="itemcontent">
+                                                                    <input type="checkbox" name="other" autocomplete="off" value="">
+
+                                                                    <h5>Άλλες</h5>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
 
 
 

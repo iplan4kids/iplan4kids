@@ -499,3 +499,29 @@ footer a:hover {
 .list-drastiriotites {
   padding: 80px 0px;
 }
+
+
+/*-------------------------------------- Add Event ---------------------------------------*/
+
+.items-collection{
+    margin:20px 0 0 0;
+}
+.items-collection label.btn-default.active{
+    background-color:#007ba7;
+    color:#FFF;
+}
+.items-collection label.btn-default{
+    width:100%;
+    border:1px solid #ccc;
+    line-height:1.42857143;
+    font-we
+    margin:5px;
+    border-radius: 4px;
+    color: #555s;
+}
+.items-collection label .itemcontent{
+    width:100%;
+}
+.items-collection .btn-group{
+    width:100%
+}
