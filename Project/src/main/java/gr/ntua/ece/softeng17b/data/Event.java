@@ -14,6 +14,7 @@ public class Event {
     private String tags;
     private String images;
     private Place place;
+    private int duration;
 
     //GETTERS
 
@@ -57,6 +58,8 @@ public class Event {
         return place;
     }
 
+    public int getDuration(){ return duration; }
+
     //SETTERS
 
 
@@ -99,4 +102,9 @@ public class Event {
     public void setPlace(Place place) {
         this.place = place;
     }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
 }

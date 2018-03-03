@@ -4,12 +4,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
-
+import gr.ntua.ece.softeng17b.data.Event;
+import gr.ntua.ece.softeng17b.data.Place;
+import gr.ntua.ece.softeng17b.data.Provider;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.sql.Timestamp;
 
 @Controller
 @SessionAttributes("client")
@@ -77,4 +81,45 @@ public class ProvController {
         }
         return model1;
 	}
+
+
+    @RequestMapping(value = "/addEvent/add", method = RequestMethod.GET)
+    public ModelAndView add(HttpServletRequest req) {
+        ModelAndView model1;
+        HttpSession session = req.getSession(false);
+
+        if (session==null)
+            model1 = new ModelAndView("index");
+        else{
+            if (session.getAttribute("provider") != null)
+                model1 = new ModelAndView("providerAddEvent");
+            else
+                model1 = new ModelAndView("redirect");
+        }
+
+        Provider prov = (Provider)session.getAttribute("provider");
+        String time[] = req.getParameter("time").split("%3A");
+        String date = req.getParameter("date") + " " + time[0]+":"+time[1];
+        String tags = ""+req.getParameter("sports")+","+
+                ""+req.getParameter("theatre")+","+
+                ""+req.getParameter("music")+","+
+                ""+req.getParameter("workshop")+","+
+                ""+req.getParameter("other")+",";
+        Place pl = new Place(prov.getId(), req.getParameter("title"),"",Double.parseDouble(req.getParameter("lat")),Double.parseDouble(req.getParameter("lng")));
+
+        Event ne = new Event();
+        ne.setPlace(pl);
+        ne.setTitle(req.getParameter("title"));
+        ne.setProv_id(prov.getId());
+        ne.setPrice(Double.parseDouble(req.getParameter("price")));
+        ne.setTickets(Integer.parseInt(req.getParameter("tickets")));
+        ne.setTags(tags);
+        ne.setDate(Timestamp.valueOf(date));
+        ne.setDescription(req.getParameter("description"));
+        ne.setDuration(Integer.parseInt(req.getParameter("duration")));
+
+        return model1;
+    }
 }
+
+

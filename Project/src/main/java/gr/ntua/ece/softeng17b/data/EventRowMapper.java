@@ -18,6 +18,7 @@ public class EventRowMapper implements RowMapper<Event> {
         ev.setTags(rs.getString("tags"));
         ev.setImages(rs.getString("images"));
         ev.setPlace(new Place(ev.getEvent_id(),ev.getTitle(),"an event",rs.getDouble("lat"),rs.getDouble("long")));
+        ev.setDuration(rs.getInt("duration"));
 
         return ev;
     }
