@@ -169,6 +169,56 @@ function fillInAddress() {
     $("#postal_code").val(codea) ;
 }
 
+/*
+function showValues() {
+    var str = $( "#register1-form" ).serialize();
+    $( "#results" ).text( str );
+}
+*/
+
+
+$( "#sports-checkbox" ).change(setCategories );
+$( "#music-checkbox" ).change(setCategories );
+$( "#theatre-checkbox" ).change(setCategories );
+$( "#workshop-checkbox" ).change(setCategories );
+$( "#other-checkbox" ).change(setCategories );
+
+//showValues();
+
+
+function setCategories() {
+    if($('#sports-checkbox').is(':checked') == true){
+        $('#sports').val('1');
+    }
+    else{
+        $('#sports').val('0');;
+    }
+    if($('#theatre-checkbox').is(':checked') == true){
+        $('#theatre').val('1');
+    }
+    else{
+        $('#theatre').val('0');
+    }
+    if($('#music-checkbox').is(':checked') == true){
+        $('#music').val('1');
+    }
+    else{
+        $('#music').val('0');;
+    }
+    if($('#workshop-checkbox').is(':checked') == true){
+        $('#workshop').val('1');
+    }
+    else{
+        $('#workshop').val('0');;
+    }
+    if($('#other-checkbox').is(':checked') == true){
+        $('#other').val('1');
+    }
+    else{
+        $('#other').val('0');;
+    }
+
+}
 
 
 
@@ -191,3 +241,14 @@ function fillInAddress() {
     }
 }
 */
+
+var timepicker = new TimePicker('time', {
+    lang: 'en',
+    theme: 'dark'
+});
+timepicker.on('change', function(evt) {
+
+    var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+    evt.element.value = value;
+
+});

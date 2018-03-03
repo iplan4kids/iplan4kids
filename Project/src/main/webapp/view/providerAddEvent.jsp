@@ -29,6 +29,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../pages/styles.css" type="text/css">
+    <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+    <link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -109,8 +111,12 @@
                                 <div class="form-group">
                                     <input placeholder="Ημερομηνία" type="date" id="checkdate" min="" class="form-control" name="date" value="">
                                 </div>
-
-
+                                <div class="form-group">
+                                    <input type="text" id="time" name="time" class="form-control" placeholder="Time">
+                                </div>
+                                <div class="form-group">
+                                    <input placeholder="Διάρκεια Δραστηριότητας σε λεπτά" type="number" min="0" class="form-control" name="duration" value="" required="required">
+                                </div>
                                 <div class="form-group">
                                     <input id="autocomplete" onFocus="" placeholder="Τοποθεσία" type="text" class="form-control" name="" value="">
                                 </div>
@@ -156,7 +162,7 @@
                                                     <div data-toggle="buttons" class="btn-group bizmoduleselect">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="sports" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="sports-checkbox" value="">
 
                                                                 <h5>Αθλητισμός</h5>
                                                             </div>
@@ -169,7 +175,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="theatre" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="theatre-checkbox" value="">
 
                                                                 <h5>Θέατρο</h5>
                                                             </div>
@@ -182,7 +188,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="music" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="music-checkbox" value="">
 
                                                                 <h5>Μουσική</h5>
                                                             </div>
@@ -195,7 +201,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="workshop" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="workshop-checkbox" value="">
 
                                                                 <h5>Εργαστήρι</h5>
                                                             </div>
@@ -208,7 +214,7 @@
                                                     <div data-toggle="buttons" class="btn-group itemcontent">
                                                         <label class="btn btn-default">
                                                             <div class="itemcontent">
-                                                                <input type="checkbox" name="other" autocomplete="off" value="">
+                                                                <input type="checkbox" name="" id="other-checkbox" value="">
 
                                                                 <h5>Άλλες</h5>
                                                             </div>
@@ -223,7 +229,11 @@
 
 
                                 </div>
-
+                                <input type="hidden" class="form-control" name="sports" id="sports" value="0">
+                                <input type="hidden" class="form-control" name="music" id="music" value="0">
+                                <input type="hidden" class="form-control" name="theatre" id="theatre" value="0">
+                                <input type="hidden" class="form-control" name="workshop" id="workshop" value="0">
+                                <input type="hidden" class="form-control" name="other" id="other" value="0">
 
 
                                 <div class="input-group">
