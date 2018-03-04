@@ -170,7 +170,7 @@ public class DataAccess {
 
     }*/
 
-    public Event createEvent(Event ne) {
+    public long createEvent(Event ne) {
 
         //Create the new event record using a prepared statement
         PreparedStatementCreator psc = new PreparedStatementCreator() {
@@ -218,7 +218,7 @@ public class DataAccess {
             //add it to elastic
             elastic.add(ne);
 
-            return ne;
+            return ne.getEvent_id();
 
         }
         else {

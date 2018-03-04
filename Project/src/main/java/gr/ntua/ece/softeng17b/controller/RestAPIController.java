@@ -59,7 +59,6 @@ public class RestAPIController {
 
 	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
         EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
-		System.out.println("*"+username+"*");
 	    try {
 			if (loginType.equals("provider")){
 				Optional<Provider> optional = dbAccess.getProviderByUsername(username);
@@ -73,7 +72,6 @@ public class RestAPIController {
             	else throw new Exception("Wrong password " + encrypter.encryptPass(password));
 			}
 			else{
-				System.out.println("*"+username+"*");
 				Optional<Admin> optional = dbAccess.getAdminByUsername(username);
 				Admin a = optional.orElseThrow(() -> new Exception("User Not Found"));
 				if(encrypter.encryptMatch(password,a.getPassword())) {                

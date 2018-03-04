@@ -87,7 +87,10 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("    <link rel=\"stylesheet\" href=\"../pages/styles.css\" type=\"text/css\">\n");
+      out.write("    <link rel=\"stylesheet\" href=\"");
+      if (_jspx_meth_c_url_1(_jspx_page_context))
+        return;
+      out.write("\" type=\"text/css\">\n");
       out.write("    <script src=\"http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js\"></script>\n");
       out.write("    <link rel=\"stylesheet\" href=\"http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css\"/>\n");
       out.write("</head>\n");
@@ -98,7 +101,7 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("<div class=\"pageHeader row\">\n");
       out.write("    <div class=\"JumboLogo\" >\n");
       out.write("        <img  src=\"");
-      if (_jspx_meth_c_url_1(_jspx_page_context))
+      if (_jspx_meth_c_url_2(_jspx_page_context))
         return;
       out.write("\" />\n");
       out.write("        <h2 style=\"margin:auto 0; color:white\">Iplan4kids<strong><sub style=\"font-size:15px; color:white\"> by Iplan</sub></strong></h2>\n");
@@ -111,7 +114,7 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <div class=\"navbar-header\">\n");
       out.write("            <a class=\"navbar-left\" href=\"/app/provider/\">\n");
       out.write("                <img src=\"");
-      if (_jspx_meth_c_url_2(_jspx_page_context))
+      if (_jspx_meth_c_url_3(_jspx_page_context))
         return;
       out.write("\" align=\"center\" width=\"50\"/>\n");
       out.write("            </a>\n");
@@ -169,7 +172,7 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                <div class=\"panel-body\">\n");
       out.write("                    <div class=\"row\">\n");
       out.write("                        <div class=\"col-lg-12\">\n");
-      out.write("                            <form id=\"register1-form\" action=\"/app/provider/addEvent/add\" method=\"post\" role=\"form\" style=\"display: block;\">\n");
+      out.write("                            <form id=\"register1-form\" action=\"/app/provider/addEvent/add\" method=\"post\" role=\"form\" style=\"display: block;\" enctype=\"multipart/form-data\">\n");
       out.write("                                <span class=\"help-block\"></span>\n");
       out.write("                                <div class=\"form-group\">\n");
       out.write("                                    <input placeholder=\"Ονομασία δραστηριότητας\" type=\"text\" class=\"form-control\" name=\"title\" value=\"\" required=\"required\">\n");
@@ -306,15 +309,15 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                <div class=\"input-group\">\n");
       out.write("                                    <label  class=\"input-group-btn\">\n");
       out.write("                                            <span style=\" height: 45px; text-align: center; display:table-cell; vertical-align:middle;\" class=\"btn btn-warning\">\n");
-      out.write("                                                Browse&hellip; <input type=\"file\" style=\"display: none;\" multiple>\n");
+      out.write("                                                Browse&hellip; <input type=\"file\" name=\"images\" accept=\".jpg\" style=\"display: none;\" multiple>\n");
       out.write("                                            </span>\n");
       out.write("                                    </label>\n");
-      out.write("                                    <input type=\"text\" class=\"form-control\">\n");
+      out.write("                                    <input type=\"text\" class=\"form-control\" multiple>\n");
       out.write("                                </div>\n");
       out.write("                                <span class=\"help-block\">\n");
-      out.write("                Try selecting one or more files and watch the feedback\n");
-      out.write("            </span>\n");
-      out.write("\n");
+      out.write("                \t\t\t\t\tTry selecting one or more files and watch the feedback\n");
+      out.write("\t\t\t\t\t\t\t\t\tPlease submit .jpg images\n");
+      out.write("            \t\t\t\t\t</span>\n");
       out.write("\n");
       out.write("                                <div class=\"form-group\">\n");
       out.write("                                    <div id=\"button-row\" class=\"row\">\n");
@@ -382,8 +385,14 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("</div>\n");
       out.write("\n");
       out.write("<!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->\n");
-      out.write("<script src = \"../pages/scripts.js\" type = \"text/javascript\"></script>\n");
-      out.write("<script src = \"../pages/registerevent.js\" type = \"text/javascript\"></script>\n");
+      out.write("<script src = \"");
+      if (_jspx_meth_c_url_4(_jspx_page_context))
+        return;
+      out.write("\" type = \"text/javascript\"></script>\n");
+      out.write("<script src =\"");
+      if (_jspx_meth_c_url_5(_jspx_page_context))
+        return;
+      out.write("\" type = \"text/javascript\"></script>\n");
       out.write("<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCIiqpp38PgqgG9teEQZToa_PCO2M7kGzc&language=el&libraries=places&callback=initAutocomplete\" async defer></script>\n");
       out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\">\n");
       out.write("\n");
@@ -429,7 +438,7 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_url_1.setPageContext(_jspx_page_context);
     _jspx_th_c_url_1.setParent(null);
-    _jspx_th_c_url_1.setValue("/images/iplan.png");
+    _jspx_th_c_url_1.setValue("/pages/styles.css");
     int _jspx_eval_c_url_1 = _jspx_th_c_url_1.doStartTag();
     if (_jspx_th_c_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
@@ -454,6 +463,60 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       return true;
     }
     _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_3(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_3.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_3.setParent(null);
+    _jspx_th_c_url_3.setValue("/images/iplan.png");
+    int _jspx_eval_c_url_3 = _jspx_th_c_url_3.doStartTag();
+    if (_jspx_th_c_url_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_3);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_3);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_4(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_4 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_4.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_4.setParent(null);
+    _jspx_th_c_url_4.setValue("/pages/scripts.js");
+    int _jspx_eval_c_url_4 = _jspx_th_c_url_4.doStartTag();
+    if (_jspx_th_c_url_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_4);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_4);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_5(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_5 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_5.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_5.setParent(null);
+    _jspx_th_c_url_5.setValue("/pages/registerevent.js");
+    int _jspx_eval_c_url_5 = _jspx_th_c_url_5.doStartTag();
+    if (_jspx_th_c_url_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_5);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_5);
     return false;
   }
 }

@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../pages/styles.css" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/pages/styles.css' />" type="text/css">
     <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css"/>
 </head>
@@ -102,7 +102,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="register1-form" action="/app/provider/addEvent/add" method="post" role="form" style="display: block;">
+                            <form id="register1-form" action="/app/provider/addEvent/add" method="post" role="form" style="display: block;" enctype="multipart/form-data">
                                 <span class="help-block"></span>
                                 <div class="form-group">
                                     <input placeholder="Ονομασία δραστηριότητας" type="text" class="form-control" name="title" value="" required="required">
@@ -239,15 +239,15 @@
                                 <div class="input-group">
                                     <label  class="input-group-btn">
                                             <span style=" height: 45px; text-align: center; display:table-cell; vertical-align:middle;" class="btn btn-warning">
-                                                Browse&hellip; <input type="file" style="display: none;" multiple>
+                                                Browse&hellip; <input type="file" name="images" accept=".jpg" style="display: none;" multiple>
                                             </span>
                                     </label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" multiple>
                                 </div>
                                 <span class="help-block">
-                Try selecting one or more files and watch the feedback
-            </span>
-
+                					Try selecting one or more files and watch the feedback
+									Please submit .jpg images
+            					</span>
 
                                 <div class="form-group">
                                     <div id="button-row" class="row">
@@ -313,8 +313,8 @@
 </div>
 
 <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-<script src = "../pages/scripts.js" type = "text/javascript"></script>
-<script src = "../pages/registerevent.js" type = "text/javascript"></script>
+<script src = "<c:url value='/pages/scripts.js' />" type = "text/javascript"></script>
+<script src ="<c:url value='/pages/registerevent.js' />" type = "text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIiqpp38PgqgG9teEQZToa_PCO2M7kGzc&language=el&libraries=places&callback=initAutocomplete" async defer></script>
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 

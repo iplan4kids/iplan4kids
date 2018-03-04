@@ -22,7 +22,11 @@
       <property name = "suffix" value = ".jsp" />
    </bean>
  	
-   <mvc:resources mapping = "pages/**" location = "pages/" />
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+ 	
+   <mvc:resources mapping = "/pages/**" location = "pages/" />
    <mvc:resources mapping = "/images/**" location = "images/" />
+   <mvc:resources mapping = "/eventImages/**" location = "eventImages/" />
    
 </beans>

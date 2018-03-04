@@ -13,9 +13,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Timestamp;
+import java.io.*;
+
 
 @Controller
 @SessionAttributes("client")
@@ -86,7 +90,7 @@ public class ProvController {
 
 
     @RequestMapping(value = "/addEvent/add", method = RequestMethod.POST)
-    public ModelAndView add(HttpServletRequest req) {
+    public ModelAndView add(@RequestParam("images") MultipartFile[] images, HttpServletRequest req) {
         ModelAndView model1;
         DataAccess db = Configuration.getInstance().getDataAccess();
         HttpSession session = req.getSession(false);
@@ -130,8 +134,36 @@ public class ProvController {
         ne.setDate(Timestamp.valueOf(date));
         ne.setDescription(req.getParameter("description"));
         ne.setDuration(Integer.parseInt(req.getParameter("duration")));
+        String imageNames = "";
+        for(int i=0 ; i<images.length ; i++){
+            imageNames += images[i].getOriginalFilename()+" , ";
+        }
+		ne.setImages(imageNames);
 
-        db.createEvent(ne);
+        long id=db.createEvent(ne);
+
+        for(int i=0 ; i<images.length ; i++) {
+            if (!images[i].isEmpty()) {
+                String rootPath = req.getSession().getServletContext().getRealPath("/");
+                File dir = new File(rootPath + File.separator + "eventImages" + File.separator + String.valueOf(id));
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+                File serverFile = new File(dir.getAbsolutePath() + File.separator + images[i].getOriginalFilename());
+
+                try {
+                    try (InputStream is = images[i].getInputStream(); BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile))) {
+                        int j;
+                        while ((j = is.read()) != -1) {
+                            stream.write(j);
+                        }
+                        stream.flush();
+                    }
+                } catch (IOException e) {
+                    System.out.println("error : " + e.getMessage());
+                }
+            }
+        }
 
         return model1;
     }
