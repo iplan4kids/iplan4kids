@@ -22,6 +22,8 @@ public class ClientRowMapper implements RowMapper<Client> {
         cl.setWallet(rs.getDouble("balance"));
         cl.setLongtitude(rs.getDouble("long"));
         cl.setLatitude(rs.getDouble("lat"));
+        cl.setDisabled(rs.getBoolean("disabled"));
+        cl.setBlocked(rs.getBoolean("blocked"));
 
         return cl;
     }

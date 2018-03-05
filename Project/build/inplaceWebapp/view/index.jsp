@@ -150,10 +150,7 @@ else{
             <h2 align="center">H εταιρεία</h2>
             <div class="panel-thumbnail"><img src="<c:url value='/images/ourCompany_image.jpg'/>" class="img-responsive img-rounded"></div>
             <div class="panel-body">
-                <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd
-                    adsasdas ddasd as d as da sd asd as dasdasd a dsads  as da sddas
-                    as dasda sdda ds d ass d a sd a sd asdasd  dsa d as dsa sdasd asd
-                    asdasdadsd dasdasd asd d adsdsdas dd sd s da ds asdasd ds ads asd
+                <p>Ελέγχοντας όλους τους παρόχους των υπηρεσιών που σας προσφέρουμε, δίνουμε ασφαλή αποτελέσματα για τις εκδηλώσεις που ψάχνετε χωρίς επιπλέον χρεώσεις για εσάς
                 </p>
             </div>
         </div>
@@ -171,10 +168,10 @@ else{
                     <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                 </div>
                 <div class="latestTxt">
-                    <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
+                    <div>Ανακοίνωση ! Μπορείτε πλέον να χρησιμοποιείτε και MASTERCARD για την αγορά των πόντων σας</div>
                 </div>
                 <div class="date">
-                    28/1/2018
+                    27/2/2018
                 </div>
             </div>
 
@@ -183,10 +180,10 @@ else{
                     <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                 </div>
                 <div class="latestTxt">
-                    <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
+                    <div>Δευτέρα 5/3 έχουμε δωρεάν εκδήλωση για τα εγκαίνια της πλατφόρμας</div>
                 </div>
                 <div class="date">
-                    28/1/2018
+                    26/2/2018
                 </div>
             </div>
 
@@ -195,10 +192,10 @@ else{
                     <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                 </div>
                 <div class="latestTxt">
-                    <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
+                    <div>Δύο νέοι πάροχοι εκδηλώσεων προστέθηκαν</div>
                 </div>
                 <div class="date">
-                    28/1/2018
+                    26/2/2018
                 </div>
             </div>
 
@@ -207,10 +204,10 @@ else{
                     <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                 </div>
                 <div class="latestTxt">
-                    <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
+                    <div>Προσοχή, μετά την αγορά οποιουδήποτε εισιτηρίου δεν μπορεί να υπάρξει επιστροφή χρημάτων</div>
                 </div>
                 <div class="date">
-                    28/1/2018
+                    25/2/2018
                 </div>
             </div>
 
@@ -219,10 +216,10 @@ else{
                     <img src="<c:url value='/images/announcement_image.png'/>" class="img-responsive"><div class="latestOverlay"></div>
                 </div>
                 <div class="latestTxt">
-                    <div>Ανακοίνωση !!!!!!!!!!!!!!!!!</div>
+                    <div>Μπορείτε να δείτε το υπόλοιπο των χρημάτων σας στο πορτοφόλι</div>
                 </div>
                 <div class="date">
-                    28/1/2018
+                    25/2/2018
                 </div>
             </div>
 
@@ -236,10 +233,7 @@ else{
             <h2 align="center">H εφαρμογή</h2>
             <div class="panel-thumbnail"><img src="<c:url value='/images/ourWebApp_image.jpg'/>" class="img-responsive img-rounded"></div>
             <div class="panel-body">
-                <p>asdsdsa s d as d  asd  asdasda sd a sdasdasdas da sd a sd asd
-                    adsasdas ddasd as d as da sd asd as dasdasd a dsads  as da sddas
-                    as dasda sdda ds d ass d a sd a sd asdasd  dsa d as dsa sdasd asd
-                    asdasdadsd dasdasd asd d adsdsdas dd sd s da ds asdasd ds ads asd
+                <p>Συνδέουμε τους παρόχους παιδικών εκδηλώσεων με τις οικογένειες και τα ίδια τα παιδιά με ευκολία.Πλοηγηθείτε στην ιστοσελίδα μας για να βρείτε εκδηλώσεις του ενδιαφέροντός σας και σε κοντινή σε εσάς τοποθεσία.
                 </p>
             </div>
         </div>

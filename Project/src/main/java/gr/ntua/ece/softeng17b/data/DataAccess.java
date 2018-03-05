@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import gr.ntua.ece.softeng17b.conf.Configuration;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -27,7 +28,7 @@ public class DataAccess {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
     private Elastic elastic;
-
+    RandomString generator = new RandomString(8);
 
     public void setup(String driverClass, String url, String user, String pass, Elastic elastic) throws SQLException {
 
@@ -114,24 +115,32 @@ public class DataAccess {
         }
     }
 
+    //new addition 5-3
+    public List<Event> getAllEventsByProvider(long id){
+        return jdbcTemplate.query("select * from events where prov_id=?", new Object[]{id},new EventRowMapper());
+    }
+
+
+    //allages
     public void createProvider(Provider p) {
 
         Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getFirst_name(),p.getLast_name(),p.getM_phone(),p.getPostal_code(),
-                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime())};
+                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime()), p.getLongtitude(),p.getLatitude(),false,false};
 
         String SQL = "insert into " +
-                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription)" +
-                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription, long, lat, disabled, blocked)" +
+                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update( SQL, params);
     }
 
-    public int createClient(Client c) {
+    //αλλαγες
+    public long createClient(Client c) {
 
         //Client new_c = new Client();
         KeyHolder keyHolder = new GeneratedKeyHolder();
         String query = "insert into " +
-                "clients (username, password, first_name, last_name, postal_code, phone, city, address, address_num, email)" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "clients (username, password, first_name, last_name, postal_code, phone, city, address, address_num, email, long, lat, disabled, blocked)" +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection con = null;
         ResultSet rs = null;
@@ -149,9 +158,14 @@ public class DataAccess {
             stmt.setString(8,c.getAddress());
             stmt.setString(9,c.getAddress_num());
             stmt.setString(10,c.getEmail());
+            stmt.setDouble(11,c.getLongtitude());
+            stmt.setDouble(12,c.getLatitude());
+            stmt.setBoolean(13,c.isDisabled());
+            stmt.setBoolean(14,c.isBlocked());
+
             return stmt;
         },keyHolder);
-        int new_id = keyHolder.getKey().intValue();
+        long new_id = keyHolder.getKey().longValue();
 
         jdbcTemplate.update("insert into wallet(user_id,balance) values(?, ?) ", new Object[]{new_id,0});
 
@@ -279,6 +293,177 @@ public class DataAccess {
         return toBase;
     }
 
+    //---------------------allageeees-------------------------------//
+
+    public Client blockClient(long id){
+        try {
+            Optional<Client> optional = getClient(id);
+            Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            c.setBlocked(true);
+            String query = "update clients set blocked=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{c.isBlocked(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Provider blockProvider(long id){
+        try {
+            Optional<Provider> optional = getProvider(id);
+            Provider p = optional.orElseThrow(() -> new Exception("Provider Not Found"));
+            p.setBlocked(true);
+            String query = "update providers set blocked=? where prov_id=?";
+            jdbcTemplate.update(query, new Object[]{p.isBlocked(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Provider unblockProvider(long id){
+        try {
+            Optional<Provider> optional = getProvider(id);
+            Provider p = optional.orElseThrow(() -> new Exception("Provider Not Found"));
+            p.setBlocked(false);
+            String query = "update providers set blocked=? where prov_id=?";
+            jdbcTemplate.update(query, new Object[]{p.isBlocked(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Client unblockClient(long id){
+        try {
+            Optional<Client> optional = getClient(id);
+            Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            c.setBlocked(false);
+            String query = "update clients set blocked=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{c.isBlocked(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Client disableClient(long id){
+        try {
+            Optional<Client> optional = getClient(id);
+            Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            c.setDisabled(true);
+            String query = "update clients set blocked=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{c.isDisabled(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Provider disableProvider(long id){
+        try {
+            Optional<Provider> optional = getProvider(id);
+            Provider p = optional.orElseThrow(() -> new Exception("Provider Not Found"));
+            p.setDisabled(true);
+            String query = "update providers set blocked=? where prov_id=?";
+            jdbcTemplate.update(query, new Object[]{p.isDisabled(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Provider undisableProvider(long id){
+        try {
+            Optional<Provider> optional = getProvider(id);
+            Provider p = optional.orElseThrow(() -> new Exception("Provider Not Found"));
+            p.setDisabled(false);
+            String query = "update providers set blocked=? where prov_id=?";
+            jdbcTemplate.update(query, new Object[]{p.isDisabled(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Client undisableClient(long id){
+        try {
+            Optional<Client> optional = getClient(id);
+            Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            c.setDisabled(false);
+            String query = "update clients set blocked=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{c.isDisabled(), id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public boolean deleteClient(long id){
+        try {
+            Optional<Client> optional = getClient(id);
+            Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            String query = "delete from clients where user_id=?";
+            jdbcTemplate.update(query, new Object[]{id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean deleteProvider(long id){
+        try {
+            Optional<Provider> optional = getProvider(id);
+            Provider p = optional.orElseThrow(() -> new Exception("Provider Not Found"));
+            String query = "delete from providers where prov_id=?";
+            jdbcTemplate.update(query, new Object[]{id});
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public String resetClientPassword(long id){
+        try {
+            Optional<Client> optional = getClient(id);
+            Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            String new_pass = generator.nextString();
+            EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
+            c.setPassword(encrypter.encryptPass(new_pass));
+            String query = "update clients set password=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{c.getPassword(),id});
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String resetProviderPassword(long id){
+        try {
+            Optional<Provider> optional = getProvider(id);
+            Provider p = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            String new_pass = generator.nextString();
+            EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
+            p.setPassword(encrypter.encryptPass(new_pass));
+            String query = "update clients set password=? where user_id=?";
+            jdbcTemplate.update(query, new Object[]{p.getPassword(),id});
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
    /* public double subTicket(long id, double coins) throws Exception{
 

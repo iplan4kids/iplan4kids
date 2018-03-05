@@ -7,6 +7,7 @@ import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.client.Requests;
 import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
@@ -15,6 +16,8 @@ import org.elasticsearch.common.unit.DistanceUnit;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.script.Script;
+import org.elasticsearch.script.ScriptType;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -23,7 +26,9 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import static java.util.Collections.singletonMap;
 
 
 public class Elastic {
@@ -124,6 +129,18 @@ public class Elastic {
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage(), e);
         }
+    }
+
+    void update(long id){
+        UpdateRequest request = new UpdateRequest(
+                "softeng",
+                "event",
+                Double.toString(id));
+
+        Map<String, Object> parameters = singletonMap("hasTickets", false);
+
+        Script inline = new Script(ScriptType.INLINE, "painless", "ctx._source.field += params.count", parameters);
+        request.script(inline);
     }
 
     SearchResults search(String text, Long subject, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {

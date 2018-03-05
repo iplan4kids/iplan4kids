@@ -29,7 +29,8 @@ public class ProviderRowMapper implements RowMapper<Provider> {
         pr.setSubscription(rs.getTimestamp("subscription"));
         pr.setLongtitude(rs.getDouble("long"));
         pr.setLatitude(rs.getDouble("lat"));
-
+        pr.setDisabled(rs.getBoolean("disabled"));
+        pr.setBlocked(rs.getBoolean("blocked"));
 
         return pr;
     }

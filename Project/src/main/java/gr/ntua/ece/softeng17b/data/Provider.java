@@ -17,6 +17,8 @@ public class Provider extends User {
     private Timestamp subscription;
     private double longtitude;
     private double latitude;
+    private boolean disabled;
+    private boolean blocked;
 
 
     //GETTERS
@@ -93,6 +95,14 @@ public class Provider extends User {
         return latitude;
     }
 
+    public boolean isDisabled(){
+        return disabled;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
     // SETTERS
 
     public void setId(int id) {
@@ -165,6 +175,14 @@ public class Provider extends User {
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
     //-------------------------------------------------

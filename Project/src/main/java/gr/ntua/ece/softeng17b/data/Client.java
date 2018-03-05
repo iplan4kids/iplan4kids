@@ -13,6 +13,8 @@ public class Client extends User{
     private double latitude;
     private double longtitude;
     private double balance;
+    private boolean disabled;
+    private boolean blocked;
 
     // GETTERS
 
@@ -70,6 +72,14 @@ public class Client extends User{
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
     }
 
     // SETTERS
@@ -130,5 +140,13 @@ public class Client extends User{
 
     public double getLatitude() {
         return latitude;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 }
