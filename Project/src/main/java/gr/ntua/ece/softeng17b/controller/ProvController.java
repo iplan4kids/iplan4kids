@@ -9,6 +9,8 @@ import gr.ntua.ece.softeng17b.data.DataAccess;
 import gr.ntua.ece.softeng17b.data.Event;
 import gr.ntua.ece.softeng17b.data.Place;
 import gr.ntua.ece.softeng17b.data.Provider;
+import gr.ntua.ece.softeng17b.services.CreateEventService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,14 @@ import java.io.*;
 @SessionAttributes("client")
 @RequestMapping(value = "/provider")
 public class ProvController {
+
+    @Autowired
+    Configuration conf;
+    @Autowired
+    DataAccess dbAccess;
+
+    @Autowired
+    CreateEventService ceService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView welcome(HttpServletRequest req) {
@@ -92,7 +102,6 @@ public class ProvController {
     @RequestMapping(value = "/addEvent/add", method = RequestMethod.POST)
     public ModelAndView add(@RequestParam("images") MultipartFile[] images, HttpServletRequest req) {
         ModelAndView model1;
-        DataAccess db = Configuration.getInstance().getDataAccess();
         HttpSession session = req.getSession(false);
 
         if (session==null)
@@ -140,7 +149,8 @@ public class ProvController {
         }
 		ne.setImages(imageNames);
 
-        long id=db.createEvent(ne);
+        Event event = ceService.doCreateEvent(ne);
+        long id= event.getEvent_id();
 
         for(int i=0 ; i<images.length ; i++) {
             if (!images[i].isEmpty()) {

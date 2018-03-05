@@ -12,21 +12,32 @@ import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
+@Repository
 public class DataAccess {
 
     private static final int MAX_TOTAL_CONNECTIONS = 16;
     private static final int MAX_IDLE_CONNECTIONS = 8;
 
-    private DataSource dataSource;
+    private DataSource basicDataSource;
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
     private Elastic elastic;
+
+    @Autowired
+    public DataAccess(BasicDataSource basicDataSource){
+        this.basicDataSource = basicDataSource;
+    }
 
 
     public void setup(String driverClass, String url, String user, String pass, Elastic elastic) throws SQLException {
@@ -50,14 +61,12 @@ public class DataAccess {
         jdbcTemplate = new JdbcTemplate(bds);
 
         //keep the dataSource for the low-level manual example to function (not actually required)
-        dataSource = bds;
 
-        this.elastic = elastic;
     }
 
 
     public List<Client> getAllClients() {
-        return jdbcTemplate.query("select * from clients,wallet where clients.user_id = wallet.user_id", new ClientRowMapper());
+        return jdbcTemplate.query("select * from clients", new ClientRowMapper());
     }
 
     public List<Provider> getAllProviders() {
@@ -66,7 +75,7 @@ public class DataAccess {
 
     public Optional<Client> getClient(Long id) {
         Long[] params = new Long[]{id};
-        List<Client> places = jdbcTemplate.query("select * from clients,wallet where clients.user_id = ? and clients.user_id = wallet.user_id", params, new ClientRowMapper());
+        List<Client> places = jdbcTemplate.query("select * from clients where clients.user_id = ?", params, new ClientRowMapper());
         if (places.size() == 1) {
             return Optional.of(places.get(0));
         } else {
@@ -76,7 +85,7 @@ public class DataAccess {
 
     public Optional<Client> getClientByUsername(String username) {
         String[] params = new String[]{username};
-        List<Client> places = jdbcTemplate.query("select * from clients,wallet where username = ? and clients.user_id = wallet.user_id", params, new ClientRowMapper());
+        List<Client> places = jdbcTemplate.query("select * from clients where username = ?", params, new ClientRowMapper());
         if (places.size() == 1) {
             return Optional.of(places.get(0));
         } else {
@@ -117,12 +126,18 @@ public class DataAccess {
     public void createProvider(Provider p) {
 
         Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getFirst_name(),p.getLast_name(),p.getM_phone(),p.getPostal_code(),
-                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime())};
+                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime()),p.getLongtitude(),p.getLatitude()};
 
         String SQL = "insert into " +
-                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription)" +
-                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription, long, lat)" +
+                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update( SQL, params);
+        /*try {
+            jdbcTemplate.getDataSource().getConnection().commit();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }*/
     }
 
     public int createClient(Client c) {
@@ -130,8 +145,8 @@ public class DataAccess {
         //Client new_c = new Client();
         KeyHolder keyHolder = new GeneratedKeyHolder();
         String query = "insert into " +
-                "clients (username, password, first_name, last_name, postal_code, phone, city, address, address_num, email)" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "clients (username, password, first_name, last_name, postal_code, phone, city, address, address_num, email, long, lat, balance)" +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
 
         Connection con = null;
         ResultSet rs = null;
@@ -149,13 +164,19 @@ public class DataAccess {
             stmt.setString(8,c.getAddress());
             stmt.setString(9,c.getAddress_num());
             stmt.setString(10,c.getEmail());
+            stmt.setDouble(11,c.getLongtitude());
+            stmt.setDouble(12,c.getLatitude());
             return stmt;
         },keyHolder);
         int new_id = keyHolder.getKey().intValue();
-
-        jdbcTemplate.update("insert into wallet(user_id,balance) values(?, ?) ", new Object[]{new_id,0});
-
+        /*try {
+            jdbcTemplate.getDataSource().getConnection().commit();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }*/
         return new_id;
+
     }
 
     /*public void createEvent(Event e){
@@ -170,7 +191,7 @@ public class DataAccess {
 
     }*/
 
-    public long createEvent(Event ne) {
+    public Event createEvent(Event ne) {
 
         //Create the new event record using a prepared statement
         PreparedStatementCreator psc = new PreparedStatementCreator() {
@@ -216,9 +237,8 @@ public class DataAccess {
             //System.out.println(keyHolder.getKeys());
             ne.setEvent_id(keyHolder.getKey().longValue());
             //add it to elastic
-            elastic.add(ne);
 
-            return ne.getEvent_id();
+            return ne;
 
         }
         else {
@@ -232,7 +252,7 @@ public class DataAccess {
         Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
         double new_balance = c.getWallet() + coins;
 
-        String query = "update wallet set balance=? where user_id=?";
+        String query = "update clients set balance=? where user_id=?";
         jdbcTemplate.update(query, new Object[]{new_balance,id});
         c.setWallet(new_balance);
 
@@ -248,7 +268,7 @@ public class DataAccess {
             throw new Exception("Not enough points");
         }
         else {
-            String query = "update wallet set balance=? where user_id=?";
+            String query = "update clients set balance=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{new_balance, id});
             c.setWallet(new_balance);
 
@@ -279,6 +299,10 @@ public class DataAccess {
         return toBase;
     }
 
+
+    public void shutdown() {
+        elastic.shutdown();
+    }
 
    /* public double subTicket(long id, double coins) throws Exception{
 

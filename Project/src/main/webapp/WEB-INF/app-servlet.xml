@@ -12,10 +12,10 @@
    http://www.springframework.org/schema/tx
    http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-   <context:component-scan base-package = "gr.ntua.ece.softeng17b.controller" />
+   <context:component-scan base-package = "gr.ntua.ece.softeng17b.controller,gr.ntua.ece.softeng17b.conf" />
    <mvc:annotation-driven />
 
-   <tx:annotation-driven/>
+   <tx:annotation-driven transaction-manager="transactionManager"/>
 
    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name = "prefix" value = "/view/" />
