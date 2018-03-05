@@ -514,10 +514,10 @@ footer a:hover {
     width:100%;
     border:1px solid #ccc;
     line-height:1.42857143;
-
+    font-we
     margin:5px;
     border-radius: 4px;
-    color: #555;
+    color: #555s;
 }
 .items-collection label .itemcontent{
     width:100%;
@@ -525,34 +525,3 @@ footer a:hover {
 .items-collection .btn-group{
     width:100%
 }
-
-
-/*--------------------------------------  Event Page---------------------------------------*/
-
-.btn-sq-lg {
-    width: 150px !important;
-    height: 150px !important;
-}
-
-.btn-sq {
-    width: 100px !important;
-    height: 100px !important;
-    font-size: 10px;
-}
-
-.btn-sq-sm {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 10px;
-}
-
-.btn-sq-xs {
-    width: 25px !important;
-    height: 25px !important;
-    padding:2px;
-}
-
-.gi-2x{font-size: 2em;}
-.gi-3x{font-size: 3em;}
-.gi-4x{font-size: 4em;}
-.gi-5x{font-size: 5em;}

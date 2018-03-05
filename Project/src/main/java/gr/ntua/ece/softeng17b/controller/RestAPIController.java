@@ -11,8 +11,6 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import gr.ntua.ece.softeng17b.services.CreateEventService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +24,6 @@ public class RestAPIController {
 
 
 
-	@Autowired
-	Configuration conf;
-
-	@Autowired
-	DataAccess dbAccess;
-
-	@Autowired
-	CreateEventService ceService;
 
 
 /*--------------------------------------------------------------------	Client Login	------------------------------------------ */
@@ -41,8 +31,8 @@ public class RestAPIController {
 	@RequestMapping(value = "/loginClient", method = RequestMethod.POST)
 	public RESTclass submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest req) {
 		
-		/*DataAccess dbAccess = Configuration.getInstance().getDataAccess();*/
-        EncryptionUtils encrypter = conf.getEncrypter();
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
 		try {
 			Optional<Client> optional = dbAccess.getClientByUsername(username);
@@ -67,8 +57,8 @@ public class RestAPIController {
 	@RequestMapping(value = "/login/{type}", method = RequestMethod.POST)
 	public boolean submitAdmissionForm(@RequestParam("username") String username, @RequestParam("password") String password, @PathVariable("type") String loginType, HttpServletRequest req) {
 
-	    //DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-        EncryptionUtils encrypter = conf.getEncrypter();
+	    DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 	    try {
 			if (loginType.equals("provider")){
 				Optional<Provider> optional = dbAccess.getProviderByUsername(username);
@@ -109,13 +99,13 @@ public class RestAPIController {
 	
 	@RequestMapping(value = "/admin/clients", method = RequestMethod.GET)
 	public List<Client> getClients(){
-		//DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 		return dbAccess.getAllClients();
 	}
 
 	@RequestMapping(value = "/admin/providers", method = RequestMethod.GET)
 	public List<Provider> getProviders(){
-		//DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 		return dbAccess.getAllProviders();
 	}
 
@@ -133,7 +123,7 @@ public class RestAPIController {
 	public RESTclass getPoints(@RequestParam("money") double money, HttpServletRequest req){
 		HttpSession session = req.getSession(false);
 		Client c = (Client) session.getAttribute("client");
-		DataAccess dbAccess = conf.getDataAccess();
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 
 		try {
 			double new_money = dbAccess.addWallet(c.getId(), money);
@@ -148,7 +138,7 @@ public class RestAPIController {
 
 	@RequestMapping(value = "/provider/buySub/renew", method = RequestMethod.POST)
 	public boolean buyYourSub(@RequestParam ("amount") int subMonths, HttpServletRequest req) {
-		//DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 		HttpSession session = req.getSession(false);
 
 		Provider prov = (Provider) session.getAttribute("provider");

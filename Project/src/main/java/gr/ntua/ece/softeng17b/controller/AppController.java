@@ -6,8 +6,6 @@ import gr.ntua.ece.softeng17b.data.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import gr.ntua.ece.softeng17b.services.CreateEventService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class AppController {
 
 
-	@Autowired
-	Configuration conf;
-	@Autowired
-	DataAccess dbAccess;
-
-	@Autowired
-	CreateEventService ceService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView welcome(HttpServletRequest req) {
@@ -74,7 +65,8 @@ public class AppController {
 	@RequestMapping(value = "/registerClient", method = RequestMethod.POST)
 	public ModelAndView registerForm(@ModelAttribute("client1") Client client1) {
 
-        EncryptionUtils encrypter = conf.getEncrypter();
+        DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+        EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
         client1.setPassword(encrypter.encryptPass(client1.getPassword()));
         dbAccess.createClient(client1);
@@ -91,8 +83,8 @@ public class AppController {
 	@RequestMapping(value = "/registerProvider", method = RequestMethod.POST)
 	public ModelAndView registerForm(@ModelAttribute("provider1") Provider provider1) {
 
-
-		EncryptionUtils encrypter = conf.getEncrypter();
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
 
 		provider1.setPassword(encrypter.encryptPass(provider1.getPassword()));
 		dbAccess.createProvider(provider1);

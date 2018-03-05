@@ -18,8 +18,6 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -28,26 +26,23 @@ import java.util.List;
 
 
 
-@Repository
 public class Elastic {
 
-    @Autowired
     private RestHighLevelClient client;
-
     private String index;
 
-    public void setup(String index, RestHighLevelClient client) {
+    public void setup(String host, int port, String index) {
         try {
             //set the name of the index
             this.index = index;
-            this.client = client;
 
             //create the high-level client
-            /*client = new RestHighLevelClient(
+            client = new RestHighLevelClient(
                     RestClient.builder(
                             new HttpHost(host, port, "http")
                     )
-            );*/
+            );
+
             if (!indexExists()) {
                 //create the index using the appropriate event mapping
                 CreateIndexRequest req = Requests.createIndexRequest(index).
@@ -64,7 +59,7 @@ public class Elastic {
 
     }
 
-    public void shutdown() {
+    void shutdown() {
         try {
             if (client != null) {
                 client.close();
@@ -101,7 +96,7 @@ public class Elastic {
         return sw.toString();
     }
 
-    public void add(Event event) throws RuntimeException {
+    void add(Event event) throws RuntimeException {
         try {
             //jsonify the event
             StringWriter sw = new StringWriter();
@@ -116,7 +111,7 @@ public class Elastic {
             writer.endObject();
             writer.name("subject").value(event.getTags());
             writer.name("hasTickets").value(event.getTickets() > 0);
-            //writer.name("images").value(event.getImages());
+            writer.name("images").value(event.getImages());
             writer.endObject();
             writer.close();
 
@@ -131,7 +126,7 @@ public class Elastic {
         }
     }
 
-    public SearchResults search(String text, Long subject, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
+    SearchResults search(String text, Long subject, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
         //A single search entry point is provided for all cases.
         //It uses the BoolQuery of elastic to apply all user-supplied constraints / filters (must = AND).
         //The constraint to return only events that have tickets available is automatically applied.
