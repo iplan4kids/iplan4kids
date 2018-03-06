@@ -56,6 +56,10 @@ public class DataAccess {
         this.elastic = elastic;
     }
 
+    public void shutdown() {
+        elastic.shutdown();
+    }
+
 
     public List<Client> getAllClients() {
         return jdbcTemplate.query("select * from clients,wallet where clients.user_id = wallet.user_id", new ClientRowMapper());
@@ -64,6 +68,11 @@ public class DataAccess {
     public List<Provider> getAllProviders() {
         return jdbcTemplate.query("select * from providers", new ProviderRowMapper());
     }
+
+    public List<Event> getAllEvents() {
+        return jdbcTemplate.query("select * from events limit 9 offset 0", new EventRowMapper());
+    }
+
 
     public Optional<Client> getClient(Long id) {
         Long[] params = new Long[]{id};
@@ -118,6 +127,28 @@ public class DataAccess {
     //new addition 5-3
     public List<Event> getAllEventsByProvider(long id){
         return jdbcTemplate.query("select * from events where prov_id=?", new Object[]{id},new EventRowMapper());
+    }
+
+    public Optional<Event> getEventById(long id){
+        Long[] params = new Long[]{id};
+        List<Event> events = jdbcTemplate.query("select * from events where event_id = ?", params, new EventRowMapper());
+        if (events.size() == 1) {
+            return Optional.of(events.get(0));
+        } else {
+            return Optional.empty();
+        }
+    }
+
+    public void setImages(Event ne){
+        try {
+            Optional<Event> optional = getEventById(ne.getEvent_id());
+            Event ue = optional.orElseThrow(() -> new Exception("Client Not Found"));
+            String query = "update events set images=? where event_id=?";
+            jdbcTemplate.update(query, new Object[]{ne.getImages(), ne.getEvent_id()});
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -197,7 +228,7 @@ public class DataAccess {
                 );
                 ps.setLong(1, ne.getProv_id());
                 ps.setString(2, ne.getTitle());
-                ps.setTimestamp(3, ne.getDate());
+                ps.setTimestamp(3, new Timestamp(ne.getDate().getTime()));
                 ps.setInt(4, ne.getTickets());
                 ps.setDouble(5,ne.getPrice());
                 ps.setString(6, ne.getDescription());

@@ -89,13 +89,17 @@ public class RestAPIController {
 		}
 	}
 
+//---------------------------Events-----------------------------------------------//
 
 
+	@RequestMapping(value = "/events/getEvents", method = RequestMethod.POST)
+	public List<Event> getEvents(){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		return dbAccess.getAllEvents();
+	}
 
 
-
-
-
+//------------------------------------------------------------------------------//
 	
 	@RequestMapping(value = "/admin/clients", method = RequestMethod.GET)
 	public List<Client> getClients(){

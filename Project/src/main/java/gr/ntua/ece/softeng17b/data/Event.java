@@ -1,13 +1,14 @@
 package gr.ntua.ece.softeng17b.data;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class Event {
 
     private long prov_id;
     private long event_id;
     private String title;
-    private Timestamp date;
+    private Date date;
     private int tickets;
     private double price;
     private String description;
@@ -30,7 +31,7 @@ public class Event {
         return title;
     }
 
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -75,7 +76,7 @@ public class Event {
         this.title = title;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

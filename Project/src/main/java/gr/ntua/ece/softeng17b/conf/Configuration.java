@@ -74,4 +74,8 @@ public class Configuration {
         return encrypter;
 }
 
+    void shutdown() {
+        dataAccess.shutdown();
+    }
+
 }

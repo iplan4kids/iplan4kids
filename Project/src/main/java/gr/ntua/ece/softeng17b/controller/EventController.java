@@ -31,15 +31,17 @@ import java.util.Optional;
 public class EventController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String getEvents(HttpServletRequest req) {
-		/*ModelAndView model1 = new ModelAndView("events");
+	public ModelAndView getEvents(HttpServletRequest req) {
+		ModelAndView model1 = new ModelAndView("allEvents");
 		HttpSession session = req.getSession(false);
-		if (session == null)
+		/*if (session == null)
 			model1.addObject("loggedIn", false);
 		else
 			model1.addObject("loggedIn", true);*/
-		return "redirect:pages/allEvents.html";
+		return model1;
 	}
+
+
 	
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
 	public String getEvent(HttpServletRequest req) {

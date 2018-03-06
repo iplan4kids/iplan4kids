@@ -65,10 +65,13 @@ var templateTest= '<div class="col-sm-4">' +
                         '<h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h2>' +
                         '<div class="panel-thumbnail eventImage"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></div>' +
                         '<div class="panel-body eventDescription">' +
-                            '<div class="eventDate">' +
+                           /* '<div class="eventDate">' +
                                 '%EVENT_DATE%' +
-                            '</div>' +
-                            '<div style="font-weight:bold; color:#333; margin-bottom:5px;">Περιγραφή</div>' +
+                            '</div>' +*/
+  ' <div class="eventDate">' +
+'%EVENT_TIME%' +
+'</div>' +
+                            '<div style="font-weight:bold; color:#333; margin-bottom:5px;">%EVENT_DATE% <br><br> Περιγραφή:</div>' +
                             '<div class="eventDescription">' +
                             '%EVENT_DESCRIPTION%' +
                             '</div>' +
@@ -83,9 +86,60 @@ var templateTest= '<div class="col-sm-4">' +
 
 $(document).ready(function() {
 // -------------------------------------- EVENT CARD ------------------------------------------------------------
- 
 
-    var parentDiv = $('#allEvents');
+
+    $.ajax({
+        url: "/app/events/getEvents", // url where to submit the request
+        type : "POST", // type of action POST || GET
+        dataType : 'json', // data type
+        contentType : 'json',
+        data : {"filters":0}, // post data || get data
+        success : function(result) {
+            // you can see the result from the console
+            // tab of the developer tools
+            if(result.length != 0) {
+                var parentDiv = $('#allEvents');
+                for (var i = 0; i < result.length; i++) {
+                    console.log(result[i]['price']);
+                    var date = new Date(result[i]['date']);
+                    var dd = date.getDate();
+                    var mm = date.getMonth();
+                    var yyyy = date.getFullYear();
+                    var hh = date.getHours();
+                    var mi = date.getMinutes();
+                    if (dd<10){
+                        dd = '0' + dd;
+                    }
+                    if (mm<10){
+                        mm = '0' +mm;
+                    }
+                    var eventDate = dd + "/" + mm + "/" + yyyy;
+                    var eventTime = hh + ":" + mi;
+                    var ds = result[i]['description'];
+                    if (ds.length> 33){
+                        ds = ds.substring(0,30)+"...";
+                    }
+                    else{
+                       // ds = ds.padEnd(33);
+                    }
+                    var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
+                        .replace('%EVENT_IMAGE%', result[i]['images'])
+                        .replace('%EVENT_DATE%', eventDate)
+                        .replace('%EVENT_DESCRIPTION%',ds )
+                        .replace('%EVENT_PRICE%', result[i]['price'])
+                        .replace('%EVENT_TIME%',eventTime );
+
+                    parentDiv.append(divContent);
+                }
+            }
+        },
+        error: function(xhr, resp, text) {
+            alert("AJAX FAILED");
+        }
+    })
+
+
+    /*var parentDiv = $('#allEvents');
     for (var i = 0; i < mockEvents.length; i++)
     {
         console.log(mockEvents[i]['price']);
@@ -96,7 +150,7 @@ $(document).ready(function() {
                                 .replace('%EVENT_PRICE%', mockEvents[i]['price']);
 
         parentDiv.append(divContent);
-    }
+    }*/
 
 });
 

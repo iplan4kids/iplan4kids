@@ -1,6 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
+<%@ page import="gr.ntua.ece.softeng17b.data.Provider" %>
+<%@ page import="java.util.Calendar" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%if (session.getAttribute("id") == null){
+		response.sendRedirect("/app/provider/addEvent");
+	}
+%>
 
+<%
+    String blocked;
+    Provider prov = (Provider) session.getAttribute("provider");
+    if(prov.getSubscription().getTime() < Calendar.getInstance().getTime().getTime()){
+        blocked = "disabled";
+    }
+    else{
+        blocked = "";
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="el">
@@ -78,7 +94,8 @@
 
 <h2 style="text-align:center">Παρακαλώ αν επιθυμείτε να ανεβάσετε φωτογραφίες για τη δραστηριότητα σας, μπορείτε να τις επιλέξετε παρακάτω. Διαφορετικά απλώς πατήστε το κουμπί και θα μεταβείτε στη προηγούμενη φόρμα</h2>
 
-<form id="register1-form" action="/app/provider/addEvent/upload" method="post" role="form" style="display: block;" enctype="multipart/form-data">
+<form id="register-form" action="/app/provider/addEvent/addImages" method="post" role="form" style="display: block;" enctype="multipart/form-data">
+    <span class="help-block" ${error}  >${error}</span>
     <div class="input-group">
         <label  class="input-group-btn">
             <span style=" height: 45px; text-align: center; display:table-cell; vertical-align:middle;" class="btn btn-warning">
@@ -94,7 +111,7 @@
     <div class="form-group">
         <div id="button-row" class="row">
             <div class="">
-                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register" <%=blocked%>>Ανέβασμα δραστηριότητας</button>
+                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register" <%=blocked%>>Προσθήκη φωτογραφιών</button>
             </div>
         </div>
     </div>
