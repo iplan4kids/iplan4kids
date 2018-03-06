@@ -102,8 +102,8 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="register1-form" action="/app/provider/addEvent/add" method="post" role="form" style="display: block;" enctype="multipart/form-data">
-                                <span class="help-block"></span>
+                            <form id="register1-form" action="/app/provider/addEvent/addDetails" method="post" role="form" style="display: block;" >
+                                <span class="help-block" ${error}  >${error}</span>
                                 <div class="form-group">
                                     <input placeholder="Ονομασία δραστηριότητας" type="text" class="form-control" name="title" value="" required="required">
                                 </div>
@@ -235,24 +235,10 @@
                                 <input type="hidden" class="form-control" name="workshop" id="workshop" value="0">
                                 <input type="hidden" class="form-control" name="other" id="other" value="0">
 
-
-                                <div class="input-group">
-                                    <label  class="input-group-btn">
-                                            <span style=" height: 45px; text-align: center; display:table-cell; vertical-align:middle;" class="btn btn-warning">
-                                                Browse&hellip; <input type="file" name="images" accept=".jpg" style="display: none;" multiple>
-                                            </span>
-                                    </label>
-                                    <input type="text" class="form-control" multiple>
-                                </div>
-                                <span class="help-block">
-                					Try selecting one or more files and watch the feedback
-									Please submit .jpg images
-            					</span>
-
                                 <div class="form-group">
                                     <div id="button-row" class="row">
                                         <div class="">
-                                            <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register" <%=blocked%>>Ανέβασμα δραστηριότητας</button>
+                                            <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register" <%=blocked%>>Ανέβασμα δραστηριότητας</button>
                                         </div>
                                     </div>
                                 </div>
