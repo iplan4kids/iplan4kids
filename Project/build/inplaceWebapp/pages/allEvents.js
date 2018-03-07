@@ -191,11 +191,11 @@ $( function() {
       values: [0, 150],
       step:1,
       slide: function( event, ui ) {
-        $( "#amount" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+        $( "#amount" ).val( "Πόντοι" + ui.values[ 0 ] + " - Πόντοι" + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "Εύρος Τιμών: €" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - €" + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "Εύρος Τιμών: Πόντοι" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - Πόντοι" + $( "#slider-range" ).slider( "values", 1 ) );
     } 
 
 );
@@ -241,6 +241,7 @@ function applyFilters(){
 
     if($('#myLocation').is(':checked') == true){
         findAddress = 0;
+
     }
     if($('#currentLocation').is(':checked') == true){
         findAddress = 1;

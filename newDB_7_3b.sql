@@ -176,7 +176,8 @@ CREATE TABLE providers (
     long double precision,
     lat double precision,
     disabled boolean,
-    blocked boolean
+    blocked boolean,
+    dept numeric(1000,2)
 );
 
 
@@ -244,6 +245,8 @@ ALTER TABLE ONLY providers ALTER COLUMN prov_id SET DEFAULT nextval('providers_p
 --
 
 COPY admins (admin_id, username, password, first_name, last_name, email, phone) FROM stdin;
+1	admin1	$2a$10$j2JFoaOiPlwB/w4Det6Hneo9qFU00uCYY1MDwLwJJIhtJDq./Ax6W	Βασίλης	Μπριλλάκης	billbrillakis@gmail.com	6978451232
+2	admin2	$2a$10$HZ2SoXdwYDX6ahYJZK9GKuPJwZV.SFKppXdp7VSkWT4l.LkxSdCtS	Κατερίνα	Τσιβρά	katerinatsivra@gmail.com	6985741237
 \.
 
 
@@ -252,6 +255,9 @@ COPY admins (admin_id, username, password, first_name, last_name, email, phone) 
 --
 
 COPY clients (user_id, username, password, first_name, last_name, postal_code, phone, city, address, address_num, email, long, lat, disabled, blocked) FROM stdin;
+1	Brillakis	$2a$10$j2JFoaOiPlwB/w4Det6Hneo9qFU00uCYY1MDwLwJJIhtJDq./Ax6W	Βασίλης	Μπριλλάκης	17122	6945870011	Νέα Σμύρνη	Νίκαιας	17	billbrillakis@gmail.com	0	0	f	f
+2	vasiliskv	$2a$10$HZ2SoXdwYDX6ahYJZK9GKuPJwZV.SFKppXdp7VSkWT4l.LkxSdCtS	Βασίλης	Καβαρδίνας	12137	6945281796	Περιστέρι	Βύρωνος	4	v.kavardinas@gmail.com	0	0	f	f
+3	jorgeSia	$2a$10$VqOr7Ix76jpdcBAvbKKWY.cM7N0jM47r4yaXNadgZyjKqzTcDJVXO	Γιώργος	Σιαχάμης	17341	6973456922	Άγιος Δημήτριος	Ηλείας	3	georgedrfsia@gmail.com	0	0	f	f
 \.
 
 
@@ -267,7 +273,10 @@ COPY events (prov_id, event_id, name, date, tickets, price, description, tags, i
 -- Data for Name: providers; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY providers (prov_id, username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, phone, postal_code, address, address_num, city, email, subscription, long, lat, disabled, blocked) FROM stdin;
+COPY providers (prov_id, username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, phone, postal_code, address, address_num, city, email, subscription, long, lat, disabled, blocked, dept) FROM stdin;
+1	paidotropos	$2a$10$fErZhcd4qvwXthWBOOoFNO/w4/98YVgu9VK72xIucRwKtsKLV6XgS	Παιδοτρόπος Α.Ε.	124569783	12345678912345678912345	Μάρκος	Αλεξόπουλος	6978521432	2115846789	15354	Λεωφόρος Σπάτων	14	Γέρακας	alex.mark@yahoo.gr	2018-03-07 18:09:29.196	0	0	f	f	0.00
+2	xoropaideia	$2a$10$82nxIOj6qe03ly94ftbvfOym9IMjnuuYVoaoV3lzYhUN8lfMXvmNK	Χοροπαιδεία Α.Ε.	124587963	12345678912345678912345	Κυριακή	Μενδρινού	6932147896	2103695455	17455	Λεωφόρος Αλίμου	54	Άλιμος	kyr.mend@gmail.com	2018-03-08 00:13:24.331	0	0	f	f	0.00
+3	logospaidia	$2a$10$/G7B7VrAYon7i7fctl7hAOWXGNwqeoGxGR2PrH4lxBUxWCF8g/SIK	Λόγος στα παιδιά Μ.Κ.Ο.	123789654	12345678912345678912345	Χαράλαμπος	Ανδρεάδης	6978457896	2119632555	10562	Βουλής	7	Αθήνα	logosstapaidia@yahoo.gr	2018-03-08 00:24:55.295	0	0	f	f	0.00
 \.
 
 
@@ -276,6 +285,9 @@ COPY providers (prov_id, username, password, full_name, afm, iban, m_first_name,
 --
 
 COPY wallet (user_id, balance, bonus) FROM stdin;
+1	421.00	201.00
+2	0.00	0.00
+3	0.00	0.00
 \.
 
 
@@ -283,14 +295,14 @@ COPY wallet (user_id, balance, bonus) FROM stdin;
 -- Name: admins_admin_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('admins_admin_id_seq', 1, false);
+SELECT pg_catalog.setval('admins_admin_id_seq', 2, true);
 
 
 --
 -- Name: clients_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('clients_user_id_seq', 1, false);
+SELECT pg_catalog.setval('clients_user_id_seq', 3, true);
 
 
 --
@@ -304,7 +316,7 @@ SELECT pg_catalog.setval('events_event_id_seq', 1, false);
 -- Name: providers_prov_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('providers_prov_id_seq', 1, false);
+SELECT pg_catalog.setval('providers_prov_id_seq', 3, true);
 
 
 --
