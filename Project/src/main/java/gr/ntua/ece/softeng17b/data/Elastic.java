@@ -88,31 +88,37 @@ public class Elastic {
         StringWriter sw = new StringWriter();
         JsonWriter writer = new JsonWriter(sw);
         writer.beginObject();
+
         writer.name("properties");
         writer.beginObject();
+
         writer.name("location");
         writer.beginObject();
         writer.name("type").value("geo_point");
         writer.endObject();
+
         writer.name("title");
         writer.beginObject();
-        writer.name("type").value("string");
+        writer.name("type").value("text");
         writer.name("analyzer").value("greek");
         writer.endObject();
+
         writer.name("description");
         writer.beginObject();
-        writer.name("type").value("string");
+        writer.name("type").value("text");
         writer.name("analyzer").value("greek");
         writer.endObject();
+
         writer.name("subject");
         writer.beginObject();
-        writer.name("type").value("string");
+        writer.name("type").value("text");
         writer.name("analyzer").value("greek");
         writer.endObject();
+
         writer.endObject();
         writer.endObject();
         writer.close();
-
+        //System.out.println(sw.toString());
         return sw.toString();
     }
 
