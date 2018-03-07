@@ -12,8 +12,17 @@ $(document).ready(function() {
             // tab of the developer tools
             if(result.length != 0) {
                 data = result;
+
                 for (var i = 0; i < data.length; i++) {
-                    var table_row = '<tr><td>'+data[i]['first_name']+'</td><td>'+data[i]['last_name']+'</td><td>'+data[i]['username']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['m_phone']+'</td><td>'+data[i]['wallet']+'</td><td><button onclick="location.href ='+"'" +' /app/admin/clients/reset/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-success">Reset</button><button onclick="location.href ='+"'" +' /app/admin/clients/block/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-warning">Ban</button><button onclick="location.href ='+"'" +' /app/admin/clients/delete/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-primary">Remove</button></td></tr>';
+                    if (data[i]['blocked']){
+                        var disable = "none";
+                        var enable = "inline";
+                    }
+                    else{
+                        var disable = "inline";
+                        var enable = "none";
+                    }
+                    var table_row = '<tr><td>'+data[i]['first_name']+'</td><td>'+data[i]['last_name']+'</td><td>'+data[i]['username']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['m_phone']+'</td><td>'+data[i]['wallet']+'</td><td><button onclick="location.href ='+"'" +' /app/admin/clients/reset/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-success">Reset</button><button style="display:'+enable+' " onclick="location.href ='+"'" +' /app/admin/clients/enable/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-warning">Enable</button><button style="display:'+disable+' " onclick="location.href ='+"'" +' /app/admin/clients/block/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-danger">Disable</button><button onclick="location.href ='+"'" +' /app/admin/clients/delete/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-default">Remove</button></td></tr>';
                     $( ".parents-table tbody" ).append( table_row );
                 }
 
@@ -115,8 +124,17 @@ $(function() {
                 // tab of the developer tools
                 if(result.length != 0) {
                     data = result;
+
                     for (var i = 0; i < data.length; i++) {
-                        var table_row = '<tr><td>'+data[i]['first_name']+'</td><td>'+data[i]['last_name']+'</td><td>'+data[i]['username']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['m_phone']+'</td><td>'+data[i]['wallet']+'</td><td><button onclick="location.href ='+"'" +' /app/admin/clients/reset/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-success">Reset</button><button onclick="location.href ='+"'" +' /app/admin/clients/block/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-warning">Ban</button><button onclick="location.href ='+"'" +' /app/admin/clients/delete/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-primary">Remove</button></td></tr>';
+                        if (data[i]['blocked']){
+                            var disable = "none";
+                            var enable = "inline";
+                        }
+                        else{
+                            var disable = "inline";
+                            var enable = "none";
+                        }
+                        var table_row = '<tr><td>'+data[i]['first_name']+'</td><td>'+data[i]['last_name']+'</td><td>'+data[i]['username']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['m_phone']+'</td><td>'+data[i]['wallet']+'</td><td><button onclick="location.href ='+"'" +' /app/admin/clients/reset/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-success">Reset</button><button style="display:'+enable+' " onclick="location.href ='+"'" +' /app/admin/clients/enable/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-warning">Enable</button><button style="display:'+disable+' " onclick="location.href ='+"'" +' /app/admin/clients/block/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-danger">Disable</button><button onclick="location.href ='+"'" +' /app/admin/clients/delete/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-default">Remove</button></td></tr>';
                         $( ".parents-table tbody" ).append( table_row );
                     }
 
@@ -179,11 +197,20 @@ $(function() {
 		    	if (dd<10){
                        	 dd = '0' + dd;
                     	}
-                   	if (mm<10){
+                    	if (mm<10){
                          mm = '0' +mm;
                      	}
+                if (data[i]['blocked']){
+		    	    var disable = "none";
+		    	    var enable = "inline";
+                }
+                else{
+                    var disable = "inline";
+                    var enable = "none";
+                }
+
 		    	var subDate = dd + "/" + mm + "/" + yyyy;
-                        var table_row = '<tr><td>'+data[i]['company_name']+'</td><td>'+data[i]['city']+'</td><td>'+data[i]['address']+'</td><td>'+data[i]['address_num']+'</td><td>'+data[i]['postal_code']+'</td><td>'+data[i]['username']+'</td><td>'+data[i]['phone']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['afm']+'</td><td>'+data[i]['iban']+'</td><td>'+data[i]['first_name']+'</td><td>'+data[i]['last_name']+'</td><td>'+data[i]['m_phone']+'</td><td>'+subDate+'</td><td>'+data[i]['debt']+'</td><td><button onclick="location.href ='+"'" +' /app/admin/providers/reset/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-success">Reset</button><button onclick="location.href ='+"'" +' /app/admin/providers/block/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-warning">Ban</button><button onclick="location.href ='+"'" +' /app/admin/providers/delete/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-primary">Remove</button></td></tr>';
+                        var table_row = '<tr><td>'+data[i]['company_name']+'</td><td>'+data[i]['city']+'</td><td>'+data[i]['address']+'</td><td>'+data[i]['address_num']+'</td><td>'+data[i]['postal_code']+'</td><td>'+data[i]['username']+'</td><td>'+data[i]['phone']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['afm']+'</td><td>'+data[i]['iban']+'</td><td>'+data[i]['first_name']+'</td><td>'+data[i]['last_name']+'</td><td>'+data[i]['m_phone']+'</td><td>'+subDate+'</td><td>'+data[i]['dept']+'</td><td><button onclick="location.href ='+"'" +' /app/admin/providers/reset/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-success">Reset</button><button style="display:'+enable+' " onclick="location.href ='+"'" +' /app/admin/providers/enable/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-warning">Enable</button><button style="display:'+disable+' " onclick="location.href ='+"'" +' /app/admin/providers/block/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-danger">Disable</button><button onclick="location.href ='+"'" +' /app/admin/providers/delete/'+data[i]["id"]+"'"+';"  type="button" class="btn btn-default">Remove</button></td></tr>';
                         $( ".providers-table tbody" ).append( table_row );
                     }
 
