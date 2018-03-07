@@ -12,7 +12,11 @@ body {
 table.table th, table.table td {
         text-align: center;
         vertical-align: middle;
+	overflow: auto;
       }
+#usprovTable {
+	overflow: auto;
+}
 /*------------------------------------------------- PAGE HEADER STYLES ----------------------------------------------------------*/
 .pageHeader{
     background-color: black;
@@ -107,6 +111,7 @@ table.table th, table.table td {
 @media (max-width: 600px) {
     .carousel-caption {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+	
     }
 }
 .carouselContainer{
