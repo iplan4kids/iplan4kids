@@ -1,6 +1,7 @@
 package gr.ntua.ece.softeng17b.conf;
 
 import gr.ntua.ece.softeng17b.data.DataAccess;
+import gr.ntua.ece.softeng17b.data.Emailer;
 import gr.ntua.ece.softeng17b.data.EncryptionUtils;
 import gr.ntua.ece.softeng17b.data.Elastic;
 
@@ -15,6 +16,7 @@ public class Configuration {
     private Properties props = new Properties();
     private DataAccess dataAccess = new DataAccess();
     private EncryptionUtils encrypter = new EncryptionUtils();
+    private Emailer emailer = new Emailer();
 
     private Configuration() {
 
@@ -44,6 +46,17 @@ public class Configuration {
                     getProperty("db.pass"),
                     elastic
             );
+
+            emailer.setup(
+                    Boolean.parseBoolean(getProperty("mail.smtp.auth")),
+                    Boolean.parseBoolean(getProperty("mail.smtp.starttls.enable")),
+                    getProperty("mail.smtp.host"),
+                    Integer.parseInt(getProperty("mail.smtp.port")),
+                    getProperty("mail.smtp.username"),
+                    getProperty("mail.smtp.password"),
+                    getProperty("mail.smtp.from")
+                    );
+
         }
         catch(Exception e) {
             throw new ConfigurationException(e.getMessage(), e);

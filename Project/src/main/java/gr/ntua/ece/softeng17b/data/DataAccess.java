@@ -331,9 +331,12 @@ public class DataAccess {
         for(int i = 0 ; i<res.ids.size(); i++){
             ids[i] = Long.parseLong(res.ids.get(i));
         }
-        String query = "select * from events where event_id in(?)";
-        List<Event> events = jdbcTemplate.query(query, ids,new EventRowMapper());
-        return events;
+        if (ids.length != 0) {
+            String query = "select * from events where event_id in(?)";
+            List<Event> events = jdbcTemplate.query(query, ids, new EventRowMapper());
+            return events;
+        }
+        else return null;
     }
 
     //---------------------allageeees-------------------------------//
@@ -345,6 +348,7 @@ public class DataAccess {
             c.setBlocked(true);
             String query = "update clients set blocked=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{c.isBlocked(), id});
+            return c;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -359,6 +363,7 @@ public class DataAccess {
             p.setBlocked(true);
             String query = "update providers set blocked=? where prov_id=?";
             jdbcTemplate.update(query, new Object[]{p.isBlocked(), id});
+            return p;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -373,6 +378,7 @@ public class DataAccess {
             p.setBlocked(false);
             String query = "update providers set blocked=? where prov_id=?";
             jdbcTemplate.update(query, new Object[]{p.isBlocked(), id});
+            return p;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -387,6 +393,7 @@ public class DataAccess {
             c.setBlocked(false);
             String query = "update clients set blocked=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{c.isBlocked(), id});
+            return c;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -401,6 +408,7 @@ public class DataAccess {
             c.setDisabled(true);
             String query = "update clients set blocked=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{c.isDisabled(), id});
+            return c;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -415,6 +423,7 @@ public class DataAccess {
             p.setDisabled(true);
             String query = "update providers set blocked=? where prov_id=?";
             jdbcTemplate.update(query, new Object[]{p.isDisabled(), id});
+            return p;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -429,6 +438,7 @@ public class DataAccess {
             p.setDisabled(false);
             String query = "update providers set blocked=? where prov_id=?";
             jdbcTemplate.update(query, new Object[]{p.isDisabled(), id});
+            return p;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -443,6 +453,7 @@ public class DataAccess {
             c.setDisabled(false);
             String query = "update clients set blocked=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{c.isDisabled(), id});
+            return c;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -456,6 +467,7 @@ public class DataAccess {
             Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
             String query = "delete from clients where user_id=?";
             jdbcTemplate.update(query, new Object[]{id});
+            return true;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -469,6 +481,7 @@ public class DataAccess {
             Provider p = optional.orElseThrow(() -> new Exception("Provider Not Found"));
             String query = "delete from providers where prov_id=?";
             jdbcTemplate.update(query, new Object[]{id});
+            return true;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -485,6 +498,7 @@ public class DataAccess {
             c.setPassword(encrypter.encryptPass(new_pass));
             String query = "update clients set password=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{c.getPassword(),id});
+            return new_pass;
         }
         catch(Exception e){
             e.printStackTrace();
@@ -501,6 +515,7 @@ public class DataAccess {
             p.setPassword(encrypter.encryptPass(new_pass));
             String query = "update clients set password=? where user_id=?";
             jdbcTemplate.update(query, new Object[]{p.getPassword(),id});
+            return new_pass;
         }
         catch(Exception e){
             e.printStackTrace();

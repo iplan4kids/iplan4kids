@@ -18,10 +18,10 @@ public class Emailer {
 
     public void setup(boolean auth, boolean enable, String host, int port , String username, String password, String from) {
         Properties properties = new Properties();
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", auth);
+        properties.put("mail.smtp.starttls.enable", enable);
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", port);
         this.session = Session.getInstance(properties, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
