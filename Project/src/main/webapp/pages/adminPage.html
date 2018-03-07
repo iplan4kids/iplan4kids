@@ -41,8 +41,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <!-- Left part of Navbar -->
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="admin2.html">Χρήστες</a></li>
-					<li><a href="admin1.html">Πάροχοι</a></li>
+                    <li id="users"><a href="#">Χρήστες</a></li>
+					<li id="admins"><a href="#">Πάροχοι</a></li>
                 </ul>
                 <!-- Right part of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -50,23 +50,23 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Όνομα Διαχειριστή
 							<span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-									 <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
+									 <li><a href="#"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
 									
 								  </ul>
 						</li>
 				</ul>
-				<!-- <ul class="nav navbar-nav navbar-right">
+				 <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
                         <form class="navbar-form" role="search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                                <input type="text" class="search form-control" placeholder="Search" name="srch-term" id="srch-term">
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                </ul> -->
+                </ul>
             </div>
         </div>
     </nav>
@@ -74,13 +74,15 @@
 
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-     <div class="container">
+   <!--  <div class="container">
       <div class="pull-right col-sm-2">
         <input type="text" class="search form-control col-sm 3" placeholder="Search.." value="">
       </div>
     </div>
-    <div class="main">
-      <div class="container">
+    -->
+    <div style="margin-bottom: 160px;margin-top: 30px;" class="main">
+      <div id="usprovTable" class="container">
+        <h3 style="text-align: center; font-weight: bold; margin-bottom:20px;">Λίστα Γονέων</h3>
         <table class="parents-table table table-striped table-bordered">
           <thead>
             <tr>
