@@ -31,6 +31,7 @@ public class ProviderRowMapper implements RowMapper<Provider> {
         pr.setLatitude(rs.getDouble("lat"));
         pr.setDisabled(rs.getBoolean("disabled"));
         pr.setBlocked(rs.getBoolean("blocked"));
+        pr.setDept(rs.getDouble("dept"));
 
         return pr;
     }

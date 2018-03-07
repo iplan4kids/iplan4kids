@@ -52,6 +52,24 @@
         <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="iplan4kidz_18a: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="providers: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="iplan4kidz_18a: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wallet: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+      </path>
     </expand>
     <select />
   </component>
@@ -86,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/RestAPIController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1305">
-              <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+              <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -105,38 +123,8 @@
       <file leaf-file-name="allEvents.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="15">
               <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="providerAddEvent.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5130">
-              <caret line="342" column="71" lean-forward="true" selection-start-line="342" selection-start-column="71" selection-end-line="342" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/scripts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="234" column="7" lean-forward="true" selection-start-line="234" selection-start-column="7" selection-end-line="234" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -145,8 +133,8 @@
       <file leaf-file-name="Elastic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
-              <caret line="194" column="58" lean-forward="true" selection-start-line="194" selection-start-column="58" selection-end-line="194" selection-end-column="58" />
+            <state relative-caret-position="287">
+              <caret line="194" column="33" lean-forward="false" selection-start-line="194" selection-start-column="33" selection-end-line="194" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -155,69 +143,106 @@
       <file leaf-file-name="allEvents.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/allEvents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1015">
+            <state relative-caret-position="15">
               <caret line="113" column="10" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
               <folding>
-                <marker date="1520386487772" expanded="true" signature="2070:2086" ph="..." />
-                <marker date="1520386487772" expanded="true" signature="2668:2716" ph="..." />
+                <marker date="1520425842067" expanded="true" signature="2124:2140" ph="..." />
+                <marker date="1520425842067" expanded="true" signature="2772:2820" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Event.java">
+      <file leaf-file-name="ClientRowMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ClientRowMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding>
-                <element signature="e#1302#1303#0" expanded="true" />
-                <element signature="e#1336#1337#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataAccess.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataAccess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="304" column="41" lean-forward="true" selection-start-line="304" selection-start-column="41" selection-end-line="304" selection-end-column="41" />
+            <state relative-caret-position="105">
+              <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
               <folding>
-                <marker date="1520387907675" expanded="true" signature="2016:2083" ph="select * fro... clients" />
-                <marker date="1520387907675" expanded="true" signature="2198:2221" ph="select * fro... providers" />
-                <marker date="1520387907675" expanded="true" signature="2332:2369" ph="select * fro... events" />
-                <marker date="1520387907675" expanded="true" signature="2542:2633" ph="select * fro... clients" />
-                <marker date="1520387907675" expanded="true" signature="2987:3071" ph="select * fro... clients" />
-                <marker date="1520387907675" expanded="true" signature="3422:3461" ph="select * fro... admins" />
-                <marker date="1520387907675" expanded="true" signature="3795:3836" ph="select * fro... providers" />
-                <marker date="1520387907675" expanded="true" signature="4207:4249" ph="select * fro... providers" />
-                <marker date="1520387907675" expanded="true" signature="4558:4594" ph="select * fro... events" />
-                <marker date="1520387907675" expanded="true" signature="4783:4822" ph="select * fro... events" />
-                <marker date="1520387907675" expanded="true" signature="5244:5287" ph="update events... " />
-                <marker date="1520387907675" expanded="true" signature="5929:6234" ph="insert into providers... " />
-                <marker date="1520387907675" expanded="true" signature="6462:6701" ph="insert into clients... " />
-                <marker date="1520387907675" expanded="true" signature="7693:7741" ph="insert into wallet... " />
-                <marker date="1520387907675" expanded="true" signature="8730:8929" ph="insert into events... " />
-                <marker date="1520387907675" expanded="true" signature="10865:10908" ph="update wallet... " />
-                <marker date="1520387907675" expanded="true" signature="11438:11481" ph="update wallet... " />
-                <marker date="1520387907675" expanded="true" signature="12522:12573" ph="update providers... " />
-                <marker date="1520387907675" expanded="true" signature="13035:13073" ph="select * fro... events" />
-                <marker date="1520387907675" expanded="true" signature="13035:13075" ph="select * fro... events" />
-                <marker date="1520387907675" expanded="true" signature="13035:13076" ph="select * fro... events" />
-                <marker date="1520387907675" expanded="true" signature="13518:13562" ph="update clients... " />
-                <marker date="1520387907675" expanded="true" signature="14015:14061" ph="update providers... " />
-                <marker date="1520387907675" expanded="true" signature="14517:14563" ph="update providers... " />
-                <marker date="1520387907675" expanded="true" signature="15007:15051" ph="update clients... " />
-                <marker date="1520387907675" expanded="true" signature="15495:15539" ph="update clients... " />
-                <marker date="1520387907675" expanded="true" signature="15996:16042" ph="update providers... " />
-                <marker date="1520387907675" expanded="true" signature="16502:16548" ph="update providers... " />
-                <marker date="1520387907675" expanded="true" signature="16996:17040" ph="update clients... " />
-                <marker date="1520387907675" expanded="true" signature="17452:17487" ph="delete from clients... " />
-                <marker date="1520387907675" expanded="true" signature="17894:17931" ph="delete from providers... " />
-                <marker date="1520387907675" expanded="true" signature="18532:18577" ph="update clients... " />
-                <marker date="1520387907675" expanded="true" signature="19200:19245" ph="update clients... " />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1816#1817#0" expanded="true" />
+                <element signature="e#1850#1851#0" expanded="true" />
+                <marker date="1520438530830" expanded="true" signature="1931:1998" ph="select * fro... clients" />
+                <marker date="1520438530830" expanded="true" signature="2113:2136" ph="select * fro... providers" />
+                <marker date="1520438530830" expanded="true" signature="2247:2284" ph="select * fro... events" />
+                <marker date="1520438530830" expanded="true" signature="2457:2548" ph="select * fro... clients" />
+                <marker date="1520438530830" expanded="true" signature="2902:2986" ph="select * fro... clients" />
+                <marker date="1520438530830" expanded="true" signature="3337:3376" ph="select * fro... admins" />
+                <marker date="1520438530830" expanded="true" signature="3710:3751" ph="select * fro... providers" />
+                <marker date="1520438530830" expanded="true" signature="4122:4164" ph="select * fro... providers" />
+                <marker date="1520438530830" expanded="true" signature="4473:4509" ph="select * fro... events" />
+                <marker date="1520438530830" expanded="true" signature="4698:4737" ph="select * fro... events" />
+                <marker date="1520438530830" expanded="true" signature="5159:5202" ph="update events... " />
+                <marker date="1520438530830" expanded="true" signature="5846:6159" ph="insert into providers... " />
+                <marker date="1520438530830" expanded="true" signature="6387:6626" ph="insert into clients... " />
+                <marker date="1520438530830" expanded="true" signature="7618:7675" ph="insert into wallet... " />
+                <marker date="1520438530830" expanded="true" signature="8666:8865" ph="insert into events... " />
+                <marker date="1520438530830" expanded="true" signature="10975:11026" ph="update wallet... " />
+                <marker date="1520438530830" expanded="true" signature="11566:11609" ph="update wallet... " />
+                <marker date="1520438530830" expanded="true" signature="12650:12701" ph="update providers... " />
+                <marker date="1520438530830" expanded="true" signature="13163:13204" ph="select * fro... events" />
+                <marker date="1520438530830" expanded="true" signature="13646:13690" ph="update clients... " />
+                <marker date="1520438530830" expanded="true" signature="14143:14189" ph="update providers... " />
+                <marker date="1520438530830" expanded="true" signature="14645:14691" ph="update providers... " />
+                <marker date="1520438530830" expanded="true" signature="15135:15179" ph="update clients... " />
+                <marker date="1520438530830" expanded="true" signature="15623:15667" ph="update clients... " />
+                <marker date="1520438530830" expanded="true" signature="16124:16170" ph="update providers... " />
+                <marker date="1520438530830" expanded="true" signature="16630:16676" ph="update providers... " />
+                <marker date="1520438530830" expanded="true" signature="17124:17168" ph="update clients... " />
+                <marker date="1520438530830" expanded="true" signature="17580:17615" ph="delete from clients... " />
+                <marker date="1520438530830" expanded="true" signature="18022:18059" ph="delete from providers... " />
+                <marker date="1520438530830" expanded="true" signature="18660:18705" ph="update clients... " />
+                <marker date="1520438530830" expanded="true" signature="19328:19373" ph="update clients... " />
+                <marker date="1520438530830" expanded="true" signature="20036:20127" ph="select * fro... clients" />
+                <marker date="1520438530830" expanded="true" signature="20165:20208" ph="update wallet... " />
+                <marker date="1520438530830" expanded="true" signature="20247:20339" ph="select * fro... events" />
+                <marker date="1520438530830" expanded="true" signature="20378:20422" ph="update events... " />
+                <marker date="1520438530830" expanded="true" signature="20458:20552" ph="select * fro... events" />
+                <marker date="1520438530830" expanded="true" signature="20588:20631" ph="update events... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/39ed67f6-0fde-446e-aeed-05e66fc05bf6/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Provider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Provider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1665">
+              <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+              <folding>
+                <element signature="e#1966#1967#0" expanded="true" />
+                <element signature="e#1994#1995#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProviderRowMapper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ProviderRowMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -695,8 +720,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4559614988000" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="2460060416" />
+        <entry key="$PROJECT_DIR$" value="4559699406000" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3126226785" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1124708390" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="3839624823" />
       </map>
@@ -942,11 +967,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/pages/styles.css" />
         <option value="$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/pages/styles.css" />
         <option value="$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/pages/eventPage.html" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Provider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ProviderRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ClientRowMapper.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/39ed67f6-0fde-446e-aeed-05e66fc05bf6/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/RandomString.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/conf/Listener.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/conf/Configuration.java" />
@@ -966,7 +988,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/pages/allEvents.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/39ed67f6-0fde-446e-aeed-05e66fc05bf6/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Provider.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ProviderRowMapper.java" />
       </list>
     </option>
   </component>
@@ -997,10 +1022,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1121,6 +1143,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1276,11 +1301,12 @@
       <workItem from="1520342219247" duration="1337000" />
       <workItem from="1520352386924" duration="10019000" />
       <workItem from="1520372851469" duration="13938000" />
+      <workItem from="1520433005630" duration="5783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202596000" />
+    <option name="totallyTimeSpent" value="208379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1292,32 +1318,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="196" y="54" width="1922" height="1053" extended-state="6" />
+    <frame x="196" y="54" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5064034" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21521907" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.5064034" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49573106" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1664888" sideWeight="0.8766026" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263473" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16602613" sideWeight="0.8766026" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26414087" sideWeight="0.08173077" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21558164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26414087" sideWeight="0.12339743" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1325,7 +1353,6 @@
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27741936" sideWeight="0.49359658" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3376344" sideWeight="0.49573106" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1483,13 +1510,6 @@
     <entry file="file://$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/view/providerAddEvent.jsp" />
     <entry file="file://$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/pages/eventPage.html" />
     <entry file="file://$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/pages/styles.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ProviderRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1497,32 +1517,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ClientRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.providers" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/39ed67f6-0fde-446e-aeed-05e66fc05bf6/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/provWelcome.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1012">
           <caret line="77" column="109" lean-forward="true" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Provider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1574,7 +1573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,13 +1616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.events">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.events" />
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/SearchResults.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1651,46 +1643,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="1110">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="194" column="58" lean-forward="true" selection-start-line="194" selection-start-column="58" selection-end-line="194" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="234" column="7" lean-forward="true" selection-start-line="234" selection-start-column="7" selection-end-line="234" selection-end-column="7" />
+        <state relative-caret-position="3510">
+          <caret line="234" column="7" lean-forward="false" selection-start-line="234" selection-start-column="7" selection-end-line="234" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/allEvents.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1015">
-          <caret line="113" column="10" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
-          <folding>
-            <marker date="1520386487772" expanded="true" signature="2070:2086" ph="..." />
-            <marker date="1520386487772" expanded="true" signature="2668:2716" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5130">
-          <caret line="342" column="71" lean-forward="true" selection-start-line="342" selection-start-column="71" selection-end-line="342" selection-end-column="71" />
+          <caret line="342" column="71" lean-forward="false" selection-start-line="342" selection-start-column="71" selection-end-line="342" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1698,15 +1668,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
-          <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="42" />
+          <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1714,7 +1676,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/RestAPIController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
-          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+          <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1722,50 +1684,119 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ClientRowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="194" column="33" lean-forward="false" selection-start-line="194" selection-start-column="33" selection-end-line="194" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/allEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="113" column="10" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
+          <folding>
+            <marker date="1520425842067" expanded="true" signature="2124:2140" ph="..." />
+            <marker date="1520425842067" expanded="true" signature="2772:2820" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/39ed67f6-0fde-446e-aeed-05e66fc05bf6/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+          <folding>
+            <element signature="e#1966#1967#0" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="304" column="41" lean-forward="true" selection-start-line="304" selection-start-column="41" selection-end-line="304" selection-end-column="41" />
+        <state relative-caret-position="105">
+          <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
           <folding>
-            <marker date="1520387907675" expanded="true" signature="2016:2083" ph="select * fro... clients" />
-            <marker date="1520387907675" expanded="true" signature="2198:2221" ph="select * fro... providers" />
-            <marker date="1520387907675" expanded="true" signature="2332:2369" ph="select * fro... events" />
-            <marker date="1520387907675" expanded="true" signature="2542:2633" ph="select * fro... clients" />
-            <marker date="1520387907675" expanded="true" signature="2987:3071" ph="select * fro... clients" />
-            <marker date="1520387907675" expanded="true" signature="3422:3461" ph="select * fro... admins" />
-            <marker date="1520387907675" expanded="true" signature="3795:3836" ph="select * fro... providers" />
-            <marker date="1520387907675" expanded="true" signature="4207:4249" ph="select * fro... providers" />
-            <marker date="1520387907675" expanded="true" signature="4558:4594" ph="select * fro... events" />
-            <marker date="1520387907675" expanded="true" signature="4783:4822" ph="select * fro... events" />
-            <marker date="1520387907675" expanded="true" signature="5244:5287" ph="update events... " />
-            <marker date="1520387907675" expanded="true" signature="5929:6234" ph="insert into providers... " />
-            <marker date="1520387907675" expanded="true" signature="6462:6701" ph="insert into clients... " />
-            <marker date="1520387907675" expanded="true" signature="7693:7741" ph="insert into wallet... " />
-            <marker date="1520387907675" expanded="true" signature="8730:8929" ph="insert into events... " />
-            <marker date="1520387907675" expanded="true" signature="10865:10908" ph="update wallet... " />
-            <marker date="1520387907675" expanded="true" signature="11438:11481" ph="update wallet... " />
-            <marker date="1520387907675" expanded="true" signature="12522:12573" ph="update providers... " />
-            <marker date="1520387907675" expanded="true" signature="13035:13073" ph="select * fro... events" />
-            <marker date="1520387907675" expanded="true" signature="13035:13075" ph="select * fro... events" />
-            <marker date="1520387907675" expanded="true" signature="13035:13076" ph="select * fro... events" />
-            <marker date="1520387907675" expanded="true" signature="13518:13562" ph="update clients... " />
-            <marker date="1520387907675" expanded="true" signature="14015:14061" ph="update providers... " />
-            <marker date="1520387907675" expanded="true" signature="14517:14563" ph="update providers... " />
-            <marker date="1520387907675" expanded="true" signature="15007:15051" ph="update clients... " />
-            <marker date="1520387907675" expanded="true" signature="15495:15539" ph="update clients... " />
-            <marker date="1520387907675" expanded="true" signature="15996:16042" ph="update providers... " />
-            <marker date="1520387907675" expanded="true" signature="16502:16548" ph="update providers... " />
-            <marker date="1520387907675" expanded="true" signature="16996:17040" ph="update clients... " />
-            <marker date="1520387907675" expanded="true" signature="17452:17487" ph="delete from clients... " />
-            <marker date="1520387907675" expanded="true" signature="17894:17931" ph="delete from providers... " />
-            <marker date="1520387907675" expanded="true" signature="18532:18577" ph="update clients... " />
-            <marker date="1520387907675" expanded="true" signature="19200:19245" ph="update clients... " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1816#1817#0" expanded="true" />
+            <element signature="e#1850#1851#0" expanded="true" />
+            <marker date="1520438530830" expanded="true" signature="1931:1998" ph="select * fro... clients" />
+            <marker date="1520438530830" expanded="true" signature="2113:2136" ph="select * fro... providers" />
+            <marker date="1520438530830" expanded="true" signature="2247:2284" ph="select * fro... events" />
+            <marker date="1520438530830" expanded="true" signature="2457:2548" ph="select * fro... clients" />
+            <marker date="1520438530830" expanded="true" signature="2902:2986" ph="select * fro... clients" />
+            <marker date="1520438530830" expanded="true" signature="3337:3376" ph="select * fro... admins" />
+            <marker date="1520438530830" expanded="true" signature="3710:3751" ph="select * fro... providers" />
+            <marker date="1520438530830" expanded="true" signature="4122:4164" ph="select * fro... providers" />
+            <marker date="1520438530830" expanded="true" signature="4473:4509" ph="select * fro... events" />
+            <marker date="1520438530830" expanded="true" signature="4698:4737" ph="select * fro... events" />
+            <marker date="1520438530830" expanded="true" signature="5159:5202" ph="update events... " />
+            <marker date="1520438530830" expanded="true" signature="5846:6159" ph="insert into providers... " />
+            <marker date="1520438530830" expanded="true" signature="6387:6626" ph="insert into clients... " />
+            <marker date="1520438530830" expanded="true" signature="7618:7675" ph="insert into wallet... " />
+            <marker date="1520438530830" expanded="true" signature="8666:8865" ph="insert into events... " />
+            <marker date="1520438530830" expanded="true" signature="10975:11026" ph="update wallet... " />
+            <marker date="1520438530830" expanded="true" signature="11566:11609" ph="update wallet... " />
+            <marker date="1520438530830" expanded="true" signature="12650:12701" ph="update providers... " />
+            <marker date="1520438530830" expanded="true" signature="13163:13204" ph="select * fro... events" />
+            <marker date="1520438530830" expanded="true" signature="13646:13690" ph="update clients... " />
+            <marker date="1520438530830" expanded="true" signature="14143:14189" ph="update providers... " />
+            <marker date="1520438530830" expanded="true" signature="14645:14691" ph="update providers... " />
+            <marker date="1520438530830" expanded="true" signature="15135:15179" ph="update clients... " />
+            <marker date="1520438530830" expanded="true" signature="15623:15667" ph="update clients... " />
+            <marker date="1520438530830" expanded="true" signature="16124:16170" ph="update providers... " />
+            <marker date="1520438530830" expanded="true" signature="16630:16676" ph="update providers... " />
+            <marker date="1520438530830" expanded="true" signature="17124:17168" ph="update clients... " />
+            <marker date="1520438530830" expanded="true" signature="17580:17615" ph="delete from clients... " />
+            <marker date="1520438530830" expanded="true" signature="18022:18059" ph="delete from providers... " />
+            <marker date="1520438530830" expanded="true" signature="18660:18705" ph="update clients... " />
+            <marker date="1520438530830" expanded="true" signature="19328:19373" ph="update clients... " />
+            <marker date="1520438530830" expanded="true" signature="20036:20127" ph="select * fro... clients" />
+            <marker date="1520438530830" expanded="true" signature="20165:20208" ph="update wallet... " />
+            <marker date="1520438530830" expanded="true" signature="20247:20339" ph="select * fro... events" />
+            <marker date="1520438530830" expanded="true" signature="20378:20422" ph="update events... " />
+            <marker date="1520438530830" expanded="true" signature="20458:20552" ph="select * fro... events" />
+            <marker date="1520438530830" expanded="true" signature="20588:20631" ph="update events... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ProviderRowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

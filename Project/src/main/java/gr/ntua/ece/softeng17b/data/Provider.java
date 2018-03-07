@@ -19,6 +19,7 @@ public class Provider extends User {
     private double latitude;
     private boolean disabled;
     private boolean blocked;
+    private double dept;
 
 
     //GETTERS
@@ -103,6 +104,8 @@ public class Provider extends User {
         return blocked;
     }
 
+    public double getDept(){return dept;}
+
     // SETTERS
 
     public void setId(int id) {
@@ -184,6 +187,9 @@ public class Provider extends User {
     public void setBlocked(boolean blocked) {
         this.blocked = blocked;
     }
+
+    public void setDept(double dept){ this.dept = dept;}
+
 
     //-------------------------------------------------
 

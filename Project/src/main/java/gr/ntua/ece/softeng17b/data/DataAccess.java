@@ -5,11 +5,8 @@ import javax.sql.DataSource;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.*;
 import java.util.Date;
-import java.util.List;
-import java.util.Optional;
 
 import gr.ntua.ece.softeng17b.conf.Configuration;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -156,11 +153,11 @@ public class DataAccess {
     public void createProvider(Provider p) {
 
         Object[] params = {p.getUsername(),p.getPassword(),p.getCompany_name(),p.getAfm(),p.getIban(),p.getFirst_name(),p.getLast_name(),p.getM_phone(),p.getPostal_code(),
-                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime()), p.getLongtitude(),p.getLatitude(),false,false};
+                            p.getPhone(),p.getCity(),p.getAddress(),p.getAddress_num(),p.getEmail(),new Timestamp(Calendar.getInstance().getTime().getTime()), p.getLongtitude(),p.getLatitude(),false,false,0};
 
         String SQL = "insert into " +
-                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription, long, lat, disabled, blocked)" +
-                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "providers (username, password, full_name, afm, iban, m_first_name, m_last_name, m_phone, postal_code, phone, city, address, address_num, email,subscription, long, lat, disabled, blocked,dept)" +
+                " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update( SQL, params);
     }
 
@@ -509,6 +506,127 @@ public class DataAccess {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean buyTicket(long user_id, long event_id){
+        Connection con = null;
+        PreparedStatement getWallet = null;
+        PreparedStatement subWallet = null;
+        PreparedStatement getTickets = null;
+        PreparedStatement subTickets = null;
+        PreparedStatement getDept = null;
+        PreparedStatement updDept = null;
+        ResultSet rsW = null;
+        ResultSet rsT = null;
+        ResultSet rsP = null;
+
+        String getWalletString = "select * from wallet " +
+                "where user_id = ? " +
+                "for update";
+
+        String subWalletString = "update wallet set balance=? where user_id=?";
+
+        String getTicketsString = "select * from events " +
+                "where event_id = ? " +
+                "for update";
+
+        String subTicketsString = "update events set tickets=? where event_id=?";
+
+        String getDeptString = "select * from providers " +
+                "where prov_id = ? " +
+                "for update";
+
+        String updDeptString = "update providers set dept=? where prov_id=?";
+
+        try {
+            con = dataSource.getConnection();
+            con.setAutoCommit(false);
+            getWallet = con.prepareStatement(getWalletString);
+            subWallet = con.prepareStatement(subWalletString);
+            getTickets = con.prepareStatement(getTicketsString);
+            subTickets = con.prepareStatement(subTicketsString);
+            getDept = con.prepareStatement(getDeptString);
+            updDept = con. prepareStatement(updDeptString);
+
+            getWallet.setLong(1,user_id);
+            rsW = getWallet.executeQuery();
+            double money = rsW.getDouble("balance");
+
+            getTickets.setLong(1, event_id);
+            rsT = getTickets.executeQuery();
+            double price = rsT.getDouble("price");
+            int tickets = rsT.getInt("tickets");
+
+            if(money >= price){
+                if (tickets > 0){
+                    double new_money = money - price;
+                    int new_tickets = tickets - 1;
+
+                    subWallet.setDouble(1, new_money);
+                    subWallet.setLong(2, user_id);
+                    subWallet.executeUpdate();
+
+                    subTickets.setInt(1, new_tickets);
+                    subTickets.setLong(2, event_id);
+                    subTickets.executeUpdate();
+
+                    getDept.setLong(1,rsT.getLong("prov_id"));
+                    rsP = getDept.executeQuery();
+                    double dept = rsP.getDouble("dept");
+                    dept = dept + price;
+
+                    updDept.setDouble(1,dept);
+                    updDept.setLong(2, rsT.getLong("prov_id"));
+                    rsP = getDept.executeQuery();
+
+                    con.commit();
+
+                }
+                else throw new Exception("Not enough tickets");
+            }
+            else throw new Exception("Not enough points");
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            if (con != null) {
+                try {
+                    System.err.print("Transaction is being rolled back");
+                    con.rollback();
+                } catch(SQLException excep) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        finally {
+            try {
+                if (getWallet != null) {
+                    getWallet.close();
+                }
+                if (subWallet != null) {
+                    subWallet.close();
+                }
+                if (getTickets != null) {
+                    getTickets.close();
+                }
+                if (subTickets != null) {
+                    subTickets.close();
+                }
+                if (getDept != null) {
+                    getDept.close();
+                }
+                if (updDept != null) {
+                    updDept.close();
+                }
+                con.setAutoCommit(true);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+        return true;
+
     }
 
    /* public double subTicket(long id, double coins) throws Exception{
