@@ -62,8 +62,8 @@ var mockEvents = [{
 // event card template
 var templateTest= '<div class="col-sm-4">' +
                     '<div class="panel eventCard">' +
-                        '<h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h2>' +
-                        '<div class="panel-thumbnail eventImage"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></div>' +
+                        '<a id="eventLink" href="/app/events/event/%EVENT_ID%"><h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h4></a>' +
+                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
                         '<div class="panel-body eventDescription">' +
                            /* '<div class="eventDate">' +
                                 '%EVENT_DATE%' +
@@ -132,6 +132,12 @@ $(document).ready(function() {
                     if (mm<10){
                         mm = '0' +mm;
                     }
+                    if (hh<10){
+                        hh = '0' + hh;
+                    }
+                    if (mi<10){
+                        mi = '0' + mi;
+                    }
                     var eventDate = dd + "/" + mm + "/" + yyyy;
                     var eventTime = hh + ":" + mi;
                     var ds = result[i]['description'];
@@ -147,7 +153,9 @@ $(document).ready(function() {
                         .replace('%EVENT_DATE%', eventDate)
                         .replace('%EVENT_DESCRIPTION%',ds )
                         .replace('%EVENT_PRICE%', result[i]['price'])
-                        .replace('%EVENT_TIME%',eventTime );
+                        .replace('%EVENT_TIME%',eventTime )
+                        .replace('%EVENT_ID%',result[i]['event_id'] )
+                        .replace('%EVENT_ID_IM%',result[i]['event_id'] );
 
                     parentDiv.append(divContent);
                 }
@@ -267,4 +275,38 @@ function applyFilters(){
 
 
 }
+
+
+$(function() {
+    $('#login1-form-link').click(function(e) {
+        $("#login1-form").delay(100).fadeIn(100);
+        $("#login-form").fadeOut(100);
+        $("#login2-form").fadeOut(100);
+        $('#login-form-link').removeClass('active');
+        $('#login2-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    $('#login2-form-link').click(function(e) {
+        $("#login2-form").delay(100).fadeIn(100);
+        $("#login1-form").fadeOut(100);
+        $("#login-form").fadeOut(100);
+        $('#login-form-link').removeClass('active');
+        $('#login1-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    $('#login-form-link').click(function(e) {
+        $("#login-form").delay(100).fadeIn(100);
+        $("#login1-form").fadeOut(100);
+        $("#login2-form").fadeOut(100);
+        $('#login1-form-link').removeClass('active');
+        $('#login2-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+});
+
+
+
 

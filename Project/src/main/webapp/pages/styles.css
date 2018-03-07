@@ -43,6 +43,7 @@ table.table th, table.table td {
     width: 100%;
     z-index:100;
     margin-bottom: 0px;   
+    border-radius: 0px;
 }
 .container-fluid {
     padding-right: 15px;
@@ -556,3 +557,15 @@ footer a:hover {
 .gi-3x{font-size: 3em;}
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
+
+#eventLink {
+    color: #333;
+}
+
+#eventLink:hover {
+    color: #333;
+}
+
+#eventLink:active {
+    color: #333;
+}
