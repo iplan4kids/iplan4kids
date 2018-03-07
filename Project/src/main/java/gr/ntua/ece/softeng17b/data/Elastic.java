@@ -94,8 +94,22 @@ public class Elastic {
         writer.beginObject();
         writer.name("type").value("geo_point");
         writer.endObject();
+        writer.name("title");
+        writer.beginObject();
+        writer.name("type").value("string");
+        writer.name("analyzer").value("greek");
         writer.endObject();
-
+        writer.name("description");
+        writer.beginObject();
+        writer.name("type").value("string");
+        writer.name("analyzer").value("greek");
+        writer.endObject();
+        writer.name("subject");
+        writer.beginObject();
+        writer.name("type").value("string");
+        writer.name("analyzer").value("greek");
+        writer.endObject();
+        writer.endObject();
         writer.endObject();
         writer.close();
 
