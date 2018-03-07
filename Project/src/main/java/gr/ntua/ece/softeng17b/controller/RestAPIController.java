@@ -165,14 +165,14 @@ public class RestAPIController {
 	}
 
 
-	/*-----------------------------------------------------------------------  Search with bar -------------------------------------*/
 
-	/*@RequestMapping(value = "/searchEvents", method = RequestMethod.GET)
-	public List<Event> getSearchedEvents(@RequestParam ("searchtext") String text, HttpServletRequest req) {
+	@RequestMapping(value = "/provider/history", method = RequestMethod.GET)
+	public List<Event> getHistory(HttpServletRequest req){
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-		List <Event> events = dbAccess.freeTextSearch(text);
-		return events;
- 	}*/
+		HttpSession session = req.getSession(false);
+		Provider prov = (Provider) session.getAttribute("provider");
+		return dbAccess.getAllEventsByProvider(prov.getId());
+	}
 	
 	
 }

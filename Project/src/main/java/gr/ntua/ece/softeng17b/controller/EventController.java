@@ -37,22 +37,28 @@ public class EventController {
 		String text = (String) req.getParameter("searchtext");
 		System.out.println(text);
 		session.setAttribute("fromSearch",text);
-		//model1.addObject("fromSearch",text);
-
-		/*if (session == null)
-			model1.addObject("loggedIn", false);
-		else
-			model1.addObject("loggedIn", true);*/
 		return model1;
 	}
 
 
 	
+	
 	@RequestMapping(value = "/event/{id}", method = RequestMethod.GET)
-	public String getEvent(HttpServletRequest req) {
-		ModelAndView model1 = new ModelAndView("events");
+	public ModelAndView getEvent(HttpServletRequest req, @PathVariable("id") long eventId) {
+		ModelAndView model1 = null;
 		HttpSession session = req.getSession(false);
-		return "redirect:pages/eventPage.html";
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		try {
+			Optional<Event> optional = dbAccess.getEventById(eventId);
+			Event ev = optional.orElseThrow(() -> new Exception("Event Not Found"));
+			model1 = new ModelAndView("eventPage");
+			model1.addObject("event", ev);
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+			model1 = new ModelAndView("redirect");
+		}
+		finally{ return model1;}
 	}
 	
 	

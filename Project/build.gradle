@@ -46,7 +46,8 @@ dependencies {
 
 	compile "com.github.iplan4kids:watermark_dependency:master-SNAPSHOT"   		/////////////////binary dependency
 
-	
+	compile "com.itextpdf:itextpdf:5.5.13"                  //pdf creator
+
     compile 'org.elasticsearch.client:elasticsearch-rest-high-level-client:6.2.1'
 
     providedRuntime "javax.servlet:javax.servlet-api:3.1.0"    //provided by the servlet container at runtime

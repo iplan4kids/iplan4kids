@@ -140,8 +140,35 @@ public class AppController {
 /*--------------------------------------------------------------------	Admin Page 	------------------------------------------ */
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-	public String getAdminPage() {
-		return "redirect:pages/adminPage.html";
+	public ModelAndView getAdminPage() {
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
+	}
+
+
+
+	@RequestMapping(value = "/admin/clients/delete/{id}", method = RequestMethod.GET)
+	public ModelAndView deleteClient(@PathVariable("id") long clientId){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		dbAccess.deleteClient(clientId);
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
+	}
+
+	@RequestMapping(value = "/admin/providers/delete/{id}", method = RequestMethod.GET)
+	public ModelAndView deleteProvider(@PathVariable("id") long providerId){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		dbAccess.deleteProvider(providerId);
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
+	}
+
+	@RequestMapping(value = "/admin/clients/block/{id}", method = RequestMethod.GET)
+	public ModelAndView blocClient(@PathVariable("id") long clientId){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		dbAccess.blockClient(clientId);
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
 	}
 
 
