@@ -198,7 +198,7 @@ public class DataAccess {
         },keyHolder);
         long new_id = keyHolder.getKey().longValue();
 
-        jdbcTemplate.update("insert into wallet(user_id,balance) values(?, ?) ", new Object[]{new_id,0});
+        jdbcTemplate.update("insert into wallet(user_id,balance,bonus) values(?, ?, ?) ", new Object[]{new_id,0,0});
 
         return new_id;
     }
@@ -276,9 +276,13 @@ public class DataAccess {
         Optional<Client> optional = getClient(id);
         Client c = optional.orElseThrow(() -> new Exception("Client Not Found"));
         double new_balance = c.getWallet() + coins;
-
-        String query = "update wallet set balance=? where user_id=?";
-        jdbcTemplate.update(query, new Object[]{new_balance,id});
+        double new_bonus = c.getBonus() + coins;
+        if(new_bonus >= 200){
+            new_bonus = new_bonus - 200.;
+            new_balance = new_balance + 20;
+        }
+        String query = "update wallet set balance=?,bonus=? where user_id=?";
+        jdbcTemplate.update(query, new Object[]{new_balance,new_bonus,id});
         c.setWallet(new_balance);
 
         return c.getWallet();

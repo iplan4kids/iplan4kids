@@ -24,6 +24,7 @@ public class ClientRowMapper implements RowMapper<Client> {
         cl.setLatitude(rs.getDouble("lat"));
         cl.setDisabled(rs.getBoolean("disabled"));
         cl.setBlocked(rs.getBoolean("blocked"));
+        cl.setBonus(rs.getDouble("bonus"));
 
         return cl;
     }

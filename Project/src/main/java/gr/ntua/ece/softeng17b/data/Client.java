@@ -13,6 +13,7 @@ public class Client extends User{
     private double latitude;
     private double longtitude;
     private double balance;
+    private double bonus;
     private boolean disabled;
     private boolean blocked;
 
@@ -65,6 +66,8 @@ public class Client extends User{
     public double getWallet() {
         return balance;
     }
+
+    public double getBonus(){return bonus;}
 
     public void setLongtitude(double longtitude) {
         this.longtitude = longtitude;
@@ -130,6 +133,10 @@ public class Client extends User{
 
     public void setWallet(double wallet) {
         this.balance = wallet;
+    }
+
+    public void setBonus(double bonus){
+        this.bonus = bonus;
     }
 
     public boolean login(){return true;}
