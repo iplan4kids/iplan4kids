@@ -16,7 +16,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
+//@Transactional
 public class DataAccess {
 
     private static final int MAX_TOTAL_CONNECTIONS = 16;
@@ -508,7 +508,7 @@ public class DataAccess {
         return null;
     }
 
-    public boolean buyTicket(long user_id, long event_id){
+    public boolean buyTicket(int number,long user_id, long event_id){
         Connection con = null;
         PreparedStatement getWallet = null;
         PreparedStatement subWallet = null;
@@ -557,10 +557,10 @@ public class DataAccess {
             double price = rsT.getDouble("price");
             int tickets = rsT.getInt("tickets");
 
-            if(money >= price){
-                if (tickets > 0){
-                    double new_money = money - price;
-                    int new_tickets = tickets - 1;
+            if(money >= (number*price)){
+                if (tickets - number >= 0){
+                    double new_money = money - (number*price);
+                    int new_tickets = tickets - number;
 
                     subWallet.setDouble(1, new_money);
                     subWallet.setLong(2, user_id);
@@ -573,7 +573,7 @@ public class DataAccess {
                     getDept.setLong(1,rsT.getLong("prov_id"));
                     rsP = getDept.executeQuery();
                     double dept = rsP.getDouble("dept");
-                    dept = dept + price;
+                    dept = dept + (number*price);
 
                     updDept.setDouble(1,dept);
                     updDept.setLong(2, rsT.getLong("prov_id"));
@@ -593,8 +593,8 @@ public class DataAccess {
                 try {
                     System.err.print("Transaction is being rolled back");
                     con.rollback();
-                } catch(SQLException excep) {
-                    e.printStackTrace();
+                } catch(SQLException except) {
+                    except.printStackTrace();
                 }
             }
         }
