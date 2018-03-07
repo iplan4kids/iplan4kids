@@ -29,8 +29,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="<c:url value='/pages/styles.css' />" type="text/css">
-    <script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css"/>
+    <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css"/>
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">

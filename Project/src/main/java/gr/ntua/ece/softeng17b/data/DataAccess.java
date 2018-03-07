@@ -70,7 +70,7 @@ public class DataAccess {
     }
 
     public List<Event> getAllEvents() {
-        return jdbcTemplate.query("select * from events limit 9 offset 0", new EventRowMapper());
+        return jdbcTemplate.query("select * from events limit 9 offset 9", new EventRowMapper());
     }
 
 
@@ -322,6 +322,17 @@ public class DataAccess {
 
         //System.out.println(dateFormat.format(cal));
         return toBase;
+    }
+
+    public List<Event> freeTextSearch(String searchtext){
+        SearchResults res = searchEvents(searchtext,null,null,null,0,9);
+        Long[] ids= new Long[(int)res.count];
+        for(int i = 0 ; i<res.ids.size(); i++){
+            ids[i] = Long.parseLong(res.ids.get(i));
+        }
+        String query = "select * from events where event_id in(?)";
+        List<Event> events = jdbcTemplate.query(query, ids,new EventRowMapper());
+        return events;
     }
 
     //---------------------allageeees-------------------------------//

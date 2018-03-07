@@ -11,6 +11,18 @@ else{
     session.setAttribute("notloggedIn","none");
 }%>
 
+<%
+    String text;
+    if (session.getAttribute("fromSearch") == null){
+        text="";
+    }
+    else {
+        text = (String) session.getAttribute("fromSearch");
+    }
+    System.out.println(text);
+
+%>
+
 
 <!DOCTYPE html>
 <html lang="el">
@@ -80,9 +92,9 @@ else{
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <div class="search-form">
-                    <form class="navbar-form" role="search">
+                    <form class="navbar-form" action="/app/events" method="get" role="search">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                            <input type="text" class="form-control" placeholder="Search" name="searchtext" id="srch-term" value=<%=text%>>
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>
@@ -97,7 +109,7 @@ else{
 
      <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-    <div class = "row mainBody">
+    <div class = "row mainBody" style="padding-bottom:154px ">
 
         <div class="col-sm-3"> 
             <h2 align="center" class="newsHeader">Φίλτρα Αναζήτησης</h2>                            
@@ -148,7 +160,7 @@ else{
         <div class="col-sm-9">
             <h2 align="center" class="newsHeader">Δραστηριότητες</h2>
 
-            <div class="panel activities" style="padding-bottom:154px ">
+            <div class="panel activities" >
             
             <!-- 1o Event -->
                 <div class="row" id="allEvents">
@@ -186,43 +198,91 @@ else{
                 Copyright &copy usage under terms and conditions of texnologia logismikou 2017-2018</p> 
     </footer>
     
-    <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- --> 
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">            
-                <!-- Modal Header -->
-                    <div class="modal-header ">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="text-center modal-title">Συνδεθείτε</h4>
-                    </div>
-                    
-                    <!-- Modal body -->
-             	<form action="/app/login" method="POST">
-                    <!-- Modal body -->
-                <div class="modal-body">
-					 
-                    	<div>Email</div>
-                        	<input type="text" class="form-control" name="username">
-                    	<div>Κωδικός</div>
-                    	<input type="text" class="form-control" name="password">
+    <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->
+<div style="align:center;" class="modal" id="myModal">
+    <div style="width:500px; margin:auto; " class="panel panel-register1">
+        <div class="panel-heading">
+            <div class="row">
+                <button style="margin-right:10px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 style="margin-left: 18px;" class="text-center modal-title"> Συνδεθείτε</h4>
+                <br>
+                <div class="col-xs-4">
+                    <a href="#" class="active" id="login1-form-link">Χρήστης</a>
                 </div>
-                    <!-- Modal footer -->
-                <div class="modal-footer">
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-success" value="Συνδεση">
-                    </div>
+                <div class="col-xs-4">
+                    <a href="#" id="login2-form-link">Διαχειριστής</a>
                 </div>
-			</form>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="text-center">
-                                    <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Ξέχασες τον κωδικό?</a>
+                <div class="col-xs-4">
+                    <a href="#" id="login-form-link">Πάροχος</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!----------------------------------------------------------- CLIENT LOGIN ------------------------------------------------------------------------>
+
+                    <form id="login1-form" action="/app/loginClient" method="post" role="form" style="display: block;">
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα χρήστη" value="" style="" required="required">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                        </div>
+                        <span id="clientwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος χρήστη και συνθηματικού.</span>
+                        <div class="form-group">
+                            <div id="button-row" class="row">
+                                <div class="">
+                                    <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!----------------------------------------------------------- ADMIN LOGIN ------------------------------------------------------------------------>
+
+                    <form id="login2-form" action="/app/login/admin" method="post" role="form" style="display: none;">
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα διαχειριστή" value="" style="" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                        </div>
+                        <span id="adminwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος διαχειριστή και συνθηματικού.</span>
+                        <div class="form-group">
+                            <div id="button-row" class="row">
+                                <div class="">
+                                    <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!----------------------------------------------------------- PROVIDER LOGIN ------------------------------------------------------------------------>
+
+                    <form id="login-form" action="/app/login/provider" method="post" role="form" style="display: none;">
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα παρόχου" value="" style="" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+                        </div>
+                        <span id="providerwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος παρόχου και συνθηματικού.</span>
+                        <div class="form-group">
+                            <div id="button-row" class="row">
+                                <div class="">
+                                    <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΣΥΝΔΕΣΗ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+
+</div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
     <script src = "pages/scripts.js" type = "text/javascript"></script>

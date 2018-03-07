@@ -34,6 +34,11 @@ public class EventController {
 	public ModelAndView getEvents(HttpServletRequest req) {
 		ModelAndView model1 = new ModelAndView("allEvents");
 		HttpSession session = req.getSession(false);
+		String text = (String) req.getParameter("searchtext");
+		System.out.println(text);
+		session.setAttribute("fromSearch",text);
+		//model1.addObject("fromSearch",text);
+
 		/*if (session == null)
 			model1.addObject("loggedIn", false);
 		else

@@ -93,9 +93,16 @@ public class RestAPIController {
 
 
 	@RequestMapping(value = "/events/getEvents", method = RequestMethod.POST)
-	public List<Event> getEvents(){
+	public List<Event> getEvents(@RequestParam ("searchtext") String text, HttpServletRequest req){
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
-		return dbAccess.getAllEvents();
+		if(text.equals("")) {
+
+			return dbAccess.getAllEvents();
+		}
+		else{
+			List <Event> events = dbAccess.freeTextSearch(text);
+			return events;
+		}
 	}
 
 
@@ -156,6 +163,16 @@ public class RestAPIController {
 			return false;
 		}
 	}
+
+
+	/*-----------------------------------------------------------------------  Search with bar -------------------------------------*/
+
+	/*@RequestMapping(value = "/searchEvents", method = RequestMethod.GET)
+	public List<Event> getSearchedEvents(@RequestParam ("searchtext") String text, HttpServletRequest req) {
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		List <Event> events = dbAccess.freeTextSearch(text);
+		return events;
+ 	}*/
 	
 	
 }

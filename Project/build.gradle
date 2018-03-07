@@ -58,9 +58,11 @@ dependencies {
 
 gretty {
     //scanInterval = 0 //disable hot deployment
-    httpEnabled = true
+    httpEnabled = false
     httpsEnabled = true
     httpPort = 8765
     contextPath = 'app'
+    /*sslKeyStorePath = "/home/george/keystore"
+    sslKeyStorePassword = "changeit"*/
     //servletContainer = 'tomcat8' //use the default (jetty)
 }

@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../pages/styles.css" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/pages/styles.css' />" type="text/css">
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -131,7 +131,8 @@
 
 
 <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-<script src = "../pages/scripts.js" type = "text/javascript"></script>
+<script src = "<c:url value='/pages/scripts.js' />" type = "text/javascript"></script>
+<script src ="<c:url value='/pages/registerevent.js' />" type = "text/javascript"></script>
 </body>
 
 </html>

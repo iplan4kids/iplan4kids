@@ -112,7 +112,7 @@ public class ProvController {
 			ne.setDate(Timestamp.valueOf(date));
 			ne.setDescription(req.getParameter("description"));
 			ne.setDuration(Integer.parseInt(req.getParameter("duration")));
-			String imageNames = "";
+			String imageNames = "/app/images/placeholderEvent.png";
 			ne.setImages(imageNames);
 
 			long id = db.createEvent(ne);
@@ -146,7 +146,12 @@ public class ProvController {
 
             Optional<Event> optional = db.getEventById(eventId);
             Event ne = optional.orElseThrow(() -> new Exception("Event Not Found"));
-            ne.setImages(imageNames);
+            if(imageNames.length() < 4){
+            	ne.setImages("/app/images/placeholderEvent.png");
+			}
+			else {
+				ne.setImages(imageNames);
+			}
             db.setImages(ne);
             for(int i=0 ; i<images.length ; i++) {
                 if (!images[i].isEmpty()) {

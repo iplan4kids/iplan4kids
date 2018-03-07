@@ -157,4 +157,8 @@ public class AppController {
 	public String getAdminPage() {
 		return "redirect:pages/adminPage.html";
 	}
+
+
 }
+
+

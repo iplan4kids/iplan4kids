@@ -233,7 +233,7 @@ $(document).ready(function() {
 	$(window).scroll(function() {
 		stickyNav();
     });
-    
+
     //------------------------------------------ TOOLTIP ------------------------------------------------
     $('[data-toggle="tooltip"]').tooltip();
 	

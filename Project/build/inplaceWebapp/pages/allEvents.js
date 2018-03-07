@@ -60,7 +60,7 @@ var mockEvents = [{
     }];
 
 // event card template
-var templateTest= '<div class="col-sm-4">' +                            
+var templateTest= '<div class="col-sm-4">' +
                     '<div class="panel eventCard">' +
                         '<h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h2>' +
                         '<div class="panel-thumbnail eventImage"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></div>' +
@@ -68,9 +68,9 @@ var templateTest= '<div class="col-sm-4">' +
                            /* '<div class="eventDate">' +
                                 '%EVENT_DATE%' +
                             '</div>' +*/
-  ' <div class="eventDate">' +
-'%EVENT_TIME%' +
-'</div>' +
+                            ' <div class="eventDate">' +
+                                '%EVENT_TIME%' +
+                            '</div>' +
                             '<div style="font-weight:bold; color:#333; margin-bottom:5px;">%EVENT_DATE% <br><br> Περιγραφή:</div>' +
                             '<div class="eventDescription">' +
                             '%EVENT_DESCRIPTION%' +
@@ -78,29 +78,48 @@ var templateTest= '<div class="col-sm-4">' +
                         '</div>' +
                         '<div class="panel-body eventPrice">' +
                             'Τιμή:%EVENT_PRICE%' +
-                            '<span class="glyphicon glyphicon-eur"></span>' +                                
+                            '<span class="glyphicon glyphicon-eur"></span>' +
                             '<button class="btn submitButton pull-right" type="submit">Αγορά</button>' +
-                        '</div>' +                            
+                        '</div>' +
                     '</div>' +
                 '</div>';
 
 $(document).ready(function() {
 // -------------------------------------- EVENT CARD ------------------------------------------------------------
 
+// https://github.com/uxitten/polyfill/blob/master/string.polyfill.js
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd
+    if (!String.prototype.padEnd) {
+        String.prototype.padEnd = function padEnd(targetLength,padString) {
+            targetLength = targetLength>>0; //floor if number or convert non-number to 0;
+            padString = String((typeof padString !== 'undefined' ? padString : ' '));
+            if (this.length > targetLength) {
+                return String(this);
+            }
+            else {
+                targetLength = targetLength-this.length;
+                if (targetLength > padString.length) {
+                    padString += padString.repeat(targetLength/padString.length); //append to original to ensure we are longer than needed
+                }
+                return String(this) + padString.slice(0,targetLength);
+            }
+        };
+    }
 
+    //console.log($('#srch-term').val());
     $.ajax({
         url: "/app/events/getEvents", // url where to submit the request
         type : "POST", // type of action POST || GET
         dataType : 'json', // data type
-        contentType : 'json',
-        data : {"filters":0}, // post data || get data
+        //contentType : 'json',
+        data : $('#srch-term').serialize(), // post data || get data
         success : function(result) {
             // you can see the result from the console
             // tab of the developer tools
             if(result.length != 0) {
                 var parentDiv = $('#allEvents');
                 for (var i = 0; i < result.length; i++) {
-                    console.log(result[i]['price']);
+                    //console.log(result[i]['price']);
                     var date = new Date(result[i]['date']);
                     var dd = date.getDate();
                     var mm = date.getMonth();
@@ -120,8 +139,9 @@ $(document).ready(function() {
                         ds = ds.substring(0,30)+"...";
                     }
                     else{
-                       // ds = ds.padEnd(33);
+                       ds = ds.padEnd(33);
                     }
+                    console.log(result[i]['images']);
                     var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
                         .replace('%EVENT_IMAGE%', result[i]['images'])
                         .replace('%EVENT_DATE%', eventDate)

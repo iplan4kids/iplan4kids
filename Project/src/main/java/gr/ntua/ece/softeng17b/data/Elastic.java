@@ -95,6 +95,7 @@ public class Elastic {
         writer.name("type").value("geo_point");
         writer.endObject();
         writer.endObject();
+
         writer.endObject();
         writer.close();
 
