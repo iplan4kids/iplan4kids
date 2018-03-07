@@ -131,7 +131,7 @@ public final class adminPage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("    </nav>>\n");
+      out.write("    </nav>\n");
       out.write("\n");
       out.write("\n");
       out.write("    <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->\n");

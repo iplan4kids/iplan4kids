@@ -168,6 +168,29 @@ public class AppController {
 		return model1;
 	}
 
+	@RequestMapping(value = "/admin/providers/block/{id}", method = RequestMethod.GET)
+	public ModelAndView blockProvider(@PathVariable("id") long providerId){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		dbAccess.blockProvider(providerId);
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
+	}
+
+	@RequestMapping(value = "/admin/clients/enable/{id}", method = RequestMethod.GET)
+	public ModelAndView enableClient(@PathVariable("id") long clientId){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		dbAccess.unblockClient(clientId);
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
+	}
+
+	@RequestMapping(value = "/admin/providers/enable/{id}", method = RequestMethod.GET)
+	public ModelAndView enableProvider(@PathVariable("id") long providerId){
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		dbAccess.unblockProvider(providerId);
+		ModelAndView model1 = new ModelAndView("adminPage");
+		return model1;
+	}
 
 }
 

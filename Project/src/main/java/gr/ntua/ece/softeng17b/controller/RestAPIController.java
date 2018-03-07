@@ -37,6 +37,9 @@ public class RestAPIController {
 		try {
 			Optional<Client> optional = dbAccess.getClientByUsername(username);
 			Client c = optional.orElseThrow(() -> new Exception("User Not Found"));
+			if(c.isBlocked()){
+				throw new Exception("Client blocked");
+			}
 			if(encrypter.encryptMatch(password,c.getPassword())) {
                 HttpSession session = req.getSession();
 				session.setMaxInactiveInterval(3*60*60);
@@ -63,6 +66,9 @@ public class RestAPIController {
 			if (loginType.equals("provider")){
 				Optional<Provider> optional = dbAccess.getProviderByUsername(username);
 				Provider p = optional.orElseThrow(() -> new Exception("User Not Found"));
+				if(p.isBlocked()){
+					throw new Exception("Provider blocked");
+				}
 				if(encrypter.encryptMatch(password,p.getPassword())) {                
                 	HttpSession session = req.getSession();
 					session.setMaxInactiveInterval(3*60*60);
