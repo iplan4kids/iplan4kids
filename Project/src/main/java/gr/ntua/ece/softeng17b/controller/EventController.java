@@ -48,14 +48,10 @@ public class EventController {
 
 
 	
-	@RequestMapping(value = "/event", method = RequestMethod.GET)
+	@RequestMapping(value = "/event/{id}", method = RequestMethod.GET)
 	public String getEvent(HttpServletRequest req) {
 		ModelAndView model1 = new ModelAndView("events");
 		HttpSession session = req.getSession(false);
-		if (session == null)
-			model1.addObject("loggedIn", false);
-		else
-			model1.addObject("loggedIn", true);
 		return "redirect:pages/eventPage.html";
 	}
 	

@@ -1,5 +1,7 @@
 package gr.ntua.ece.softeng17b.controller;
 
+import com.iplan.watermark.Watermark;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -23,7 +25,6 @@ import java.util.Optional;
 
 
 @Controller
-@SessionAttributes("client")
 @RequestMapping(value = "/provider")
 public class ProvController {
 	
@@ -74,7 +75,7 @@ public class ProvController {
 	}
 
 
-	@RequestMapping(value = "/addEvent/addDetails", method = RequestMethod.POST)
+	@RequestMapping(value = "/addEvent/addImages", method = RequestMethod.POST)
 	public ModelAndView addDetails(HttpServletRequest req) {
 		ModelAndView model1;
 		
@@ -112,7 +113,7 @@ public class ProvController {
 			ne.setDate(Timestamp.valueOf(date));
 			ne.setDescription(req.getParameter("description"));
 			ne.setDuration(Integer.parseInt(req.getParameter("duration")));
-			String imageNames = "/app/images/placeholderEvent.png";
+			String imageNames = "";
 			ne.setImages(imageNames);
 
 			long id = db.createEvent(ne);
@@ -123,14 +124,14 @@ public class ProvController {
 		catch (Exception e){
 			e.printStackTrace();
 			model1 = new ModelAndView("providerAddEvent");
-			model1.addObject("error", "Οι φωτογραφίες δεν καταχωρήθηκαν, προσπαθήστε πάλι");
+			model1.addObject("error", "Η δραστηριότητα δεν καταχωρήθηκε, προσπαθήστε πάλι");
 			return model1;
 		}
 	}
 
 
 
-    @RequestMapping(value = "/addEvent/addImages", method = RequestMethod.POST)
+    @RequestMapping(value = "/addEvent/addFinal", method = RequestMethod.POST)
     public ModelAndView addImages(@RequestParam("images") MultipartFile[] images, HttpServletRequest req){
 
         ModelAndView model1;
@@ -146,12 +147,7 @@ public class ProvController {
 
             Optional<Event> optional = db.getEventById(eventId);
             Event ne = optional.orElseThrow(() -> new Exception("Event Not Found"));
-            if(imageNames.length() < 4){
-            	ne.setImages("/app/images/placeholderEvent.png");
-			}
-			else {
-				ne.setImages(imageNames);
-			}
+            ne.setImages(imageNames);
             db.setImages(ne);
             for(int i=0 ; i<images.length ; i++) {
                 if (!images[i].isEmpty()) {
@@ -162,18 +158,22 @@ public class ProvController {
                     }
                     File serverFile = new File(dir.getAbsolutePath() + File.separator + images[i].getOriginalFilename());
 
-                    try {
-                        try (InputStream is = images[i].getInputStream(); BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile))) {
+
+					try (InputStream is = images[i].getInputStream(); BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile))) {
                             int j;
                             while ((j = is.read()) != -1) {
                                 stream.write(j);
                             }
                             stream.flush();
-                        }
-                    } catch (IOException e) {
+							String path = dir.getAbsolutePath() + File.separator + images[i].getOriginalFilename();
+							Provider prov = (Provider) session.getAttribute("provider");
+							String text = prov.getCompany_name();
+							Watermark.addTextWatermark(text, path);
+                    }
+					catch (IOException e) {
                         System.out.println("error : " + e.getMessage());
 						model1 = new ModelAndView("imagesUpload");
-						model1.addObject("error", "Η δραστηριότητα δεν καταχωρήθηκε, προσπαθήστε πάλι");
+						model1.addObject("error", "Οι φωτογραφίες δεν καταχωρήθηκαν, προσπαθήστε πάλι");
 						return model1;
                     }
                 }
@@ -185,7 +185,7 @@ public class ProvController {
         catch (Exception e){
             e.printStackTrace();
 			model1 = new ModelAndView("imagesUpload");
-			model1.addObject("error", "Η δραστηριότητα δεν καταχωρήθηκε, προσπαθήστε πάλι");
+			model1.addObject("error", "Οι φωτογραφίες δεν καταχωρήθηκαν, προσπαθήστε πάλι");
 			return model1;
         }
 	}

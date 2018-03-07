@@ -172,7 +172,7 @@ public final class providerAddEvent_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                <div class=\"panel-body\">\n");
       out.write("                    <div class=\"row\">\n");
       out.write("                        <div class=\"col-lg-12\">\n");
-      out.write("                            <form id=\"register1-form\" action=\"/app/provider/addEvent/addDetails\" method=\"post\" role=\"form\" style=\"display: block;\" >\n");
+      out.write("                            <form id=\"register1-form\" action=\"/app/provider/addEvent/addImages\" method=\"post\" role=\"form\" style=\"display: block;\" >\n");
       out.write("                                <span class=\"help-block\" ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${error}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("  >");

@@ -102,7 +102,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="register1-form" action="/app/provider/addEvent/addDetails" method="post" role="form" style="display: block;" >
+                            <form id="register1-form" action="/app/provider/addEvent/addImages" method="post" role="form" style="display: block;" >
                                 <span class="help-block" ${error}  >${error}</span>
                                 <div class="form-group">
                                     <input placeholder="Ονομασία δραστηριότητας" type="text" class="form-control" name="title" value="" required="required">

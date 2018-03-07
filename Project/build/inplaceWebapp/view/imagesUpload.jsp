@@ -94,7 +94,7 @@
 
 <h2 style="text-align:center">Παρακαλώ αν επιθυμείτε να ανεβάσετε φωτογραφίες για τη δραστηριότητα σας, μπορείτε να τις επιλέξετε παρακάτω. Διαφορετικά απλώς πατήστε το κουμπί και θα μεταβείτε στη προηγούμενη φόρμα</h2>
 
-<form id="register-form" action="/app/provider/addEvent/addImages" method="post" role="form" style="display: block;" enctype="multipart/form-data">
+<form id="register-form" action="/app/provider/addEvent/addFinal" method="post" role="form" style="display: block;" enctype="multipart/form-data">
     <span class="help-block" ${error}  >${error}</span>
     <div class="input-group">
         <label  class="input-group-btn">

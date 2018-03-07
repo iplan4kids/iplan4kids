@@ -20,16 +20,12 @@ public class AppController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView welcome(HttpServletRequest req) {
-		HttpSession session = req.getSession(false);
+		HttpSession session = req.getSession();
 		ModelAndView model1;
-		if (session==null)
+		if (session.getAttribute("provider") != null || session.getAttribute("admin") != null)
+			model1 = new ModelAndView("redirect");
+		else
 			model1 = new ModelAndView("index");
-		else {
-			if (session.getAttribute("provider") != null || session.getAttribute("admin") != null)
-				model1 = new ModelAndView("redirect");
-			else
-				model1 = new ModelAndView("index");
-		}
 		return model1;
 	}
 	
@@ -97,7 +93,7 @@ public class AppController {
 
 
 	
-	@RequestMapping(value = "/further", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/further", method = RequestMethod.GET)
 	public ModelAndView getfurther(HttpServletRequest req) {
 		ModelAndView model1 = new ModelAndView("further");
 		HttpSession session = req.getSession(false);
@@ -107,7 +103,7 @@ public class AppController {
 		}
 		else 	session.setAttribute("name", true);
 		return model1;
-	}
+	}*/
 
 
 
@@ -116,15 +112,11 @@ public class AppController {
 	@RequestMapping(value = "/myProfile", method = RequestMethod.GET)
 	public ModelAndView getProfile(HttpServletRequest req) {
 		ModelAndView model1;
-		HttpSession session = req.getSession(false);
-		if (session==null)
-			model1 = new ModelAndView("index");
-		else {
-			if (session.getAttribute("client") != null)
+		HttpSession session = req.getSession();
+		if (session.getAttribute("client") != null)
 			model1 = new ModelAndView("clientProfile");
 		else
 			model1 = new ModelAndView("redirect");
-		}
 		return model1;
 	}
 
@@ -135,17 +127,11 @@ public class AppController {
 	@RequestMapping(value = "/buyPoints", method = RequestMethod.GET)
 	public ModelAndView getbuyPoints(HttpServletRequest req) {
 		ModelAndView model1;
-		HttpSession session = req.getSession(false);
-		if (session==null)
-			model1 = new ModelAndView("index");
-		else{
-			if (session.getAttribute("client") != null)
-				model1 = new ModelAndView("buyPoints");
-			else
-				model1 = new ModelAndView("redirect");
-		}
-		Client c = (Client) session.getAttribute("client");
-		model1.addObject("client1",c);
+		HttpSession session = req.getSession();
+		if (session.getAttribute("client") != null)
+			model1 = new ModelAndView("buyPoints");
+		else
+			model1 = new ModelAndView("redirect");
 		return model1;
 	}
 
