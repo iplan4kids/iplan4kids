@@ -86,7 +86,6 @@ var templateTest= '<div class="col-sm-4">' +
 
 $(document).ready(function() {
 // -------------------------------------- EVENT CARD ------------------------------------------------------------
-
 // https://github.com/uxitten/polyfill/blob/master/string.polyfill.js
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd
     if (!String.prototype.padEnd) {
@@ -167,6 +166,11 @@ $(document).ready(function() {
     })
 
 
+
+	
+  	//document.getElementById("allEvents").innerHTML = "asdadad";
+	
+    	
     /*var parentDiv = $('#allEvents');
     for (var i = 0; i < mockEvents.length; i++)
     {
@@ -180,7 +184,8 @@ $(document).ready(function() {
         parentDiv.append(divContent);
     }*/
 
-});
+}); 
+
 
 $( function() {
     
@@ -191,11 +196,11 @@ $( function() {
       values: [0, 150],
       step:1,
       slide: function( event, ui ) {
-        $( "#amount" ).val( "Πόντοι" + ui.values[ 0 ] + " - Πόντοι" + ui.values[ 1 ] );
+        $( "#amount" ).val( "Εύρος Πόντων: " + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "Εύρος Τιμών: Πόντοι" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - Πόντοι" + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "Εύρος Πόντων: " + $( "#slider-range" ).slider( "values", 0 ) +
+      " - " + $( "#slider-range" ).slider( "values", 1 ) );
     } 
 
 );
@@ -212,13 +217,13 @@ function applyFilters(){
         };
 
     };
-
-
+    
     var parentDiv = $('#allEvents');
 
     var filterDate = $("#filterdate").val();
     var sliderMin = $("#slider-range").slider("values") [0];
     var sliderMax = $("#slider-range").slider("values") [1];
+    var numberOfKm = $("#numberOfKm").val();
     var selectedCategories = [];
     var lng,lat;
     var findAddress;
@@ -264,7 +269,8 @@ function applyFilters(){
                 "date":filterDate,
                 "lng":lng,
                 "lat":lat,
-                "findAddr":findAddress
+                "findAddr":findAddress,
+                "numberOfKm":parseInt(numberOfKm)
             }
 
 

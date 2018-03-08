@@ -132,7 +132,7 @@ else{
                         <label><input id="category4" type="checkbox" value="4">Βιβλίο</label>
                     </div>
                     <div class="checkbox">
-                        <label><input id="category5" type="checkbox" value="5">Άλλες Δραστηριότηες</label>
+                        <label><input id="category5" type="checkbox" value="5">Άλλες Δραστηριότητες</label>
                     </div>
 
                         <label style="display: inline;"  for="amount">
@@ -150,7 +150,10 @@ else{
                     <div class="radio">
                         <label><input id="currentLocation" type="radio" name="optradio">Εδώ που είμαι αυτή την στιγμή</label>
                     </div>
-
+                    
+                    <label>Χιλιομετρική Απόσταση:</label>
+					<input style="margin-left: 5px; margin-bottom:10px; margin-top:10px;"  placeholder="Αριθμός Χιλιομέτρων" type="number" id="numberOfKm" min="0" step="1" class="form-control " name="" value="0">
+					
                     <button class="btn submitButton" onclick="applyFilters()">Εφαρμογή Φίλτρων</button>
                 </div>
 
@@ -171,15 +174,8 @@ else{
             </div>
             <!-- ----------------------------------- PAGIFICATION ------------------------------------- -->
             <div class="row pager">
-                <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
+                    <a href="#" class="previous">&laquo; Προηγούμενη</a>
+                    <a href="#" class="next">Επόμενη &raquo;</a>
             </div>        
         </div>
     </div>
