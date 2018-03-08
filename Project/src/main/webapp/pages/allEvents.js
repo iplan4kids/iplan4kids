@@ -63,7 +63,7 @@ var mockEvents = [{
 var templateTest= '<div class="col-sm-4">' +
                     '<div class="panel eventCard">' +
                         '<a id="eventLink" href="/app/events/event/%EVENT_ID%"><h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h4></a>' +
-                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
+                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="~/iplan4kids/%EVENT_ID_IMAGE%/%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
                         '<div class="panel-body eventDescription">' +
                            /* '<div class="eventDate">' +
                                 '%EVENT_DATE%' +
@@ -155,7 +155,8 @@ $(document).ready(function() {
                         .replace('%EVENT_PRICE%', result[i]['price'])
                         .replace('%EVENT_TIME%',eventTime )
                         .replace('%EVENT_ID%',result[i]['event_id'] )
-                        .replace('%EVENT_ID_IM%',result[i]['event_id'] );
+                        .replace('%EVENT_ID_IM%',result[i]['event_id'] )
+                        .replace('%EVENT_ID_IMAGE%',result[i]['event_id'] );
 
                     parentDiv.append(divContent);
                 }
