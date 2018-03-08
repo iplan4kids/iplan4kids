@@ -300,8 +300,8 @@ public class DataAccess {
         }
     }
 
-    public SearchResults searchEvents(String text, Long subject, Long distanceInKm, Location fromLoc, int from, int count) {
-        return elastic.search(text, subject, true, distanceInKm, fromLoc, from, count);
+    public SearchResults searchEvents(String text, Long subject, Double priceDown, Double priceUp, Long distanceInKm, Location fromLoc, int from, int count) {
+        return elastic.search(text, subject, priceDown, priceUp, true, distanceInKm, fromLoc, from, count);
     }
 
     public Timestamp renewSub(int months,long id)throws Exception{
@@ -324,7 +324,7 @@ public class DataAccess {
     }
 
     public List<Event> freeTextSearch(String searchtext){
-        SearchResults res = searchEvents(searchtext,null,null,null,0,9);
+        SearchResults res = searchEvents(searchtext,null,null,null,null,null,0,9);
         Long[] ids= new Long[(int)res.count];
         for(int i = 0 ; i<res.ids.size(); i++){
             ids[i] = Long.parseLong(res.ids.get(i));

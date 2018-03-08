@@ -115,6 +115,11 @@ public class Elastic {
         writer.name("analyzer").value("greek");
         writer.endObject();
 
+        writer.name("price");
+        writer.beginObject();
+        writer.name("type").value("double");
+        writer.endObject();
+
         writer.endObject();
         writer.endObject();
         writer.close();
@@ -136,6 +141,7 @@ public class Elastic {
             writer.name("lon").value(event.getPlace().getLongitude());
             writer.endObject();
             writer.name("subject").value(event.getTags());
+            writer.name("price");
             writer.name("hasTickets").value(event.getTickets() > 0);
             writer.name("images").value(event.getImages());
             writer.endObject();
@@ -164,7 +170,7 @@ public class Elastic {
         request.script(inline);
     }
 
-    SearchResults search(String text, Long subject, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
+    SearchResults search(String text, Long subject,Double priceDown,Double priceUp, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
         //A single search entry point is provided for all cases.
         //It uses the BoolQuery of elastic to apply all user-supplied constraints / filters (must = AND).
         //The constraint to return only events that have tickets available is automatically applied.
@@ -185,6 +191,12 @@ public class Elastic {
             if (subject != null) {
                 boolQuery.must(
                         QueryBuilders.termQuery("subject", subject)
+                );
+            }
+
+            if(priceDown != null && priceUp != null){
+                boolQuery.must(
+                        QueryBuilders.rangeQuery("price").gte(priceDown).lte(priceUp)
                 );
             }
 
