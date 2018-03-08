@@ -113,23 +113,23 @@ else{
 							<div class="col-lg-12">
 								<form id="register1-form" action="/app/registerClient" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="" required="required">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται το όνομα σας" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο" value="" required="required">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται το Επώνυμο σας" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="tel" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
+										<input type="tel" data-toggle="tooltip" data-placement="top" title="Εισάγεται το τηλέφωνο σας κινητο(69ΧΧΧΧΧΧΧΧ) ή σταθερό(210ΧΧΧΧΧΧΧ) 10 ψηφία συνολικά" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
+										<input type="email" data-toggle="tooltip" data-placement="top" title="info@gmail.com" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input id="autocomplete" placeholder="Τοποθεσία" type="text" class="form-control" name="" value="">
+										<input id="autocomplete" placeholder="Τοποθεσία" type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται την οδό σας καθώς και το νούμερο και επιλέξτε" class="form-control" name="" value="">
 									</div>
 									<span id="geowrong" style="color:red;" class="help-block"></span>
 									<div class="form-group">
-										<input type="text" name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" hidden>
+										<input type="text"  name="postal_code" id="postal_code" class="form-control" placeholder="Ταχυδρομικός Κωδικας" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
 										<input type="text" name="city" id="locality" class="form-control" placeholder="Περιοχή" value="" required="required" hidden>
@@ -141,19 +141,19 @@ else{
 										<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
+										<input type="text" name="latitude" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
+										<input type="text" name="longtitude" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται username" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" onkeyup='check();' id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+										<input type="password" data-toggle="tooltip" data-placement="top" title="Επιλέξτε κωδικό τον κωδικό πρόσβασης σας" name="password" onkeyup='check();' id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm_password" onkeyup='check();' id="confirm_password" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
+										<input type="password" data-toggle="tooltip" data-placement="top" title="Επιβεβαιώστε τον κωδικό που εισαγάγατε παραπάνω" name="confirm_password" onkeyup='check();' id="confirm_password" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
 									</div>
 									<div class="form-group">
 										<div id="button-row" class="row">
@@ -165,28 +165,28 @@ else{
 								</form>
 								<form id="register-form" action="/app/registerProvider" method="post" role="form" style="display: none;">
 									<div class="form-group">
-										<input type="text" name="company_name" id="company_name" tabindex="1" class="form-control" placeholder="Επωνυμία Επιχείρησης" value="">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Πλήρης ονομασία επιχείρησης" name="company_name" id="company_name" tabindex="1" class="form-control" placeholder="Επωνυμία Επιχείρησης" value="">
 									</div>
 										<div class="form-group">
-										<input type="text" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα Yπεύθυνου" value="">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται το όνομα του υπεύθυνου" name="first_name" id="first_name" tabindex="1" class="form-control" placeholder="Όνομα Yπεύθυνου" value="">
 									</div>
 									<div class="form-group">
-										<input type="text" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο Υπεύθυνου" value="">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται το επώνυμο του υπεύθυνου" name="last_name" id="last_name" tabindex="1" class="form-control" placeholder="Επώνυμο Υπεύθυνου" value="">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
+										<input type="email" data-toggle="tooltip" data-placement="top" title="Εισάγεται το email επικοινωνίας" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="tel" pattern="^\d{10}$" name="phone" id="tel" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
+										<input type="tel" data-toggle="tooltip" data-placement="top" title="Εισάγεται το τηλέφωνο του υπεύθυνου κινητο(69ΧΧΧΧΧΧΧΧ) ή σταθερό(210ΧΧΧΧΧΧΧ) 10 ψηφία συνολικά" pattern="^\d{10}$" name="phone" id="tel" tabindex="1" class="form-control" placeholder="Τηλέφωνο" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="tel" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Κινητό Τηλέφωνο" value="" required="required">
+										<input type="tel" data-toggle="tooltip" data-placement="top" title="Εισάγεται το τηλέφωνο σας κινητο(69ΧΧΧΧΧΧΧΧ) ή σταθερό(210ΧΧΧΧΧΧΧ) 10 ψηφία συνολικά" pattern="^\d{10}$" name="m_phone" id="m_phone" tabindex="1" class="form-control" placeholder="Κινητό Τηλέφωνο" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" pattern="^\d{9}$" name="afm" id="afm" tabindex="1" class="form-control" placeholder="Α.Φ.Μ" value="" required="required">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται το A.Φ.Μ σας 9 ψηφία συνολικά" pattern="^\d{9}$" name="afm" id="afm" tabindex="1" class="form-control" placeholder="Α.Φ.Μ" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="text" name="iban" id="iban" tabindex="1" class="form-control" placeholder="ΙΒΑΝ" value="" required="required">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται το IBAN σας GR-...." name="iban" id="iban" tabindex="1" class="form-control" placeholder="ΙΒΑΝ" value="" required="required">
 									</div>
 									<div class="form-group"><div class="form-group">
 										<input id="autocomplete2" placeholder="Τοποθεσία" type="text" class="form-control" name="" value="">
@@ -205,19 +205,19 @@ else{
 											<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
+											<input type="text" name="latitude" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
+											<input type="text" name="longtitude" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
 										</div>
 									<div class="form-group">
-										<input type="text" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
+										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται username" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+										<input type="password" data-toggle="tooltip" data-placement="top" title="Επιλέξτε κωδικό τον κωδικό πρόσβασης σας" name="password" onkeyup='check1();' id="password1" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm_password" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
+										<input type="password" data-toggle="tooltip" data-placement="top" title="Επιβεβαιώστε τον κωδικό που εισαγάγατε παραπάνω" name="confirm_password" onkeyup='check1();' id="confirm_password1" tabindex="1" class="form-control" placeholder="Επιβεβαίωση Κωδικού" value="" style="" required="required">
 									</div>
 									<div class="form-group">
 										<div id="button-row" class="row">
@@ -245,87 +245,90 @@ else{
     </footer>
     
     <!-- -------------------------------------- BOOTSTRAP MODALS ----------------------------------------------- -->
-<div style="align:center;" class="modal" id="myModal">
-                <div style="width:500px; margin:auto; " class="panel panel-register1">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <button style="margin-right:10px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 style="margin-left: 18px;" class="text-center modal-title"> Συνδεθείτε</h4>
-                            <br>
-                            <div class="col-xs-4">
-                                <a href="#" class="active" id="login1-form-link">Χρήστης</a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" id="login2-form-link">Διαχειριστής</a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" id="login-form-link">Πάροχος</a>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-12">
+	<div style="align:center;" class="modal" id="myModal">
+		<div style="width:500px; margin:auto; " class="panel panel-register1">
+			<div class="panel-heading">
+				<div class="row">
+					<button style="margin-right:10px;" type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 style="margin-left: 18px;" class="text-center modal-title"> Συνδεθείτε</h4>
+					<br>
+					<div class="col-xs-4">
+						<a href="#" class="active" id="login1-form-link">Χρήστης</a>
+					</div>
+					<div class="col-xs-4">
+						<a href="#" id="login2-form-link">Διαχειριστής</a>
+					</div>
+					<div class="col-xs-4">
+						<a href="#" id="login-form-link">Πάροχος</a>
+					</div>
+				</div>
+				<hr>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-12">
 
-<!----------------------------------------------------------- CLIENT LOGIN ------------------------------------------------------------------------>
+						<!----------------------------------------------------------- CLIENT LOGIN ------------------------------------------------------------------------>
 
-                                <form id="login1-form" action="/app/loginClient" method="post" role="form" style="display: block;">
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα χρήστη" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <div id="button-row" class="row">
-                                            <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-<!----------------------------------------------------------- ADMIN LOGIN ------------------------------------------------------------------------>
+						<form id="login1-form" action="/app/loginClient" method="post" role="form" style="display: block;">
+							<div class="form-group">
+								<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα χρήστη" value="" style="" required="required">
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+							</div>
+							<span id="clientwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος χρήστη και συνθηματικού.</span>
+							<div class="form-group">
+								<div id="button-row" class="row">
+									<div class="">
+										<button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<!----------------------------------------------------------- ADMIN LOGIN ------------------------------------------------------------------------>
 
-                                <form id="login2-form" action="/app/login/admin" method="post" role="form" style="display: none;">
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα διαχειριστή" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <div id="button-row" class="row">
-                                            <div class="">
-                                                <button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-<!----------------------------------------------------------- PROVIDER LOGIN ------------------------------------------------------------------------>
+						<form id="login2-form" action="/app/login/admin" method="post" role="form" style="display: none;">
+							<div class="form-group">
+								<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα διαχειριστή" value="" style="" required="required">
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+							</div>
+							<span id="adminwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος διαχειριστή και συνθηματικού.</span>
+							<div class="form-group">
+								<div id="button-row" class="row">
+									<div class="">
+										<button type="submit" name="register1-submit" id="register1-submit" class="form-control btn btn-register1">ΣΥΝΔΕΣΗ</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<!----------------------------------------------------------- PROVIDER LOGIN ------------------------------------------------------------------------>
 
-                                <form id="login-form" action="/app/login/provider" method="post" role="form" style="display: none;">
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα παρόχου" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <div id="button-row" class="row">
-                                            <div class="">
-                                                <button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΣΥΝΔΕΣΗ</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<form id="login-form" action="/app/login/provider" method="post" role="form" style="display: none;">
+							<div class="form-group">
+								<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Όνομα παρόχου" value="" style="" required="required">
+							</div>
+							<div class="form-group">
+								<input type="password" name="password"  id="password" tabindex="1" class="form-control" placeholder="Κωδικός" value="" style="" required="required">
+							</div>
+							<span id="providerwrong" style="display:none; color:red;" class="help-block">*Μη έγκυρος συνδυασμός όνοματος παρόχου και συνθηματικού.</span>
+							<div class="form-group">
+								<div id="button-row" class="row">
+									<div class="">
+										<button type="submit" name="register-submit" id="register-submit" class="form-control btn btn-register">ΣΥΝΔΕΣΗ</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-    </div>
+	</div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
 	<script src = "pages/scripts.js" type = "text/javascript"></script>

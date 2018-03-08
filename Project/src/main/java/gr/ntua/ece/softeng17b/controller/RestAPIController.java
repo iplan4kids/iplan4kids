@@ -5,6 +5,7 @@ import gr.ntua.ece.softeng17b.data.*;
 import gr.ntua.ece.softeng17b.RESTrepresentations.*;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -97,7 +98,7 @@ public class RestAPIController {
 		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
 		if(text.equals("")) {
 
-			return dbAccess.getAllEvents();
+			return new ArrayList<Event>(){};
 		}
 		else{
 			List <Event> events = dbAccess.freeTextSearch(text);
@@ -123,12 +124,14 @@ public class RestAPIController {
 			if (session.getAttribute("client") == null) throw new Exception("Not logged in...");
 			else {
 				Client cl = (Client) session.getAttribute("client");
-				List<Event> events = dbAccess.searchByFilters( tags, filters.getMin(), filters.getMax(), filters.getNumberOfKm(), new SimpleLocation(cl.getLatitude(), cl.getLongtitude()), 0, 9);
+				System.out.println(cl.getLatitude());
+				System.out.println(cl.getLongtitude());
+				List<Event> events = dbAccess.searchByFilters( tags, filters.getMin(), filters.getMax(), filters.getNumberOfKm(), new SimpleLocation(cl.getLatitude(), cl.getLongtitude()), 0, 48);
 				return events;
 			}
 		}
 		else {
-			List<Event> events = dbAccess.searchByFilters( tags, filters.getMin(), filters.getMax(), filters.getNumberOfKm(), new SimpleLocation(filters.getLat(), filters.getLng()), 0, 9);
+			List<Event> events = dbAccess.searchByFilters( tags, filters.getMin(), filters.getMax(), filters.getNumberOfKm(), new SimpleLocation(filters.getLat(), filters.getLng()), 0, 48);
 			return events;
 		}
 	}

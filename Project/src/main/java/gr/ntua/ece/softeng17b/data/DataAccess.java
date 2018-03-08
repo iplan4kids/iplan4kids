@@ -67,7 +67,7 @@ public class DataAccess {
     }
 
     public List<Event> getAllEvents() {
-        return jdbcTemplate.query("select * from events limit 9 offset 0", new EventRowMapper());
+        return jdbcTemplate.query("select * from events", new EventRowMapper());
     }
 
 
@@ -324,7 +324,7 @@ public class DataAccess {
     }
 
     public List<Event> freeTextSearch(String searchtext){
-        SearchResults res = searchEvents(searchtext,null,null,null,null,null,0,9);
+        SearchResults res = searchEvents(searchtext,null,null,null,null,null,0,48);
         Long[] ids= new Long[(int)res.count];
         List<Event> events = new ArrayList<Event>();
         for(int i = 0 ; i<res.ids.size(); i++){
@@ -342,7 +342,7 @@ public class DataAccess {
         else return null;
     }
     public List<Event> searchByFilters(String tags,Double priceDown, Double priceUp, Long distanceInKm, Location place, int from, int count) {
-        SearchResults res = searchEvents(null,tags,priceDown,priceUp,distanceInKm,place,0,9);
+        SearchResults res = searchEvents(null,tags,priceDown,priceUp,distanceInKm,place,0,48);
         List<Event> events = new ArrayList<Event>();
         Long[] ids = new Long[(int) res.count];
         for (int i = 0; i < res.ids.size(); i++) {

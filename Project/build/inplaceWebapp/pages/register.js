@@ -127,7 +127,7 @@ function initAutocomplete() {
 }
 
 function fillInAddress() {
-  alert(select);
+  //alert(select);
     // Get the place details from the autocomplete object.
     if (select == "#register1-form") {
         var place = autocomplete.getPlace();
@@ -220,4 +220,10 @@ function fillInAddress() {
         $(select).find("#postal_code").val(codea);
     }
 }
+
+
+$('[data-toggle="tooltip"]').tooltip(); 
+
+
+
 

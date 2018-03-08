@@ -141,10 +141,10 @@ else{
 										<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
+										<input type="text" name="latitude" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
-										<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
+										<input type="text" name="longtitude" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
 									</div>
 									<div class="form-group">
 										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται username" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
@@ -205,10 +205,10 @@ else{
 											<input type="text" name="address_num" id="street_number" class="form-control" placeholder="Αριθμός Οδού" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="lat" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
+											<input type="text" name="latitude" id="lat" class="form-control" placeholder="Γεωγραφικό πλάτος" value="" required="required" hidden>
 										</div>
 										<div class="form-group">
-											<input type="text" name="lng" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
+											<input type="text" name="longtitude" id="lng" class="form-control" placeholder="Γεωγραφικό μήκος" value="" required="required" hidden>
 										</div>
 									<div class="form-group">
 										<input type="text" data-toggle="tooltip" data-placement="top" title="Εισάγεται username" name="username" pattern="[a-zA-Z0-9]+" id="username" tabindex="1" class="form-control" placeholder="Username" value="" required="required">
