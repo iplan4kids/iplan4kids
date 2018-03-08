@@ -1,0 +1,110 @@
+-- auto-generated definition
+CREATE TABLE wallet
+(
+  user_id INTEGER          NOT NULL
+    CONSTRAINT wallet_pkey
+    PRIMARY KEY
+    CONSTRAINT wallet_user_id_fkey
+    REFERENCES clients
+    ON DELETE CASCADE,
+  balance NUMERIC(1000, 2) NOT NULL,
+  bonus   NUMERIC(100, 2)  NOT NULL
+);
+
+-- auto-generated definition
+CREATE TABLE events
+(
+  prov_id     INTEGER          NOT NULL
+    CONSTRAINT events_prov_id_fkey
+    REFERENCES providers
+    ON DELETE CASCADE,
+  event_id    SERIAL           NOT NULL
+    CONSTRAINT events_pkey
+    PRIMARY KEY,
+  name        VARCHAR(100)     NOT NULL,
+  date        TIMESTAMP        NOT NULL,
+  tickets     INTEGER          NOT NULL,
+  price       NUMERIC(1000, 2) NOT NULL,
+  description VARCHAR(5000),
+  tags        VARCHAR(1000),
+  images      VARCHAR(5000),
+  long        DOUBLE PRECISION,
+  lat         DOUBLE PRECISION,
+  duration    INTEGER
+);
+
+-- auto-generated definition
+CREATE TABLE providers
+(
+  prov_id      SERIAL       NOT NULL
+    CONSTRAINT providers_pkey
+    PRIMARY KEY,
+  username     VARCHAR(50)  NOT NULL
+    CONSTRAINT providers_username_key
+    UNIQUE,
+  password     VARCHAR(60)  NOT NULL,
+  full_name    VARCHAR(100) NOT NULL,
+  afm          VARCHAR(9)   NOT NULL,
+  iban         VARCHAR(23)  NOT NULL,
+  m_first_name VARCHAR(50)  NOT NULL,
+  m_last_name  VARCHAR(50)  NOT NULL,
+  m_phone      VARCHAR(10)  NOT NULL,
+  phone        VARCHAR(10)  NOT NULL,
+  postal_code  VARCHAR(50)  NOT NULL,
+  address      VARCHAR(50)  NOT NULL,
+  address_num  VARCHAR(4)   NOT NULL,
+  city         VARCHAR(50)  NOT NULL,
+  email        VARCHAR(355) NOT NULL
+    CONSTRAINT providers_email_key
+    UNIQUE,
+  subscription TIMESTAMP,
+  long         DOUBLE PRECISION,
+  lat          DOUBLE PRECISION,
+  disabled     BOOLEAN,
+  blocked      BOOLEAN,
+  dept         NUMERIC(1000, 2)
+);
+
+-- auto-generated definition
+CREATE TABLE clients
+(
+  user_id     SERIAL       NOT NULL
+    CONSTRAINT clients_pkey
+    PRIMARY KEY,
+  username    VARCHAR(50)  NOT NULL
+    CONSTRAINT clients_username_key
+    UNIQUE,
+  password    VARCHAR(60)  NOT NULL,
+  first_name  VARCHAR(50)  NOT NULL,
+  last_name   VARCHAR(50)  NOT NULL,
+  postal_code VARCHAR(50)  NOT NULL,
+  phone       VARCHAR(10)  NOT NULL,
+  city        VARCHAR(50)  NOT NULL,
+  address     VARCHAR(50)  NOT NULL,
+  address_num VARCHAR(4)   NOT NULL,
+  email       VARCHAR(355) NOT NULL
+    CONSTRAINT clients_email_key
+    UNIQUE,
+  long        DOUBLE PRECISION,
+  lat         DOUBLE PRECISION,
+  disabled    BOOLEAN,
+  blocked     BOOLEAN
+);
+
+
+-- auto-generated definition
+CREATE TABLE admins
+(
+  admin_id   SERIAL       NOT NULL
+    CONSTRAINT admins_pkey
+    PRIMARY KEY,
+  username   VARCHAR(50)  NOT NULL,
+  password   VARCHAR(60)  NOT NULL,
+  first_name VARCHAR(100) NOT NULL,
+  last_name  VARCHAR(100) NOT NULL,
+  email      VARCHAR(355) NOT NULL,
+  phone      VARCHAR(10)  NOT NULL
+);
+
+
+
