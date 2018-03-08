@@ -25,6 +25,7 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -120,6 +121,11 @@ public class Elastic {
         writer.name("type").value("double");
         writer.endObject();
 
+        writer.name("date");
+        writer.beginObject();
+        writer.name("type").value("date");
+        writer.endObject();
+
         writer.endObject();
         writer.endObject();
         writer.close();
@@ -141,7 +147,8 @@ public class Elastic {
             writer.name("lon").value(event.getPlace().getLongitude());
             writer.endObject();
             writer.name("subject").value(event.getTags());
-            writer.name("price");
+            writer.name("price").value(event.getPrice());
+            writer.name("date").value(event.getDate().getTime());
             writer.name("hasTickets").value(event.getTickets() > 0);
             writer.name("images").value(event.getImages());
             writer.endObject();
@@ -170,7 +177,7 @@ public class Elastic {
         request.script(inline);
     }
 
-    SearchResults search(String text, Long subject,Double priceDown,Double priceUp, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
+    SearchResults search(String text, Long subject, Double priceDown, Double priceUp, Date date, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
         //A single search entry point is provided for all cases.
         //It uses the BoolQuery of elastic to apply all user-supplied constraints / filters (must = AND).
         //The constraint to return only events that have tickets available is automatically applied.
@@ -197,6 +204,12 @@ public class Elastic {
             if(priceDown != null && priceUp != null){
                 boolQuery.must(
                         QueryBuilders.rangeQuery("price").gte(priceDown).lte(priceUp)
+                );
+            }
+
+            if(date != null){
+                boolQuery.must(
+                        QueryBuilders.rangeQuery("date").gte(date.getTime())
                 );
             }
 

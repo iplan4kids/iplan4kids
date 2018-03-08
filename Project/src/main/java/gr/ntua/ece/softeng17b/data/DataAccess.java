@@ -301,7 +301,7 @@ public class DataAccess {
     }
 
     public SearchResults searchEvents(String text, Long subject, Double priceDown, Double priceUp, Long distanceInKm, Location fromLoc, int from, int count) {
-        return elastic.search(text, subject, priceDown, priceUp, true, distanceInKm, fromLoc, from, count);
+        return elastic.search(text, subject, priceDown, priceUp, Calendar.getInstance().getTime(),true, distanceInKm, fromLoc, from, count);
     }
 
     public Timestamp renewSub(int months,long id)throws Exception{

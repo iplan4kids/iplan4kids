@@ -103,48 +103,68 @@
       <file leaf-file-name="DataAccess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="330" column="9" lean-forward="true" selection-start-line="330" selection-start-column="9" selection-end-line="330" selection-end-column="9" />
+            <state relative-caret-position="-3784">
+              <caret line="335" column="9" lean-forward="true" selection-start-line="335" selection-start-column="9" selection-end-line="335" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1520469124022" expanded="true" signature="1933:2000" ph="select * fro... clients" />
-                <marker date="1520469124022" expanded="true" signature="2115:2138" ph="select * fro... providers" />
-                <marker date="1520469124022" expanded="true" signature="2249:2286" ph="select * fro... events" />
-                <marker date="1520469124022" expanded="true" signature="2459:2550" ph="select * fro... clients" />
-                <marker date="1520469124022" expanded="true" signature="2904:2988" ph="select * fro... clients" />
-                <marker date="1520469124022" expanded="true" signature="3339:3378" ph="select * fro... admins" />
-                <marker date="1520469124022" expanded="true" signature="3712:3753" ph="select * fro... providers" />
-                <marker date="1520469124022" expanded="true" signature="4124:4166" ph="select * fro... providers" />
-                <marker date="1520469124022" expanded="true" signature="4475:4511" ph="select * fro... events" />
-                <marker date="1520469124022" expanded="true" signature="4700:4739" ph="select * fro... events" />
-                <marker date="1520469124022" expanded="true" signature="5161:5204" ph="update events... " />
-                <marker date="1520469124022" expanded="true" signature="5848:6161" ph="insert into providers... " />
-                <marker date="1520469124022" expanded="true" signature="6389:6636" ph="insert into clients... " />
-                <marker date="1520469124022" expanded="true" signature="7533:7590" ph="insert into wallet... " />
-                <marker date="1520469124022" expanded="true" signature="8581:8780" ph="insert into events... " />
-                <marker date="1520469124022" expanded="true" signature="10890:10941" ph="update wallet... " />
-                <marker date="1520469124022" expanded="true" signature="11481:11524" ph="update wallet... " />
-                <marker date="1520469124022" expanded="true" signature="12619:12670" ph="update providers... " />
-                <marker date="1520469124022" expanded="true" signature="13177:13218" ph="select * fro... events" />
-                <marker date="1520469124022" expanded="true" signature="13705:13749" ph="update clients... " />
-                <marker date="1520469124022" expanded="true" signature="14224:14270" ph="update providers... " />
-                <marker date="1520469124022" expanded="true" signature="14748:14794" ph="update providers... " />
-                <marker date="1520469124022" expanded="true" signature="15260:15304" ph="update clients... " />
-                <marker date="1520469124022" expanded="true" signature="15770:15814" ph="update clients... " />
-                <marker date="1520469124022" expanded="true" signature="16293:16339" ph="update providers... " />
-                <marker date="1520469124022" expanded="true" signature="16821:16867" ph="update providers... " />
-                <marker date="1520469124022" expanded="true" signature="17337:17381" ph="update clients... " />
-                <marker date="1520469124022" expanded="true" signature="17815:17850" ph="delete from clients... " />
-                <marker date="1520469124022" expanded="true" signature="18282:18319" ph="delete from providers... " />
-                <marker date="1520469124022" expanded="true" signature="18945:18990" ph="update clients... " />
-                <marker date="1520469124022" expanded="true" signature="19642:19687" ph="update clients... " />
-                <marker date="1520469124022" expanded="true" signature="20390:20481" ph="select * fro... wallet" />
-                <marker date="1520469124022" expanded="true" signature="20519:20562" ph="update wallet... " />
-                <marker date="1520469124022" expanded="true" signature="20601:20693" ph="select * fro... events" />
-                <marker date="1520469124022" expanded="true" signature="20732:20776" ph="update events... " />
-                <marker date="1520469124022" expanded="true" signature="20812:20906" ph="select * fro... providers" />
-                <marker date="1520469124022" expanded="true" signature="20942:20985" ph="update providers... " />
+                <marker date="1520470892678" expanded="true" signature="1933:2000" ph="select * fro... clients" />
+                <marker date="1520470892678" expanded="true" signature="2115:2138" ph="select * fro... providers" />
+                <marker date="1520470892678" expanded="true" signature="2249:2286" ph="select * fro... events" />
+                <marker date="1520470892678" expanded="true" signature="2459:2550" ph="select * fro... clients" />
+                <marker date="1520470892678" expanded="true" signature="2904:2988" ph="select * fro... clients" />
+                <marker date="1520470892678" expanded="true" signature="3339:3378" ph="select * fro... admins" />
+                <marker date="1520470892678" expanded="true" signature="3712:3753" ph="select * fro... providers" />
+                <marker date="1520470892678" expanded="true" signature="4124:4166" ph="select * fro... providers" />
+                <marker date="1520470892678" expanded="true" signature="4475:4511" ph="select * fro... events" />
+                <marker date="1520470892678" expanded="true" signature="4700:4739" ph="select * fro... events" />
+                <marker date="1520470892678" expanded="true" signature="5161:5204" ph="update events... " />
+                <marker date="1520470892678" expanded="true" signature="5848:6161" ph="insert into providers... " />
+                <marker date="1520470892678" expanded="true" signature="6389:6636" ph="insert into clients... " />
+                <marker date="1520470892678" expanded="true" signature="7533:7590" ph="insert into wallet... " />
+                <marker date="1520470892678" expanded="true" signature="8581:8780" ph="insert into events... " />
+                <marker date="1520470892678" expanded="true" signature="10890:10941" ph="update wallet... " />
+                <marker date="1520470892678" expanded="true" signature="11481:11524" ph="update wallet... " />
+                <marker date="1520470892678" expanded="true" signature="12652:12703" ph="update providers... " />
+                <marker date="1520470892678" expanded="true" signature="13210:13251" ph="select * fro... events" />
+                <marker date="1520470892678" expanded="true" signature="13738:13782" ph="update clients... " />
+                <marker date="1520470892678" expanded="true" signature="14257:14303" ph="update providers... " />
+                <marker date="1520470892678" expanded="true" signature="14781:14827" ph="update providers... " />
+                <marker date="1520470892678" expanded="true" signature="15293:15337" ph="update clients... " />
+                <marker date="1520470892678" expanded="true" signature="15803:15847" ph="update clients... " />
+                <marker date="1520470892678" expanded="true" signature="16326:16372" ph="update providers... " />
+                <marker date="1520470892678" expanded="true" signature="16854:16900" ph="update providers... " />
+                <marker date="1520470892678" expanded="true" signature="17370:17414" ph="update clients... " />
+                <marker date="1520470892678" expanded="true" signature="17848:17883" ph="delete from clients... " />
+                <marker date="1520470892678" expanded="true" signature="18315:18352" ph="delete from providers... " />
+                <marker date="1520470892678" expanded="true" signature="18978:19023" ph="update clients... " />
+                <marker date="1520470892678" expanded="true" signature="19675:19720" ph="update clients... " />
+                <marker date="1520470892678" expanded="true" signature="20423:20514" ph="select * fro... wallet" />
+                <marker date="1520470892678" expanded="true" signature="20552:20595" ph="update wallet... " />
+                <marker date="1520470892678" expanded="true" signature="20634:20726" ph="select * fro... events" />
+                <marker date="1520470892678" expanded="true" signature="20765:20809" ph="update events... " />
+                <marker date="1520470892678" expanded="true" signature="20845:20939" ph="select * fro... providers" />
+                <marker date="1520470892678" expanded="true" signature="20975:21018" ph="update providers... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="810">
+              <caret line="87" column="17" lean-forward="true" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="allEvents.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="103" column="17" lean-forward="true" selection-start-line="92" selection-start-column="12" selection-end-line="103" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,18 +182,8 @@
       <file leaf-file-name="Elastic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="179" column="64" lean-forward="false" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="providerAddEvent.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="301" column="86" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="86" />
+            <state relative-caret-position="2546">
+              <caret line="211" column="76" lean-forward="true" selection-start-line="211" selection-start-column="76" selection-end-line="211" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -864,7 +874,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/META-INF/jetty-env.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/redirect.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/provWelcome.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/providerProfile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/buyPoints.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/buySub.jsp" />
@@ -899,6 +908,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/view/adminPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/AppController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/RestAPIController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java" />
       </list>
@@ -1217,7 +1227,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220163000" />
+    <option name="totallyTimeSpent" value="221795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1496,14 +1506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ClientRowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1593,14 +1595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="64" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
@@ -1673,57 +1667,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="103" column="17" lean-forward="true" selection-start-line="92" selection-start-column="12" selection-end-line="103" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="87" column="17" lean-forward="true" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="179" column="64" lean-forward="false" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="64" />
+        <state relative-caret-position="2546">
+          <caret line="211" column="76" lean-forward="true" selection-start-line="211" selection-start-column="76" selection-end-line="211" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="330" column="9" lean-forward="true" selection-start-line="330" selection-start-column="9" selection-end-line="330" selection-end-column="9" />
+        <state relative-caret-position="-3784">
+          <caret line="335" column="9" lean-forward="true" selection-start-line="335" selection-start-column="9" selection-end-line="335" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1520469124022" expanded="true" signature="1933:2000" ph="select * fro... clients" />
-            <marker date="1520469124022" expanded="true" signature="2115:2138" ph="select * fro... providers" />
-            <marker date="1520469124022" expanded="true" signature="2249:2286" ph="select * fro... events" />
-            <marker date="1520469124022" expanded="true" signature="2459:2550" ph="select * fro... clients" />
-            <marker date="1520469124022" expanded="true" signature="2904:2988" ph="select * fro... clients" />
-            <marker date="1520469124022" expanded="true" signature="3339:3378" ph="select * fro... admins" />
-            <marker date="1520469124022" expanded="true" signature="3712:3753" ph="select * fro... providers" />
-            <marker date="1520469124022" expanded="true" signature="4124:4166" ph="select * fro... providers" />
-            <marker date="1520469124022" expanded="true" signature="4475:4511" ph="select * fro... events" />
-            <marker date="1520469124022" expanded="true" signature="4700:4739" ph="select * fro... events" />
-            <marker date="1520469124022" expanded="true" signature="5161:5204" ph="update events... " />
-            <marker date="1520469124022" expanded="true" signature="5848:6161" ph="insert into providers... " />
-            <marker date="1520469124022" expanded="true" signature="6389:6636" ph="insert into clients... " />
-            <marker date="1520469124022" expanded="true" signature="7533:7590" ph="insert into wallet... " />
-            <marker date="1520469124022" expanded="true" signature="8581:8780" ph="insert into events... " />
-            <marker date="1520469124022" expanded="true" signature="10890:10941" ph="update wallet... " />
-            <marker date="1520469124022" expanded="true" signature="11481:11524" ph="update wallet... " />
-            <marker date="1520469124022" expanded="true" signature="12619:12670" ph="update providers... " />
-            <marker date="1520469124022" expanded="true" signature="13177:13218" ph="select * fro... events" />
-            <marker date="1520469124022" expanded="true" signature="13705:13749" ph="update clients... " />
-            <marker date="1520469124022" expanded="true" signature="14224:14270" ph="update providers... " />
-            <marker date="1520469124022" expanded="true" signature="14748:14794" ph="update providers... " />
-            <marker date="1520469124022" expanded="true" signature="15260:15304" ph="update clients... " />
-            <marker date="1520469124022" expanded="true" signature="15770:15814" ph="update clients... " />
-            <marker date="1520469124022" expanded="true" signature="16293:16339" ph="update providers... " />
-            <marker date="1520469124022" expanded="true" signature="16821:16867" ph="update providers... " />
-            <marker date="1520469124022" expanded="true" signature="17337:17381" ph="update clients... " />
-            <marker date="1520469124022" expanded="true" signature="17815:17850" ph="delete from clients... " />
-            <marker date="1520469124022" expanded="true" signature="18282:18319" ph="delete from providers... " />
-            <marker date="1520469124022" expanded="true" signature="18945:18990" ph="update clients... " />
-            <marker date="1520469124022" expanded="true" signature="19642:19687" ph="update clients... " />
-            <marker date="1520469124022" expanded="true" signature="20390:20481" ph="select * fro... wallet" />
-            <marker date="1520469124022" expanded="true" signature="20519:20562" ph="update wallet... " />
-            <marker date="1520469124022" expanded="true" signature="20601:20693" ph="select * fro... events" />
-            <marker date="1520469124022" expanded="true" signature="20732:20776" ph="update events... " />
-            <marker date="1520469124022" expanded="true" signature="20812:20906" ph="select * fro... providers" />
-            <marker date="1520469124022" expanded="true" signature="20942:20985" ph="update providers... " />
+            <marker date="1520470892678" expanded="true" signature="1933:2000" ph="select * fro... clients" />
+            <marker date="1520470892678" expanded="true" signature="2115:2138" ph="select * fro... providers" />
+            <marker date="1520470892678" expanded="true" signature="2249:2286" ph="select * fro... events" />
+            <marker date="1520470892678" expanded="true" signature="2459:2550" ph="select * fro... clients" />
+            <marker date="1520470892678" expanded="true" signature="2904:2988" ph="select * fro... clients" />
+            <marker date="1520470892678" expanded="true" signature="3339:3378" ph="select * fro... admins" />
+            <marker date="1520470892678" expanded="true" signature="3712:3753" ph="select * fro... providers" />
+            <marker date="1520470892678" expanded="true" signature="4124:4166" ph="select * fro... providers" />
+            <marker date="1520470892678" expanded="true" signature="4475:4511" ph="select * fro... events" />
+            <marker date="1520470892678" expanded="true" signature="4700:4739" ph="select * fro... events" />
+            <marker date="1520470892678" expanded="true" signature="5161:5204" ph="update events... " />
+            <marker date="1520470892678" expanded="true" signature="5848:6161" ph="insert into providers... " />
+            <marker date="1520470892678" expanded="true" signature="6389:6636" ph="insert into clients... " />
+            <marker date="1520470892678" expanded="true" signature="7533:7590" ph="insert into wallet... " />
+            <marker date="1520470892678" expanded="true" signature="8581:8780" ph="insert into events... " />
+            <marker date="1520470892678" expanded="true" signature="10890:10941" ph="update wallet... " />
+            <marker date="1520470892678" expanded="true" signature="11481:11524" ph="update wallet... " />
+            <marker date="1520470892678" expanded="true" signature="12652:12703" ph="update providers... " />
+            <marker date="1520470892678" expanded="true" signature="13210:13251" ph="select * fro... events" />
+            <marker date="1520470892678" expanded="true" signature="13738:13782" ph="update clients... " />
+            <marker date="1520470892678" expanded="true" signature="14257:14303" ph="update providers... " />
+            <marker date="1520470892678" expanded="true" signature="14781:14827" ph="update providers... " />
+            <marker date="1520470892678" expanded="true" signature="15293:15337" ph="update clients... " />
+            <marker date="1520470892678" expanded="true" signature="15803:15847" ph="update clients... " />
+            <marker date="1520470892678" expanded="true" signature="16326:16372" ph="update providers... " />
+            <marker date="1520470892678" expanded="true" signature="16854:16900" ph="update providers... " />
+            <marker date="1520470892678" expanded="true" signature="17370:17414" ph="update clients... " />
+            <marker date="1520470892678" expanded="true" signature="17848:17883" ph="delete from clients... " />
+            <marker date="1520470892678" expanded="true" signature="18315:18352" ph="delete from providers... " />
+            <marker date="1520470892678" expanded="true" signature="18978:19023" ph="update clients... " />
+            <marker date="1520470892678" expanded="true" signature="19675:19720" ph="update clients... " />
+            <marker date="1520470892678" expanded="true" signature="20423:20514" ph="select * fro... wallet" />
+            <marker date="1520470892678" expanded="true" signature="20552:20595" ph="update wallet... " />
+            <marker date="1520470892678" expanded="true" signature="20634:20726" ph="select * fro... events" />
+            <marker date="1520470892678" expanded="true" signature="20765:20809" ph="update events... " />
+            <marker date="1520470892678" expanded="true" signature="20845:20939" ph="select * fro... providers" />
+            <marker date="1520470892678" expanded="true" signature="20975:21018" ph="update providers... " />
           </folding>
         </state>
       </provider>
