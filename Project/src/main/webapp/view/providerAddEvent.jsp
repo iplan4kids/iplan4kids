@@ -60,10 +60,10 @@
             <!-- Left part of Navbar -->
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="#">Ιστορικό</a>
+                    <a href="/app/provider/">Ιστορικό</a>
                 </li>
                 <li>
-                    <a href="#">Αναφορά</a>
+                    <a href="/app/provider/">Αναφορά</a>
                 </li>
                 <li>
                     <a href="/app/provider/addEvent">Προσθήκη Νέου</a>
