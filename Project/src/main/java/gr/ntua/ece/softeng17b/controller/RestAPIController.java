@@ -204,6 +204,36 @@ public class RestAPIController {
 		Provider prov = (Provider) session.getAttribute("provider");
 		return dbAccess.getAllEventsByProvider(prov.getId());
 	}
+
+	@RequestMapping(value = "/events/buyTheTickets", method = RequestMethod.POST)
+	public RESTclass buyTheTickets(@RequestParam("ticketsnumber") int tickets, HttpServletRequest req) {
+
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		EncryptionUtils encrypter = Configuration.getInstance().getEncrypter();
+		HttpSession session = req.getSession(true);
+		Event ev = (Event)session.getAttribute("event");
+		Client cl = (Client)session.getAttribute("client");
+
+		boolean suc = dbAccess.buyTicket(tickets,cl.getId(),ev.getEvent_id());
+		if(suc) {
+			try {
+
+				Optional<Client> optional = dbAccess.getClient(cl.getId());
+				Client c = optional.orElseThrow(() -> new Exception("User Not Found"));
+				session.setAttribute("client",c);
+				return new RESTclass(true, c.getUsername(), c.getWallet());
+			}
+			catch (Exception e){
+				e.printStackTrace();
+				return null;
+			}
+		}
+
+		else{
+			return null;
+		}
+	}
+
 	
 	
 }

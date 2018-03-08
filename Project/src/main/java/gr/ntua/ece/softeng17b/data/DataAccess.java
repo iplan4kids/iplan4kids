@@ -586,11 +586,19 @@ public class DataAccess {
 
             getWallet.setLong(1,user_id);
             rsW = getWallet.executeQuery();
-            double money = rsW.getDouble("balance");
+            double money;
+            if(rsW.next()) {
+                money = rsW.getDouble("balance");
+            }
+            else throw new Exception("empty");
 
             getTickets.setLong(1, event_id);
             rsT = getTickets.executeQuery();
-            double price = rsT.getDouble("price");
+            double price;
+            if(rsT.next()) {
+                price = rsT.getDouble("price");
+            }
+            else throw new Exception("empty");
             int tickets = rsT.getInt("tickets");
 
             if(money >= (number*price)){
@@ -608,7 +616,11 @@ public class DataAccess {
 
                     getDept.setLong(1,rsT.getLong("prov_id"));
                     rsP = getDept.executeQuery();
-                    double dept = rsP.getDouble("dept");
+                    double dept;
+                    if(rsP.next()) {
+                        dept = rsP.getDouble("dept");
+                    }
+                    else throw new Exception("empty");
                     dept = dept + (number*price);
 
                     updDept.setDouble(1,dept);

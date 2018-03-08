@@ -66,9 +66,9 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <div class="search-form">
-                        <form class="navbar-form" role="search">
+                        <form class="navbar-form" action="/app/events" method="get" role="search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                                <input type="text" class="form-control" placeholder="Search" name="searchtext" id="srch-term" value="">
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
@@ -83,7 +83,7 @@
 
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-    <div class="row">
+    <div class="row" >
       <div class="col-sm-12">
         <div class="profile-header">
           <div class="col-sm-3 left">
@@ -96,7 +96,7 @@
       </div>
     </div>
 
-    <div class="row" style="padding-bottom: 154px">
+    <div class="row" style="padding-bottom: 300px">
       <div class="container">
         <table class="profile table">
           <tr>

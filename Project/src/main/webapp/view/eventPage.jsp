@@ -7,11 +7,11 @@
 <%@ page import="gr.ntua.ece.softeng17b.conf.Configuration" %>
 <%@ page import="java.util.Optional" %>
 <% if (session.getAttribute("client") == null){
-    session.setAttribute("notloggedIn","list-item");
+    session.setAttribute("notloggedIn","inline");
     session.setAttribute("loggedIn","none");
 }
 else{
-    session.setAttribute("loggedIn","list-item");
+    session.setAttribute("loggedIn","inline");
     session.setAttribute("notloggedIn","none");
 }%>
 
@@ -81,7 +81,7 @@ else{
             </ul>
             <!-- Right part of Navbar -->
             <ul id="logregprof" class="nav navbar-nav navbar-right">
-                <li class="notlogged" style="display:${notloggedIn}" ><a href="/app/register"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
+                <li class="notlogged" style="display:${notloggedIn}" ><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Εγγραφή </a></li>
                 <li class="notlogged" style="display:${notloggedIn}"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση </a></li>
                 <li class="dropdown"><a id="logged1" style="display:${loggedIn}" href="#"><span class="glyphicon glyphicon-piggy-bank"></span> Πορτοφόλι (<% if (session.getAttribute("client") == null){ %>%WALLET_POINTS%<%} else {%> <%=String.format("%.2f",((Client) session.getAttribute("client")).getWallet())%> <% }%>)</a></li>
 
@@ -112,7 +112,7 @@ else{
 
      <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
-    <div class = "row mainBody">
+    <div class = "row mainBody" style="padding-bottom: 154px">
 
 
 
@@ -317,7 +317,7 @@ else{
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <div id="icantBuy" style="display: none;" >
+                    <div id="icantBuy" style="display: ${notloggedIn};" >
                         <h4 style="margin-bottom: 10px;" class="text-center modal-title">Δεν είστε συνδεδεμένος,συνδεθείτε ή κάντε εγγραφή:</h4>
                         <div class="row">
                             <div style="text-align: center;" class="col-lg-12">
@@ -332,22 +332,24 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div id="icanBuy" style="display: inline;">
+                    <div id="icanBuy" style="display: ${loggedIn};">
                         <form id="buy-form" action="/app/login/provider" method="post" role="form">
                             <span class="help-block">Αριθμός εισιτηρίων</span>
                             <div class="form-group">
-                                <input type="number" name="ticketsnumber" min="1" id="username" tabindex="1" class="form-control" placeholder="Αριθμός Εισιτηρίων" value="" style="" required="required">
+                                <input type="number" name="ticketsnumber" min="1" id="ticketsnumber" tabindex="1" class="form-control" placeholder="Αριθμός Εισιτηρίων" value="" style="" required="required">
                             </div>
                             <div class="form-group">
                                 <label style="padding-left: 0px;" class="col-xs-3 control-label">Όροι συναλλαγής:</label>
                                 <div class="col-xs-9">
                                     <div style="border: 1px solid #e5e5e5; height: 200px; overflow: auto; padding: 10px; border-radius: 4px;">
-                                        <p>Lorem ipsum dolor sit amet, veniam numquam has te. No suas nonumes recusabo mea, est ut graeci definitiones. His ne melius vituperata scriptorem, cum paulo copiosae conclusionemque at. Facer inermis ius in, ad brute nominati referrentur vis. Dicat erant sit ex. Phaedrum imperdiet scribentur vix no, ad latine similique forensibus vel.</p>
-                                        <p>Dolore populo vivendum vis eu, mei quaestio liberavisse ex. Electram necessitatibus ut vel, quo at probatus oportere, molestie conclusionemque pri cu. Brute augue tincidunt vim id, ne munere fierent rationibus mei. Ut pro volutpat praesent qualisque, an iisque scripta intellegebat eam.</p>
-                                        <p>Mea ea nonumy labores lobortis, duo quaestio antiopam inimicus et. Ea natum solet iisque quo, prodesset mnesarchum ne vim. Sonet detraxit temporibus no has. Omnium blandit in vim, mea at omnium oblique.</p>
-                                        <p>Eum ea quidam oportere imperdiet, facer oportere vituperatoribus eu vix, mea ei iisque legendos hendrerit. Blandit comprehensam eu his, ad eros veniam ridens eum. Id odio lobortis elaboraret pro. Vix te fabulas partiendo.</p>
-                                        <p>Natum oportere et qui, vis graeco tincidunt instructior an, autem elitr noster per et. Mea eu mundi qualisque. Quo nemore nusquam vituperata et, mea ut abhorreant deseruisse, cu nostrud postulant dissentias qui. Postea tincidunt vel eu.</p>
-                                        <p>Ad eos alia inermis nominavi, eum nibh docendi definitionem no. Ius eu stet mucius nonumes, no mea facilis philosophia necessitatibus. Te eam vidit iisque legendos, vero meliore deserunt ius ea. An qui inimicus inciderint.</p>
+                                        <h4 style="padding-top:0px;margin-top:0px;">Γνωστοποίηση Γενικών Όρων Συναλλαγών</h4>
+                                        <p>Το Website έχει αναπτυχθεί και λειτουργεί με σκοπό την παροχή από το iplan4kids προς τους χρήστες του website τη δυνατότητα να συλλέξουν πληροφορίες σχετικά με πολιτιστικά γεγονότα, όπως συναυλίες, θεατρικές παραστάσεις, αθλητικές διοργανώσεις, να ελέγξουν τη διαθεσιμότητα εισιτηρίων και να προβούν σε κράτηση ή αγορά αυτών. Το iplan4kids ενεργεί αποκλειστικά ως διαμεσολαβητής κρατήσεων των πολιτιστικών υπηρεσιών που παρουσιάζονται και εξυπηρετούνται μέσω του Website και παρέχονται από τρίτους παρόχους και σύμφωνα με τους όρους και τις προϋποθέσεις που αυτοί, δηλαδή οι Τρίτοι Πάροχοι, διαμορφώνουν και γνωστοποιούν προς τους χρήστες των πολιτιστικών υπηρεσιών που παρέχουν.</p>
+                                        <h4>Όροι αγοράς και ακύρωσης :</h4>
+                                        <p>Η αγορά των εισιτηρίων γίνεται μέσω των πόντων που υπάρχουν στο πορτοφόλι σας και ακολουθούν τους κανόνες του πορτοφολιού.Μετά απο την ολοκλήρωση της αγοράς, δεν είναι δυνατή η ακύρωση της  κράτησης με ή χωρίς επιστροφή χρημάτων.</p>
+                                        <h4>Αποποίηση Ευθύνης</h4>
+                                        <p>Το iplan4kids δεν εγγυάται την ορθότητα, ακρίβεια και σαφήνεια των πληροφοριών που αναρτώνται στο Website, συμπεριλαμβανομένων των τιμών των αγαθών, δεδομένου ότι οι πληροφορίες αυτές της παρέχονται προς δημοσίευση από τρίτα μέρη, ιδιαίτερα δε από Τρίτους Παρόχους και η επιβεβαίωσή ή/και ο έλεγχος αυτών από το iplan4kids ως προς τα ανωτέρω δεν είναι και δεν θα μπορούσε να είναι εφικτός. Για το λόγο αυτό το iplan4kids ουδεμία ευθύνη φέρει σχετικά, διατηρεί δε το δικαίωμα να προβεί αζημίως σε διορθώσεις, επικαιροποιήσεις ή/ και όποιες άλλες μεταβολές στις εν λόγω πληροφορίες, εφόσον του ζητηθεί από τον πάροχο της πληροφορίας ή κατόπιν συναίνεσης αυτού, ακόμη και στην περίπτωση που η διόρθωση, η επικαιροποίηση ή μεταβολή αφορά ή/ και επηρεάζει εκκρεμείς κρατήσεις.</p>
+                                        <p>Το iplan4kids δεν εγγυάται ούτε φέρει οποιαδήποτε ευθύνη σχετικά με την προβαλλόμενη διαθεσιμότητα των παρεχομένων αγαθών αλλά εμφανίζει τις συγκεκριμένες πληροφορίες στο Website όπως του γνωστοποιούνται από τον εκάστοτε Τρίτο Πάροχο.</p>
+                                        <p>Το iplan4kids δεν εγγυάται ούτε φέρει οποιαδήποτε ευθύνη για την επάρκεια, καταλληλότητα, την διαθεσιμότητα των αγαθών που παρέχουν οι Τρίτοι Πάροχοι καθώς και για τυχόν πράξεις ή παραλείψεις αυτών στο πλαίσιο της συνεργασίας τους με το iplan4kids ή/ και της εκπλήρωσης της παροχής προς τους χρήστες που είναι δυνατόν να προκαλέσουν αξιώσεις αποζημίωσης για οποιοδήποτε λόγο. Σε κάθε περίπτωση το iplan4kids ουδεμία ευθύνη φέρει έναντι των χρηστών ή και οποιουδήποτε τρίτου για άμεση ή έμμεση ζημία, διαφυγόντα κέρδη, απώλεια εσόδου ή κέρδους, απώλεια ευκαιρίας, απώλεια ή καταστροφή δεδομένων και εν γένει για οποιουδήποτε είδους θετική ή αποθετική ζημία η οποία οφείλεται ή αφορά στην πρόσβαση ή/ και χρήση του Website και τα αγαθά που αποκτήθηκαν μέσω αυτού.</p>
                                     </div>
                                 </div>
                             </div>
@@ -378,7 +380,7 @@ else{
     </div>
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-<script src = "<c:url value='/pages/scripts.js' />" type = "text/javascript"></script>
+<script src = "<c:url value='/pages/buyscripts.js' />" type = "text/javascript"></script>
     </body>
 
 </html>

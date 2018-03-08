@@ -46,10 +46,10 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <!-- Left part of Navbar -->
                 <ul class="nav navbar-nav navbar-left">
-                    <li>
+                    <li id ="history">
                         <a href="#">Ιστορικό</a>
                     </li>
-                    <li>
+                    <li id ="repo">
                         <a href="#">Αναφορά</a>
                     </li>
                     <li>
@@ -78,8 +78,8 @@
     <!-- -------------------------------------- MAIN PAGE ----------------------------------------------- -->
 
     <div class="row list-drastiriotites">
-      <div class="col-sm-12">d
-        <div class="row">
+      <div class="col-sm-12">
+        <div id="hisrepo" class="row">
           <h2 style="text-align:center;"> Ιστορικό </h2>
           <table class="table">
             <thead>
@@ -88,18 +88,9 @@
                 <th>Προβολή δραστηριότητας</th>
               </tr>
             </thead>
-            <tr>
-              <td>Δραστηριότητα 1</td>
-              <td><button type="button" class="btn btn-primary" name="button">Προβολή</button></td>
-            </tr>
-            <tr>
-              <td>Δραστηριότητα 2</td>
-              <td><button type="button" class="btn btn-primary" name="button">Προβολή</button></td>
-            </tr>
-            <tr>
-              <td>Δραστηριότητα 3</td>
-              <td><button type="button" class="btn btn-primary" name="button">Προβολή</button></td>
-            </tr>
+	     <tbody>
+			
+          </tbody>
           </table>
         </div>
       </div>
@@ -119,7 +110,8 @@
 
 
     <!-- -------------------------------------- SCRIPTS ----------------------------------------------- -->
-	<script src = "../pages/scripts.js" type = "text/javascript"></script>
+	
+	<script src = "../pages/provider.js" type = "text/javascript"></script>
     </body>
 
 </html>

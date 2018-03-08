@@ -24,7 +24,7 @@ public class Provider extends User {
 
     //GETTERS
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -108,7 +108,7 @@ public class Provider extends User {
 
     // SETTERS
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

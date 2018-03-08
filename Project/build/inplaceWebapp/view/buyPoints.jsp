@@ -82,9 +82,9 @@ else{
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <div class="search-form">
-                    <form class="navbar-form" role="search">
+                    <form class="navbar-form" action="/app/events" method="get" role="search">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                            <input type="text" class="form-control" placeholder="Search" name="searchtext" id="srch-term" value="">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>

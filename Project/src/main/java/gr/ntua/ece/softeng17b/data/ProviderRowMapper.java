@@ -11,7 +11,7 @@ public class ProviderRowMapper implements RowMapper<Provider> {
     @Override
     public Provider mapRow(ResultSet rs, int rowNum) throws SQLException {
         Provider pr = new Provider();
-        pr.setId(rs.getInt("prov_id"));
+        pr.setId(rs.getLong("prov_id"));
         pr.setUsername(rs.getString("username"));
         pr.setPassword(rs.getString("password"));
         pr.setCompany_name(rs.getString("full_name"));

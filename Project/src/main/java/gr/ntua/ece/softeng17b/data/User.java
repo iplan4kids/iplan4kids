@@ -2,7 +2,7 @@ package gr.ntua.ece.softeng17b.data;
 
 public abstract class User {
 	
-	protected int id;
+	protected long id;
     protected String username;
     protected String password;
     protected String salt;
@@ -12,7 +12,7 @@ public abstract class User {
     protected String m_phone;
 
 
-    abstract int getId();
+    abstract long getId();
 
     abstract String getUsername();
 
@@ -29,7 +29,7 @@ public abstract class User {
 
     // SETTERS
 
-    abstract void setId(int id);
+    abstract void setId(long id);
 
     abstract void setUsername(String username);
 
