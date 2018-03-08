@@ -106,22 +106,22 @@ else{
             <div class="item active">
                 <img src="<c:url value='/images/kids_cooking.jpg'/>" alt="Image1" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>asdfsd</h3>
-                    <p>adsasdfasdf</p>
+                    <h3>Εργαστήριο Μαγειρικής</h3>
+                    <p>Μαθήματα μαγειρικής σε παιδιά</p>
                 </div>
             </div>
             <div class="item">
                 <img src="<c:url value='/images/painting.jpg'/>" alt="Image2" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>sdfasdf</h3>
-                    <p>asdfasdf</p>
+                    <h3>Εργαστήριο Καλλιτεχνικών</h3>
+                    <p>Μαθήματα καλλιτεχνικών σε παιδιά</p>
                 </div>
             </div>
             <div class="item">
                 <img src="<c:url value='/images/swimming.jpg'/>" alt="Image3" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>asdfsd</h3>
-                    <p>adsasdfasdf</p>
+                    <h3>Κολύμβηση</h3>
+                    <p>Προγράμματα κολύμβησης για παιδιά</p>
                 </div>
             </div>
 
