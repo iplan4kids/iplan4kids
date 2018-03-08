@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/view/eventPage.jsp" line="167" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="64eff250-50b8-4bf7-bda5-adfa9c3e8187" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,77 +85,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DataAccess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java">
+      <file leaf-file-name="SimpleLocation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/SimpleLocation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2975">
-              <caret line="348" column="52" lean-forward="true" selection-start-line="348" selection-start-column="52" selection-end-line="348" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2212#2213#0" expanded="true" />
-                <element signature="e#2299#2300#0" expanded="true" />
-                <element signature="e#13068#13075#0" expanded="true" />
-                <element signature="e#13830#13837#0" expanded="true" />
-                <marker date="1520504768343" expanded="true" signature="1933:2000" ph="select * fro... clients" />
-                <marker date="1520504768343" expanded="true" signature="2115:2138" ph="select * fro... providers" />
-                <marker date="1520504768343" expanded="true" signature="2249:2269" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="2442:2533" ph="select * fro... clients" />
-                <marker date="1520504768343" expanded="true" signature="2887:2971" ph="select * fro... clients" />
-                <marker date="1520504768343" expanded="true" signature="3322:3361" ph="select * fro... admins" />
-                <marker date="1520504768343" expanded="true" signature="3695:3736" ph="select * fro... providers" />
-                <marker date="1520504768343" expanded="true" signature="4107:4149" ph="select * fro... providers" />
-                <marker date="1520504768343" expanded="true" signature="4458:4494" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="4683:4722" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="5144:5187" ph="update events... " />
-                <marker date="1520504768343" expanded="true" signature="5831:6144" ph="insert into providers... " />
-                <marker date="1520504768343" expanded="true" signature="6372:6619" ph="insert into clients... " />
-                <marker date="1520504768343" expanded="true" signature="7516:7573" ph="insert into wallet... " />
-                <marker date="1520504768343" expanded="true" signature="8564:8763" ph="insert into events... " />
-                <marker date="1520504768343" expanded="true" signature="10873:10924" ph="update wallet... " />
-                <marker date="1520504768343" expanded="true" signature="11464:11507" ph="update wallet... " />
-                <marker date="1520504768343" expanded="true" signature="12637:12688" ph="update providers... " />
-                <marker date="1520504768343" expanded="true" signature="13249:13290" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="13249:13291" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="14062:14103" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="14062:14104" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="14691:14735" ph="update clients... " />
-                <marker date="1520504768343" expanded="true" signature="15210:15256" ph="update providers... " />
-                <marker date="1520504768343" expanded="true" signature="15734:15780" ph="update providers... " />
-                <marker date="1520504768343" expanded="true" signature="16246:16290" ph="update clients... " />
-                <marker date="1520504768343" expanded="true" signature="16756:16800" ph="update clients... " />
-                <marker date="1520504768343" expanded="true" signature="17279:17325" ph="update providers... " />
-                <marker date="1520504768343" expanded="true" signature="17807:17853" ph="update providers... " />
-                <marker date="1520504768343" expanded="true" signature="18323:18367" ph="update clients... " />
-                <marker date="1520504768343" expanded="true" signature="18801:18836" ph="delete from clients... " />
-                <marker date="1520504768343" expanded="true" signature="19268:19305" ph="delete from providers... " />
-                <marker date="1520504768343" expanded="true" signature="19931:19976" ph="update clients... " />
-                <marker date="1520504768343" expanded="true" signature="20628:20673" ph="update clients... " />
-                <marker date="1520504768343" expanded="true" signature="21376:21467" ph="select * fro... wallet" />
-                <marker date="1520504768343" expanded="true" signature="21505:21548" ph="update wallet... " />
-                <marker date="1520504768343" expanded="true" signature="21587:21679" ph="select * fro... events" />
-                <marker date="1520504768343" expanded="true" signature="21718:21762" ph="update events... " />
-                <marker date="1520504768343" expanded="true" signature="21798:21892" ph="select * fro... providers" />
-                <marker date="1520504768343" expanded="true" signature="21928:21971" ph="update providers... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestAPIController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/RestAPIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="128" column="70" lean-forward="true" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
+            <state relative-caret-position="30">
+              <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clients" pinned="false" current-in-tab="false">
-        <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.clients">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,38 +115,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="providerAddEvent.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
+      <file leaf-file-name="eventPage.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/eventPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="301" column="86" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="86" />
+            <state relative-caret-position="341">
+              <caret line="204" column="23" lean-forward="true" selection-start-line="204" selection-start-column="23" selection-end-line="204" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1995">
-              <caret line="377" column="6" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="377" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="151" column="60" lean-forward="true" selection-start-line="151" selection-start-column="60" selection-end-line="151" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="providers" pinned="false" current-in-tab="false">
-        <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.providers">
+      <file leaf-file-name="clients" pinned="false" current-in-tab="false">
+        <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.clients">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -206,21 +134,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/register.js">
+      <file leaf-file-name="events" pinned="false" current-in-tab="false">
+        <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.events">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1830">
-              <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+            <state relative-caret-position="458">
+              <caret line="276" column="78" lean-forward="true" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Elastic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java">
+      <file leaf-file-name="Place.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Place.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="179" column="123" lean-forward="false" selection-start-line="179" selection-start-column="123" selection-end-line="179" selection-end-column="123" />
+            <state relative-caret-position="240">
+              <caret line="16" column="37" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="16" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="providerAddEvent.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4181">
+              <caret line="301" column="86" lean-forward="true" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -877,8 +834,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/ProviderFinder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/AdminFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/AdminRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/CompositeUserFinder.java" />
@@ -917,8 +872,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/conf/app.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/adminPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/AppController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/ProvController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Elastic.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/SimpleLocation.java" />
@@ -928,6 +881,10 @@
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/RestAPIController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Place.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/eventPage.jsp" />
       </list>
     </option>
   </component>
@@ -1240,12 +1197,12 @@
       <workItem from="1520433005630" duration="7121000" />
       <workItem from="1520455490903" duration="1976000" />
       <workItem from="1520458434839" duration="4676000" />
-      <workItem from="1520496640752" duration="8935000" />
+      <workItem from="1520496640752" duration="13579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234988000" />
+    <option name="totallyTimeSpent" value="239632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1345,32 +1302,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/EventRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/eed01b6a/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.events" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="118" column="38" lean-forward="false" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/eventPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3006">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1385,14 +1321,6 @@
     <entry file="file://$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/view/providerAddEvent.jsp" />
     <entry file="file://$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/pages/eventPage.html" />
     <entry file="file://$USER_HOME$/Untitled Folder/iplan4kids-Ongoing/Project/src/main/webapp/pages/styles.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/provWelcome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="109" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/RandomString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
@@ -1418,6 +1346,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,14 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Emailer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1508,6 +1429,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding>
+            <element signature="e#1966#1967#0" expanded="false" />
+            <element signature="e#1994#1995#0" expanded="false" />
+            <element signature="e#3803#3804#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1548,18 +1474,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11">
           <caret line="175" column="46" lean-forward="true" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1574,22 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="102" column="13" lean-forward="false" selection-start-line="100" selection-start-column="12" selection-end-line="102" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/SimpleLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1635,13 +1538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.events">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/view/allEvents.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-930">
@@ -1661,26 +1557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="301" column="86" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1830">
           <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="377" column="6" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="377" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1693,17 +1573,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.clients">
+    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.providers">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="151" column="60" lean-forward="true" selection-start-line="151" selection-start-column="60" selection-end-line="151" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/provWelcome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="109" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/DataAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="348" column="52" lean-forward="true" selection-start-line="348" selection-start-column="52" selection-end-line="348" selection-end-column="52" />
+        <state relative-caret-position="3710">
+          <caret line="271" column="81" lean-forward="true" selection-start-line="270" selection-start-column="8" selection-end-line="271" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2212#2213#0" expanded="true" />
@@ -1756,16 +1660,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/RestAPIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="-453">
           <caret line="128" column="70" lean-forward="true" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.providers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1777,10 +1682,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="151" column="60" lean-forward="true" selection-start-line="151" selection-start-column="60" selection-end-line="151" selection-end-column="60" />
+        <state relative-caret-position="360">
+          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/SimpleLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/data/Place.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ntua/ece/softeng17b/controller/EventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.clients">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/providerAddEvent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4181">
+          <caret line="301" column="86" lean-forward="true" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="276" column="78" lean-forward="true" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cf2c357/39ed67f6-0fde-446e-aeed-05e66fc05bf6/iplan4kidz_18a.public.events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/eventPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="204" column="23" lean-forward="true" selection-start-line="204" selection-start-column="23" selection-end-line="204" selection-end-column="23" />
           <folding />
         </state>
       </provider>

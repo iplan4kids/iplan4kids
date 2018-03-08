@@ -141,8 +141,10 @@ else{
 
 
                     <div style="margin-bottom: 10px;" class="filters-container" id="slider-range" ></div>
+                    <!-- 
                     <label>Επιλογή Ημερομηνιας:</label>
-                    <input style="margin-left: 5px; margin-bottom:10px; margin-top:10px;"  placeholder="Ημερομηνία" type="date" id="filterdate" min="" class="form-control " name="date" value="">
+                    -->
+                    <input style="display: none; margin-left: 5px; margin-bottom:10px; margin-top:10px;"  placeholder="Ημερομηνία" type="date" id="filterdate" min="" class="form-control " name="date" value="">
                     <label>Επιλογή Τοποθεσίας:</label>
                     <div class="radio">
                         <label><input id="myLocation" type="radio" name="optradio">Το σπίτι μου</label>
@@ -172,11 +174,7 @@ else{
 
                 </div>
             </div>
-            <!-- ----------------------------------- PAGIFICATION ------------------------------------- -->
-            <div class="row pager">
-                    <a href="#" class="previous">&laquo; Προηγούμενη</a>
-                    <a href="#" class="next">Επόμενη &raquo;</a>
-            </div>        
+                  
         </div>
     </div>
 

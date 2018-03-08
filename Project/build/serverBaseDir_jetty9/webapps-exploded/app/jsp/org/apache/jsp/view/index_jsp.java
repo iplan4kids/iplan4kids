@@ -197,8 +197,8 @@ else{
         return;
       out.write("\" alt=\"Image1\" style=\"width:100%;\">\n");
       out.write("                <div class=\"carousel-caption\">\n");
-      out.write("                    <h3>asdfsd</h3>\n");
-      out.write("                    <p>adsasdfasdf</p>\n");
+      out.write("                    <h3>Εργαστήριο Μαγειρικής</h3>\n");
+      out.write("                    <p>Μαθήματα μαγειρικής σε παιδιά</p>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"item\">\n");
@@ -207,8 +207,8 @@ else{
         return;
       out.write("\" alt=\"Image2\" style=\"width:100%;\">\n");
       out.write("                <div class=\"carousel-caption\">\n");
-      out.write("                    <h3>sdfasdf</h3>\n");
-      out.write("                    <p>asdfasdf</p>\n");
+      out.write("                    <h3>Εργαστήριο Καλλιτεχνικών</h3>\n");
+      out.write("                    <p>Μαθήματα καλλιτεχνικών σε παιδιά</p>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"item\">\n");
@@ -217,8 +217,8 @@ else{
         return;
       out.write("\" alt=\"Image3\" style=\"width:100%;\">\n");
       out.write("                <div class=\"carousel-caption\">\n");
-      out.write("                    <h3>asdfsd</h3>\n");
-      out.write("                    <p>adsasdfasdf</p>\n");
+      out.write("                    <h3>Κολύμβηση</h3>\n");
+      out.write("                    <p>Προγράμματα κολύμβησης για παιδιά</p>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("\n");

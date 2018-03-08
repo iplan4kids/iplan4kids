@@ -48,7 +48,12 @@ public class EventController {
 			Optional<Event> optional = dbAccess.getEventById(eventId);
 			Event ev = optional.orElseThrow(() -> new Exception("Event Not Found"));
 			model1 = new ModelAndView("eventPage");
+			session.setAttribute("event",ev);
 			model1.addObject("event", ev);
+
+			Optional<Provider> optional2 = dbAccess.getProvider(ev.getProv_id());
+			Provider prov = optional2.orElseThrow(() -> new Exception("Provider Not Found"));
+			model1.addObject("prov", prov);
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());

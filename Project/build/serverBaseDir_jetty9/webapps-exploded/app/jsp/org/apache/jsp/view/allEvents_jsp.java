@@ -232,8 +232,10 @@ else{
       out.write("\r\n");
       out.write("\r\n");
       out.write("                    <div style=\"margin-bottom: 10px;\" class=\"filters-container\" id=\"slider-range\" ></div>\r\n");
+      out.write("                    <!-- \r\n");
       out.write("                    <label>Επιλογή Ημερομηνιας:</label>\r\n");
-      out.write("                    <input style=\"margin-left: 5px; margin-bottom:10px; margin-top:10px;\"  placeholder=\"Ημερομηνία\" type=\"date\" id=\"filterdate\" min=\"\" class=\"form-control \" name=\"date\" value=\"\">\r\n");
+      out.write("                    -->\r\n");
+      out.write("                    <input style=\"display: none; margin-left: 5px; margin-bottom:10px; margin-top:10px;\"  placeholder=\"Ημερομηνία\" type=\"date\" id=\"filterdate\" min=\"\" class=\"form-control \" name=\"date\" value=\"\">\r\n");
       out.write("                    <label>Επιλογή Τοποθεσίας:</label>\r\n");
       out.write("                    <div class=\"radio\">\r\n");
       out.write("                        <label><input id=\"myLocation\" type=\"radio\" name=\"optradio\">Το σπίτι μου</label>\r\n");
@@ -263,11 +265,7 @@ else{
       out.write("\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
-      out.write("            <!-- ----------------------------------- PAGIFICATION ------------------------------------- -->\r\n");
-      out.write("            <div class=\"row pager\">\r\n");
-      out.write("                    <a href=\"#\" class=\"previous\">&laquo; Προηγούμενη</a>\r\n");
-      out.write("                    <a href=\"#\" class=\"next\">Επόμενη &raquo;</a>\r\n");
-      out.write("            </div>        \r\n");
+      out.write("                  \r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");
       out.write("\r\n");
