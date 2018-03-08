@@ -177,7 +177,7 @@ public class Elastic {
         request.script(inline);
     }
 
-    SearchResults search(String text, Long subject, Double priceDown, Double priceUp, Date date, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
+    SearchResults search(String text, String subject, Double priceDown, Double priceUp, Date date, boolean hasTickets, Long distanceInKm, Location fromLoc, int from, int count) {
         //A single search entry point is provided for all cases.
         //It uses the BoolQuery of elastic to apply all user-supplied constraints / filters (must = AND).
         //The constraint to return only events that have tickets available is automatically applied.

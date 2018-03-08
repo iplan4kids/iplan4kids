@@ -89,7 +89,7 @@ public class ProvController {
 			if (time.length() <= 4) time = "0" + time;
 			time += ":00";
 			String date = req.getParameter("date") + " " + time;
-			String[] arrayTags = {"sports", "theatre", "music", "workshop", "other"};
+			String[] arrayTags = {"Αθλητισμός", "Θέατρο", "Μουσική", "Εργαστήρι", "Άλλες"};
 			int[] numTags = {
 					Integer.parseInt(req.getParameter("sports")),
 					Integer.parseInt(req.getParameter("theatre")),

@@ -127,7 +127,7 @@ function initAutocomplete() {
 }
 
 function fillInAddress() {
-  alert(select);
+  //alert(select);
     // Get the place details from the autocomplete object.
     if (select == "#register1-form") {
         var place = autocomplete.getPlace();

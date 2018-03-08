@@ -29,7 +29,7 @@ public class EventController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView getEvents(HttpServletRequest req) {
 		ModelAndView model1 = new ModelAndView("allEvents");
-		HttpSession session = req.getSession(false);
+		HttpSession session = req.getSession(true);
 		String text = (String) req.getParameter("searchtext");
 		System.out.println(text);
 		session.setAttribute("fromSearch",text);

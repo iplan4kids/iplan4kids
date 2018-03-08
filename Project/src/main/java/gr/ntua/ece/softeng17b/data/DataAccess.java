@@ -300,7 +300,7 @@ public class DataAccess {
         }
     }
 
-    public SearchResults searchEvents(String text, Long subject, Double priceDown, Double priceUp, Long distanceInKm, Location fromLoc, int from, int count) {
+    public SearchResults searchEvents(String text, String subject, Double priceDown, Double priceUp, Long distanceInKm, Location fromLoc, int from, int count) {
         return elastic.search(text, subject, priceDown, priceUp, Calendar.getInstance().getTime(),true, distanceInKm, fromLoc, from, count);
     }
 
@@ -326,12 +326,35 @@ public class DataAccess {
     public List<Event> freeTextSearch(String searchtext){
         SearchResults res = searchEvents(searchtext,null,null,null,null,null,0,9);
         Long[] ids= new Long[(int)res.count];
+        List<Event> events = new ArrayList<Event>();
         for(int i = 0 ; i<res.ids.size(); i++){
             ids[i] = Long.parseLong(res.ids.get(i));
         }
         if (ids.length != 0) {
-            String query = "select * from events where event_id in(?)";
-            List<Event> events = jdbcTemplate.query(query, ids, new EventRowMapper());
+            String query = "select * from events where event_id in (?) ";
+
+            for(Long i : ids){
+                List<Event> one = (jdbcTemplate.query(query, new Long[]{i}, new EventRowMapper()));
+                events.add(one.get(0));
+            }
+            return events;
+        }
+        else return null;
+    }
+    public List<Event> searchByFilters(String tags,Double priceDown, Double priceUp, Long distanceInKm, Location place, int from, int count) {
+        SearchResults res = searchEvents(null,tags,priceDown,priceUp,distanceInKm,place,0,9);
+        List<Event> events = new ArrayList<Event>();
+        Long[] ids = new Long[(int) res.count];
+        for (int i = 0; i < res.ids.size(); i++) {
+            ids[i] = Long.parseLong(res.ids.get(i));
+        }
+        if (ids.length != 0) {
+            String query = "select * from events where event_id in (?) ";
+
+            for(Long i : ids){
+                List<Event> one = (jdbcTemplate.query(query, new Long[]{i}, new EventRowMapper()));
+                events.add(one.get(0));
+            }
             return events;
         }
         else return null;

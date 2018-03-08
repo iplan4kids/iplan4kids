@@ -1,6 +1,6 @@
 package gr.ntua.ece.softeng17b.data;
 
-public class SimpleLocation{
+public class SimpleLocation implements Location{
 
     private double latitude;
     private double longitude;

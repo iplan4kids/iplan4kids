@@ -63,7 +63,7 @@ var mockEvents = [{
 var templateTest= '<div class="col-sm-4">' +
                     '<div class="panel eventCard">' +
                         '<a id="eventLink" href="/app/events/event/%EVENT_ID%"><h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h4></a>' +
-                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="eventImages/%EVENT_ID_IMAGE%/%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
+                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
                         '<div class="panel-body eventDescription">' +
                            /* '<div class="eventDate">' +
                                 '%EVENT_DATE%' +
@@ -146,16 +146,15 @@ $(document).ready(function() {
                     else{
                        ds = ds.padEnd(33);
                     }
+                    var imageArray = result[i]['images'].split(",");
                     console.log(result[i]['images']);
-					var imageArray = result[i]['images'].split(",");
-					var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
+                    var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
                         .replace('%EVENT_IMAGE%', imageArray[0])
                         .replace('%EVENT_DATE%', eventDate)
                         .replace('%EVENT_DESCRIPTION%',ds )
                         .replace('%EVENT_PRICE%', result[i]['price'])
                         .replace('%EVENT_TIME%',eventTime )
                         .replace('%EVENT_ID%',result[i]['event_id'] )
-						.replace('%EVENT_ID_IMAGE%',result[i]['event_id'] )
                         .replace('%EVENT_ID_IM%',result[i]['event_id'] );
 
                     parentDiv.append(divContent);
@@ -219,7 +218,7 @@ function applyFilters(){
         };
 
     };
-    
+
     var parentDiv = $('#allEvents');
 
     var filterDate = $("#filterdate").val();
@@ -275,10 +274,143 @@ function applyFilters(){
                 "numberOfKm":parseInt(numberOfKm)
             }
 
+            $.ajax({
+                url: "/app/events/byFiltersEvents", // url where to submit the request
+                type : "POST", // type of action POST || GET
+                dataType : 'json', // data type
+                contentType : 'application/json',
+                data : JSON.stringify(filtersJSON), // post data || get data
+                success : function(result) {
+                    // you can see the result from the console
+                    // tab of the developer tools
+                    var parentDiv = $('#allEvents');
+                    parentDiv.empty();
+                    if(result.length != 0) {
+                        var parentDiv = $('#allEvents');
+                        for (var i = 0; i < result.length; i++) {
+                            //console.log(result[i]['price']);
+                            var date = new Date(result[i]['date']);
+                            var dd = date.getDate();
+                            var mm = date.getMonth();
+                            var yyyy = date.getFullYear();
+                            var hh = date.getHours();
+                            var mi = date.getMinutes();
+                            if (dd<10){
+                                dd = '0' + dd;
+                            }
+                            if (mm<10){
+                                mm = '0' +mm;
+                            }
+                            if (hh<10){
+                                hh = '0' + hh;
+                            }
+                            if (mi<10){
+                                mi = '0' + mi;
+                            }
+                            var eventDate = dd + "/" + mm + "/" + yyyy;
+                            var eventTime = hh + ":" + mi;
+                            var ds = result[i]['description'];
+                            if (ds.length> 33){
+                                ds = ds.substring(0,30)+"...";
+                            }
+                            else{
+                                ds = ds.padEnd(33);
+                            }
+                            console.log(result[i]['images']);
+                            var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
+                                .replace('%EVENT_IMAGE%', result[i]['images'])
+                                .replace('%EVENT_DATE%', eventDate)
+                                .replace('%EVENT_DESCRIPTION%',ds )
+                                .replace('%EVENT_PRICE%', result[i]['price'])
+                                .replace('%EVENT_TIME%',eventTime )
+                                .replace('%EVENT_ID%',result[i]['event_id'] )
+                                .replace('%EVENT_ID_IM%',result[i]['event_id'] );
+
+                            parentDiv.append(divContent);
+                        }
+                    }
+                },
+                error: function(xhr, resp, text) {
+                    alert("AJAX FAILED");
+                }
+            })
 
             console.log(filtersJSON);
         });
+        return true;
     }
+
+    var filtersJSON = {
+        "categories":selectedCategories,
+        "min":sliderMin,
+        "max":sliderMax,
+        "date":filterDate,
+        "lng":lng,
+        "lat":lat,
+        "findAddr":findAddress,
+        "numberOfKm":parseInt(numberOfKm)
+    }
+
+    $.ajax({
+        url: "/app/events/byFiltersEvents", // url where to submit the request
+        type : "POST", // type of action POST || GET
+        dataType : 'json', // data type
+        contentType : 'application/json',
+        data : JSON.stringify(filtersJSON),
+        success : function(result) {
+            // you can see the result from the console
+            // tab of the developer tools
+            var parentDiv = $('#allEvents');
+            parentDiv.empty();
+            if(result.length != 0) {
+                var parentDiv = $('#allEvents');
+                for (var i = 0; i < result.length; i++) {
+                    //console.log(result[i]['price']);
+                    var date = new Date(result[i]['date']);
+                    var dd = date.getDate();
+                    var mm = date.getMonth();
+                    var yyyy = date.getFullYear();
+                    var hh = date.getHours();
+                    var mi = date.getMinutes();
+                    if (dd<10){
+                        dd = '0' + dd;
+                    }
+                    if (mm<10){
+                        mm = '0' +mm;
+                    }
+                    if (hh<10){
+                        hh = '0' + hh;
+                    }
+                    if (mi<10){
+                        mi = '0' + mi;
+                    }
+                    var eventDate = dd + "/" + mm + "/" + yyyy;
+                    var eventTime = hh + ":" + mi;
+                    var ds = result[i]['description'];
+                    if (ds.length> 33){
+                        ds = ds.substring(0,30)+"...";
+                    }
+                    else{
+                        ds = ds.padEnd(33);
+                    }
+                    console.log(result[i]['images']);
+                    var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
+                        .replace('%EVENT_IMAGE%', result[i]['images'])
+                        .replace('%EVENT_DATE%', eventDate)
+                        .replace('%EVENT_DESCRIPTION%',ds )
+                        .replace('%EVENT_PRICE%', result[i]['price'])
+                        .replace('%EVENT_TIME%',eventTime )
+                        .replace('%EVENT_ID%',result[i]['event_id'] )
+                        .replace('%EVENT_ID_IM%',result[i]['event_id'] );
+
+                    parentDiv.append(divContent);
+                }
+            }
+        },
+        error: function(xhr, resp, text) {
+            alert("AJAX FAILED");
+        }
+    })
 
 
 

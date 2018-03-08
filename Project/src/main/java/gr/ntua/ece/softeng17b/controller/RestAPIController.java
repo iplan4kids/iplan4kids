@@ -11,13 +11,7 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestAPIController {
@@ -107,6 +101,34 @@ public class RestAPIController {
 		}
 		else{
 			List <Event> events = dbAccess.freeTextSearch(text);
+			return events;
+		}
+	}
+
+	@RequestMapping(value = "/events/byFiltersEvents", method = RequestMethod.POST,consumes = {"application/json"})
+	public List<Event> getEventsByFilters(@RequestBody Filters filters, HttpServletRequest req) throws Exception {
+		DataAccess dbAccess = Configuration.getInstance().getDataAccess();
+		HttpSession session = req.getSession(true);
+		String tags = "";
+		String[] arrayTags = {"Αθλητισμός", "Θέατρο", "Μουσική", "Εργαστήρι", "Άλλες"};
+		for (String i : filters.getCategories()) {
+			tags += arrayTags[Integer.parseInt(i) - 1] + " , ";
+		}
+		if(tags.equals("")) tags = null;
+		if(filters.getNumberOfKm() == 0) filters.setNumberOfKm(null);
+		System.out.println(filters.getFindAddr());
+		System.out.println(filters.getNumberOfKm());
+		System.out.println(filters.getMax());
+		if (filters.getFindAddr() == 0) {
+			if (session.getAttribute("client") == null) throw new Exception("Not logged in...");
+			else {
+				Client cl = (Client) session.getAttribute("client");
+				List<Event> events = dbAccess.searchByFilters( tags, filters.getMin(), filters.getMax(), filters.getNumberOfKm(), new SimpleLocation(cl.getLatitude(), cl.getLongtitude()), 0, 9);
+				return events;
+			}
+		}
+		else {
+			List<Event> events = dbAccess.searchByFilters( tags, filters.getMin(), filters.getMax(), filters.getNumberOfKm(), new SimpleLocation(filters.getLat(), filters.getLng()), 0, 9);
 			return events;
 		}
 	}
