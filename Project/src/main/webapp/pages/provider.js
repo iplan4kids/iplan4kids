@@ -11,8 +11,30 @@ $(document).ready(function() {
             if (result.length != 0) {
                 data = result;
                 for (var i = 0; i < data.length; i++) {
-
-                    var table_row = '<tr><td>' + data[i]['title'] + '</td><td><button onclick="location.href =' + "'" + ' /app/admin/clients/reset/' + data[i]["event_id"] + "'" + ';"  type="button" class="btn btn-success">Προβολή Δραστηριότητας</button></td></tr>';
+			var date = new Date(result[i]['date']);
+                    var dd = date.getDate();
+                    var mm = date.getMonth();
+                    var yyyy = date.getFullYear();
+		   
+		    var hh = date.getHours();
+                    var mi = date.getMinutes();
+		    if (dd<10){
+                        dd = '0' + dd;
+                    }
+                    if (mm<10){
+                        mm = '0' +mm;
+                    }
+                    if (hh<10){
+                        hh = '0' + hh;
+                    }
+                    if (mi<10){
+                        mi = '0' + mi;
+                    }
+		    var eventDate = dd + "/" + mm + "/" + yyyy;
+		    var eventTime = hh + ":" + mi;
+		    var tag = data[i]['tags'].substring(0,data[i]['tags'].length-2);
+		    
+                    var table_row = '<tr><td>' + data[i]['title'] + '</td><td>' + eventDate + '</td><td>' + eventTime + '</td><td>' + data[i]['tickets'] + '</td><td>' + data[i]['price'] + '</td><td>' +tag + '</td><td><button onclick="location.href =' + "'" + ' /app/admin/clients/reset/' + data[i]["event_id"] + "'" + ';"  type="button" class="btn btn-success" disabled>Προβολή Δραστηριότητας</button></td></tr>';
                     $(".table tbody").append(table_row);
 
                 }
@@ -34,8 +56,13 @@ $(function() {
 	    var histo = ' <h2 style="text-align:center;"> Ιστορικό </h2>' + '<table class="table">'
   +'          <thead>'
   +'            <tr>'
-  +'              <th>Όλες οι δραστηριότητες μου</th>'
-  +'              <th>Προβολή δραστηριότητας</th>'
+ 	+' 	<th>Όνομα Δραστηριότητας</th>'
+      +'           <th>Ημερομηνία</th>'	
+	 +'           <th>Ώρα</th>'	
+	+' 	<th>Αριθμός εισιτηρίων</th>'
+	+' 	<th>Τιμή</th>'
+	+' 	<th>Κατηγορίες</th>'
+	+' 	<th>Προβολή δραστηριότητας</th>'
   +'            </tr>'
   +'          </thead>'
 	+'     <tbody>'
@@ -43,29 +70,51 @@ $(function() {
           +'</tbody>'
         +'  </table> ';
 	    $('#hisrepo').append(histo);
-            $.ajax({
-                url: "/app/provider/history", // url where to submit the request
-                type: "GET", // type of action POST || GET
-                dataType: 'json', // data type
-                //contentType : 'json',
-                success: function (result) {
-                    // you can see the result from the console
-                    // tab of the developer tools
-                    if (result.length != 0) {
-                        data = result;
-                        for (var i = 0; i < data.length; i++) {
-
-                            var table_row = '<tr><td>' + data[i]['title'] + '</td><td><button onclick="location.href =' + "'" + ' /app/admin/clients/reset/' + data[i]["event_id"] + "'" + ';"  type="button" class="btn btn-success">Προβολή Δραστηριότητας</button></td></tr>';
-                            $(".table tbody").append(table_row);
-
-                        }
-
+             $.ajax({
+        url: "/app/provider/history", // url where to submit the request
+        type: "GET", // type of action POST || GET
+        dataType: 'json', // data type
+        //contentType : 'json',
+        success: function (result) {
+            // you can see the result from the console
+            // tab of the developer tools
+            if (result.length != 0) {
+                data = result;
+                for (var i = 0; i < data.length; i++) {
+			var date = new Date(result[i]['date']);
+                    var dd = date.getDate();
+                    var mm = date.getMonth();
+                    var yyyy = date.getFullYear();
+		   
+		    var hh = date.getHours();
+                    var mi = date.getMinutes();
+		    if (dd<10){
+                        dd = '0' + dd;
                     }
-                },
-                error: function (xhr, resp, text) {
-                    alert("AJAX FAILED");
+                    if (mm<10){
+                        mm = '0' +mm;
+                    }
+                    if (hh<10){
+                        hh = '0' + hh;
+                    }
+                    if (mi<10){
+                        mi = '0' + mi;
+                    }
+		    var eventDate = dd + "/" + mm + "/" + yyyy;
+		    var eventTime = hh + ":" + mi;
+		    var tag = data[i]['tags'].substring(0,data[i]['tags'].length-2);
+		    
+                    var table_row = '<tr><td>' + data[i]['title'] + '</td><td>' + eventDate + '</td><td>' + eventTime + '</td><td>' + data[i]['tickets'] + '</td><td>' + data[i]['price'] + '</td><td>' +tag + '</td><td><button onclick="location.href =' + "'" + ' /app/admin/clients/reset/' + data[i]["event_id"] + "'" + ';"  type="button" class="btn btn-success" disabled>Προβολή Δραστηριότητας</button></td></tr>';
+                    $(".table tbody").append(table_row);
+
                 }
-            });
+
+            }
+        },
+        error: function (xhr, resp, text) {
+            alert("AJAX FAILED");
+        }
+    })
             e.preventDefault();
         });
         $('#repo').click(function(e) {
@@ -96,7 +145,7 @@ $(function() {
                         data = result;
                         for (var i = 0; i < data.length; i++) {
 
-                            var table_row = '<tr><td>' + data[i]['title'] + '</td><td><button onclick="location.href =' + "'" + ' /app/admin/clients/reset/' + data[i]["event_id"] + "'" + ';"  type="button" class="btn btn-success">Προβολή Δραστηριότητας</button></td></tr>';
+                            var table_row = '<tr><td>' + data[i]['title'] + '</td><td><button onclick="location.href =' + "'" + ' /app/admin/clients/reset/' + data[i]["event_id"] + "'" + ';"  type="button" class="btn btn-success" disabled>Προβολή Δραστηριότητας</button></td></tr>';
                             $(".table tbody").append(table_row);
 
                         }

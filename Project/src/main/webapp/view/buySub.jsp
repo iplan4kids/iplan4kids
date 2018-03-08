@@ -30,58 +30,49 @@
     </div>
 </div>
 
-<!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-left" href="/app/provider/">
-                <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
-            </a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <!-- Left part of Navbar -->
-            <ul class="nav navbar-nav navbar-left">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Δραστηριότητες
+    <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-left" href="/app/provider/">
+                    <img src="<c:url value='/images/iplan.png' />" align="center" width="50"/>
+                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <!-- Left part of Navbar -->
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="/app/provider/">Ιστορικό</a>
+                    </li>
+                    <li>
+                        <a href="/app/provider/">Αναφορά</a>
+                    </li>
+                    <li>
+                        <a href="/app/provider/addEvent">Προσθήκη Νέου</a>
+                    </li>
+                    <li class="active">
+                        <a href="/app/provider/buySub">Ανανέωσε</a>
+                    </li>
+                  </ul>
+                <!-- Right part of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> ${provider.getUsername()}
                         <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Κατηγορία 1</a></li>
-                        <li><a href="#">Κατηγορία 2</a></li>
-                        <li><a href="#">Κατηγορία 3</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- Right part of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Όνομα Παρόχου
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="octicon octicon-file"></span>Τα στοιχεία μου</a></li>
-
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <div class="search-form">
-                    <form class="navbar-form" role="search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </ul>
+                            <ul class="dropdown-menu">
+                                <li><a href="/app/provider/myProfile"><span class="glyphicon glyphicon-file"></span>Τα στοιχεία μου</a></li>
+                                <li ><a  href="/app/logoutStrong"><span id="logout" class="glyphicon glyphicon-log-out"></span>Αποσύνδεση</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <!-- -------------------------------------- NAVIGATION BAR ----------------------------------------------- -->
 <div class="container">

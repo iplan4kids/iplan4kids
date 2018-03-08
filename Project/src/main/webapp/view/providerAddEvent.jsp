@@ -65,7 +65,7 @@
                 <li>
                     <a href="/app/provider/">Αναφορά</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="/app/provider/addEvent">Προσθήκη Νέου</a>
                 </li>
                 <li>
