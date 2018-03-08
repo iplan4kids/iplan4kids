@@ -164,9 +164,9 @@ else{
       out.write("            </ul>\n");
       out.write("            <ul class=\"nav navbar-nav navbar-right\">\n");
       out.write("                <div class=\"search-form\">\n");
-      out.write("                    <form class=\"navbar-form\" role=\"search\">\n");
+      out.write("                    <form class=\"navbar-form\" action=\"/app/events\" method=\"get\" role=\"search\">\n");
       out.write("                        <div class=\"input-group\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"srch-term\" id=\"srch-term\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"searchtext\" id=\"srch-term\" value=\"\">\n");
       out.write("                            <div class=\"input-group-btn\">\n");
       out.write("                                <button class=\"btn btn-default\" type=\"submit\"><i class=\"glyphicon glyphicon-search\"></i></button>\n");
       out.write("                            </div>\n");

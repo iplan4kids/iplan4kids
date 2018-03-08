@@ -67,7 +67,7 @@ public class DataAccess {
     }
 
     public List<Event> getAllEvents() {
-        return jdbcTemplate.query("select * from events limit 9 offset 9", new EventRowMapper());
+        return jdbcTemplate.query("select * from events limit 9 offset 0", new EventRowMapper());
     }
 
 

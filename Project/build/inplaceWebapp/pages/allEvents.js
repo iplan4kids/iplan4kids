@@ -63,7 +63,7 @@ var mockEvents = [{
 var templateTest= '<div class="col-sm-4">' +
                     '<div class="panel eventCard">' +
                         '<a id="eventLink" href="/app/events/event/%EVENT_ID%"><h4 align="center" style="font-weight:bold" class="eventTitle">%EVENT_TITLE%</h4></a>' +
-                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
+                        '<div class="panel-thumbnail eventImage"><a href="/app/events/event/%EVENT_ID_IM%"><img src="eventImages/%EVENT_ID_IMAGE%/%EVENT_IMAGE%" class="img-responsive img-rounded"></a></div>' +
                         '<div class="panel-body eventDescription">' +
                            /* '<div class="eventDate">' +
                                 '%EVENT_DATE%' +
@@ -86,7 +86,6 @@ var templateTest= '<div class="col-sm-4">' +
 
 $(document).ready(function() {
 // -------------------------------------- EVENT CARD ------------------------------------------------------------
-
 // https://github.com/uxitten/polyfill/blob/master/string.polyfill.js
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd
     if (!String.prototype.padEnd) {
@@ -148,13 +147,15 @@ $(document).ready(function() {
                        ds = ds.padEnd(33);
                     }
                     console.log(result[i]['images']);
-                    var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
-                        .replace('%EVENT_IMAGE%', result[i]['images'])
+					var imageArray = result[i]['images'].split(",");
+					var divContent = templateTest.replace('%EVENT_TITLE%', result[i]['title'])
+                        .replace('%EVENT_IMAGE%', imageArray[0])
                         .replace('%EVENT_DATE%', eventDate)
                         .replace('%EVENT_DESCRIPTION%',ds )
                         .replace('%EVENT_PRICE%', result[i]['price'])
                         .replace('%EVENT_TIME%',eventTime )
                         .replace('%EVENT_ID%',result[i]['event_id'] )
+						.replace('%EVENT_ID_IMAGE%',result[i]['event_id'] )
                         .replace('%EVENT_ID_IM%',result[i]['event_id'] );
 
                     parentDiv.append(divContent);
@@ -167,6 +168,11 @@ $(document).ready(function() {
     })
 
 
+
+	
+  	//document.getElementById("allEvents").innerHTML = "asdadad";
+	
+    	
     /*var parentDiv = $('#allEvents');
     for (var i = 0; i < mockEvents.length; i++)
     {
@@ -180,7 +186,8 @@ $(document).ready(function() {
         parentDiv.append(divContent);
     }*/
 
-});
+}); 
+
 
 $( function() {
     
@@ -191,11 +198,11 @@ $( function() {
       values: [0, 150],
       step:1,
       slide: function( event, ui ) {
-        $( "#amount" ).val( "Πόντοι" + ui.values[ 0 ] + " - Πόντοι" + ui.values[ 1 ] );
+        $( "#amount" ).val( "Εύρος Πόντων: " + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "Εύρος Τιμών: Πόντοι" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - Πόντοι" + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "Εύρος Πόντων: " + $( "#slider-range" ).slider( "values", 0 ) +
+      " - " + $( "#slider-range" ).slider( "values", 1 ) );
     } 
 
 );
@@ -212,13 +219,13 @@ function applyFilters(){
         };
 
     };
-
-
+    
     var parentDiv = $('#allEvents');
 
     var filterDate = $("#filterdate").val();
     var sliderMin = $("#slider-range").slider("values") [0];
     var sliderMax = $("#slider-range").slider("values") [1];
+    var numberOfKm = $("#numberOfKm").val();
     var selectedCategories = [];
     var lng,lat;
     var findAddress;
@@ -264,7 +271,8 @@ function applyFilters(){
                 "date":filterDate,
                 "lng":lng,
                 "lat":lat,
-                "findAddr":findAddress
+                "findAddr":findAddress,
+                "numberOfKm":parseInt(numberOfKm)
             }
 
 

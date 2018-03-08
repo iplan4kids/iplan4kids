@@ -223,7 +223,7 @@ else{
       out.write("                        <label><input id=\"category4\" type=\"checkbox\" value=\"4\">Βιβλίο</label>\r\n");
       out.write("                    </div>\r\n");
       out.write("                    <div class=\"checkbox\">\r\n");
-      out.write("                        <label><input id=\"category5\" type=\"checkbox\" value=\"5\">Άλλες Δραστηριότηες</label>\r\n");
+      out.write("                        <label><input id=\"category5\" type=\"checkbox\" value=\"5\">Άλλες Δραστηριότητες</label>\r\n");
       out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("                        <label style=\"display: inline;\"  for=\"amount\">\r\n");
@@ -241,7 +241,10 @@ else{
       out.write("                    <div class=\"radio\">\r\n");
       out.write("                        <label><input id=\"currentLocation\" type=\"radio\" name=\"optradio\">Εδώ που είμαι αυτή την στιγμή</label>\r\n");
       out.write("                    </div>\r\n");
-      out.write("\r\n");
+      out.write("                    \r\n");
+      out.write("                    <label>Χιλιομετρική Απόσταση:</label>\r\n");
+      out.write("\t\t\t\t\t<input style=\"margin-left: 5px; margin-bottom:10px; margin-top:10px;\"  placeholder=\"Αριθμός Χιλιομέτρων\" type=\"number\" id=\"numberOfKm\" min=\"0\" step=\"1\" class=\"form-control \" name=\"\" value=\"0\">\r\n");
+      out.write("\t\t\t\t\t\r\n");
       out.write("                    <button class=\"btn submitButton\" onclick=\"applyFilters()\">Εφαρμογή Φίλτρων</button>\r\n");
       out.write("                </div>\r\n");
       out.write("\r\n");
@@ -262,15 +265,8 @@ else{
       out.write("            </div>\r\n");
       out.write("            <!-- ----------------------------------- PAGIFICATION ------------------------------------- -->\r\n");
       out.write("            <div class=\"row pager\">\r\n");
-      out.write("                <ul class=\"pagination\">\r\n");
-      out.write("                    <li><a href=\"#\">&laquo;</a></li>\r\n");
-      out.write("                    <li><a href=\"#\">1</a></li>\r\n");
-      out.write("                    <li><a href=\"#\">2</a></li>\r\n");
-      out.write("                    <li><a href=\"#\">3</a></li>\r\n");
-      out.write("                    <li><a href=\"#\">4</a></li>\r\n");
-      out.write("                    <li><a href=\"#\">5</a></li>\r\n");
-      out.write("                    <li><a href=\"#\">&raquo;</a></li>\r\n");
-      out.write("                </ul>\r\n");
+      out.write("                    <a href=\"#\" class=\"previous\">&laquo; Προηγούμενη</a>\r\n");
+      out.write("                    <a href=\"#\" class=\"next\">Επόμενη &raquo;</a>\r\n");
       out.write("            </div>        \r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");
@@ -381,7 +377,7 @@ else{
       out.write("    <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBMp5eP199GDotlWhbsMppKyTSVKQJlS4o&language=el&libraries=places\" async defer></script>\r\n");
       out.write("    </body>\r\n");
       out.write("\r\n");
-      out.write("</html>");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
