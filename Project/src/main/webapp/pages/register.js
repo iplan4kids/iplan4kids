@@ -221,3 +221,9 @@ function fillInAddress() {
     }
 }
 
+
+$('[data-toggle="tooltip"]').tooltip(); 
+
+
+
+
