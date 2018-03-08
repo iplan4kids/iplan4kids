@@ -168,7 +168,7 @@ public class DataAccess {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         String query = "insert into " +
                 "clients (username, password, first_name, last_name, postal_code, phone, city, address, address_num, email, long, lat, disabled, blocked)" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, false, false)";
 
         Connection con = null;
         ResultSet rs = null;
@@ -188,8 +188,6 @@ public class DataAccess {
             stmt.setString(10,c.getEmail());
             stmt.setDouble(11,c.getLongtitude());
             stmt.setDouble(12,c.getLatitude());
-            stmt.setBoolean(13,c.isDisabled());
-            stmt.setBoolean(14,c.isBlocked());
 
             return stmt;
         },keyHolder);
